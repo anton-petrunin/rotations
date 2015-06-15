@@ -1,0 +1,130 @@
+\usepackage{amsmath,amssymb,amsthm,pifont,amsrefs}
+\usepackage{bm}%makes better bold fornt in math
+\usepackage{ushort}
+\usepackage{manfnt}
+\usepackage{enumerate}
+\usepackage{epsfig,lpic,wrapfig}
+\usepackage{hyperref}
+%\usepackage[notref,notcite,color]{showkeys}
+\hypersetup{colorlinks=true,citecolor=black,linkcolor=black,anchorcolor=black,filecolor=black,menucolor=black,urlcolor=black
+}
+\hyphenation{Kapo-vitch}
+
+
+
+\renewcommand{\thesubsection}{\thesection\Alph{subsection}}
+
+\newcounter{thm}[section]
+\renewcommand{\thethm}{\thesection.\arabic{thm}}
+\def\claim#1{\par\medskip\noindent\refstepcounter{thm}\hbox{\bf \arabic{section}.\arabic{thm}. #1.}
+\it\ %\ignorespaces
+}
+\def\endclaim{
+\par\medskip}
+\newenvironment{thm}{\claim}{\endclaim}
+\newcommand*{\DCto}{\begin{picture}(20,10)
+\put(1,0){$\longrightarrow$}
+\put(12,-2.5){\llap{\text{\sf\tiny DC}}}
+\end{picture}}
+\newcommand*\GHto{\begin{picture}(20,10)
+\put(1,0){$\longrightarrow$}
+\put(12,-2.5){\llap{\text{\sf\tiny GH}}}
+\end{picture}}
+\newcommand{\de}{\delta}
+\def\op{\operatorname}
+\def\Cone{\operatorname{Cone}}
+\def\Const{\text{\rm Const}}
+\newcommand*{\angk}[4]{\tilde\measuredangle^{#1}(#2\,{}^{#3}_{#4}\hspace{-0.2ex})}
+\def\area{\operatorname{area}}
+\def\vol{\operatorname{vol}}
+\def\diam{\operatorname{diam}}
+\def\codim{\operatorname{codim}}
+\def\dim{\operatorname{dim}}
+\def\dir{\operatorname{dir}}
+\def\div{\mathop{\rm div}}
+\def\dist{\operatorname{dist}}
+\def\gexp{\mathop{\rm gexp}\nolimits}
+\def\pack{\operatorname{pack}}
+\def\Ric{\operatorname{Ric}}
+\def\pack{\operatorname{pack}}
+\def\rank{\operatorname{rank}\nolimits}
+\def\Rm{\operatorname{Rm}}
+\def\Sc{\operatorname{Sc}}
+\def\Int{\operatorname{Int}}
+\def\Str{\operatorname{Str}}
+\def\Tr{\operatorname{Tr}}
+\def\supp{\operatorname{supp}}
+
+\def\turn{\mathop{\rm turn}\nolimits}
+\def\curv{\mathop{\rm curv}\nolimits}
+
+\def\EE{\mathbb{E}}
+\def\R{\mathbb{R}}
+\def\RR{\mathbb{R}}
+\def\SS{\mathbb{S}}
+\def\ZZ{\mathbb{Z}}
+\def\NN{\mathbb{N}}
+\def\N{\mathrm{N}}
+\def\MM{\mathbb{M}}
+\def\II{\mathbb{I}}
+\def\T{\mathrm{T}}
+\def\df{\buildrel \mathrm{def} \over{=\!\!=}}
+\def\parit#1{\medskip\noindent{\it #1}}
+\def\parbf#1{\medskip\noindent{\bf #1}}
+\def\qeds{\qed\par\medskip}
+\def\z{\zeta}
+\def\eps{\varepsilon}
+\def\ge{\geqslant}
+\def\le{\leqslant}
+\def\phi{\varphi}
+\def\i{\subset}
+\def\l{\left}
+\def\r{\right}
+\def\<{\langle}
+\def\>{\rangle}
+\def\vr{\overrightarrow}
+\def\length{\mathop{\rm length}\nolimits}
+\newcommand{\wt}[1]{\widetilde{#1}}
+\newcommand{\dto}[1]{\stackrel{\hbox{\tiny $#1$}}{\longrightarrow}}
+\newcommand{\ddto}[1]{\stackrel{#1}{\Rightarrow}}
+\newcommand{\dwto}[1]{\stackrel{#1}{\rightharpoonup}}
+\newcommand{\testto}{\stackrel{test}{\longrightarrow}}
+\newcommand*{\set}[2]{\l\{\,\l.{#1}\vphantom{#2}\,\r|\,{#2}\,\r\}}
+\def\:{\colon}
+\def\~{\tilde}
+\def\acts{\curvearrowright}
+\def\id{\mathrm{id}}
+\def\emptyset{\varnothing}
+
+%LIST STILES
+\renewcommand{\@listI}{%
+\leftmargin=25pt
+\rightmargin=0pt
+\labelsep=5pt
+\labelwidth=20pt
+\itemindent=0pt
+\listparindent=0pt
+\topsep=0pt plus 1pt
+\partopsep=\topsep
+\parsep=\topsep
+\itemsep=\topsep}
+%ITEMIZE-first order sign
+\renewcommand{\labelitemi}{$\mathsurround=0pt \diamond$}
+\renewcommand{\labelitemii}{$\mathsurround=0pt \circ$}
+
+
+%NUMBERONCIRC
+\newcommand*{\numform}[1]{\@numform{\@nameuse{c@#1}}}
+\newcommand*{\@numform}[1]%
+{\ifcase #1\or \ding{202}\or \ding{203}\or \ding{204}\or \ding{205}\or \ding{206}\or \ding{207}\or \ding{208}\or \ding{209}\or \ding{210}\or \ding{211}\else\@ctrerr \fi}
+%EQNUMBER
+\newcounter{eqtn}
+\renewcommand{\@eqnnum}{\theeqtn}
+\renewcommand{\theeqtn}{\numform{eqtn}}
+\newcommand{\eqlbl}[1]{\refstepcounter{eqtn}\eqno\text{\numform{eqtn}\label{#1}}}
+
+\let\oldcdot\cdot
+\def\cdot{{\hskip0.5pt\oldcdot\hskip0.5pt}}
+
+\newcommand*{\zz}[1]{#1\nobreak\discretionary{}%
+            {\hbox{$\mathsurround=0pt #1$}}{}}
