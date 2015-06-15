@@ -601,29 +601,80 @@ An openning braket may come with a closing pair,
 
 \section{The estimate}
 
+Assume a finite  sign-sequence $\bm{s}=(s_1,\dots, s_k)$
+is given;
+that is $s_i=\pm1$ for $i$.
+
+A pair of indexes $i< j$
+\emph{form an $\bm{s}$-pair} 
+if $\sum_{n=i}^js_n=0$ and $\sum_{n=i}^{j'}s_n>0$ if $i<j'<j$.
+
+Note that for any index $i$ appears in at most one $\bm{s}$-pair.
+If you exchange ``$+1$'' and ``$-1$'' in $\bm{s}$ by ``$($'' and ``$)$'' correspondingly then $(i,j)$ is an $\bm{s}$-pair
+if ind only if the $i$-th bracket forms a pair with $j$-bracket;
+in particular for any $\bm{s}$-pair $(i,j)$ we have
+\begin{itemize}
+\item $s_i=1$; that is, $i$-th braket has to be openning.
+ \item $s_j=1$; that is, $j$-th braket has to be closing.
+\end{itemize}
+Moreover 
+
+
+Given an $\bm{s}$-pair $(i,j)$, 
+we say that $q$ is the depth of $(i,j)$
+(briefly $q=\depth_{\bm{s}}(i,j)$) 
+if $q$ is the maximal number such that there are $\bm{s}$-pairs 
+$(i,j)=(i_1,j_1),(i_2,j_2),\dots,(i_q,j_q)$ which are nested; 
+that is,
+\[i=i_1<\dots<i_q<j_q<\dots<j_1=j.\]
+
 \begin{thm}{Proposition}
 Assume three finite sequences are given:
 \begin{itemize}
 \item $(s_1,\dots, s_k)$ such that $s_i=\pm1$ for any $i$
-\item $(\alpha_1,\dots,\alpha_k)$
 \item $0\le K_1\le K_2\le \dots\le K_k$.
-\item $0\le \beta_1\le\dots\le\beta_k$ such that $\beta_i\ge |\alpha_i|$ for any $i$.
+\item $(\alpha_1,\dots,\alpha_k)$ such that any $\bm{s}$-pair $(i,j)$, we have
+\[|\alpha_i-\alpha_j|\le \depth(i,j)\cdot(K_j-K_i),\]
+\item $0\le \beta_1\le\dots\le\beta_k$ such that $\beta_i\ge |\alpha_i|$ for any $i$ and $\beta_j>2\cdot\beta_i$ for any $j>i$ such that $|\sum_{n=i}^j|=5$.
 \end{itemize}
-We say that indexes $i< j$ \emph{form an $s$-pair} if $\sum_{n=i}^js_n=0$ and $\sum{n=i}^{j'}s_n>0$ if $i<j'<j$.
-Assume that for any $s$-pair $(i,j)$, we have
-\[s_i\cdot\alpha_i+s_j\cdot\alpha_j\le q(i,j)\cdot(K_j-K_i),\]
-where $q(i,j)$ is the maximal number such that there are $s$-pairs 
-$(i,j)=(i_1,j_1),\dots(i_q,j_q)$ which are nested; that is,
-$i=i_1<\dots<i_q<j_q<\dots<j_1=j$.
-Futher assume that for any $s$-pair $(i,j)$
-such that $q(i,j)\ge 5$ we have $\beta_j>2\cdot \beta_i$.
-If the sum $\sum_{n=i}^js_n$ does not vanish and divisible by $5$
-then $\beta_i>2\cdot \beta_i$.
-
 Then
-\[\sum s_n\cdot \alpha_n\le 5\cdot K_k-K_1+10\cdot \beta_k.\]
+\[|\sum s_n\cdot \alpha_n|\le 10\cdot( K_k+ \beta_k).\]
 
 \end{thm}
+
+\parit{Proof.}
+Note that for arbitrary the $\bm{s}$-pairs $(i,j)$ and $(i',j')$
+we have three possibllities:
+\begin{itemize}
+\item $[i,j]\subset [i',j']$ and in this case $\depth_{\bm{s}}(i,j)<\depth_{\bm{s}}(i',j')$;
+\item $[i,j]\supset [i',j']$ and in this case $\depth_{\bm{s}}(i,j)>\depth_{\bm{s}}(i',j')$;
+\item $[i,j]\cap [i',j']=\emptyset$.
+\end{itemize}
+In partcular, if $\depth_{\bm{s}}(i,j)=\depth_{\bm{s}}(i',j')$ then the intervals $[i,j]$ and $[i',j']$ do not overlap.
+
+Therfore if $S_q=\sum (\alpha_i-\alpha_j)$ is the sum for all $\bm{s}$-pairs with depth $q$ then 
+\[S_q\le q\cdot K_k.\]
+In particular 
+\[S_1+S_2+S_3+S_4+S_5\le 15\cdot K_k.\]
+The left hand side in the last sum contins some (maybe all) of the terms of 
+$\sum_{n} s_n\cdot \alpha_n$.
+Let us group in the remaining terms into 5 groups $G_1,\dots,G_5$ 
+so $s_i\cdot\alpha_i$ goes into the same group with $s_j\cdot\alpha_j$
+if the sum $\sum_{n=j}^j s_n$ is divisible by $5$.
+
+It remains to give estimate for the five sum 
+$A_m=|\sum_{i\in G_m}s_i\cdot \alpha_i|$.
+Note that
+\begin{align*}
+|\sum_{i\in G_m}s_i\cdot \alpha_i|
+&\le \sum {i\in G_m}\beta_i
+\\
+&\le 2\cdot\beta_k;
+\end{align*}
+the last inequality follows since
+$\beta_j>2\cdot \beta_i$
+if $i,j\in G_m$ and $i<j$.
+\qeds
 
 
 \begin{bibdiv}
