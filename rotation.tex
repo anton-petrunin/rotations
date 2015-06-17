@@ -36,17 +36,30 @@ We give a universal upper bound for the variation of turn of minimizing geodesic
 
 \section{Introduction}
 
+Denote by $\EE^3$ the 3-dimensional Euclidean space.
+
+Recall that the \emph{turn} of a curve $\gamma\:\II\to \EE^3$ 
+(briefly $\turn\gamma$)
+is defined as supremum of sum of exterior angles 
+for the broken lines inscribed in $\gamma$.
+If $\gamma$ is smooth and equipped with the natural parameter, 
+then 
+\[\turn\gamma=\int\limits_\II \kappa(t)\cdot dt,\]
+where $\kappa(t)=|\gamma''(t)|$ is the curvature of $\gamma$ at $t$.
+
 \begin{thm}{Main theorem}\label{thm:main}
-There is a real constant $\omega$ such that 
-if $K$ is a closed convex set in the 3-dimensional Euclidean space,
+If $K$ is a closed convex set in the 3-dimensional Euclidean space,
 $\Sigma$ is the surface of $K$ 
 and $\gamma$ be a minimizing geodesic in $\Sigma$
-then the variation of turn of $\gamma$ is at most $\omega$.
+then 
+\[\turn\gamma\le \omega,\]
+where $\omega$ is a universal real constant.
 \end{thm}
 
-Dmitry Burago asked us this question few years ago.
-Later we learned that this question was also stated in \cite{AH-PSV}, \cite{pach} and \cite{BKZ}.
-Below we formulate some related statements.
+The question was stated in \cite{AH-PSV}, \cite{pach} and \cite{BKZ},
+but we have learned it from Dmitry Burago only few years ago.
+
+Let us briefly discuss the related results.
 
 \begin{itemize}
 \item In \cite{liberman}, Liberman gives a bound on the turn of short geodesic in terms of the ratio diameter and inradius of $K$.
@@ -64,30 +77,14 @@ It is easy to see that the length of spherical image of geodesic can not be smal
 Counterexamples were found indepenently by Milka in \cite{milka}, 
 Usov in \cite{usov-conj-pog} 
 and much later by Pach in \cite{pach}.
-\item In \cite{BKZ} it was constructed a closed hypersurface with a minimizing geodesic which twists around given line arbitrary many times.
+\item In \cite{BKZ},
+B{\'a}r{\'a}ny,
+Kuperberg, 
+and Zamfirescu 
+have constructed a corkscrew minimizing geodesic on a closed hypersurface;
+that is a minimizing geodesic which twists around given line arbitrary many times.
 \end{itemize}
- 
 
-
-
-Given a convex body $K$, define its $k$-width, $w_k(K)$
-as the minimal diameter of the projections of $K$ to the $k$-dimensional subspaces.
-From Lieberman's theorem the following statement follows. 
-Given $\eps$ and $\ell$ there is a real constant $\omega(\eps,\ell)$ such that the any geodesic of length $\ell$ on the surface of convex body $K$ such that $w_3(K)=\diam K\le 1$ and $w_1(K)>\eps$ has variation of turn at most $\omega(\eps,\ell)$.
-Since $w_2(K)\ge w_1(K)$ for any convex body $K$,
-the following result is stronger.
-
-\begin{thm}{Theorem}\label{thm:dim=2}
-Given $\eps>0$ and $\ell$ there is a real constant $\omega(\eps,\ell)$ such that the any geodesic of length $\ell$ on the surface of convex body $K$ in the 3-dimensional Euclidean space such that $w_3(K)=\diam K\le 1$ and $w_2(K)>\eps$ has variation of turn at most $\omega(\eps,\ell)$.
-\end{thm}
-
-Comparing to the Main theorem, we exchange the condition on minimality of geodesic to the condition that the body $K$ is far from 1-dimensional set.
-Note that ny minimizing geodesic on the surface of $K$ has length at most 10 times bigger than $\diam K$, therefore Main theorem for the class of bodies far enough form a line segment follows from Theorem \ref{thm:dim=2}.
-Note that the helix-like geodesics of fixed length 
-on a sufficiently thin cylinder 
-can have arbitrary large variation of turn;
-i.e., the condition on the second width is essential.
-As it follows from the Main theorem, such geodesic can not be minimizing.
 
 \section{Preliminaries}
 
@@ -172,8 +169,51 @@ Therefore, we get an estimate
 \le
 (4\cdot N+2)\cdot\pi.\]
 
+\section{Reduction to a simpler case}
 
-\section{The proof}
+Arguing by contradiction 
+let us assume that 
+there is a convex surface with a minimizing geodesic which has arbitrary large turn.
+
+In this we will show that one can assume in addition something about the surface and the curve.
+Namely we will prove the following claim.
+
+\begin{thm}{Proposition}
+Assume Main Theorem does not hold;
+that is, there is a sequence of convex surfaces $\Sigma_n$
+and a sequence of minimizing geodesic $\gamma_n$ in $\Sigma_n$ such that 
+\[\turn \gamma_n\to\infty\ \ \text{as}\ \ n\to\infty\]
+Then we can assume in addition that $\Sigma_n$ is a graph on a concave function 
+$z=f_n(x,y)$ and the velocity vector of $\gamma_n$
+has negative $z$-coordinate at all times.
+\end{thm}
+
+\parit{Proof.}
+Take a sequence of surfaces $\Sigma_n$ with a sequence of minimizing geodesics $\gamma_n$ such that 
+\[\turn\gamma_n\to \infty.\]
+Denote by $K_n$ the convex body bounded by $\Sigma_n$.
+
+Applying rescaling, we can assume that $\diam\gamma_n=1$ for all $n$.
+Passing to a subsequence if necessary, we can also assum that $K_n$ converges in Hausdorff sense, say to $K_\infty$.
+
+By Liberman's theorem we have that $K_\infty$ lies in the plane.
+
+It follows that $\gamma_n$ converges to a line segment in $K_\infty$
+or broken line made from two line segments, one on one side and the other on the other side of $K_\infty$.
+In the later case we can pass to an arc of $\gamma_n$ so that its turn is still converges to $\infty$ as $n\to\infty$ and the limit curve is a line segment.
+
+We can pass to an arc of $\gamma_n$ and rescale to ensure that 
+\[1\le|p_n-\gamma(t)|\le 2\] 
+for any $t$ and some fixed point $p_n\in K_n$
+while still $\turn\gamma_n\to\infty$ as $n\to \infty$.
+In particular 
+\[\limsup_{n\to\infty}(\turn_{p_n}\gamma_n)\le \pi.\]
+
+Further, we can subdivide $\gamma_n$ into arcs with equal $\turn_{p_n}$
+
+\qeds
+
+
 
 In the proof we will need the following lemma.
 
@@ -559,86 +599,57 @@ Note that the rotation of $\gamma$ in direction of $x$-axis equals to
 \[\sum_m (-1)^m\cdot e_m\cdot\alpha_m.\]
 Let extract from the index set $1,\dots,n$
 the maximal number of pairs $(i,i+1)$
-such that $e_m=e_{m+1}$ note that for each pait we get
+such that $e_m=e_{m+1}$ note that for each pair we get
 
-\section{Sequence of curly brackets}
+\section{The sum estimate}
 
-Consider a finite sequence $(s_1,\dots,s_n)$ such that $s_m=\pm1$ for any $m$.
+There is no geometry in this section.
+Here we give an estimate for a sum 
+of finite sequence of real numbers 
+of a very specific form.
 
-For a pair of indexes $m$ and $k$ in $\{1,\dots,n\}$,
-we will write $m\vdash k$ if $m<k$,
-\[\sum_{i=m}^k s_i= 0.\]
-and
-\[\sum_{i=m}^j s_i>0.\]
-if $m\le j<k$.
-
-Note that if $m\vdash k$ and $m'vdash k$ implies $m=m'$,
-and $m\vdash k$ and $mvdash k'$ implies $k=k'$.
-Further if $m\vdash k$ and $m'\vdash k'$ then the intervals $[m,k]$ and $[m',k']$ either disjoint or one lies in the other.
-
-Depth ...
-
-
-Given $m$ such that $s_m=+1$, 
-consider the maximal $k$ such that
-\[\sum_{i=m}^\ell s_i\ge 0\]
-for any $\ell<k$.
-The value $k$ is assumed to take an integer from $m+1$ to $n$ or $\infty$.
-Note that if $k<\infty$ then $s_k=-1$ and 
-\[\sum_{i=m}^k s_i= 0.\]
-
-Any pairs of two intervals of the form $(m,k)$ either disjoint or 
-one contains the other.
-The deepness of the interval $(m,k)$ as above is defined as length of the maxiamal sequence of nested inervals of that type inside $(m,k)$.
-
-
-
-Consider a finite sequence $(s_1,\dots,s_n)$ such that $s_i=\pm1$ for any $i$.
-We say that 
-
-Consider an arbitrary finite sequence of curly brackets say $))()(()(()))(($.
-An openning braket may come with a closing pair,
-
-\section{The estimate}
 
 Assume a finite  sign-sequence $\bm{s}=(s_1,\dots, s_k)$
 is given;
 that is $s_i=\pm1$ for $i$.
 
-A pair of indexes $i< j$
-\emph{form an $\bm{s}$-pair} 
-if $\sum_{n=i}^js_n=0$ and $\sum_{n=i}^{j'}s_n>0$ if $i<j'<j$.
+We say that a pair of indexes $i< j$
+forms an \emph{$\bm{s}$-pair} 
+if 
+\begin{align*}
+\sum_{n=i}^js_n&=0
+\intertext{and }
+\sum_{n=i}^{j'}s_n&>0
+\end{align*} 
+if $i<j'<j$.
 
 Note that for any index $i$ appears in at most one $\bm{s}$-pair.
 If you exchange ``$+1$'' and ``$-1$'' in $\bm{s}$ by ``$($'' and ``$)$'' correspondingly then $(i,j)$ is an $\bm{s}$-pair
-if ind only if the $i$-th bracket forms a pair with $j$-bracket;
+if and only if the $i$-th bracket forms a pair with $j$-bracket;
 in particular for any $\bm{s}$-pair $(i,j)$ we have
 \begin{itemize}
 \item $s_i=1$; that is, $i$-th braket has to be openning.
- \item $s_j=1$; that is, $j$-th braket has to be closing.
+ \item $s_j=-1$; that is, $j$-th braket has to be closing.
 \end{itemize}
-Moreover 
 
-
-Given an $\bm{s}$-pair $(i,j)$, 
-we say that $q$ is the depth of $(i,j)$
+We say that $q$ is the depth of an $\bm{s}$-pair $(i,j)$
 (briefly $q=\depth_{\bm{s}}(i,j)$) 
-if $q$ is the maximal number such that there are $\bm{s}$-pairs 
-$(i,j)=(i_1,j_1),(i_2,j_2),\dots,(i_q,j_q)$ which are nested; 
-that is,
+if $q$ is the maximal number such that theis $q$-long nested sequence of $\bm{s}$-pairs starting with $(i,j)$; 
+that is a sequence of $\bm{s}$-pairs
+$(i,j)=(i_1,j_1),(i_2,j_2),\dots,(i_q,j_q)$ such that
 \[i=i_1<\dots<i_q<j_q<\dots<j_1=j.\]
 
 \begin{thm}{Proposition}
-Assume three finite sequences are given:
+Assume that
 \begin{itemize}
-\item $(s_1,\dots, s_k)$ such that $s_i=\pm1$ for any $i$
+\item $s_1,\dots, s_k$ is a sign sequence,
 \item $0\le K_1\le K_2\le \dots\le K_k$.
-\item $(\alpha_1,\dots,\alpha_k)$ such that any $\bm{s}$-pair $(i,j)$, we have
-\[|\alpha_i-\alpha_j|\le \depth(i,j)\cdot(K_j-K_i),\]
-\item $0\le \beta_1\le\dots\le\beta_k$ such that $\beta_i\ge |\alpha_i|$ for any $i$ and $\beta_j>2\cdot\beta_i$ for any $j>i$ such that $|\sum_{n=i}^j|=5$.
+\item a sequence $\alpha_1,\dots,\alpha_k$ is such that for $\bm{s}$-pair $(i,j)$, we have
+\[|\alpha_i-\alpha_j|\le \depth_{\bm{s}}(i,j)\cdot(K_j-K_i),\]
+\item $0\le \beta_1\le\dots\le\beta_k$ such that $\beta_i\ge |\alpha_i|$ for any $i$ and $\beta_j>2\cdot\beta_i$ for any $j>i$ such that $|\sum_{n=i}^js_n|=5$.
 \end{itemize}
 Then
-\[|\sum s_n\cdot \alpha_n|\le 10\cdot( K_k+ \beta_k).\]
+\[|\sum s_n\cdot \alpha_n|\le 20\cdot( K_k+ \beta_k).\]
 
 \end{thm}
 
@@ -652,28 +663,40 @@ we have three possibllities:
 \end{itemize}
 In partcular, if $\depth_{\bm{s}}(i,j)=\depth_{\bm{s}}(i',j')$ then the intervals $[i,j]$ and $[i',j']$ do not overlap.
 
-Therfore if $S_q=\sum (\alpha_i-\alpha_j)$ is the sum for all $\bm{s}$-pairs with depth $q$ then 
-\[S_q\le q\cdot K_k.\]
-In particular 
-\[S_1+S_2+S_3+S_4+S_5\le 15\cdot K_k.\]
-The left hand side in the last sum contins some (maybe all) of the terms of 
-$\sum_{n} s_n\cdot \alpha_n$.
-Let us group in the remaining terms into 5 groups $G_1,\dots,G_5$ 
-so $s_i\cdot\alpha_i$ goes into the same group with $s_j\cdot\alpha_j$
-if the sum $\sum_{n=j}^j s_n$ is divisible by $5$.
 
-It remains to give estimate for the five sum 
-$A_m=|\sum_{i\in G_m}s_i\cdot \alpha_i|$.
+Therefore if 
+\[S_q=\sum_{\depth_{\bm{s}}(i,j)=q} (\alpha_i-\alpha_j)\] 
+is the sum for all $\bm{s}$-pairs with depth $q$ then 
+\[|S_q|\le q\cdot K_k.\]
+
+Since $s_i=1$ and $s_j=-1$ for any $\bm{s}$-pair $(i,j)$,
+we have
+\[\alpha_i-\alpha_j=s_i\cdot\alpha_i+s_j\cdot\alpha_j.\]
+Therefor sum  $S_1+S_2+S_3+S_4+S_5$  contains some  terms of 
+$\sum_{n} s_n\cdot \alpha_n$.
+Denote by $G\subset\{1,\dots,k\}$ the remaining indexes.
+Let us divide $G$ into 5 groups, say $G_1,\dots,G_5$ 
+so $i$ and $j$ go into the same group if 
+\[\sum_{n=i}^j s_n\equiv 0\pmod 5.\]
+
 Note that
 \begin{align*}
-|\sum_{i\in G_m}s_i\cdot \alpha_i|
-&\le \sum {i\in G_m}\beta_i
+|\sum_{n\in G_m}s_n\cdot \alpha_n|
+&\le \sum_{n\in G_m}\beta_n\le
 \\
 &\le 2\cdot\beta_k;
 \end{align*}
 the last inequality follows since
 $\beta_j>2\cdot \beta_i$
 if $i,j\in G_m$ and $i<j$.
+
+Summarizing
+\begin{align*}
+|\sum_n s_n\cdot\alpha_n|&\le |S_1|+|S_2|+|S_3|+|S_4|+|S_5|+|\sum_{n\in G} s_n\cdot\alpha_n|\le
+\\
+&\le 15\cdot K_k+10\cdot \beta_k.
+\end{align*}
+Hence the result follows.
 \qeds
 
 
