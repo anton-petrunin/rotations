@@ -209,7 +209,25 @@ while still $\turn\gamma_n\to\infty$ as $n\to \infty$.
 In particular 
 \[\limsup_{n\to\infty}(\turn_{p_n}\gamma_n)\le \pi.\]
 
-Further, we can subdivide $\gamma_n$ into arcs with equal $\turn_{p_n}$
+Therefore, passing to a subarc of $\gamma_n$ we can assume that 
+$\turn_{p_n}\gamma_n\to0$ and $\turn\gamma_n\to\infty$ as $n\to\infty$.
+
+Passing to a subsequence we can assume that for all $t$, 
+the angle between $\gamma'_n(t)$ and $p_n-\gamma_n(t)$ 
+converges to a fixed value, 
+say $\phi$ 
+as $n\to \infty$.
+
+Let us show that we can assume that $\phi=0$.
+If $\phi=\pi$ then it is sufficient to change reparametrize each $\gamma_n$ in the opposite direction.
+Otherwise repeat the construction for a point $q_n$ instead of $p_n$, 
+so that the triangles $\triangle p_nq_n\gamma_n(t)$ are far from being degenerate.
+We get that $\gamma_n$ runs in nearly one direction.
+Then one can choose $p_n$ near the end of $\gamma_n$.
+
+Now move each $\Sigma_n$ so that the segment form $p_n$ to the end of $\gamma_n$ lies on the $z$-axis,
+say ...
+
 
 \qeds
 
@@ -442,8 +460,7 @@ Let $\gamma:[0,\ell]\to \Sigma$ be a minimizing geodesic on a convex surface $\S
 Assume that $z\:\RR^3\to\RR$ be a linear function such that
 $(z\circ\gamma)'(t)>\eps$ for any $t\in (0,\ell)$ and a fixed $\eps>0$.
 
-We can assume that $z$ has unit gradient.
-Further we will assume that $z$ is the coordinate 
+We can assume that $z$ is the coordinate 
 of $(x,y,z)$-coordinates on $\RR^3$.
 The lines parallel to the $z$-axis will be called \emph{vertical};
 the lines and planes parallel to $(x,y)$-plane will be called \emph{horisontal}.
@@ -457,12 +474,12 @@ denote by $\nu^h$ its horizontal projection.
 Since $(z\circ\gamma)'(t)>0$, 
 we have $\nu^h(t)\ne0$ for any $t\in [0,\ell]$.
 The rotation of $\rho_{[a,b]}$  is defined as
-algebraic rotation around the origin of the vector $\nu^h(t)$, 
-say by the formula 
+algebraic rotation around the origin of the vector $\nu^h(t)$;
+say it can be defined by the formula 
 \[\rho_{[a,b]}
 =
 \int\limits_a^b \<\mu(t),\mathrm{J}(\mu'(t))\>\cdot dt,\]
-where $\mathrm{J}\:\RR^2\to\RR^2$ denotes the rotation by angle $\tfrac\pi 2$ around the origin and $\mu=\nu^h/|\nu^h|$.
+where $\mathrm{J}\:\RR^2\to\RR^2$ denotes the rotation by angle $\tfrac\pi 2$ around the origin and \[\mu\df\tfrac{\nu^h}{|\nu^h|}.\]
 
 Given a real value $z_0$, set 
 \[F_{z_0}=\set{p\in K}{z(p)=z_0}.\]
@@ -533,7 +550,10 @@ for any $t$.
 Fix a $(x,y,z)$-coordinates on the Euclidean space.
 The lines parallel to the $z$-axis will be called \emph{vertical};
 the lines and planes parallel to $(x,y)$-plane will be called \emph{horisontal}.
+
 Given a vector $\upsilon$, we will denote by $\upsilon_x$, $\upsilon_y$ and $\upsilon_z$ its components.
+Set 
+\[e_x=(1,0,0),\ \ e_y=(0,1,0)\ \ \text{and}\ \ e_z=(0,0,1).\]
 
 Let $\Sigma$ be a convex surface which bounds convex set $K$
 and $\gamma\:\II\to \Sigma$ is a minimizing geodesic.
@@ -541,15 +561,58 @@ and $\gamma\:\II\to \Sigma$ is a minimizing geodesic.
 Given $t\in \II$, 
 consider the oriented orthonormal frame $\lambda(t),\mu(t),\nu(t)$ 
 such that $\nu(t)$ is the outer normal to $\Sigma$ at $\gamma(t)$,
-the vector $\mu(t)$ is horizontal and therefore the vecor $\lambda(t)$ lies in the plane spanned by $\nu(t)$ and the $z$-axis.
+the vector $\mu(t)$ is horizontal and therefore the vector $\lambda(t)$ lies in the plane spanned by $\nu(t)$ and the $z$-axis.
 
-Further we assume that $\nu(t)$ is not vertical for any $t$,
-so the frame $(\lambda,\mu,\nu)$ is uniquely defined.
+Further we assume that $\gamma'_z(t)>0$ for any $t$.
+In particular, $\nu(t)$ is not vertical and therefore
+the frame $(\lambda,\mu,\nu)$ is uniquely defined.
 
-Let
+After rotating $(xy)$-plane if necessary, 
+we can assume that the border of shadow in the directions of $x$- and $y$-axises 
+are smooth curves and $\gamma$ intersects them transversely.
+
+Denote by $t_1,t_2,\dots, t_k$ the time moments in the increasing order 
+at which $\gamma$ intersects 
+the border of shadow in the direction of $x$-axis.
+Note that $\mu(t_n)=\pm e_x$;
+define $s_n$ to be $\pm1$ so that
+\[\mu(t_n)=s_n\cdot e_x.\]
+
+Further denote by $\alpha(t)$ the signed angle between $\dot\gamma(t)$ and $\lambda(t)$ in the tangent plane at $\gamma(t)$;
+the value $\alpha(t)$ is assumed to take values in $(-\tfrac\pi2,\tfrac\pi2)$.
+Set 
+\[\alpha_n=\alpha(t_n).\]
+
+Note that  
+\[\turn_{e_x}\left(\gamma|_{[t_1,t_k]}\right)
+=\left|\sum s_n\cdot \alpha_n\right|.\]
+
+Let us define two more angles.
 \begin{itemize}
-\item $\phi(t)$ be the angle between $\dot\gamma(t)$ and $z$-axis
-\item $\psi(t)$ be the signed angle between $\nu(t)$ and $(x,y)$-plane.
+\item Let $\phi(t)$ be the angle between $\dot\gamma(t)$ and $z$-axis. Set $\phi_n=\phi(t_n)$.
+\item Let $\psi(t)$ be the signed angle between $\nu(t)$ and $(x,y)$-plane. 
+Set $\psi_n=\psi(t_n)$.
+\end{itemize}
+Note that 
+\[\phi(t)\ge |\psi(t)|\ \ \text{and}\ \  \phi(t)\ge |\alpha(t)|\] 
+for any $t$.
+In particular 
+\[\phi_n\ge |\psi_n|\ \ \text{and}\ \  \phi_n\ge |\alpha_n|\]
+for any $n$.
+
+Denote by $\nu^h(t)$ its horizontal projection of $\nu(t)$.
+Since $\gamma'_z(t)>0$, 
+we have $\nu^h(t)\ne0$ for any $t$.
+The rotation $\rho_{[a,b]}$  of the interval $[a,b]$
+is defined as
+algebraic rotation around the origin of the vector $\nu^h(t)$;
+say it can be defined by the formula 
+\[\rho_{[a,b]}
+=
+\int\limits_a^b \<\tau(t),\mathrm{J}(\tau'(t))\>\cdot dt,\]
+where $\mathrm{J}\:\RR^2\to\RR^2$ denotes the rotation by angle $\tfrac\pi 2$ around the origin and \[\tau\df\tfrac{\nu^h}{|\nu^h|}.\]
+
+\begin{itemize}
 \item $\alpha(t)$ be the signed angle between $\dot\gamma(t)$ and the plane spanned by $\nu(t)$ and $\mu(t)$.
 \item $\sigma(t)$ be the continuous function
 which is modulo $2\cdot\pi$ equal to the signed angle between the $y$-axis
@@ -564,8 +627,8 @@ and the plane spanned by $\nu(t)$ and $\mu(t)$.
 &=
 \sup\set{|\sigma(b')-\sigma(a')|}{[a',b']\subset[a,b]}.
 \end{align*}
-
 \end{itemize}
+
 Note that for any $t\in\II$,
 the angles $|\phi(t)|$, $|\psi(t)|$ and $|\alpha(t)|$ form the sides of a right spherical triangle.
 Therefore
