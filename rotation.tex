@@ -46,6 +46,7 @@ If $\gamma$ is smooth and equipped with the natural parameter,
 then 
 \[\turn\gamma=\int\limits_\II \kappa(t)\cdot dt,\]
 where $\kappa(t)=|\gamma''(t)|$ is the curvature of $\gamma$ at $t$.
+By that reason the turn of curve is also called its \emph{total curvature}.
 
 \begin{thm}{Main theorem}\label{thm:main}
 If $K$ is a closed convex set in the 3-dimensional Euclidean space,
@@ -83,6 +84,7 @@ Kuperberg,
 and Zamfirescu 
 have constructed a corkscrew minimizing geodesic on a closed hypersurface;
 that is a minimizing geodesic which twists around given line arbitrary many times.
+In fact it is easy to show that if every subarc of geodesic rotates around any curve at most $n$ times then the turn of $\gamma$ can not accessed $4\cdot n\cdot \pi$, see Claim~\ref{clm:rotations} below.
 \end{itemize}
 
 
@@ -91,24 +93,25 @@ that is a minimizing geodesic which twists around given line arbitrary many time
 Let $\Sigma$ be a convex hypersurface in the Euclidean space.
 
 Given a point $p\in \Sigma$, we will denote by $n_p$ the outer normal vector of $\Sigma$ at $p$;
-the map $\Sigma\to\SS^2$ defined as $p\mapsto n_p$ is also called \emph{Gauss map}.
+the map $\Sigma\to\SS^2$ defined as $p\mapsto n_p$ sometimes is called \emph{Gauss map}.
 
-Fix a points $z\notin\Sigma$ and $p\in \Sigma$.
-We say that $p$ lies on light (dark) side from $z$ if 
+Fix a points $z\notin\Sigma$.
+Given a point $p\in \Sigma$,
+we say that $p$ lies on light (dark) side from $z$ if 
 if $\langle z-p,n_p\rangle\le 0$ (correspondingly $\langle z-p,n_p\rangle\ge 0$).
 If $\langle z-p,n_p\rangle= 0$ we say that $p$ lies on the horizon
-%crest???
 from $p$.
 Note that if $z$ lies inside of $\Sigma$ then all points on $\Sigma$ lie on the dark side from $z$.
 
-Let $\gamma$ be a space curve equipped with natural parameter.
+Let $\gamma$ be a space curve 
+parametrized by length.
 Fix a point $z\notin\gamma$. 
 Let us define \emph{Liberman's development} of $\gamma$ with respect to $z$ as the unit-speed plane cure $\tilde\gamma_z$ such that the direction $\tilde\gamma_z(t)$
 changes counterclockwise as $t$ changes
 and
 $|\tilde\gamma_p(t)|=|\gamma(t)-z|$ for any $t$.
 
-Locally convex/concave???
+The Liberman's development $\tilde\gamma_z$ is called convex concave at $\tilde\gamma_z(t)$ if there the curvelinear triangle ??? 
 
 
 \begin{thm}{Liberman lemma}\label{lem:liberman}
@@ -133,7 +136,6 @@ Given a point $z$, let us define the turn of $\gamma$ in the direction of $z$ as
 \langle\gamma''(t),\tfrac{z-\gamma(t)}{|z-\gamma(t)|}\rangle
 \right|
 \cdot dt.\]
-Clearly $\turn_z\gamma\le \turn \gamma$ for any $\gamma$.
 
 \begin{thm}{Key Lemma}
 \label{lem:key}
@@ -152,9 +154,19 @@ In particular,
 \[\turn_u\gamma\le 4\cdot\pi+\sum_i\curv\Omega_i.\]
 \end{thm}
 
-\parbf{Remark.}
+\parbf{Remarks.}
+Clearly $\turn_z\gamma\le \turn \gamma$ for any curve $\gamma$ in $\Sigma$.
+
+On the other hand given few points $z_i$ which do not lie in one plane
+one can estimate $\turn\gamma$ 
+in terms of $\turn_{z_i}\gamma$ 
+the distances between $z_i$ and the maximal distance to $\gamma$.
+
 Let $N=N(\Sigma,\gamma, u)$ be the maximal integer such that at most $N$ of the domains $\Omega_i$ intersect at one point.
 Note that from \cite{BKZ}, it follows that the value $N$ can take arbitrary large value.
+The number $N$ can be estimated through the maximal rotation number of subarcs of $\gamma$ with respect to the lines.
+In particular the turn of geodesic $\gamma$ can be bounded in terms of maximal rotation number of subarcs of $\gamma$ around the lines.
+The later was claimed in \cite{BKZ} without a proof.
 
 Then
 \[\sum_{i=2}^{n-1}\curv\Omega_i
@@ -168,6 +180,9 @@ Therefore, we get an estimate
 4\cdot N\cdot\pi+|\alpha_0-\alpha_1|+|\alpha_{n-1}-\alpha_n|
 \le
 (4\cdot N+2)\cdot\pi.\]
+Since the same holds for any vector $u$,
+we can taking avarage we get
+\[\turn\gamma\le 3\cdot(4\cdot N+2)\cdot\pi.\]
 
 \section{Reduction to a simpler case}
 
@@ -178,14 +193,13 @@ there is a convex surface with a minimizing geodesic which has arbitrary large t
 In this we will show that one can assume in addition something about the surface and the curve.
 Namely we will prove the following claim.
 
-\begin{thm}{Proposition}
+\begin{thm}{Proposition}\label{prop:almost-const}
 Assume Main Theorem does not hold;
 that is, there is a sequence of convex surfaces $\Sigma_n$
 and a sequence of minimizing geodesic $\gamma_n$ in $\Sigma_n$ such that 
-\[\turn \gamma_n\to\infty\ \ \text{as}\ \ n\to\infty\]
-Then we can assume in addition that $\Sigma_n$ is a graph on a concave function 
-$z=f_n(x,y)$ and the velocity vector of $\gamma_n$
-has negative $z$-coordinate at all times.
+\[\turn \gamma_n\to\infty\ \ \text{as}\ \ n\to\infty.\]
+
+Then we can assume in addition that $\gamma_n'(t)$ is nearly constant.
 \end{thm}
 
 \parit{Proof.}
@@ -232,328 +246,15 @@ say ...
 \qeds
 
 
-
-In the proof we will need the following lemma.
-
-\begin{thm}{Lemma}\label{lem:1}
-Let $f\:[0,a]\to\RR$ be a positive concave nondecreasing function.
-Assume  $0<x_1<x_2\le a$.
-Denote by $\alpha$ the the graph of the restriction $f|_{[x_1,x_2]}$.
-Then $\alpha$ has smaller length than then any curve between the ends of $\alpha$ which pass through a point on $x$-axis.
-
-In other words 
-\[\length\alpha<\sqrt{(x_2-x_1)^2+(f(x_1)+f(x_2))^2}.\]
-
-\end{thm}
-
-The proof below is a straigthforward computaion.
-
-\parit{Proof.}
-Set $\theta= \frac{f(x_1)}{1+x_1}$.
-Since $f$ is concave 
-\[0\le f'(x)\le \theta.\]
-In particular $f(x_2)\ge f(x_1)$ 
-and 
-\[\length\alpha\le \sqrt{1+\theta^2}\cdot(x_2-x_1).\]
-On the other hand, 
-\[\sqrt{(x_2-x_1)^2+(f(x_1)+f(x_2))^2}>\sqrt{1+\theta^2}\cdot(x_2-x_1).\]
-Hence the claim follows.
-\qeds
-
-\begin{thm}{Lemma}\label{lem:2}
-Let $K\subset \RR^3$ 
-be an unbounded convex set which contains a ray in the direction $u$,
-$\Sigma$ be the surface of $K$ 
-and
-$\gamma$ is a geodesic on $\Sigma$.
-Assume that Liberman's development of $\gamma$ in the direction of $u$ is a line segment.
-Then $\gamma$ is a line segment.
-\end{thm}
-
-
-
-
-\parit{Proof of the Main theorem (\ref{thm:main}).}
-Assume contrary;
-i.e., there is a sequence of closed convex sets $K_n$
-with surfaces $\Sigma_n$ 
-and geodesics $\gamma_n$ in $\Sigma_n$
-such that 
-\[\turn\gamma_n\to\infty
-\ \ \text{as}\ \ n\to \infty.
-\eqlbl{*}
-\] 
-
-Let us choose an integer $k_n$ 
-(say, $k_n=\lfloor\sqrt{\turn\gamma_n}\rfloor$ will do)
-such that $k_n\to\infty$ as $n\to \infty$
-and if we cut $\gamma_n$ into $k_n$ arcs then we can choose one of the arcs $\gamma'_n$ for each $n$ 
-so that \ref{*} holds with $\gamma'_n$ istead of $\gamma_n$.
-
-By Liberman's lemma we can assume that turn of $\gamma_n'$ toward to one of the ends of $\gamma$ converges to zero.
-After rescaling, we can assume that $\gamma_n'$ has unit length
-and the distance from $\gamma'_n$ to end of $\gamma_n$ converges to infinity.
-
-Passing to a subsequence,
-we can assume that $K_n$ converges to an unbounded convex set, 
-say $K_\infty$ 
-and $\gamma'_n$ converges to a minimizing geodesic $\gamma'_\infty$ in the surface $\Sigma_\infty$ of $K_\infty$.
-Note that $\gamma'_\infty$ satisfies the condition in Lemma \ref{lem:2};
-it follows that $\gamma'_\infty$ is a line segment. 
-
-by Liberman's theorem, $K_\infty$ is degenerate;
-i.e., $K_\infty$ lies in a plane.
-In other words, $K_\infty$ is either closed convex plane set or a closed line interval (possibly unbounded).
-Recall that in the first case $\Sigma_\infty$ (i.e., the surface of $K_\infty$)
-is defined as doubling of $K_\infty$ in its boundary;
-in the later case the surface of $K_\infty$ is defined as $K_\infty$ itself.
-
-
-
-\begin{thm}{Claim}
-Without loss of generality, we can assume that $K_\infty$ is noncompact, $\gamma_\infty$ is a line segment 
-and the $\gamma_n\to \gamma_\infty$ in the $C^1$-topology.
-\end{thm}
-
-If $\gamma_\infty$ is a broken line made from two line segments
-then we can cut each $\gamma_n$ in two geodesics, such that each converge to a line segment.
-Then we have to choose one of this halphs and pass to a susequence so that \ref{*} still holds.
-
-It remains to show that the convergence can be assumed to be $C^1$.
-
-
-We can assume that all $\gamma_n$ have unit length
-and equipped with natural parametrization by $[0,1]$ and $\gamma_n(0)$ is the origin of $\RR^3$ for all $n$.
-Consider the Liberman's development $\tilde\gamma_n$ of $\gamma_n$ with respect to $\gamma_n(0)=0$. 
-Note that 
-\[|\tilde\gamma_n(1)-\tilde\gamma_n(\tfrac12)|\le \tfrac12=\length(\gamma_n|_{[\frac12,1]}).\]
-Since $\gamma_\infty$ is a line segment, we get
-\[|\tilde\gamma_n(1)-\tilde\gamma(\tfrac12)|\to \tfrac12\ \ \text{as}\ \ n\to \infty.\]
-
-By Liberman's lemma, $\tilde\gamma_n$ is a convex curve therefore for any $t\in[\tfrac12,1]$ we have
-\[\measuredangle(\tilde\gamma_n(t),\tilde\gamma'_n(t))=\measuredangle(\gamma_n(t),\gamma'_n(t))\to0
-\ \ \text{as}\ \ 
-n\to \infty.\]
-Further note that
-\[
-\measuredangle(\gamma_n(t),\gamma_n(1))
-\le
-\measuredangle(\tilde\gamma_n(t),\tilde\gamma_n(1))
-\to 0 
-\ \ \text{as}
-\ \ 
-n\to \infty.
-\]
-Finally
-\[\measuredangle(\gamma_n(1),\gamma_\infty(1))\to 0\ \ \text{as}
-\ \ 
-n\to \infty.\]
-Therefore 
-\[\measuredangle(\gamma_n'(t),\gamma_\infty(1))\to 0\ \ \text{as}
-\ \ 
-n\to \infty\]
-for any $t\in[\tfrac12,1]$.
-In other words, on the interval $[\tfrac12,1]$, the curves $\gamma_n$ converge to the line segment $\gamma_\infty$ in the $C^1$-topology.
-
-Repeating the same argument for the development with respect to the other end of $\gamma_n$ finishes the proof of the claim. 
-
-\medskip
-
-Fix a orthonormal frame $\tau,\nu,\beta$.
-Let us parametrize the surfce $\Sigma_n$ by standard sphere
-
-
-Fix a linear function $s$ such that $s\circ\gamma_\infty$ 
-has derivative near $1$ at all points.
-Fix a line $\ell$ such that $s$ is contsnt on $\ell$.
-
-Fix large $n$.
-Given a point $p\in \Sigma_n$,
-the set 
-\[\set{q\in\Sigma_n}{s(q)=s(p)}\]
-will be called the parallel of $p$.
-Typically parallel is a closed curve,
-but it might degenerate to a point.
-In the later case $s$ admits maximum or minimum at $p$
-and we will call $p$ north or correspondingly south pole of $\Sigma_n$.
-The horizon with respect to $\ell$ divides $\Sigma$ into east and west hemisphere.
-If the parallel of $p$ degenerates to a point, 
-then $s$ admit
-Without loss of generality, we can assume that $\gamma_n$ 
-cross the horizons of $\ell$ tranversally.
-Let $t_0<t_1<\dots<t_k$ be the time moments 
-at which $\gamma_n$ cross the horizon of $\ell$.
-Let us assign the sign $s_i$ for each $t_i$;
-we set $s_i=1$ or $-1$ 
-if at $t_i$ the geodesic $\gamma_n$ cross the horizon from west to east and
-from east to west.
-The meaning of west and east can be made precise by applying normal map to $\gamma$ and equip the sphere with geographic coordinate so that the north pole will be ???. 
-
-Given $t_k$ and an integer 
-$i$ denote by $k^i$ the least integer number $m>k$ such that
-\[|\sum_{j=k}^m s_j|>i\]
-
-
-
-
-Note that the left and right horizons, 
-say $\lambda$ and $\rho$,
-on $\Sigma_n$ of $\ell$
-and $\gamma_n$ go in the direction tranversal to $\Pi$.
-Therefore if $\gamma_n$ meets only one of two horizons
-then the domains $\Omega_i$ from Lemma \ref{lem:key}
-do not overlap.
-In particular we get that the turn of $\gamma_n$ is bounded above by a constant;
-$6\cdot\pi$ will do, but in fact one can show that the total turn in this case converges to zero. 
-
-The condition that $\gamma_n$ intersects only $\lambda$ or only $\rho$ always hold if $K_\infty$ is 2-dimensional.
-
-Therefore it only remains to consider the case if $K_\infty$ is 1-dimensional.
-Which we are going to do next.
-
-\parbf{Claim.}
-Without loss of generality, we can assume that $\gamma_n$ lies on the graph of convex function $z=f(x,y)$ and converges to a vertical segment as $n\to \infty$.
-
-\medskip
-
-Indeed ???
-
-Consider Liberman's development $\tilde\gamma_n$ with respect to the vertical direction.
-It is a graph of convex function $z=h_n(t)$;
-we can assume that $h_n$ is increasing and its slope converges to infinity as $n\to\infty$.
-
-Given $t$, denote by $t'>t$ the minimal value at which the arc $\gamma|_{[t,t']}$ makes full turn; i.e., ???.
-
-Denote by $\tilde\alpha(t)$ the angle of $\gamma_n$ to the $z$-axis at time $t$,
-it coincides 
-
-
-Let us choose a direction $u$ 
-which is not parallel to $\gamma_\infty$ and apply Lemma \ref{lem:key}.
-
-For large enough $n$, 
-the $\gamma_n$ 
-In this case the domains $\Omega_i$ do not overlap and therefore we get an upper bound for the turn.
-
-It remains to consider  $K_\infty$ is 1-dimensional.
-
-Assume $\gamma$ is a minimizing geodesic on the graph of convex function $z=f(x,y)$.
-Denote by $\alpha(t)$ the angle between $\gamma$ and $z$-axis at time $t$
-and by $\beta(t)$ the angle between the $z$-axis and the tangent plane to the graph at $\gamma(t)$.
-
-Clearly $\alpha(t)\ge \beta(t)$ for any $t$.
-
-From the convexity of Liberman's development with respect to $z$-axis it follows that $\alpha(t)$ is nondecreasing function of $t$.
-
-Assume $z$-coordinates grows as $t$ increase.
-Denote by $\Pi(t)$ the vertical plane passing through $\gamma(t)$ which is perpendicular to the tangent plane.
-Let $t'<t$ be a value such that $\gamma(t')\in \Pi(t)$.
-Then $\beta(t)\le \alpha(t')$.
-
-\parbf{Claim.}
-$\beta(t)\le \alpha(t')$.
-
-\section{Rotations}
-
-Let $\gamma:[0,\ell]\to \Sigma$ be a minimizing geodesic on a convex surface $\Sigma\subset \RR^3$.
-
-Assume that $z\:\RR^3\to\RR$ be a linear function such that
-$(z\circ\gamma)'(t)>\eps$ for any $t\in (0,\ell)$ and a fixed $\eps>0$.
-
-We can assume that $z$ is the coordinate 
-of $(x,y,z)$-coordinates on $\RR^3$.
-The lines parallel to the $z$-axis will be called \emph{vertical};
-the lines and planes parallel to $(x,y)$-plane will be called \emph{horisontal}.
-
-Given two values $a<b$ in $[0,\ell]$,
-denote by $\rho_{[a,b]}$ the total rotation of $\gamma$ makes on the interval $[a,b]$.
-
-Let us define $\rho_{[a,b]}$ more precisely.
-If $\nu=\nu(t)$ denotes the unit normal vector to $\Sigma$ at $\gamma(t)$,
-denote by $\nu^h$ its horizontal projection.
-Since $(z\circ\gamma)'(t)>0$, 
-we have $\nu^h(t)\ne0$ for any $t\in [0,\ell]$.
-The rotation of $\rho_{[a,b]}$  is defined as
-algebraic rotation around the origin of the vector $\nu^h(t)$;
-say it can be defined by the formula 
-\[\rho_{[a,b]}
-=
-\int\limits_a^b \<\mu(t),\mathrm{J}(\mu'(t))\>\cdot dt,\]
-where $\mathrm{J}\:\RR^2\to\RR^2$ denotes the rotation by angle $\tfrac\pi 2$ around the origin and \[\mu\df\tfrac{\nu^h}{|\nu^h|}.\]
-
-Given a real value $z_0$, set 
-\[F_{z_0}=\set{p\in K}{z(p)=z_0}.\]
-
-The proof of the following statement is left to the reader.
-
-\begin{thm}{Lemma}
-Let $\gamma\:[a,b]\to\Sigma$ be ???.
-Set $k=\lfloor \tfrac{\rho_{[a,b]}-\pi}{2\cdot\pi}\rfloor$.
-Assume a vertical line $\ell$ is passing through $F_a$ and $F_b$
-and $\Pi$ be a half-plane with boundary $\ell$.
-Then $\Pi$
-intersects $\gamma([a,b])$ at least $k$ times
-at the point say $\gamma(t_1), \dots,\gamma(t_k)$
-and each arc $\gamma_{[t_i,t_{i+1}]}$ makes a full turn aroud $\ell$.
-\end{thm}
-
-Without loss of generality, we may assume that horison of $x$-axis is smooth and $\gamma$ meets the horison tranverslly.
-Let $t_1<t_2<\dots<t_n$
-be the values at which $\gamma$ meats the horizon.
-
-Denote by $\alpha_i$ and $\beta_i$
-the angle between $\dot\gamma(t_i)$ and $x$- and $z$-axises correspondingly.
-
-By Lemma ???, the turn of $\gamma$ in the direction of $x$-axis
-can be bounded in terms of 
-\[\sigma=|\alpha_1-\alpha_2+\dots-(-1)^n\cdot\alpha_n|.\]
-
-Note that 
-\[|\alpha_i-\tfrac\pi2|\le \beta_i\]
-for any $i$.
-
-
-
-\begin{thm}{Lemma}
-Assume \[z\circ\gamma(t_i)>\tfrac12\cdot(z\circ\gamma(a)+z\circ\gamma(b))\]
-and $|\rho_{[t_i,t_j]}|=3\cdot \pi$ for some $j>i$.
-Then the sequence $\beta_j,\beta_{j+1}\dots$ is nonecreasing.
-
-Moreover, if for some $m>k\ge j$ we have $|\rho_{[t_k,t_m]}|=4\cdot \pi$ then 
-$\beta_m\ge 2\cdot \beta_k$.
-\end{thm}
-
-Set $\#(i,j)=\rho_{[t_i,t_j]}/\pi$.
-Note that $\#_{i,j}$ is an integer for any pair $(i,j)$.
-
-Set $\sigma(i,j)=\max_{i\le i'<j'\le j}\{|\#(i',j')|\}$.
-Assume $i<j$ and $\#(i,j)=0$, note that in this 
-\[|\alpha_i-\alpha_j|\le \sigma(i,j)\cdot\kappa(\Sigma\cap z^{-1}([t_i,t_j])).\]
-
-\ 
- 
-Let $\phi(t)=\measuredangle(\dot\gamma(t),i)$, 
-$\psi(t)=\measuredangle(\dot\gamma(t),k)$ 
-and $\theta(t)=\tfrac\pi2-\measuredangle(\nu(t),k)$.
-
-Note that 
-\[\theta(t)\le \psi(t)
-\ \ \ 
-\text{and}
-\ \ \ 
-\phi(t)\le \psi(t)\] 
-for any $t$.
-
-
-\section{Once more}
+\section{Angle estimates}
 
 Fix a $(x,y,z)$-coordinates on the Euclidean space.
 The lines parallel to the $z$-axis will be called \emph{vertical};
 the lines and planes parallel to $(x,y)$-plane will be called \emph{horisontal}.
 
-Given a vector $\upsilon$, we will denote by $\upsilon_x$, $\upsilon_y$ and $\upsilon_z$ its components.
+Given a vector $\bm{\upsilon}$, we will denote by $\upsilon_x$, $\upsilon_y$ and $\upsilon_z$ its components.
 Set 
-\[e_x=(1,0,0),\ \ e_y=(0,1,0)\ \ \text{and}\ \ e_z=(0,0,1).\]
+\[\bm{e}_x=(1,0,0),\ \ \bm{e}_y=(0,1,0)\ \ \text{and}\ \ \bm{e}_z=(0,0,1).\]
 
 Let $\Sigma$ be a convex surface which bounds convex set $K$
 and $\gamma\:\II\to \Sigma$ is a minimizing geodesic.
@@ -563,7 +264,8 @@ consider the oriented orthonormal frame $\lambda(t),\mu(t),\nu(t)$
 such that $\nu(t)$ is the outer normal to $\Sigma$ at $\gamma(t)$,
 the vector $\mu(t)$ is horizontal and therefore the vector $\lambda(t)$ lies in the plane spanned by $\nu(t)$ and the $z$-axis.
 
-Further we assume that $\gamma'_z(t)>0$ for any $t$.
+According to Proposition~\ref{prop:almost-const},
+ we assume that $\gamma'_z(t)>0$ for any $t$.
 In particular, $\nu(t)$ is not vertical and therefore
 the frame $(\lambda,\mu,\nu)$ is uniquely defined.
 
@@ -579,13 +281,18 @@ define $s_n$ to be $\pm1$ so that
 \[\mu(t_n)=s_n\cdot e_x.\]
 
 Further denote by $\alpha(t)$ the signed angle between $\dot\gamma(t)$ and $\lambda(t)$ in the tangent plane at $\gamma(t)$;
-the value $\alpha(t)$ is assumed to take values in $(-\tfrac\pi2,\tfrac\pi2)$.
+we assume that $\alpha(t)$ takes values in $(-\tfrac\pi2,\tfrac\pi2)$.
 Set 
 \[\alpha_n=\alpha(t_n).\]
 
 Note that  
-\[\turn_{e_x}\left(\gamma|_{[t_1,t_k]}\right)
-=\left|\sum s_n\cdot \alpha_n\right|.\]
+\begin{align*}
+\turn_{\bm{e}_x} \gamma
+&\le 
+2\cdot\pi+\turn_{\bm{e}_x}\left(\gamma|_{[t_1,t_k]}\right)=
+\\
+&=2\cdot\pi+\left|\sum s_n\cdot \alpha_n\right|.
+\end{align*}
 
 Let us define two more angles.
 \begin{itemize}
@@ -603,66 +310,69 @@ for any $n$.
 Denote by $\nu^h(t)$ its horizontal projection of $\nu(t)$.
 Since $\gamma'_z(t)>0$, 
 we have $\nu^h(t)\ne0$ for any $t$.
-The rotation $\rho_{[a,b]}$  of the interval $[a,b]$
-is defined as
-algebraic rotation around the origin of the vector $\nu^h(t)$;
+Define the rotation $\rho_{[a,b]}$  
+of the interval $[a,b]\subset\II$
+as the
+algebraic rotation of $\nu^h(t)$ around the origin in $(xy)$-plane;
 say it can be defined by the formula 
 \[\rho_{[a,b]}
 =
 \int\limits_a^b \<\tau(t),\mathrm{J}(\tau'(t))\>\cdot dt,\]
 where $\mathrm{J}\:\RR^2\to\RR^2$ denotes the rotation by angle $\tfrac\pi 2$ around the origin and \[\tau\df\tfrac{\nu^h}{|\nu^h|}.\]
 
-\begin{itemize}
-\item $\alpha(t)$ be the signed angle between $\dot\gamma(t)$ and the plane spanned by $\nu(t)$ and $\mu(t)$.
-\item $\sigma(t)$ be the continuous function
-which is modulo $2\cdot\pi$ equal to the signed angle between the $y$-axis
-and the plane spanned by $\nu(t)$ and $\mu(t)$.
-\item Given an interval $[a,b]\subset \II$ set 
-\begin{align*}
-\xi[a,b]
-&=
-\sigma(b)-\sigma(a)
-\intertext{and}
-\bar\xi[a,b]
-&=
-\sup\set{|\sigma(b')-\sigma(a')|}{[a',b']\subset[a,b]}.
-\end{align*}
-\end{itemize}
+\begin{thm}{Claim}\label{clm:rotations}
+Let $n=\lceil \sup\set{\rho[a,b]}{[a,b]\subset\II} \rceil$
+then \[\turn_{\bm{e}_x}\gamma\le 4\cdot n\cdot\pi.\]
 
-Note that for any $t\in\II$,
-the angles $|\phi(t)|$, $|\psi(t)|$ and $|\alpha(t)|$ form the sides of a right spherical triangle.
-Therefore
-\[\cos\phi=\cos\alpha\cdot\cos\psi.\]
-In particular
-\[|\phi|\ge |\psi|
-\ \ \ 
-\text{and}
-\ \ \ 
-|\phi|\ge |\alpha|\]
-for any $t$.
-
-\begin{thm}{Claim}
-Let $[a,b]\subset\II$ and $\bar\xi[a,b]\ge 3\cdot\pi$.
-Then $\psi(b)\ge \phi(a)$.
 \end{thm}
 
 
 \begin{thm}{Claim}
-\[d\alpha= \sin \psi \cdot d\sigma\] 
+Assume that $[b,c]\subset [a,d]\subset \II$ and
+$\gamma_z(b)
+\ge
+\tfrac12\cdot(\gamma_z(a)+\gamma_z(d))$,
+$\rho[b,c]\ge 3\cdot \pi$.
+Then $\psi(t)>0$ for any $t\ge c$.
+
+In other words the arc $\gamma|_{[c,d]}$ lies on a graph $z=f(x,y)$ of a concave function $f\:\RR^2\to\RR$.
 \end{thm}
 
-Without loss of generality, we may assume that horison of $x$-axis is smooth and $\gamma$ meets this horison tranverslly.
-Let $t_1<t_2<\dots<t_n$
-be the values at which $\gamma$ meats the horizon.
-Set $\alpha_m=\alpha(t_m)$ and $s_m=\xi[t_1,t_m]$ and $e_m=e^{i\cdot s_m}$.
-Note that $s_m$ is ??? of $\pi$ for each $m$,
-in particular $e_m=\pm1$ for any $m$.
+Note that the last two claims imply the following.
 
-Note that the rotation of $\gamma$ in direction of $x$-axis equals to 
-\[\sum_m (-1)^m\cdot e_m\cdot\alpha_m.\]
-Let extract from the index set $1,\dots,n$
-the maximal number of pairs $(i,i+1)$
-such that $e_m=e_{m+1}$ note that for each pair we get
+\begin{thm}{Proposition}\label{prop:graph}
+Assume that for arbitrary positive number $\omega$ there is a convex surface $\Sigma$ and a minimizing geodesic $\gamma\:\II\to \Sigma$ with $\turn \gamma>\omega$.
+Then we can assume in addition that $\Sigma$ is a graph $z=f(x,y)$ of a concave function $f\:\RR^2\to\RR$
+and $\gamma'_z(t)>0$ for any $t\in\II$. 
+\end{thm}
+
+In particular, from now on $\psi(t)>0$ for any $t\in\II$.
+Note also that by Liberman's lemma $\phi(t)$ is a nondecreasing function on $\II$.
+
+\begin{thm}{Claim}
+Let $[a,b]\subset\II$ and $\rho[a,b]\ge 3\cdot\pi$.
+Then $\psi(t)\ge \phi(a)$ for any $t\ge b$.
+\end{thm}
+
+
+\begin{thm}{Claim}
+Assume  
+$\psi(t)\ge \eps>0$ for any $t\in [a,b]$.
+Then 
+$\alpha(b)-\alpha(a)>\eps\cdot\rho[a,b]$.
+In particular, either $|\alpha(a)|>\tfrac12\cdot\eps\cdot\rho[a,b]$ or $|\alpha(b)|>\tfrac12\cdot\eps\cdot\rho[a,b]$.
+\end{thm}
+
+Note that above two claims imply the following.
+
+\begin{thm}{Proposition}
+Assume $\gamma$ as in Proposition \ref{prop:graph}
+and for some $i<j$ we have
+\[\left|\sum_{n=i}^js_i\right|=5\]
+Then $\phi_j>2\cdot\phi_i$.
+\end{thm}
+
+
 
 \section{The sum estimate}
 
@@ -680,8 +390,8 @@ We say that a pair of indexes $i< j$
 forms an \emph{$\bm{s}$-pair} 
 if 
 \begin{align*}
-\sum_{n=i}^js_n&=0
-\intertext{and }
+\sum_{n=i}^js_n&=0&&
+\text{and}&
 \sum_{n=i}^{j'}s_n&>0
 \end{align*} 
 if $i<j'<j$.
@@ -709,10 +419,10 @@ Assume that
 \item $0\le K_1\le K_2\le \dots\le K_k$.
 \item a sequence $\alpha_1,\dots,\alpha_k$ is such that for $\bm{s}$-pair $(i,j)$, we have
 \[|\alpha_i-\alpha_j|\le \depth_{\bm{s}}(i,j)\cdot(K_j-K_i),\]
-\item $0\le \beta_1\le\dots\le\beta_k$ such that $\beta_i\ge |\alpha_i|$ for any $i$ and $\beta_j>2\cdot\beta_i$ for any $j>i$ such that $|\sum_{n=i}^js_n|=5$.
+\item $0\le \phi_1\le\dots\le\phi_k$ such that $\phi_i\ge |\alpha_i|$ for any $i$ and $\phi_j>2\cdot\phi_i$ for any $j>i$ such that $|\sum_{n=i}^js_n|=5$.
 \end{itemize}
 Then
-\[|\sum s_n\cdot \alpha_n|\le 20\cdot( K_k+ \beta_k).\]
+\[|\sum s_n\cdot \alpha_n|\le 20\cdot( K_k+ \phi_k).\]
 
 \end{thm}
 
@@ -745,19 +455,19 @@ so $i$ and $j$ go into the same group if
 Note that
 \begin{align*}
 |\sum_{n\in G_m}s_n\cdot \alpha_n|
-&\le \sum_{n\in G_m}\beta_n\le
+&\le \sum_{n\in G_m}\phi_n\le
 \\
-&\le 2\cdot\beta_k;
+&\le 2\cdot\phi_k;
 \end{align*}
 the last inequality follows since
-$\beta_j>2\cdot \beta_i$
+$\phi_j>2\cdot \phi_i$
 if $i,j\in G_m$ and $i<j$.
 
 Summarizing
 \begin{align*}
 |\sum_n s_n\cdot\alpha_n|&\le |S_1|+|S_2|+|S_3|+|S_4|+|S_5|+|\sum_{n\in G} s_n\cdot\alpha_n|\le
 \\
-&\le 15\cdot K_k+10\cdot \beta_k.
+&\le 15\cdot K_k+10\cdot \phi_k.
 \end{align*}
 Hence the result follows.
 \qeds
