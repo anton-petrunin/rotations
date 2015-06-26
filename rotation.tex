@@ -2,7 +2,8 @@
 \usepackage{kubik}
 
 \begin{document}
-\title{Turn of geodesics on convex surfaces}
+\title{On the total curvature of \\
+minimizing geodesics on convex surfaces}
 \author{Nina Lebedeva}
 \address{N. Lebedeva\newline\vskip-4mm
 Math. Dept.
@@ -84,8 +85,28 @@ Kuperberg,
 and Zamfirescu 
 have constructed a corkscrew minimizing geodesic on a closed hypersurface;
 that is a minimizing geodesic which twists around given line arbitrary many times.
-In fact it is easy to show that if every subarc of geodesic rotates around any curve at most $n$ times then the turn of $\gamma$ can not accessed $4\cdot n\cdot \pi$, see Claim~\ref{clm:rotations} below.
+
+\item In the same paper they also constructed a minimizing geodesic on a convex surface in $\RR^3$
+with turn bigger that $2\cdot\pi$.
+(Note that $2\cdot\pi$ is the optimal bound for the analogous problem in the plane.)
 \end{itemize}
+
+\parbf{Plan of the proof.}
+We prove is divided in three steps.
+
+First we prove a sequence of propositions which alow us to consider only special case of surfaces and curves.
+Namely we show that we can assume that
+\begin{enumerate}[(i)]
+\item\label{smooth}{\it (Proposition \ref{prop:smooth}).} 
+The surface $\Sigma$ is $C^\infty$-smooth.
+\item{\it (Proposition \ref{prop:almost-const}).}  The $z$-component of $\gamma'$ is positive,
+\item\label{graph}{\it (Proposition \ref{prop:graph}).} The surface $\Sigma$ is formed by a graph $z=f(x,y)$ of a smooth convex function $f\:\RR^2\to \RR$.
+\end{enumerate}
+
+On the second step we give number of geometric inequalities which relate the angles between $\gamma'(t)$ and with the coordinate axis.
+
+The last step in the proof is purely algebraic, 
+here we combine the obtained inequalities to give a universal bound on the turn of $\gamma_n$ whcih satisfy the conditions  estimate the turn of $\gamma_n$ which satisfy the conditions (\ref{smooth})--(\ref{graph}).
 
 
 \section{Preliminaries}
@@ -184,7 +205,35 @@ Since the same holds for any vector $u$,
 we can taking avarage we get
 \[\turn\gamma\le 3\cdot(4\cdot N+2)\cdot\pi.\]
 
-\section{Reduction to a simpler case}
+
+\section{Reduction to the smooth case}
+
+\begin{thm}{Proposition}\label{prop:smooth}
+Let $\Sigma$ be a convex surface and $\gamma$ be a geodesic on $\Sigma$.
+Then there is a sequence of smooth convex surfaces $\Sigma_n$ converging to $\Sigma$
+and an sequence of geodesics $\gamma_n$ in $\Sigma_n$ converging to $\gamma$.
+\end{thm}
+
+\parit{Proof.}
+Assume $\gamma$ is a minimizing geodesic on a convex surface $\Sigma$.
+Assume $\gamma$ parametrized by its length $[0,\ell]$.
+We can choose a subinterval $[a,b]\subset [0,\ell]$
+such that $0<a$ and $b<\ell$
+and $\turn(\gamma|_{[a,b]})$ is arbitrary close to the $\turn \gamma$.
+
+Set $p=\gamma(a)$ and $q=\gamma(b)$.
+
+Assume $\Sigma_n$ be a sequence of smooth convex surfaces converging to $\Sigma$.
+and $p_n,q_n\in\Sigma_n$ be a two sequences of points which converge to $p$ and $q$ 
+correspondingly.
+
+Denote by $\gamma_n$ a minimizing geodesic from $p_n$ to $q_n$ in $\Sigma_n$.
+Note that $\gamma_n$ converges to $\gamma|_{[a,b]}$
+as $n\to\infty$.
+\qeds
+
+
+\section{Reduction to a monotonic case}
 
 Arguing by contradiction 
 let us assume that 
@@ -199,10 +248,13 @@ that is, there is a sequence of convex surfaces $\Sigma_n$
 and a sequence of minimizing geodesic $\gamma_n$ in $\Sigma_n$ such that 
 \[\turn \gamma_n\to\infty\ \ \text{as}\ \ n\to\infty.\]
 
-Then we can assume in addition that $\gamma_n'(t)$ is nearly constant.
+Then we can assume in addition that $\Sigma_n$ is smooth and $\gamma_n'(t)$ is nearly constant.
 \end{thm}
 
 \parit{Proof.}
+Applying Proposition~\ref{prop:smooth}, we can assume that $\Sigma_n$ are smooth.
+
+
 Take a sequence of surfaces $\Sigma_n$ with a sequence of minimizing geodesics $\gamma_n$ such that 
 \[\turn\gamma_n\to \infty.\]
 Denote by $K_n$ the convex body bounded by $\Sigma_n$.
@@ -239,10 +291,7 @@ so that the triangles $\triangle p_nq_n\gamma_n(t)$ are far from being degenerat
 We get that $\gamma_n$ runs in nearly one direction.
 Then one can choose $p_n$ near the end of $\gamma_n$.
 
-Now move each $\Sigma_n$ so that the segment form $p_n$ to the end of $\gamma_n$ lies on the $z$-axis,
-say ...
-
-
+...
 \qeds
 
 
@@ -341,8 +390,12 @@ In other words the arc $\gamma|_{[c,d]}$ lies on a graph $z=f(x,y)$ of a concave
 Note that the last two claims imply the following.
 
 \begin{thm}{Proposition}\label{prop:graph}
-Assume that for arbitrary positive number $\omega$ there is a convex surface $\Sigma$ and a minimizing geodesic $\gamma\:\II\to \Sigma$ with $\turn \gamma>\omega$.
-Then we can assume in addition that $\Sigma$ is a graph $z=f(x,y)$ of a concave function $f\:\RR^2\to\RR$
+Assume Main Theorem does not hold;
+that is, there is a sequence of convex surfaces $\Sigma_n$
+and a sequence of minimizing geodesic $\gamma_n$ in $\Sigma_n$ such that 
+\[\turn \gamma_n\to\infty\ \ \text{as}\ \ n\to\infty.\]
+
+Then we can assume in addition that $\Sigma_n$ is a graph $z=f_n(x,y)$ of a smooth convex function $f_n\:\RR^2\to\RR$
 and $\gamma'_z(t)>0$ for any $t\in\II$. 
 \end{thm}
 
