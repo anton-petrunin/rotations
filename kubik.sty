@@ -1,4 +1,4 @@
-\usepackage{amsmath,amssymb,amsthm,pifont,amsrefs}
+\usepackage{amsmath,amssymb,amsthm,pifont}
 \usepackage{bm}%makes better bold fornt in math
 \usepackage{ushort}
 \usepackage{manfnt}
@@ -8,6 +8,33 @@
 %\usepackage[notref,notcite,color]{showkeys}
 \hypersetup{colorlinks=true,citecolor=black,linkcolor=black,anchorcolor=black,filecolor=black,menucolor=black,urlcolor=black
 }
+
+\usepackage[russian,
+german,
+english]{babel}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[
+sorting=none,
+bibencoding=auto,
+backend=biber,
+maxnames=10,
+%babel=other,
+autolang=other,
+doi=false,
+url=false,
+style=numeric-comp,
+isbn=false]{biblatex}
+\usepackage{csquotes}
+\AtEveryBibitem{\clearlist{language}}
+\AtEveryBibitem{\clearlist{note}}
+\renewbibmacro{in:}{}
+%\renewcommand*{\bibfont}{\small}
+\addbibresource{lib.bib}
+
+
+
+
 \hyphenation{Kapo-vitch}
 
 
@@ -55,7 +82,7 @@
 \def\Tr{\operatorname{Tr}}
 \def\supp{\operatorname{supp}}
 
-\def\turn{\mathop{\rm turn}\nolimits}
+\def\tc{\mathop{\rm TotCur}\nolimits}
 \def\curv{\mathop{\rm curv}\nolimits}
 \def\depth{\mathop{\rm depth}\nolimits}
 

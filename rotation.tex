@@ -30,31 +30,34 @@ USA}
 \date{}
 
 \begin{abstract}
-We give a universal upper bound for the variation of turn of minimizing geodesic on a convex surface in the Euclidean space.
+We give a universal upper bound 
+for the total curvature 
+of minimizing geodesic 
+on a convex surface 
+in the Euclidean space.
 \end{abstract}
+\subjclass{53A05, 53C45, 53C22}
 \maketitle
-
 
 \section{Introduction}
 
 Denote by $\EE^3$ the 3-dimensional Euclidean space.
 
-Recall that the \emph{turn} of a curve $\gamma\:\II\to \EE^3$ 
-(briefly $\turn\gamma$)
+Recall that the \emph{total curvature} of a curve $\gamma\:[0,\ell]\to \EE^3$ 
+(briefly $\tc\gamma$)
 is defined as supremum of sum of exterior angles 
 for the broken lines inscribed in $\gamma$.
 If $\gamma$ is smooth and equipped with the natural parameter, 
 then 
-\[\turn\gamma=\int\limits_\II \kappa(t)\cdot dt,\]
+\[\tc\gamma=\int\limits_0^\ell \kappa(t)\cdot dt,\]
 where $\kappa(t)=|\gamma''(t)|$ is the curvature of $\gamma$ at $t$.
-By that reason the turn of curve is also called its \emph{total curvature}.
 
 \begin{thm}{Main theorem}\label{thm:main}
 If $K$ is a closed convex set in the 3-dimensional Euclidean space,
 $\Sigma$ is the surface of $K$ 
 and $\gamma$ be a minimizing geodesic in $\Sigma$
 then 
-\[\turn\gamma\le \omega,\]
+\[\tc\gamma\le \omega,\]
 where $\omega$ is a universal real constant.
 \end{thm}
 
@@ -67,7 +70,8 @@ Let us briefly discuss the related results.
 \item In \cite{liberman}, Liberman gives a bound on the turn of short geodesic in terms of the ratio diameter and inradius of $K$.
 In the proof he use now so called Liberman's lemma \ref{lem:liberman} discussed below.
 This statement was rediscovered in \cite{BKZ}.
-\item In \cite{usov}, Usov gives the optimal bound for turn of geodesic on the graph of $\ell$-Lipscitz convex function. 
+\item In \cite{usov}, 
+Usov gives the optimal bound for total curvature of geodesic on the graph of $\ell$-Lipscitz convex function. 
 Namely, he proves that if $f\:\RR^2\to\RR$ is $\ell$-Lipschitz and convex then any 
 geodesic in its graph 
 \[\Gamma_f=\set{(x,y,z)\in \RR^3}{z=f(x,y)}\] 
@@ -75,7 +79,9 @@ has turn at most $2\cdot \ell$.
 This statement was also rediscovered in \cite{BKZ}.
 Yet an amusing generalization of Usov's result is given by Berg in \cite{berg}.
 \item In \cite{pogorelov}, Pogorelov conjectured that any the spherical image of geodesic on convex surface has to be contructable.
-It is easy to see that the length of spherical image of geodesic can not be smaller than its turn, so this conjecture (if true) would be stronger than Liberman's theorem.
+It is easy to see that the length of spherical image of geodesic can not be smaller than its total curvature, 
+so this conjecture (if it would be true) 
+would be stronger than Liberman's theorem.
 Counterexamples were found indepenently by Milka in \cite{milka}, 
 Usov in \cite{usov-conj-pog} 
 and much later by Pach in \cite{pach}.
@@ -87,7 +93,7 @@ have constructed a corkscrew minimizing geodesic on a closed hypersurface;
 that is a minimizing geodesic which twists around given line arbitrary many times.
 
 \item In the same paper they also constructed a minimizing geodesic on a convex surface in $\RR^3$
-with turn bigger that $2\cdot\pi$.
+with total curvature bigger that $2\cdot\pi$.
 (Note that $2\cdot\pi$ is the optimal bound for the analogous problem in the plane.)
 \end{itemize}
 
@@ -106,7 +112,9 @@ The surface $\Sigma$ is $C^\infty$-smooth.
 On the second step we give number of geometric inequalities which relate the angles between $\gamma'(t)$ and with the coordinate axis.
 
 The last step in the proof is purely algebraic, 
-here we combine the obtained inequalities to give a universal bound on the turn of $\gamma_n$ whcih satisfy the conditions  estimate the turn of $\gamma_n$ which satisfy the conditions (\ref{smooth})--(\ref{graph}).
+here we combine the obtained inequalities to give a universal bound on the total curvature 
+of $\gamma_n$ 
+which satisfies the conditions (\ref{smooth})--(\ref{graph}).
 
 
 \section{Preliminaries}
@@ -145,12 +153,14 @@ at the points on dark (light) side of $\Sigma$ with respect to $z$.
 Assume $\gamma\:[0,\ell]\to \Sigma$ is a unit-speed curve in the space.
 
 The vector $\gamma''(t)$ is the curvature vector of $\gamma$ at $t$.
-The turn of $\gamma$ can be defined as 
-\[\turn\gamma\df\int\limits_0^\ell|\gamma''(t)|\cdot dt.\]
+The total curvature of $\gamma$ can be defined as 
+\[\tc\gamma\df\int\limits_0^\ell|\gamma''(t)|\cdot dt.\]
 
-The turn of $\tilde\gamma_z$ is called the turn of $\gamma$ in the direction of $z$ and denoted as $\turn_z\gamma$
-Given a point $z$, let us define the turn of $\gamma$ in the direction of $z$ as
-\[\turn_z\gamma
+The total curvature of $\tilde\gamma_z$ 
+is called the total curvature of $\gamma$ in the direction of $z$ 
+and denoted as $\tc_z\gamma$
+Given a point $z$, let us define the total curvature of $\gamma$ in the direction of $z$ as
+\[\tc_z\gamma
 \df
 \int\limits_0^\ell
 \left|
@@ -163,30 +173,31 @@ Given a point $z$, let us define the turn of $\gamma$ in the direction of $z$ as
 Let $\gamma\:[0,\ell]\to \Sigma$ be a geodesic on the convex surface in the Euclidean space 
 and $u\in\SS^2$.
 Assume that $0=t_0<t_1<\dots<t_n=\ell$ be the values such that each arcs $\gamma|_{[t_{i-1},t_i]}$ alternating light and dark side of $\Sigma$ with respect to $u$.
-Set $\alpha_i=\measuredangle(\dot\gamma(t_i),u)$
+Set $\alpha_i=\measuredangle(\gamma'(t_i),u)$
 Then 
-\[\turn_u\gamma=|\sum_i(-1)^i\alpha_i|.\]
+\[\tc_u\gamma=|\sum_i(-1)^i\alpha_i|.\]
 
 Moreover, if $1<i<n$ 
 and $\Omega_i$ denotes the domain of $\Sigma$ bounded by the arc $\gamma|_{[t_{i-1},t_i]}$ and the $u$-horizon then 
 \[|\alpha_i-\alpha_{i-1}|\le \curv\Omega_i,\]
 where $\curv\Omega_i$ denotes the total curvature of $\Omega_i$.
 In particular,
-\[\turn_u\gamma\le 4\cdot\pi+\sum_i\curv\Omega_i.\]
+\[\tc_u\gamma\le 4\cdot\pi+\sum_i\curv\Omega_i.\]
 \end{thm}
 
 \parbf{Remarks.}
-Clearly $\turn_z\gamma\le \turn \gamma$ for any curve $\gamma$ in $\Sigma$.
+Clearly $\tc_z\gamma\le \tc \gamma$ for any curve $\gamma$ in $\Sigma$.
 
 On the other hand given few points $z_i$ which do not lie in one plane
-one can estimate $\turn\gamma$ 
-in terms of $\turn_{z_i}\gamma$ 
+one can estimate $\tc\gamma$ 
+in terms of $\tc_{z_i}\gamma$ 
 the distances between $z_i$ and the maximal distance to $\gamma$.
 
 Let $N=N(\Sigma,\gamma, u)$ be the maximal integer such that at most $N$ of the domains $\Omega_i$ intersect at one point.
 Note that from \cite{BKZ}, it follows that the value $N$ can take arbitrary large value.
 The number $N$ can be estimated through the maximal rotation number of subarcs of $\gamma$ with respect to the lines.
-In particular the turn of geodesic $\gamma$ can be bounded in terms of maximal rotation number of subarcs of $\gamma$ around the lines.
+In particular the total curvature of geodesic $\gamma$ 
+can be bounded in terms of maximal rotation number of subarcs of $\gamma$ around the lines.
 The later was claimed in \cite{BKZ} without a proof.
 
 Then
@@ -196,22 +207,23 @@ N\cdot\curv\Sigma
 \le 
 4\cdot N\cdot\pi.\]
 Therefore, we get an estimate
-\[\turn_u\gamma
+\[\tc_u\gamma
 \le 
 4\cdot N\cdot\pi+|\alpha_0-\alpha_1|+|\alpha_{n-1}-\alpha_n|
 \le
 (4\cdot N+2)\cdot\pi.\]
 Since the same holds for any vector $u$,
 we can taking avarage we get
-\[\turn\gamma\le 3\cdot(4\cdot N+2)\cdot\pi.\]
+\[\tc\gamma\le 3\cdot(4\cdot N+2)\cdot\pi.\]
 
 
-\section{Reduction to the smooth case}
+\section{Smoothing}
 
 \begin{thm}{Proposition}\label{prop:smooth}
-Let $\Sigma$ be a convex surface and $\gamma$ be a geodesic on $\Sigma$.
-Then there is a sequence of smooth convex surfaces $\Sigma_n$ converging to $\Sigma$
-and an sequence of geodesics $\gamma_n$ in $\Sigma_n$ converging to $\gamma$.
+Let $K_1,K_2,\dots,K_\infty$ be closed convex sets in $\RR^3$
+and $K_n\to K_\infty$ in the sense of Hausdorff.
+Then for any minimizing geodesic $\gamma_\infty$ in the surface of $K_\infty$
+there is a a sequence of minimizing geodesics $\gamma_n$ in the surface of $K_n$ such that  $\gamma_n\to\gamma_\infty$.
 \end{thm}
 
 \parit{Proof.}
@@ -219,7 +231,7 @@ Assume $\gamma$ is a minimizing geodesic on a convex surface $\Sigma$.
 Assume $\gamma$ parametrized by its length $[0,\ell]$.
 We can choose a subinterval $[a,b]\subset [0,\ell]$
 such that $0<a$ and $b<\ell$
-and $\turn(\gamma|_{[a,b]})$ is arbitrary close to the $\turn \gamma$.
+and $\tc(\gamma|_{[a,b]})$ is arbitrary close to the $\tc \gamma$.
 
 Set $p=\gamma(a)$ and $q=\gamma(b)$.
 
@@ -232,66 +244,116 @@ Note that $\gamma_n$ converges to $\gamma|_{[a,b]}$
 as $n\to\infty$.
 \qeds
 
+\section{Length and diameter}
+
+Let $\eps>0$.
+A curve $\gamma\:[a,b]\to\RR^3$ will be called $\eps$-straight
+if 
+\[\length \gamma\le e^\eps\cdot|\gamma(b)-\gamma(a)|\]
+
+\begin{thm}{Lemma}\label{lem:eps-straight}
+Given $\eps>0$ there is $\delta>0$ (any  $\delta<(1-e^{-\eps})/2$ will do)
+such that
+in any minimizing geodesic of length $\ell$
+on a convex surface $\Sigma$ in $\RR^3$ there an $\eps$-straight arc of length at least $\delta\cdot\ell$;
+\end{thm}
+
+\parit{Proof.}
+Set $\alpha=\arccos e^{-\eps}$.
+Let $N$ be the maximal number of points in $\mathbb S^2$ which lie on distance at least $2\cdot\alpha$ from each other.
+
+Let $\gamma\:[0,\ell]\to \Sigma$ be a minimizing geodesic parametrized by its length.
+
+Given a value $t\in [0,\ell]$,
+set $t'$ to be the maximal value in $[0,\ell]$ such that the interval $[t,t']$ i $\eps$-straight.
+
+Consider the maximal sequence $0=t_0<t_1<\dots<t_n<\ell$
+such that $t_{i+1}=t_i'$.
+
+Denote by $\nu_i$ the outer unit normal vector to $\Sigma$ at $\gamma(t_i)$. 
+Note that $\measuredangle(\nu_i,\nu_j)>2\cdot\alpha$ for all $i$ and $j$.
+It follows that the sequence $(t_i)$ terminates after at most $N$ steps.
+Therefore any $\delta<\tfrac1{N+1}$ does the job.
+\qeds
+
+
+\begin{thm}{Lemma}\label{lem:diam-length}
+Assume $\gamma$ is a minimizing geodesic on a convex surface in $\RR^3$.
+Then 
+\[\length\gamma< 4\cdot\diam \gamma.\]
+\end{thm}
+
+\parit{Proof.}
+Assume contrary;
+that is, 
+there is convex surface $\Sigma\subset\RR^3$
+and a geodesic $\gamma\:[0,4]\to \Sigma$ 
+is parametrized by its length with $\diam \gamma\le 1$.
+
+Denote by $\nu_0$, $\nu_2$ and $\nu_4$ the outer unit normal vectors
+to $\Sigma$ at $\gamma(0)$, $\gamma(2)$ and $\gamma(4)$ correspondingly.
+
+Note that $\measuredangle(\nu_0,\nu_2), \measuredangle(\nu_2,\nu_4)\ge\tfrac23\cdot\pi$ and $\measuredangle(\nu_0,\nu_2)>\tfrac23\cdot\pi$,
+a contradiction.
+\qeds
+
+
 
 \section{Reduction to a monotonic case}
 
-Arguing by contradiction 
-let us assume that 
-there is a convex surface with a minimizing geodesic which has arbitrary large turn.
-
-In this we will show that one can assume in addition something about the surface and the curve.
-Namely we will prove the following claim.
+In this section we show that to prove the Main theorem,
+it is sufficient to consider only the geodesics which go almost in one direction.
 
 \begin{thm}{Proposition}\label{prop:almost-const}
 Assume Main Theorem does not hold;
 that is, there is a sequence of convex surfaces $\Sigma_n$
 and a sequence of minimizing geodesic $\gamma_n$ in $\Sigma_n$ such that 
-\[\turn \gamma_n\to\infty\ \ \text{as}\ \ n\to\infty.\]
+\[\tc \gamma_n\to\infty\ \ \text{as}\ \ n\to\infty.\]
 
-Then we can assume in addition that $\Sigma_n$ is smooth and $\gamma_n'(t)$ is nearly constant.
+Then we can assume in addition that $\Sigma_n$ is smooth and $\gamma_n'(t)$ is arbitrary close to a constant vector.
 \end{thm}
 
 \parit{Proof.}
-Applying Proposition~\ref{prop:smooth}, we can assume that $\Sigma_n$ are smooth.
+Note that total curvature is lower semicontinuous on the space of curves.
+Therefore, by Proposition~\ref{prop:smooth}, we can assume that $\Sigma_n$ are smooth.
 
 
 Take a sequence of surfaces $\Sigma_n$ with a sequence of minimizing geodesics $\gamma_n$ such that 
-\[\turn\gamma_n\to \infty.\]
+\[\tc\gamma_n\to \infty.\]
 Denote by $K_n$ the convex body bounded by $\Sigma_n$.
 
 Applying rescaling, we can assume that $\diam\gamma_n=1$ for all $n$.
-Passing to a subsequence if necessary, we can also assum that $K_n$ converges in Hausdorff sense, say to $K_\infty$.
+By Lemma \ref{lem:diam-length} $\length\gamma_n<4$.
+Therefore we can subdivide $\gamma_n$ into say 100000 arcs
+such that the legth of each arc is at most $\tfrac1{100}$
+and it lies on the distance $1\pm \tfrac1{100}$ 
+from a point $p\in K_n$.
+Choose among them the arc with the maximal total curvature and 
+name it $\gamma_n$ and translate whole space so the corresponding point $p$ becomes the origin;
+we still have that $\tc\gamma_n\to \infty$ as $n\to \infty$.
 
-By Liberman's theorem we have that $K_\infty$ lies in the plane.
+Let us apply Liberman's Lemma to $\gamma_n$ and reference point $p_n$.
+We get that $\tc_p\gamma_n<\pi+\tfrac1{10}$.
+Therefore we can divide $\gamma_n$ into say 100000 arcs again so that 
+total curvature of each arc in direction of $p_n$ is at most $\tfrac 1{100}$.
+In particular on each arc the angle between $\gamma(t)$ and $\gamma'(t)$ is a constant $\pm \tfrac 1{100}$.
+Choose among the arcs the one which has maximal total curvature and 
+name it $\gamma_n$ again;
+we still have that $\tc\gamma_n\to \infty$ as $n\to \infty$;
+denote by $\alpha$ the angle between $\gamma(t)$ and $\gamma'(t)$ at some point of the arc.
 
-It follows that $\gamma_n$ converges to a line segment in $K_\infty$
-or broken line made from two line segments, one on one side and the other on the other side of $K_\infty$.
-In the later case we can pass to an arc of $\gamma_n$ so that its turn is still converges to $\infty$ as $n\to\infty$ and the limit curve is a line segment.
+If $\alpha$ is sufficiently close to $\pi$ or $0$ then $\gamma_n$ runs almost in the direction of $\pm\gamma(t)$;
+in this case we finished the proof.
 
-We can pass to an arc of $\gamma_n$ and rescale to ensure that 
-\[1\le|p_n-\gamma(t)|\le 2\] 
-for any $t$ and some fixed point $p_n\in K_n$
-while still $\turn\gamma_n\to\infty$ as $n\to \infty$.
-In particular 
-\[\limsup_{n\to\infty}(\turn_{p_n}\gamma_n)\le \pi.\]
+Assume $\alpha$ is sufficiently far from $\pi$ and $0$.
+Applying Lemma \ref{lem:eps-straight} we get a nondegenerate (say isosceles and right-angled) 
+triangle $\triangle a_1a_2a_3$ in $K_n$ 
+of the size comparable to $\diam \gamma$ and on the distance comparable to $\diam \gamma$ from $\gamma$.
 
-Therefore, passing to a subarc of $\gamma_n$ we can assume that 
-$\turn_{p_n}\gamma_n\to0$ and $\turn\gamma_n\to\infty$ as $n\to\infty$.
-
-Passing to a subsequence we can assume that for all $t$, 
-the angle between $\gamma'_n(t)$ and $p_n-\gamma_n(t)$ 
-converges to a fixed value, 
-say $\phi$ 
-as $n\to \infty$.
-
-Let us show that we can assume that $\phi=0$.
-If $\phi=\pi$ then it is sufficient to change reparametrize each $\gamma_n$ in the opposite direction.
-Otherwise repeat the construction for a point $q_n$ instead of $p_n$, 
-so that the triangles $\triangle p_nq_n\gamma_n(t)$ are far from being degenerate.
-We get that $\gamma_n$ runs in nearly one direction.
-Then one can choose $p_n$ near the end of $\gamma_n$.
-
-...
+Apply the construction to each vertex of the triangle.
+We pass to an arc of $\gamma_n$
+such that the angle between $\gamma'(t)$ and $a_i-\gamma(t)$ is nearly constant for each $i$.
+The later imply that $\gamma'$ is nearly constant.
 \qeds
 
 
@@ -299,53 +361,60 @@ Then one can choose $p_n$ near the end of $\gamma_n$.
 
 Fix a $(x,y,z)$-coordinates on the Euclidean space.
 The lines parallel to the $z$-axis will be called \emph{vertical};
-the lines and planes parallel to $(x,y)$-plane will be called \emph{horisontal}.
+the lines and planes parallel to $(x,y)$-plane will be called \emph{horizontal}.
 
-Given a vector $\bm{\upsilon}$, we will denote by $\upsilon_x$, $\upsilon_y$ and $\upsilon_z$ its components.
+Given a vector $\bm{\upsilon}\in\RR^3$, we will denote by $\upsilon_x$, $\upsilon_y$ and $\upsilon_z$ its components.
 Set 
 \[\bm{e}_x=(1,0,0),\ \ \bm{e}_y=(0,1,0)\ \ \text{and}\ \ \bm{e}_z=(0,0,1).\]
 
-Let $\Sigma$ be a convex surface which bounds convex set $K$
-and $\gamma\:\II\to \Sigma$ is a minimizing geodesic.
+Let $\Sigma$ be a convex surface 
+and $\gamma\:[0,\ell]\to \Sigma$ is a minimizing geodesic 
+with unit-speed parametrization.
 
-Given $t\in \II$, 
+Given $t\in [0,\ell]$, 
 consider the oriented orthonormal frame $\lambda(t),\mu(t),\nu(t)$ 
 such that $\nu(t)$ is the outer normal to $\Sigma$ at $\gamma(t)$,
 the vector $\mu(t)$ is horizontal and therefore the vector $\lambda(t)$ lies in the plane spanned by $\nu(t)$ and the $z$-axis.
 
+\begin{thm}{Observation}
 According to Proposition~\ref{prop:almost-const},
- we assume that $\gamma'_z(t)>0$ for any $t$.
-In particular, $\nu(t)$ is not vertical and therefore
-the frame $(\lambda,\mu,\nu)$ is uniquely defined.
+we can assume that $\gamma'_z(t)>0$ for any $t$
+and both ends of $\gamma$ lie on the $z$-axis.
+\end{thm}
 
-After rotating $(xy)$-plane if necessary, 
-we can assume that the border of shadow in the directions of $x$- and $y$-axises 
-are smooth curves and $\gamma$ intersects them transversely.
+In particular, $\nu(t)$ can not be vertical 
+and therefore the frame $(\lambda,\mu,\nu)$ is uniquely defined for any $t\in[0,\ell]$.
 
-Denote by $t_1,t_2,\dots, t_k$ the time moments in the increasing order 
-at which $\gamma$ intersects 
-the border of shadow in the direction of $x$-axis.
-Note that $\mu(t_n)=\pm e_x$;
-define $s_n$ to be $\pm1$ so that
-\[\mu(t_n)=s_n\cdot e_x.\]
 
-Further denote by $\alpha(t)$ the signed angle between $\dot\gamma(t)$ and $\lambda(t)$ in the tangent plane at $\gamma(t)$;
-we assume that $\alpha(t)$ takes values in $(-\tfrac\pi2,\tfrac\pi2)$.
+
+After rotating $(x,y)$-plane if necessary, 
+we can assume that the border of shadow in the directions of $x$-axis, say $\omega_x$, 
+is a smooth curve and $\gamma$ intersects them transversely.
+
+Let $t_1<t_2<\dots<t_k$ be the time moments in $[0,\ell]$ 
+at which $\gamma$ intersects $\omega_x$.
+Note that $\mu(t_n)=s_n e_x$
+for some $s_n=\pm1$.
+
+Further denote by $\alpha(t)$ the signed angle between $\gamma'(t)$ and $\lambda(t)$ in the tangent plane at $\gamma(t)$.
+Since $\gamma'_z>0$,
+we can (and will) 
+assume that $\alpha(t)$ takes values in $(-\tfrac\pi2,\tfrac\pi2)$.
 Set 
 \[\alpha_n=\alpha(t_n).\]
 
 Note that  
 \begin{align*}
-\turn_{\bm{e}_x} \gamma
+\tc_{\bm{e}_x} \gamma
 &\le 
-2\cdot\pi+\turn_{\bm{e}_x}\left(\gamma|_{[t_1,t_k]}\right)=
+2\cdot\pi+\tc_{\bm{e}_x}\left(\gamma|_{[t_1,t_k]}\right)=
 \\
 &=2\cdot\pi+\left|\sum s_n\cdot \alpha_n\right|.
 \end{align*}
 
-Let us define two more angles.
+Consider yet two more angle functions.
 \begin{itemize}
-\item Let $\phi(t)$ be the angle between $\dot\gamma(t)$ and $z$-axis. Set $\phi_n=\phi(t_n)$.
+\item Let $\phi(t)$ be the angle between $\gamma'(t)$ and $z$-axis. Set $\phi_n=\phi(t_n)$.
 \item Let $\psi(t)$ be the signed angle between $\nu(t)$ and $(x,y)$-plane. 
 Set $\psi_n=\psi(t_n)$.
 \end{itemize}
@@ -356,54 +425,78 @@ In particular
 \[\phi_n\ge |\psi_n|\ \ \text{and}\ \  \phi_n\ge |\alpha_n|\]
 for any $n$.
 
-Denote by $\nu^h(t)$ its horizontal projection of $\nu(t)$.
-Since $\gamma'_z(t)>0$, 
-we have $\nu^h(t)\ne0$ for any $t$.
-Define the rotation $\rho_{[a,b]}$  
-of the interval $[a,b]\subset\II$
+\parbf{Horizontal rotation.}
+Note that $\mu(t)$ is horizontal for any $t$.
+
+Define the rotation $\rho[a,b]$  
+of the interval $[a,b]\subset[0,\ell]$
 as the
-algebraic rotation of $\nu^h(t)$ around the origin in $(xy)$-plane;
+algebraic rotation of $\mu(t)$ around the origin in $(x,y)$-plane;
 say it can be defined by the formula 
 \[\rho_{[a,b]}
 =
-\int\limits_a^b \<\tau(t),\mathrm{J}(\tau'(t))\>\cdot dt,\]
-where $\mathrm{J}\:\RR^2\to\RR^2$ denotes the rotation by angle $\tfrac\pi 2$ around the origin and \[\tau\df\tfrac{\nu^h}{|\nu^h|}.\]
+\int\limits_a^b \<\mu(t),\mathrm{J}(\mu'(t))\>\cdot dt,\]
+where $\mathrm{J}\:\RR^2\to\RR^2$ denotes the rotation by angle $\tfrac\pi 2$ around the origin.
 
-\begin{thm}{Claim}\label{clm:rotations}
-Let $n=\lceil \sup\set{\rho[a,b]}{[a,b]\subset\II} \rceil$
-then \[\turn_{\bm{e}_x}\gamma\le 4\cdot n\cdot\pi.\]
-
-\end{thm}
-
+Note that 
+\[\rho[t_i,t_{i+1}]=\tfrac\pi2\cdot(s_i+s_{i+1}).\]
 
 \begin{thm}{Claim}
-Assume that $[b,c]\subset [a,d]\subset \II$ and
-$\gamma_z(b)
-\ge
-\tfrac12\cdot(\gamma_z(a)+\gamma_z(d))$,
-$\rho[b,c]\ge 3\cdot \pi$.
-Then $\psi(t)>0$ for any $t\ge c$.
-
-In other words the arc $\gamma|_{[c,d]}$ lies on a graph $z=f(x,y)$ of a concave function $f\:\RR^2\to\RR$.
+Assume that 
+\[\gamma_z(t_i)\ge \tfrac12\cdot(\gamma_z(\ell)+\gamma_z(0))\ \ \text{and}\ \ \left|\sum_{n=i}^js_n\right|=4.\]
+Then $\psi(t)>0$ for any $t\ge t_j$.
 \end{thm}
 
-Note that the last two claims imply the following.
+Note that the claim implies that from $t_j$,
+the geodesic $\gamma$ 
+lies on a graph $z=f(x,y)$ of a concave function $f\:\RR^2\to\RR$
+and forms a minimizing geodesic in this graph.
+Indeed fix $\eps>0$ such that $\psi(t)>\eps$
+for any $t\ge t_j$.
+Consider the set $W$ which lies under all the supporting planes 
+such that its outer normal vector forms angle at most 
+$\tfrac\pi2-\eps$ with the vertical direction.
+Note that the set $W$ forms a subgraph $z\le f(x,y)$ 
+of a  concave $(\mathop{\rm ctg} \eps)$-Lipschitz function $f\:\RR^2\to \RR$
+and all the points of $\gamma$ lie the graph $z=f(x,y)$
+
+\parit{Proof.}
+Assume contrary, that is $\phi(t)\le 0$ for some $t\ge t_j$.
+Let us draw the half-plane $\Pi$ through $\gamma(t)$ bounded by the $z$-axis.
+Note that $\Pi$ intesects the arc $\gamma|_{[t_i,t_j]}$ at some point say 
+$\gamma(t')$.
+Consider the sub-arc $\sigma$ 
+of $\Sigma\cap\Pi$ from $\gamma(t)$
+to $z$.
+Since $\gamma$ is minimizing we have that 
+\[\length \gamma|_{[t',t]}\le \length\sigma.\]
+Straightforward computations lead to a contradiction.
+\qeds
+
+Note that the last claim imply the following.
 
 \begin{thm}{Proposition}\label{prop:graph}
 Assume Main Theorem does not hold;
 that is, there is a sequence of convex surfaces $\Sigma_n$
 and a sequence of minimizing geodesic $\gamma_n$ in $\Sigma_n$ such that 
-\[\turn \gamma_n\to\infty\ \ \text{as}\ \ n\to\infty.\]
+\[\tc \gamma_n\to\infty\ \ \text{as}\ \ n\to\infty.\]
 
-Then we can assume in addition that $\Sigma_n$ is a graph $z=f_n(x,y)$ of a smooth convex function $f_n\:\RR^2\to\RR$
-and $\gamma'_z(t)>0$ for any $t\in\II$. 
+Then we can make in addition one of the following assumtions:
+
+\begin{enumerate}[(i)]
+\item\label{graph} $\Sigma_n$ is a graph $z=f_n(x,y)$ of a smooth convex function $f_n\:\RR^2\to\RR$
+and $\gamma'_z(t)>0$ for any $t\in[0,\ell]$. 
+\item\label{finite} $\left|\sum_{n=i}^js_n\right|<10$ for any $i<j$.
+\end{enumerate} 
 \end{thm}
 
-In particular, from now on $\psi(t)>0$ for any $t\in\II$.
-Note also that by Liberman's lemma $\phi(t)$ is a nondecreasing function on $\II$.
+In particular, from now on $\psi(t)>0$ for any $t\in[0,\ell]$.
+Note also that by Liberman's lemma $\phi(t)$ is a nondecreasing function on $[0,\ell]$.
+The two cases (\ref{graph}) and (\ref{finite}) will be done separetely.
+The case (\ref{graph}) is more involved.
 
 \begin{thm}{Claim}
-Let $[a,b]\subset\II$ and $\rho[a,b]\ge 3\cdot\pi$.
+Let $[a,b]\subset[0,\ell]$ and $\rho[a,b]\ge 3\cdot\pi$.
 Then $\psi(t)\ge \phi(a)$ for any $t\ge b$.
 \end{thm}
 
@@ -449,14 +542,18 @@ if
 \end{align*} 
 if $i<j'<j$.
 
-Note that for any index $i$ appears in at most one $\bm{s}$-pair.
-If you exchange ``$+1$'' and ``$-1$'' in $\bm{s}$ by ``$($'' and ``$)$'' correspondingly then $(i,j)$ is an $\bm{s}$-pair
-if and only if the $i$-th bracket forms a pair with $j$-bracket;
-in particular for any $\bm{s}$-pair $(i,j)$ we have
+Note that for any index $i$ appears in at most one $\bm{s}$-pair and 
+for any $\bm{s}$-pair $(i,j)$ we have
 \begin{itemize}
 \item $s_i=1$; that is, $i$-th braket has to be openning.
  \item $s_j=-1$; that is, $j$-th braket has to be closing.
 \end{itemize}
+
+\parbf{Bracket interpretation.}
+If you exchange ``$+1$'' and ``$-1$'' in $\bm{s}$ by ``$($'' and ``$)$'' correspondingly then $(i,j)$ is an $\bm{s}$-pair
+if and only if the $i$-th bracket forms a pair with $j$-bracket.
+
+\medskip
 
 We say that $q$ is the depth of an $\bm{s}$-pair $(i,j)$
 (briefly $q=\depth_{\bm{s}}(i,j)$) 
@@ -498,10 +595,13 @@ is the sum for all $\bm{s}$-pairs with depth $q$ then
 Since $s_i=1$ and $s_j=-1$ for any $\bm{s}$-pair $(i,j)$,
 we have
 \[\alpha_i-\alpha_j=s_i\cdot\alpha_i+s_j\cdot\alpha_j.\]
-Therefor sum  $S_1+S_2+S_3+S_4+S_5$  contains some  terms of 
-$\sum_{n} s_n\cdot \alpha_n$.
-Denote by $G\subset\{1,\dots,k\}$ the remaining indexes.
-Let us divide $G$ into 5 groups, say $G_1,\dots,G_5$ 
+That is, one can partition $\{1,\dots,k\}$ into two sets, say $H$ and $G$ such that
+\[S_1+S_2+S_3+S_4+S_5=\sum_{i\in H}s_i\cdot \alpha_i\] 
+
+An index $i$ belongs to $G$ 
+if it does not form an $\bm{s}$-pair 
+or its $\bm{s}$-pair has depth at least $6$.
+Let us subdivide $G$ into 5 groups, say $G_1,\dots,G_5$ 
 so $i$ and $j$ go into the same group if 
 \[\sum_{n=i}^j s_n\equiv 0\pmod 5.\]
 
@@ -512,13 +612,17 @@ Note that
 \\
 &\le 2\cdot\phi_k;
 \end{align*}
-the last inequality follows since
+the last inequality follows since $(\phi_i)$ is an increasing sequence 
+and
 $\phi_j>2\cdot \phi_i$
 if $i,j\in G_m$ and $i<j$.
 
 Summarizing
 \begin{align*}
-|\sum_n s_n\cdot\alpha_n|&\le |S_1|+|S_2|+|S_3|+|S_4|+|S_5|+|\sum_{n\in G} s_n\cdot\alpha_n|\le
+|\sum_n s_n\cdot\alpha_n|&\le 
+\sum_{i=1}^5|S_i|
++
+\sum_{i=1}^5\left|\sum_{n\in G_i} s_n\cdot\alpha_n\right|\le
 \\
 &\le 15\cdot K_k+10\cdot \phi_k.
 \end{align*}
@@ -526,129 +630,8 @@ Hence the result follows.
 \qeds
 
 
-\begin{bibdiv}
-\begin{biblist}
-\bib{AH-PSV}{article}{
-   author={Agarwal, Pankaj K.},
-   author={Har-Peled, Sariel},
-   author={Sharir, Micha},
-   author={Varadarajan, Kasturi R.},
-   title={Approximating shortest paths on a convex polytope in three
-   dimensions},
-   journal={J. ACM},
-   volume={44},
-   date={1997},
-   number={4},
-   pages={567--584},
-   %issn={0004-5411},
-   %review={\MR{1481315 (99c:68241)}},
-   %doi={10.1145/263867.263869},
-}
-
- \bib{BKZ}{article}{
-   author={B{\'a}r{\'a}ny, Imre},
-   author={Kuperberg, Krystyna},
-   author={Zamfirescu, Tudor},
-   title={Total curvature and spiralling shortest paths},
-   note={U.S.-Hungarian Workshops on Discrete Geometry and Convexity
-   (Budapest, 1999/Auburn, AL, 2000)},
-   journal={Discrete Comput. Geom.},
-   volume={30},
-   date={2003},
-   number={2},
-   pages={167--176},
-   %issn={0179-5376},
-   %review={\MR{2007957 (2004h:52009)}},
-   %doi={10.1007/s00454-003-0001-z},
-}
-
-\bib{berg}{article}{
-   author={Berg, I. D.},
-   title={An estimate on the total curvature of a geodesic in Euclidean
-   $3$-space-with-boundary},
-   journal={Geom. Dedicata},
-   volume={13},
-   date={1982},
-   number={1},
-   pages={1--6},
-   %issn={0046-5755},
-   %review={\MR{679213 (84d:53049)}},
-   %doi={10.1007/BF00149423},
-}
-
-\bib{liberman}{article}{
-   author={Liberman, J.},
-   title={Geodesic lines on convex surfaces},
-   journal={C. R. (Doklady) Acad. Sci. URSS (N.S.)},
-   volume={32},
-   date={1941},
-   pages={310--313},
-  % review={\MR{0010994 (6,100g)}},
-}
-
-\bib{milka}{article}{
-   author={Milka, A. D.},
-   title={A shortest path with nonrectifiable spherical representation. I},
-%   language={Russian},
-   journal={Ukrain. Geometr. Sb.},
-   number={16},
-   date={1974},
-   pages={35--52, ii},
-%   review={\MR{0385761 (52 \#6620)}},
-}
-
-\bib{pach}{article}{
-   author={Pach, J{\'a}nos},
-   title={Folding and turning along geodesics in a convex surface},
-   journal={Geombinatorics},
-   volume={7},
-   date={1997},
-   number={2},
-   pages={61--65},
-%   issn={1065-7371},
-%   review={\MR{1487759 (98k:52026)}},
-}
-
-\bib{pogorelov}{book}{
-   author={Pogorelov, A. V.},
-   title={Vneshnyaya geometriya vypuklykh poverkhnostei},
-%   language={Russian},
-   publisher={Izdat. ``Nauka'', Moscow},
-   date={1969},
-   pages={759},
-%   review={\MR{0244909 (39 \#6222)}},
-}
-
-\bib{usov}{article}{
-   author={Usov, V. V.},
-   title={The length of the spherical image of a geodesic on a convex
-   surface},
-%   language={Russian},
-   journal={Sibirsk. Mat. \v Z.},
-   volume={17},
-   date={1976},
-   number={1},
-   pages={233--236. %(inside back cover)
-   },
-%   issn={0037-4474},
-%   review={\MR{0405316 (53 \#9110)}},
-}
-
-\bib{usov-conj-pog}{article}{
-   author={Usov, V. V.},
-   title={The three-dimensional swerve of curves on convex surfaces},
-%   language={Russian},
-   journal={Sibirsk. Mat. \v Z.},
-   volume={17},
-   date={1976},
-   number={6},
-   pages={1427--1430, 1440},
-%   issn={0037-4474},
-%   review={\MR{0442862 (56 \#1237)}},
-}
-
-\end{biblist}
-\end{bibdiv}
-
+\sloppy
+\printbibliography[heading=bibintoc]
+\fussy
 
 \end{document}

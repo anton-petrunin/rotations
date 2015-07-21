@@ -32,10 +32,10 @@ Mode=LaTeX
 
 [item:kubik.sty]
 archive=true
-column=24
+column=0
 encoding=UTF-8
 highlight=LaTeX
-line=10
+line=0
 mode=LaTeX
 open=false
 order=1
@@ -52,22 +52,22 @@ order=-1
 
 [item:rotation.tex]
 archive=true
-column=13
+column=5
 encoding=UTF-8
 highlight=LaTeX
-line=91
+line=281
 mode=LaTeX
 open=true
 order=0
 
 [view-settings,view=0,item:kubik.sty]
-CursorColumn=24
-CursorLine=10
+CursorColumn=26
+CursorLine=57
 JumpList=
-ViMarks=
+ViMarks=.,57,25,[,57,25,],57,25
 
 [view-settings,view=0,item:rotation.tex]
-CursorColumn=13
-CursorLine=91
+CursorColumn=5
+CursorLine=281
 JumpList=
-ViMarks=.,0,0,[,0,0,],653,13
+ViMarks=.,275,29,[,275,29,],275,29
