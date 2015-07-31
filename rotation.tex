@@ -303,57 +303,69 @@ a contradiction.
 
 In this section we show that to prove the Main theorem,
 it is sufficient to consider only the geodesics which go almost in one direction.
+The following proposition will be applied to $\eps=\tfrac\pi4$;
+in this case one can take $\delta=10^{-10}$.
 
 \begin{thm}{Proposition}\label{prop:almost-const}
-Assume Main Theorem does not hold;
-that is, there is a sequence of convex surfaces $\Sigma_n$
-and a sequence of minimizing geodesic $\gamma_n$ in $\Sigma_n$ such that 
-\[\tc \gamma_n\to\infty\ \ \text{as}\ \ n\to\infty.\]
+Given $\eps>0$ there is $\delta>0$
+such that the following statement holds.
 
-Then we can assume in addition that $\Sigma_n$ is smooth and $\gamma_n'(t)$ is arbitrary close to a constant vector.
+If $\gamma\:[0,\ell]\to\Sigma$ is a minimizing geodeisc 
+on a smooth convex surface $\Sigma$ in $\RR^3$
+then there is an interval $[a,b]\subset[0,\ell]$
+such that \[\tc(\gamma|_{[a,b]}>\delta\cdot\tc\gamma.\]
+and 
+\[\measuredangle(\gamma'(t),u)<\eps\] 
+for any $t\in[a,b]$
+and a fixed unit vector $u$.
 \end{thm}
 
 \parit{Proof.}
 Note that total curvature is lower semicontinuous on the space of curves.
 Therefore, by Proposition~\ref{prop:smooth}, we can assume that $\Sigma_n$ are smooth.
 
-
-Take a sequence of surfaces $\Sigma_n$ with a sequence of minimizing geodesics $\gamma_n$ such that 
-\[\tc\gamma_n\to \infty.\]
-Denote by $K_n$ the convex body bounded by $\Sigma_n$.
-
-Applying rescaling, we can assume that $\diam\gamma_n=1$ for all $n$.
-By Lemma \ref{lem:diam-length} $\length\gamma_n<4$.
-Therefore we can subdivide $\gamma_n$ into say 100000 arcs
+Applying rescaling, we can assume that $\diam\gamma=1$.
+By Lemma \ref{lem:diam-length} $\length\gamma_n\zz<4$.
+Therefore we can subdivide $\gamma$ into say 100000 arcs
 such that the legth of each arc is at most $\tfrac1{100}$
-and it lies on the distance $1\pm \tfrac1{100}$ 
+and it lies on the distance $\tfrac12\pm \tfrac1{100}$ 
 from a point $p\in K_n$.
 Choose among them the arc with the maximal total curvature and 
-name it $\gamma_n$ and translate whole space so the corresponding point $p$ becomes the origin;
-we still have that $\tc\gamma_n\to \infty$ as $n\to \infty$.
+name it $\bar\gamma$ and translate whole space so the corresponding point $p$ becomes the origin.
+Clearly
+\[\tc\bar\gamma>\tfrac1{100000}\cdot \tc\gamma.\]
 
-Let us apply Liberman's Lemma to $\gamma_n$ and reference point $p_n$.
-We get that $\tc_p\gamma_n<\pi+\tfrac1{10}$.
-Therefore we can divide $\gamma_n$ into say 100000 arcs again so that 
-total curvature of each arc in direction of $p_n$ is at most $\tfrac 1{100}$.
-In particular on each arc the angle between $\gamma(t)$ and $\gamma'(t)$ is a constant $\pm \tfrac 1{100}$.
-Choose among the arcs the one which has maximal total curvature and 
-name it $\gamma_n$ again;
-we still have that $\tc\gamma_n\to \infty$ as $n\to \infty$;
-denote by $\alpha$ the angle between $\gamma(t)$ and $\gamma'(t)$ at some point of the arc.
+Fix $N>\tfrac2\eps$.
+Applying Liberman's Lemma to $\bar\gamma$ with the origin as the reference point 
+we get that \[\tc_0\gamma_n<\pi+\tfrac1{10}.\]
+Therefore we can divide $\bar\gamma$ into $N$ arcs 
+so that for each arc $\bar{\bar\gamma}$
+we have \[\tc_p\bar{\bar\gamma}\le \tfrac{\pi+\tfrac1{10}}{N}.\]
+Coose among these arcs the one with maximal total curvature,
+denote it further by $\bar{\bar\gamma}$.
+Clearly 
+\[\tc\bar{\bar\gamma}>\tfrac\eps{1000}\cdot \tc\bar\gamma.\]
 
-If $\alpha$ is sufficiently close to $\pi$ or $0$ then $\gamma_n$ runs almost in the direction of $\pm\gamma(t)$;
-in this case we finished the proof.
+Fix a parameter $t$ of $\bar{\bar\gamma}$
+and denote by $\alpha$ the angle between $\bar{\bar\gamma}'(t)$ and $p-\bar{\bar\gamma}(t)$.
 
-Assume $\alpha$ is sufficiently far from $\pi$ and $0$.
-Applying Lemma \ref{lem:eps-straight} we get a nondegenerate (say isosceles and right-angled) 
+If $\alpha<\tfrac\eps2$ or $alpha>\pi-\tfrac\eps2$,
+then the problem is solved.
+
+Otherwise 
+applying Lemma \ref{lem:eps-straight} we get a nondegenerate (say equilateral) 
 triangle $\triangle a_1a_2a_3$ in $K_n$ 
-of the size comparable to $\diam \gamma$ and on the distance comparable to $\diam \gamma$ from $\gamma$.
+of the size comparable to $\diam \bar\gamma$ 
+and on the distance comparable to $\diam \gamma$ from any point of $\bar\gamma$,
+say side of triangle can be taken to be $\tfrac{\eps^2}{1000}\cdot\diam \bar\gamma$
+and the distance to any point can be assumed to be between $\diam \bar\gamma$ and $2\cdot \diam \bar\gamma$
 
 Apply the construction to each vertex of the triangle.
-We pass to an arc of $\gamma_n$
-such that the angle between $\gamma'(t)$ and $a_i-\gamma(t)$ is nearly constant for each $i$.
-The later imply that $\gamma'$ is nearly constant.
+We pass to an arc of $\hat\gamma$
+such that the angle between $\hat\gamma'(t)$ and $a_i-\hat\gamma(t)$ 
+and the distance $|\hat\gamma(t)-a_i|$
+are nearly constant for each $i$.
+The later imply that $\hat\gamma'$ is nearly constant.
 \qeds
 
 
@@ -393,8 +405,8 @@ is a smooth curve and $\gamma$ intersects them transversely.
 
 Let $t_1<t_2<\dots<t_k$ be the time moments in $[0,\ell]$ 
 at which $\gamma$ intersects $\omega_x$.
-Note that $\mu(t_n)=s_n e_x$
-for some $s_n=\pm1$.
+Note that 
+\[\mu(t_n)=s_n\cdot e_x\ \ \text{for some}\ \  s_n=\pm1.\]
 
 Further denote by $\alpha(t)$ the signed angle between $\gamma'(t)$ and $\lambda(t)$ in the tangent plane at $\gamma(t)$.
 Since $\gamma'_z>0$,
