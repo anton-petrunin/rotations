@@ -69,19 +69,19 @@ order=-1
 
 [item:rotation.tex]
 archive=true
-column=58
+column=4
 encoding=UTF-8
 highlight=LaTeX
-line=408
+line=505
 mode=LaTeX
 open=true
 order=0
 
 [view-settings,view=0,item:kubik.sty]
-CursorColumn=27
-CursorLine=84
+CursorColumn=17
+CursorLine=88
 JumpList=
-ViMarks=.,84,26,[,84,26,],84,26
+ViMarks=.,88,16,[,88,16,],88,16
 
 [view-settings,view=0,item:lib.bib]
 CursorColumn=71
@@ -90,7 +90,7 @@ JumpList=
 ViMarks=
 
 [view-settings,view=0,item:rotation.tex]
-CursorColumn=58
-CursorLine=408
+CursorColumn=4
+CursorLine=505
 JumpList=
-ViMarks=.,408,57,[,408,56,],408,57
+ViMarks=.,505,3,[,503,0,],505,3

@@ -68,7 +68,7 @@ but we have learned it from Dmitry Burago only few years ago.
 Let us briefly discuss the related results.
 
 \begin{itemize}
-\item In \cite{liberman}, Liberman gives a bound on the turn of short geodesic in terms of the ratio diameter and inradius of $K$.
+\item In \cite{liberman}, Liberman gives a bound on the total curvature of short geodesic in terms of the ratio diameter and inradius of $K$.
 In the proof he use now so called Liberman's lemma \ref{lem:liberman} discussed below.
 This statement was rediscovered in \cite{BKZ}.
 \item In \cite{usov}, 
@@ -76,7 +76,7 @@ Usov gives the optimal bound for total curvature of geodesic on the graph of $\e
 Namely, he proves that if $f\:\RR^2\to\RR$ is $\ell$-Lipschitz and convex then any 
 geodesic in its graph 
 \[\Gamma_f=\set{(x,y,z)\in \RR^3}{z=f(x,y)}\] 
-has turn at most $2\cdot \ell$.
+has total curvature at most $2\cdot \ell$.
 This statement was also rediscovered in \cite{BKZ}.
 Yet an amusing generalization of Usov's result is given by Berg in \cite{berg}.
 \item In \cite{pogorelov}, Pogorelov conjectured that any the spherical image of geodesic on convex surface has to be contructable.
@@ -85,15 +85,14 @@ so this conjecture (if it would be true)
 would be stronger than Liberman's theorem.
 Counterexamples were found indepenently by Milka in \cite{milka}, 
 Usov in \cite{usov-conj-pog} 
-and much later by Pach in \cite{pach}.
+and yet much later rediscovered by Pach in \cite{pach}.
 \item In \cite{BKZ},
 B{\'a}r{\'a}ny,
 Kuperberg, 
 and Zamfirescu 
 have constructed a corkscrew minimizing geodesic on a closed hypersurface;
 that is a minimizing geodesic which twists around given line arbitrary many times.
-
-\item In the same paper they also constructed a minimizing geodesic on a convex surface in $\RR^3$
+In the same paper they also constructed a minimizing geodesic on a convex surface in $\RR^3$
 with total curvature bigger that $2\cdot\pi$.
 (Note that $2\cdot\pi$ is the optimal bound for the analogous problem in the plane.)
 \end{itemize}
@@ -230,10 +229,9 @@ there is a a sequence of minimizing geodesics $\gamma_n$ in the surface of $K_n$
 \parit{Proof.}
 Assume $\gamma$ is a minimizing geodesic on a convex surface $\Sigma$.
 Assume $\gamma$ parametrized by its length $[0,\ell]$.
-We can choose a subinterval $[a,b]\subset [0,\ell]$
-such that $0<a$ and $b<\ell$
-and $\tc(\gamma|_{[a,b]})$ is arbitrary close to the $\tc \gamma$.
 
+Fix a subinterval $[a,b]\subset [0,\ell]$
+such that $0<a$ and $b<\ell$.
 Set $p=\gamma(a)$ and $q=\gamma(b)$.
 
 Assume $\Sigma_n$ be a sequence of smooth convex surfaces converging to $\Sigma$.
@@ -370,35 +368,33 @@ The later imply that $\hat\gamma'$ is nearly constant.
 \qeds
 
 
-\section{Angle estimates}
+\section{Elevating geodesics}
 
-Fix a $(x,y,z)$-coordinates on the Euclidean space.
+Fix a $(x,y,z)$-coordinates on the Euclidean space;
+denote by 
+\[\bm{i}=(1,0,0),\ \ \bm{j}=(0,1,0)\ \ \text{and}\ \ \bm{k}=(0,0,1)\]
+the standard basis.
+
 The lines parallel to the $z$-axis will be called \emph{vertical};
 the lines and planes parallel to $(x,y)$-plane will be called \emph{horizontal}.
-
-Given a vector $\bm{\upsilon}\in\RR^3$, we will denote by $\upsilon_x$, $\upsilon_y$ and $\upsilon_z$ its components.
-Set 
-\[\bm{e}_x=(1,0,0),\ \ \bm{e}_y=(0,1,0)\ \ \text{and}\ \ \bm{e}_z=(0,0,1).\]
 
 Let $\Sigma$ be a convex surface 
 and $\gamma\:[0,\ell]\to \Sigma$ is a minimizing geodesic 
 with unit-speed parametrization.
+
+We say that $\gamma$ is \emph{elevating} if both ends $\gamma(0)$ and $\gamma(\ell)$ lie on the $z$-axiz and $\langle\gamma'(t),\bm{k}\rangle>0$ for all $t$.
+According to Proposition~\ref{prop:almost-const}, it is sufficient to prove 
+Main theorem only for elevating geodesics.
+
+Further we assume that $\gamma$ is elevating.
 
 Given $t\in [0,\ell]$, 
 consider the oriented orthonormal frame $\lambda(t),\mu(t),\nu(t)$ 
 such that $\nu(t)$ is the outer normal to $\Sigma$ at $\gamma(t)$,
 the vector $\mu(t)$ is horizontal and therefore the vector $\lambda(t)$ lies in the plane spanned by $\nu(t)$ and the $z$-axis.
 
-\begin{thm}{Observation}
-According to Proposition~\ref{prop:almost-const},
-we can assume that $\gamma'_z(t)>0$ for any $t$
-and both ends of $\gamma$ lie on the $z$-axis.
-\end{thm}
-
 In particular, $\nu(t)$ can not be vertical 
 and therefore the frame $(\lambda,\mu,\nu)$ is uniquely defined for any $t\in[0,\ell]$.
-
-
 
 After rotating $(x,y)$-plane if necessary, 
 we can assume that the border of shadow in the directions of $x$-axis, say $\omega_x$, 
@@ -409,7 +405,7 @@ at which $\gamma$ intersects $\omega_x$.
 Note that 
 \[\mu(t_n)=s_n\cdot e_x\ \ \text{for some}\ \  s_n=\pm1.\]
 
-Further denote by $\alpha(t)$ the signed angle between $\gamma'(t)$ and $\lambda(t)$ in the tangent plane at $\gamma(t)$.
+Further set $\alpha(t)$ the signed angle between $\gamma'(t)$ and $\lambda(t)$ in the tangent plane at $\gamma(t)$.
 Since $\gamma'_z>0$,
 we can (and will) 
 assume that $\alpha(t)$ takes values in $(-\tfrac\pi2,\tfrac\pi2)$.
@@ -418,16 +414,129 @@ Set
 
 Note that  
 \begin{align*}
-\tc_{\bm{e}_x} \gamma
+\tc_{\bm{i}} \gamma
 &\le 
-2\cdot\pi+\tc_{\bm{e}_x}\left(\gamma|_{[t_1,t_k]}\right)=
+2\cdot\pi+\tc_{\bm{i}}\left(\gamma|_{[t_1,t_k]}\right)=
 \\
 &=2\cdot\pi+\left|\sum s_n\cdot \alpha_n\right|.
 \end{align*}
 
+\section{$s$-pairs}
+
+For given elevating geodesic $\gamma$ 
+we introduced two sequences 
+$\bm{s}=(s_1,\dots,s_k)$
+and $(\alpha_1,\dots,\alpha_k)$ 
+with $s_n=\pm1$ and $\alpha_n\in(-\tfrac\pi2,\tfrac\pi2)$ for each $n$.
+By Proposition ???, to prove Main theorem,
+it is sufficient to find an universal upper bound for the sum
+\[s_1\cdot\alpha_1+\dots+s_k\cdot\alpha_k.\]
+
+In this section we will estimate the sum
+\[s_i\cdot\alpha_i+s_j\cdot\alpha_j\] 
+for some special pairs of $i$ and $j$, so called $\bm{s}$-pairs.
+
+We say that a pair of indexes $i<j$
+forms an \emph{$\bm{s}$-pair} 
+if 
+\[
+\sum_{n=i}^js_n=0\ \ 
+\text{and}\ \ 
+\sum_{n=i}^{j'}s_n>0
+\]
+if $i<j'<j$.
+
+Note that for any index $i$ appears in at most one $\bm{s}$-pair and 
+for any $\bm{s}$-pair $(i,j)$ we have
+\begin{itemize}
+\item $s_i=1$; that is, $i$-th braket has to be openning.
+ \item $s_j=-1$; that is, $j$-th braket has to be closing.
+\end{itemize}
+In particular,
+\[s_i\cdot\alpha_i+s_j\cdot\alpha_j=\alpha_i-\alpha_j.\]
+
+\parbf{Bracket interpretation.}
+If you exchange ``$+1$'' and ``$-1$'' in $\bm{s}$ by ``$($'' and ``$)$'' correspondingly then $(i,j)$ is an $\bm{s}$-pair
+if and only if the $i$-th bracket forms a pair with $j$-bracket.
+
+\parbf{Embedded disc interpretation.}
+Assume $(i,j)$ is an $\bm{s}$-pair.
+Note that in this case there is an arc of $\omega_{\bm{i}}$
+from $\gamma(t_i)$ to $\gamma(t_j)$
+with monotonic $z$-coordinate.
+Moreover this arc, say $\sigma$ together with $\gamma|{[t_i,t_j]}$ bounds an immesed disc in $\Sigma$.
+That is there is an immesion $\iota\:\DD\to\Sigma$ 
+such that the closed curve $\iota|_{\partial \DD}$ is formed by joint of $\sigma$ and $\gamma|{[t_i,t_j]}$.
+
+The proof can be guessed from the diagram.
+It shows a lift of $\gamma$ in the universal cover of strip of $\Sigma$ between horizontal planes through $\gamma(t_i)$ and $\gamma(t_j)$;
+the solid vertical lines correspond are lifts of $\sigma$ and the dashed lines corresponds to the lifts of the other component of $\omega_{\bm{i}}$ bethween the planes.
+
+We say that $q$ is the depth of an $\bm{s}$-pair $(i,j)$
+(briefly $q=\depth_{\bm{s}}(i,j)$) 
+if $q$ is the maximal number such that theis $q$-long nested sequence of $\bm{s}$-pairs starting with $(i,j)$; 
+that is a sequence of $\bm{s}$-pairs
+$(i,j)=(i_1,j_1),(i_2,j_2),\dots,(i_q,j_q)$ such that
+\[i=i_1<\dots<i_q<j_q<\dots<j_1=j.\]
+
+We say that $q$ is the depth of an $\bm{s}$-pair $(i,j)$
+(briefly $q=\depth_{\bm{s}}(i,j)$) 
+if $q$ is the maximal number such that theis $q$-long nested sequence of $\bm{s}$-pairs starting with $(i,j)$; 
+that is a sequence of $\bm{s}$-pairs
+$(i,j)=(i_1,j_1),(i_2,j_2),\dots,(i_q,j_q)$ such that
+\[i=i_1<\dots<i_q<j_q<\dots<j_1=j.\]
+
+Note that the $\bm{s}$-pair of the same depth do not overlap;
+that is if for two distinct $\bm{s}$-pairs $(i,j)$ and $(i',j')$,
+we have $\depth(i,j)=\depth(i',j')$
+then either $i<j<i'<j'$ or $i'<j'<i<j$.
+
+The following proposition follow directly from the definitions above.
+
+\begin{thm}{Proposition}\label{prop:immersion}
+Let $(i,j)$ be an $\bm{s}$-pair.
+Then the arcs $\gamma|_{[t_i,t_j]}$ and an arc of $\omega_{\bm{i}}$ bound an immesed disc in $\Sigma$ which lies between horizontal planes through $\gamma(t_i)$ and $\gamma(t_j)$.
+Moreover the maximal multiplicity of the disc is at most $\depth_{\bm{s}}(i,j)$.
+\end{thm}
+
+
+\begin{thm}{Corollary}
+Let us denote by $S_q$  the subset of indiexes $\{1,\dots,k\}$
+which are the parts of $\bm{s}$-pairs with depth $q$.
+Then
+\[\sum_{n\in S_q}s_n\cdot\alpha_n\le 4\cdot\pi\cdot q.\]
+\end{thm}
+
+\parit{Proof.} For each $n$ denote by $K_n$ the integral of Gauss curvature of the part of surface $\Sigma$ which lies below horizontal plane through $\gamma(t_n)$.
+Note that 
+\[0\le K_1\le\dots\le K_k\le 4\cdot\pi.\]
+
+
+By Proposition~\ref{prop:immersion} and the Key Lemma,
+we get
+\[s_i\cdot\alpha_i+s_j\cdot\alpha_j=\alpha_i-\alpha_j\le q\cdot (K_j-K_i)\]
+
+The statement follows since the $\bm{s}$-pairs with the same depth do not overlap.
+\qeds
+
+
+\section{The estimate for the rest}
+
+Set $R=\{1,\dots,k\}\backslash (S_1\cup\dots\cup S_5)$;
+this is the set of indexes which do not appear in any $\bm{s}$-pairs
+as well as the indexes which appera in $\bm{s}$-pairs of depth at least $6$.
+
+According to ???, the theorem will follow if we can find an universal upper bound on 
+\[|\sum_{n\in R}s_n\cdot \alpha_n|.\]
+
+Further let us subdivide $R$ into $R_1,\dots R_5$,
+by setting 
+\[R_r=\set{n\in R}{s_1+\dots+s_n\equiv r\pmod 5}.\]
+
+
 Consider yet two more angle functions.
 \begin{itemize}
-\item Let $\phi(t)$ be the angle between $\gamma'(t)$ and $z$-axis. Set $\phi_n=\phi(t_n)$.
+\item Let $\phi(t)=\measuredangle(\gamma'(t),\bm{k})$. Set $\phi_n=\phi(t_n)$.
 \item Let $\psi(t)$ be the signed angle between $\nu(t)$ and $(x,y)$-plane. 
 Set $\psi_n=\psi(t_n)$.
 \end{itemize}
@@ -437,6 +546,14 @@ for any $t$.
 In particular 
 \[\phi_n\ge |\psi_n|\ \ \text{and}\ \  \phi_n\ge |\alpha_n|\]
 for any $n$.
+It follows that
+\[|\sum_{n\in R}s_n\cdot \alpha_n|\le \sum_{n\in R}\phi_n.\]
+Given $n\in R_r$, denote by $n'$ the lest index in $R_r$ bigger than $n$.
+Our aim is to show that $\phi_{n'}\ge 2\cdot\phi_n$.
+In this case 
+
+Since $\phi_n\le \pi$, we will get
+\[\sum_{n\in R_r}\phi_n\le 2\cdot \pi.\]
 
 \parbf{Horizontal rotation.}
 Note that $\mu(t)$ is horizontal for any $t$.
@@ -456,7 +573,7 @@ Note that
 
 \begin{thm}{Claim}
 Assume that 
-\[\gamma_z(t_i)\ge \tfrac12\cdot(\gamma_z(\ell)+\gamma_z(0))\ \ \text{and}\ \ \left|\sum_{n=i}^js_n\right|=4.\]
+\[\gamma_z(t_i)\ge \tfrac12\cdot(\gamma_z(\ell)+\gamma_z(0))\ \ \text{and}\ \ \left|\sum_{n=i}^js_n\right|=6.\]
 Then $\psi(t)>0$ for any $t\ge t_j$.
 \end{thm}
 
@@ -475,15 +592,30 @@ and all the points of $\gamma$ lie the graph $z=f(x,y)$
 
 \parit{Proof.}
 Assume contrary, that is $\phi(t)\le 0$ for some $t\ge t_j$.
-Let us draw the half-plane $\Pi$ through $\gamma(t)$ bounded by the $z$-axis.
-Note that $\Pi$ intesects the arc $\gamma|_{[t_i,t_j]}$ at some point say 
-$\gamma(t')$.
+Let us draw the half-plane $\Pi_+$ through $\gamma(t)$ bounded by the $z$-axis.
+Denote by $\Pi_-$ the opposite half-plane for $\Pi_+$ .
+
+Note that there are two values $t_+<t_-$ in $[t_i,t_j]$
+such that $\gamma(t_\pm)\in \Pi_\pm$.
+
 Consider the sub-arc $\sigma$ 
 of $\Sigma\cap\Pi$ from $\gamma(t)$
-to $z$.
+to $\gamma(t')$.
 Since $\gamma$ is minimizing we have that 
 \[\length \gamma|_{[t',t]}\le \length\sigma.\]
-Straightforward computations lead to a contradiction.
+
+The later contradicts straightforward estimates.
+Namely assume 
+$a$ and $a_+$ be the distances from $\gamma(t)$ and $\gamma(t_+)$ to the $z$-axis.
+Further set $b=\langle \gamma(t)-\gamma(0),\bm{k}\rangle$ 
+and 
+$b_+=\langle \gamma(t)-\gamma(0),\bm{k}\rangle$.
+By the assumptions we have $b\le 2\cdot b_+$;
+it follows that  $a_+\le a\le 2\cdot a_+$
+and therefore 
+\[(\length\sigma)^2\le (b-b_+)^2+a_+^2.\]
+On the other hand, since $t_+<t_-<t$ we get that 
+\[(\length\gamma|_{[t_+,t]})^2\ge (b-b_+)^2+(a+a_+)^2.\]
 \qeds
 
 Note that the last claim imply the following.
@@ -562,18 +694,7 @@ for any $\bm{s}$-pair $(i,j)$ we have
  \item $s_j=-1$; that is, $j$-th braket has to be closing.
 \end{itemize}
 
-\parbf{Bracket interpretation.}
-If you exchange ``$+1$'' and ``$-1$'' in $\bm{s}$ by ``$($'' and ``$)$'' correspondingly then $(i,j)$ is an $\bm{s}$-pair
-if and only if the $i$-th bracket forms a pair with $j$-bracket.
 
-\medskip
-
-We say that $q$ is the depth of an $\bm{s}$-pair $(i,j)$
-(briefly $q=\depth_{\bm{s}}(i,j)$) 
-if $q$ is the maximal number such that theis $q$-long nested sequence of $\bm{s}$-pairs starting with $(i,j)$; 
-that is a sequence of $\bm{s}$-pairs
-$(i,j)=(i_1,j_1),(i_2,j_2),\dots,(i_q,j_q)$ such that
-\[i=i_1<\dots<i_q<j_q<\dots<j_1=j.\]
 
 \begin{thm}{Proposition}
 Assume that
@@ -648,3 +769,34 @@ Hence the result follows.
 \fussy
 
 \end{document}
+
+
+
+
+Denote by $\Sigma_t$ the subset of $\Sigma$ which lies below $\gamma(t)$;
+that is
+\[\Sigma_t=\set{x\in \Sigma}{\langle x-\gamma(t),\bm{k}\rangle\le 0}.\]
+Denote by $K_t$ the integral of Gauss curvature along $\Sigma_t$.
+Note that $t\mapsto K_t$ is nondecreasing.
+
+
+
+
+Set $K_n=K_{t_n}$. Note that $0\le K_0\le \dots\le K_k\le 4\cdot \pi$.
+
+\begin{thm}{Proposition}\label{prop:s-pair}
+Assume for some $(i,j)$ is an $\bm{s}$-pair.
+Then
+\[s_i\cdot\alpha_i+s_j\cdot\alpha_j\le (K_j-K_i)\cdot\depth_{\bm{s}}(i,j).\]
+
+\end{thm}
+
+\parit{Proof.}
+Consider the closed curve formed by the arc $\gamma|_{[t_i,t_j]}$ and the arc of $\omega_{\bm{i}}$ from $\gamma(t_i)$ to $\gamma(t_j)$.
+Note that it forms the boundary of immersed $\iota\:\DD\looparrowright\Sigma$ 
+which lies between the horizontal planes through $\gamma(t_i)$ and $\gamma(t_j)$
+and it overlaps at most $\depth_{\bm{s}}(i,j)$ times;
+that is for any any $p\in\Sigma$ the set $\iota^{-1}(\{p\})$ contains at most $\depth_{\bm{s}}(i,j)$ points.
+
+Applying Key lemma, the statement follows.
+\qeds
