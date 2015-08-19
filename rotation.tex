@@ -370,56 +370,173 @@ The later imply that $\hat\gamma'$ is nearly constant.
 
 \section{Elevating geodesics}
 
+In this section we fix notations which will be used further 
+without additional explanation.
+
 Fix a $(x,y,z)$-coordinates on the Euclidean space;
-denote by 
-\[\bm{i}=(1,0,0),\ \ \bm{j}=(0,1,0)\ \ \text{and}\ \ \bm{k}=(0,0,1)\]
+denote by $(\bm{i},\bm{j},\bm{k})$
 the standard basis.
 
 The lines parallel to the $z$-axis will be called \emph{vertical};
 the lines and planes parallel to $(x,y)$-plane will be called \emph{horizontal}.
 
-Let $\Sigma$ be a convex surface 
-and $\gamma\:[0,\ell]\to \Sigma$ is a minimizing geodesic 
-with unit-speed parametrization.
+\begin{thm}{Definition}
+A smooth curve $\gamma\:[0,\ell]\to\RR^3$ 
+is called \emph{elevating} if both ends $\gamma(0)$ and $\gamma(\ell)$ lie on the $z$-axiz and $\langle\gamma'(t),\bm{k}\rangle>0$ for all $t$.
+\end{thm}
 
-We say that $\gamma$ is \emph{elevating} if both ends $\gamma(0)$ and $\gamma(\ell)$ lie on the $z$-axiz and $\langle\gamma'(t),\bm{k}\rangle>0$ for all $t$.
 According to Proposition~\ref{prop:almost-const}, it is sufficient to prove 
 Main theorem only for elevating geodesics.
 
-Further we assume that $\gamma$ is elevating.
+\parbf{$\bm{(\lambda,\mu,\nu)}$-frame.}
+Let $\Sigma$ be a convex surface 
+and $\gamma\:[0,\ell]\to \Sigma$ is an elevating minimizing geodesic 
+with unit-speed parametrization.
 
 Given $t\in [0,\ell]$, 
 consider the oriented orthonormal frame $\lambda(t),\mu(t),\nu(t)$ 
 such that $\nu(t)$ is the outer normal to $\Sigma$ at $\gamma(t)$,
 the vector $\mu(t)$ is horizontal and therefore the vector $\lambda(t)$ lies in the plane spanned by $\nu(t)$ and the $z$-axis.
+We assume in addition that $\langle\lambda,\bm{k}\rangle\ge 0$.
 
-In particular, $\nu(t)$ can not be vertical 
+Since $\langle\dot\gamma(t),\bm{k}\rangle>0$, 
+$\nu(t)$ can not be vertical 
 and therefore the frame $(\lambda,\mu,\nu)$ is uniquely defined for any $t\in[0,\ell]$.
 
+\parbf{Border crossing.}
 After rotating $(x,y)$-plane if necessary, 
 we can assume that the border of shadow in the directions of $x$-axis, say $\omega_x$, 
 is a smooth curve and $\gamma$ intersects them transversely.
 
 Let $t_1<t_2<\dots<t_k$ be the time moments in $[0,\ell]$ 
-at which $\gamma$ intersects $\omega_x$.
+at which $\gamma$ crossing $\omega_x$.
 Note that 
 \[\mu(t_n)=s_n\cdot e_x\ \ \text{for some}\ \  s_n=\pm1.\]
 
-Further set $\alpha(t)$ the signed angle between $\gamma'(t)$ and $\lambda(t)$ in the tangent plane at $\gamma(t)$.
-Since $\gamma'_z>0$,
-we can (and will) 
-assume that $\alpha(t)$ takes values in $(-\tfrac\pi2,\tfrac\pi2)$.
+\parbf{Angle functions.}
 Set 
-\[\alpha_n=\alpha(t_n).\]
-
-Note that  
 \begin{align*}
-\tc_{\bm{i}} \gamma
-&\le 
-2\cdot\pi+\tc_{\bm{i}}\left(\gamma|_{[t_1,t_k]}\right)=
+\phi(t)&=\measuredangle(\bm{k},\dot\gamma(t)),
+&
+\phi_n&=\phi(t_n)
 \\
-&=2\cdot\pi+\left|\sum s_n\cdot \alpha_n\right|.
+\psi(t)&=\tfrac\pi2-\measuredangle(\bm{k},\nu(t)),
+&
+\psi_n&=\psi(t_n)
+\\
+\alpha(t)&=\tfrac\pi2-\measuredangle(\mu(t),\dot\gamma(t)),
+&
+\alpha_n&=\alpha(t_n)
 \end{align*}
+
+From the above definitions it follows that $|\alpha(t)|,|\psi(t)|\le \tfrac\pi2$ and for each $t$ there is a right spherical triangle with legs $|\alpha(t)|,|\psi(t)|$ and hypotenuse $\phi(t)$.
+In particular $\cos\alpha\cdot\cos\psi=\cos\phi$.
+Whence we get the following.
+
+\begin{thm}{Claim}
+For any $t$ we have 
+\[
+\phi(t)\ge |\psi(t)|\ \ \text{and}\ \ \phi(t)\ge |\alpha(t)|
+\]
+In particular,
+\[
+\phi_n\ge |\psi_n|\ \ \text{and}\ \ \phi_n\ge |\alpha_n|
+\]
+for any $n$.
+\end{thm}
+
+Applying Liberman's Lemma in the direction $\bm{k}$ we also get the following.
+
+\begin{thm}{Claim}
+If an arc $\gamma|_{[a,b]}$ lies in the dark side for $\bm{k}$ then 
+the function $\phi$ is nondecreasing in $[a,b]$.
+\end{thm}
+
+\section{Plane sections}
+
+Assume $\gamma$ is curve on a smooth strictly convex surface $\Sigma$ in $\RR^3$.
+Consider a plane $L$ 
+passing through two points of $\gamma$, 
+say $p=\gamma(a)$ and $q=\gamma(b)$ with $a<b$.
+Let $L_\pm$ be a  half-planes in $L$ bounded by the line trough $p$ and $q$.
+Set $\sigma_\pm=\Sigma\cap L_\pm$;
+note that $\sigma_\pm$ are a smooth convex plane curve connecting $p$ to $q$ in $\Sigma$.
+
+\begin{thm}{Observation}\label{obs:cut}
+If $\gamma$ is a minimizing geodesic in the convex surface $\Sigma\subset \RR^3$ and $a$, $b$ and $\sigma_\pm$ as above then
+\[\length\sigma_\pm\ge\length(\gamma|_{[a,b]}).\]
+\end{thm}
+
+Based on this observation we give couple of estimates on elevating minimizing geodesics.
+
+\begin{thm}{Propostion}\label{prop:around-once}
+Assume $\gamma\:[0,\ell]\to \Sigma$ is elevating minimizing geodesic in the convex surface $\Sigma\subset \RR^3$.
+Assume that for a subsegment $[a,b]\subset [0,\ell]$ the following conditions hold
+\begin{enumerate}[(i)]
+\item The points $\gamma(a)$ and $\gamma(b)$ lie in a one half-plane with boundary line formed by the $z$-axis
+and  the arc $\gamma|_{[a,b]}$ goes around the $z$-axis at least once.
+\item $\gamma(a)$ lies above the horizontal plane through $\tfrac12\cdot(\gamma(0)+\gamma(\ell))$.
+\end{enumerate}
+Then  $\gamma(b)$ lies on the dark side of $\Sigma$ with respect to $\bm{k}$.
+\end{thm}
+
+\parit{Proof.} We apply the observation above to the plane containing $z$-axis and $\gamma(b)$ and perform straightforward computations.
+
+We can assume that $\gamma(0)$ is the origin of the $(x,y,z)$-coordinate system
+and both points $p=\gamma(a)$ and $q=\gamma(b)$ lie in the $(x,z)$-coordinate half-plane with $x\ge 0$, denoted by $\Pi$.
+We can assume that $\sigma_+\subset \Pi$.
+Let $(x_p,0,z_p)$ and $(x_q,0,z_q)$ be the coordinates of $p$ and $q$.
+
+From the assumptions $z_p<z_q<2\cdot z_p$.
+From convexity of the curve $\Pi\cap \Sigma$
+we get 
+\[\length\sigma_+\le \sqrt{(z_q-z_p)^2+x_p^2}\]
+
+On the other hand, since $\gamma|_{[a,b]}$ goes around $z$-axis at least once,
+we get 
+\[\length\gamma|_{[a,b]}\ge \sqrt{(z_q-z_p)^2+(x_p+x_q)^2}.\]
+
+These two estimates contradict Observation~\ref{obs:cut}.
+\qeds
+
+\begin{thm}{Corollary}\label{cor:around-twice}
+If $\Sigma$, $\gamma$, $\ell$, $a$ and $b$ as in the Proposition and the arc $\gamma|_{[a,b]}$ goes around the $z$-axis at least twice
+then the arc $\gamma|_{[b,\ell]}$ lies on the dark side with respect to $\bm{k}$.
+\end{thm}
+
+\parit{Proof.} 
+Fix $b'\in [b,\ell]$.
+Note that one can find $a'\in [a,b]$ such that the the assumtions of Proposition~\ref{prop:around-once} hold for the interval $[a',b']$. Applying Proposition we get the result.\qeds 
+
+
+\begin{thm}{Propostion}\label{prop:phi-psi}
+Assume $\gamma\:[0,\ell]\to \Sigma$ is elevating minimizing geodesic in the convex surface $\Sigma\subset \RR^3$.
+Assume that the arc $\gamma|_{[b,\ell]}$ lies in the dark side of $\Sigma$ with respect to $\bm{k}$.
+Set $\phi(t)=\measuredangle(\bm{k},\dot\gamma(t))$ and $\psi(t)=\tfrac\pi2-\measuredangle(\bm{k},\nu(t))$.
+If $b\le s<t\le \ell$ and the point $\gamma(s)$ lies in the plane $\Pi$ through $\gamma(t)$ spanned by $\nu(t)$ and $\lambda(t)$
+then 
+\[\phi(s)\le \psi(t).\]
+\end{thm}
+
+\parit{Proof.}
+We apply the observation to the plane $\Pi$ and $p=\gamma(s)$ and $q=\gamma(t)$.
+
+Let $z_p$ and $z_q$ be the $z$-coordinates of $p$ and $q$.
+
+Since $\gamma|_{[s,t]}$ lies in the dark side,
+its Liberman's development $\tilde\gamma|_{[s,t]}$ 
+with respect to $\bm{k}$ is concave.
+In particular 
+\[\length(\gamma|_{[s,t]})
+=
+\length(\tilde\gamma|_{[s,t]})
+\ge
+\tfrac{z_q-z_p}{\cos\phi(s)}.\]
+
+On the other hand, convexity of $\sigma_+$ imply that
+\[\length\sigma_+\le \tfrac{z_q-z_p}{\cos\psi(t)}.\]
+It remains to apply Observation~\ref{obs:cut}.
+\qeds
 
 \section{$s$-pairs}
 
@@ -518,6 +635,8 @@ we get
 
 The statement follows since the $\bm{s}$-pairs with the same depth do not overlap.
 \qeds
+
+
 
 
 \section{The estimate for the rest}
