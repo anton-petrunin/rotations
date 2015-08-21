@@ -42,27 +42,26 @@ in the Euclidean space.
 \section{Introduction}
 
 
-Denote by $\EE^3$ the 3-dimensional Euclidean space.
-
-Recall that the \emph{total curvature} of a curve $\gamma\:[0,\ell]\to \EE^3$ 
+Recall that the \emph{total curvature} of a curve $\gamma\:[0,\ell]\to \RR^3$ 
 (briefly $\tc\gamma$)
 is defined as supremum of sum of exterior angles 
 for the broken lines inscribed in $\gamma$.
 If $\gamma$ is smooth and equipped with the natural parameter, 
 then 
 \[\tc\gamma=\int\limits_0^\ell \kappa(t)\cdot dt,\]
-where $\kappa(t)=|\gamma''(t)|$ is the curvature of $\gamma$ at $t$.
+where $\kappa(t)=|\ddot\gamma(t)|$ is the curvature of $\gamma$ at $t$.
+
+By convex surface in the Euclidean 3-space $\RR^3$ we understand the boundary of closed convex set with nonempty interior.
 
 \begin{thm}{Main theorem}\label{thm:main}
-If $K$ is a closed convex set in the 3-dimensional Euclidean space,
-$\Sigma$ is the surface of $K$ 
+Let $\Sigma$ be a convex surface in $\RR^3$
 and $\gamma$ be a minimizing geodesic in $\Sigma$
 then 
 \[\tc\gamma\le \omega,\]
 where $\omega$ is a universal real constant.
 \end{thm}
 
-The question was stated in \cite{AH-PSV}, \cite{pach} and \cite{BKZ},
+This question was formulated in \cite{AH-PSV}, \cite{pach} and \cite{BKZ},
 but we have learned it from Dmitry Burago only few years ago.
 
 Let us briefly discuss the related results.
@@ -105,11 +104,12 @@ Namely we show that we can assume that
 \begin{enumerate}[(i)]
 \item\label{smooth}{\it (Proposition \ref{prop:smooth}).} 
 The surface $\Sigma$ is $C^\infty$-smooth.
-\item{\it (Proposition \ref{prop:almost-const}).}  The $z$-component of $\gamma'$ is positive,
+\item{\it (Proposition \ref{prop:almost-const}).}  
+The $z$-component of $\dot\gamma$ is positive,
 \item\label{graph}{\it (Proposition \ref{prop:graph}).} The surface $\Sigma$ is formed by a graph $z=f(x,y)$ of a smooth convex function $f\:\RR^2\to \RR$.
 \end{enumerate}
 
-On the second step we give number of geometric inequalities which relate the angles between $\gamma'(t)$ and with the coordinate axis.
+On the second step we give number of geometric inequalities which relate the angles between $\dot\gamma(t)$ and with the coordinate axis.
 
 The last step in the proof is purely algebraic, 
 here we combine the obtained inequalities to give a universal bound on the total curvature 
@@ -152,9 +152,9 @@ at the points on dark (light) side of $\Sigma$ with respect to $z$.
 
 Assume $\gamma\:[0,\ell]\to \Sigma$ is a unit-speed curve in the space.
 
-The vector $\gamma''(t)$ is the curvature vector of $\gamma$ at $t$.
+The vector $\ddot\gamma(t)$ is the curvature vector of $\gamma$ at $t$.
 The total curvature of $\gamma$ can be defined as 
-\[\tc\gamma\df\int\limits_0^\ell|\gamma''(t)|\cdot dt.\]
+\[\tc\gamma\df\int\limits_0^\ell|\ddot\gamma(t)|\cdot dt.\]
 
 The total curvature of $\tilde\gamma_z$ 
 is called the total curvature of $\gamma$ in the direction of $z$ 
@@ -164,7 +164,7 @@ Given a point $z$, let us define the total curvature of $\gamma$ in the directio
 \df
 \int\limits_0^\ell
 \left|
-\langle\gamma''(t),\tfrac{z-\gamma(t)}{|z-\gamma(t)|}\rangle
+\langle\ddot\gamma(t),\tfrac{z-\gamma(t)}{|z-\gamma(t)|}\rangle
 \right|
 \cdot dt.\]
 
@@ -173,7 +173,7 @@ Given a point $z$, let us define the total curvature of $\gamma$ in the directio
 Let $\gamma\:[0,\ell]\to \Sigma$ be a geodesic on the convex surface in the Euclidean space 
 and $u\in\SS^2$.
 Assume that $0=t_0<t_1<\dots<t_n=\ell$ be the values such that each arcs $\gamma|_{[t_{i-1},t_i]}$ alternating light and dark side of $\Sigma$ with respect to $u$.
-Set $\alpha_i=\measuredangle(\gamma'(t_i),u)$
+Set $\alpha_i=\measuredangle(\dot\gamma(t_i),u)$
 Then 
 \[\tc_u\gamma=|\sum_i(-1)^i\alpha_i|.\]
 
@@ -310,65 +310,67 @@ Given $\eps>0$ there is $\delta>0$
 such that the following statement holds.
 
 If $\gamma\:[0,\ell]\to\Sigma$ is a minimizing geodeisc 
-on a smooth convex surface $\Sigma$ in $\RR^3$
+on a smooth strongly convex surface $\Sigma$ in $\RR^3$
 then there is an interval $[a,b]\subset[0,\ell]$
 such that \[\tc(\gamma|_{[a,b]}>\delta\cdot\tc\gamma.\]
 and 
-\[\measuredangle(\gamma'(t),u)<\eps\] 
+\[\measuredangle(\dot\gamma(t),\bm{k})<\eps\] 
 for any $t\in[a,b]$
-and a fixed unit vector $u$.
+and a fixed unit vector $\bm{k}$.
 \end{thm}
 
 \parit{Proof.}
-Note that total curvature is lower semicontinuous on the space of curves.
-Therefore, by Proposition~\ref{prop:smooth}, we can assume that $\Sigma_n$ are smooth.
-
-Applying rescaling, we can assume that $\diam\gamma=1$.
-By Lemma \ref{lem:diam-length} $\length\gamma_n\zz<4$.
-Therefore we can subdivide $\gamma$ into say 100000 arcs
-such that the legth of each arc is at most $\tfrac1{100}$
-and it lies on the distance $\tfrac12\pm \tfrac1{100}$ 
-from a point $p\in K_n$.
-Choose among them the arc with the maximal total curvature and 
-name it $\bar\gamma$ and translate whole space so the corresponding point $p$ becomes the origin.
+Applying rescaling, we can assume that $\diam\gamma=3$.
+By Lemma \ref{lem:diam-length} $\length\gamma_n\zz<12$.
+Therefore we can subdivide $\gamma$ into $12$ 
+arcs $\gamma_1,\dots,\gamma_{12}$
+such that for each $n$ there is a point $p_n\in K$ which lies on the distance at least $1$ from $\gamma_n$ and $\length\gamma_n\le 1$.
+Choose
+an arc $\gamma'=\gamma_n$ with the maximal total curvature 
+and set $p'=p_n$.
 Clearly
-\[\tc\bar\gamma>\tfrac1{100000}\cdot \tc\gamma.\]
+\[\tc\gamma'\ge\tfrac1{12}\cdot\tc\gamma.\]
 
-Fix $N>\tfrac2\eps$.
-Applying Liberman's Lemma to $\bar\gamma$ with the origin as the reference point 
-we get that \[\tc_0\gamma_n<\pi+\tfrac1{10}.\]
-Therefore we can divide $\bar\gamma$ into $N$ arcs 
-so that for each arc $\bar{\bar\gamma}$
-we have \[\tc_p\bar{\bar\gamma}\le \tfrac{\pi+\tfrac1{10}}{N}.\]
-Coose among these arcs the one with maximal total curvature,
-denote it further by $\bar{\bar\gamma}$.
+
+Applying Liberman's Lemma to $\gamma'$ with  the reference point $p'$ 
+we get that 
+\[\tc_{p'}\gamma'<\pi+1<5.\]
+
+Choose an integer $N>\tfrac2\eps$.
+Note that we can divide $\gamma'$ into $N$ arcs 
+$\gamma'_1,\dots,\gamma'_N$
+so that 
+\[\tc_{p'}\gamma_n'\le \tfrac{5}{N}\]
+for each $n$.
+Choose among these arcs the one with maximal total curvature,
+denote it further by $\gamma''$.
 Clearly 
-\[\tc\bar{\bar\gamma}>\tfrac\eps{1000}\cdot \tc\bar\gamma.\]
+\[\tc\gamma''>\tfrac\eps{10^3}\cdot \tc\gamma'.\]
 
-Fix a parameter $t$ of $\bar{\bar\gamma}$
-and denote by $\alpha$ the angle between $\bar{\bar\gamma}'(t)$ and $p-\bar{\bar\gamma}(t)$.
+Fix a parameter $t$ of $\gamma''$
+and denote by $\alpha$ the angle between $\dot\gamma''(t)$ and $p-\gamma''(t)$.
 
-If $\alpha<\tfrac\eps2$ or $alpha>\pi-\tfrac\eps2$,
+If $\alpha<\tfrac\eps2$ or $\alpha>\pi-\tfrac\eps2$,
 then the problem is solved.
 
 Otherwise 
 applying Lemma \ref{lem:eps-straight} we get a nondegenerate (say equilateral) 
 triangle $\triangle a_1a_2a_3$ in $K_n$ 
-of the size comparable to $\diam \bar\gamma$ 
-and on the distance comparable to $\diam \gamma$ from any point of $\bar\gamma$,
+of the size comparable to $\diam \gamma'$ 
+and on the distance comparable to $\diam \gamma'$ from any point of $\gamma''$,
 say side of triangle can be taken to be $\tfrac{\eps^2}{1000}\cdot\diam \bar\gamma$
 and the distance to any point can be assumed to be between $\diam \bar\gamma$ and $2\cdot \diam \bar\gamma$
 
 Apply the construction to each vertex of the triangle.
 We pass to an arc of $\hat\gamma$
-such that the angle between $\hat\gamma'(t)$ and $a_i-\hat\gamma(t)$ 
-and the distance $|\hat\gamma(t)-a_i|$
+such that the angle between $\dot\gamma(t)$ and $a_i-\gamma(t)$ 
+and the distance $|\gamma(t)-a_i|$
 are nearly constant for each $i$.
-The later imply that $\hat\gamma'$ is nearly constant.
+The later imply that $\dot\gamma$ is nearly constant.
 \qeds
 
 
-\section{Elevating geodesics}
+\section{Elevating geodesics}\label{sec:elevating}
 
 In this section we fix notations which will be used further 
 without additional explanation.
@@ -382,7 +384,7 @@ the lines and planes parallel to $(x,y)$-plane will be called \emph{horizontal}.
 
 \begin{thm}{Definition}
 A smooth curve $\gamma\:[0,\ell]\to\RR^3$ 
-is called \emph{elevating} if both ends $\gamma(0)$ and $\gamma(\ell)$ lie on the $z$-axiz and $\langle\gamma'(t),\bm{k}\rangle>0$ for all $t$.
+is called \emph{elevating} if both ends $\gamma(0)$ and $\gamma(\ell)$ lie on the $z$-axiz and $\langle\dot\gamma(t),\bm{k}\rangle>0$ for all $t$.
 \end{thm}
 
 According to Proposition~\ref{prop:almost-const}, it is sufficient to prove 
@@ -403,30 +405,12 @@ Since $\langle\dot\gamma(t),\bm{k}\rangle>0$,
 $\nu(t)$ can not be vertical 
 and therefore the frame $(\lambda,\mu,\nu)$ is uniquely defined for any $t\in[0,\ell]$.
 
-\parbf{Border crossing.}
-After rotating $(x,y)$-plane if necessary, 
-we can assume that the border of shadow in the directions of $x$-axis, say $\omega_x$, 
-is a smooth curve and $\gamma$ intersects them transversely.
-
-Let $t_1<t_2<\dots<t_k$ be the time moments in $[0,\ell]$ 
-at which $\gamma$ crossing $\omega_x$.
-Note that 
-\[\mu(t_n)=s_n\cdot e_x\ \ \text{for some}\ \  s_n=\pm1.\]
-
 \parbf{Angle functions.}
 Set 
 \begin{align*}
-\phi(t)&=\measuredangle(\bm{k},\dot\gamma(t)),
-&
-\phi_n&=\phi(t_n)
-\\
-\psi(t)&=\tfrac\pi2-\measuredangle(\bm{k},\nu(t)),
-&
-\psi_n&=\psi(t_n)
-\\
+\phi(t)&=\measuredangle(\bm{k},\dot\gamma(t)),&
+\psi(t)&=\tfrac\pi2-\measuredangle(\bm{k},\nu(t)),&
 \alpha(t)&=\tfrac\pi2-\measuredangle(\mu(t),\dot\gamma(t)),
-&
-\alpha_n&=\alpha(t_n)
 \end{align*}
 
 From the above definitions it follows that $|\alpha(t)|,|\psi(t)|\le \tfrac\pi2$ and for each $t$ there is a right spherical triangle with legs $|\alpha(t)|,|\psi(t)|$ and hypotenuse $\phi(t)$.
@@ -439,9 +423,9 @@ For any $t$ we have
 \phi(t)\ge |\psi(t)|\ \ \text{and}\ \ \phi(t)\ge |\alpha(t)|
 \]
 In particular,
-\[
-\phi_n\ge |\psi_n|\ \ \text{and}\ \ \phi_n\ge |\alpha_n|
-\]
+$\phi_n\ge |\psi_n|$ 
+and
+$\phi_n\ge |\alpha_n|$
 for any $n$.
 \end{thm}
 
@@ -540,18 +524,27 @@ It remains to apply Observation~\ref{obs:cut}.
 
 \section{$s$-pairs}
 
-For given elevating geodesic $\gamma$ 
-we introduced two sequences 
-$\bm{s}=(s_1,\dots,s_k)$
-and $(\alpha_1,\dots,\alpha_k)$ 
-with $s_n=\pm1$ and $\alpha_n\in(-\tfrac\pi2,\tfrac\pi2)$ for each $n$.
-By Proposition ???, to prove Main theorem,
-it is sufficient to find an universal upper bound for the sum
-\[s_1\cdot\alpha_1+\dots+s_k\cdot\alpha_k.\]
+Let $\Sigma\subset \RR^3$ 
+be a strongly convex surface
+and $\gamma\:[0,\ell]\to\Sigma$ be an elevating minimizing geodesic.
 
-In this section we will estimate the sum
-\[s_i\cdot\alpha_i+s_j\cdot\alpha_j\] 
-for some special pairs of $i$ and $j$, so called $\bm{s}$-pairs.
+After rotating $(x,y)$-plane if necessary, 
+we can assume that the border of shadow in the directions of $x$-axis, say $\omega_x$, 
+is a smooth curve and $\gamma$ intersects them transversely.
+
+Let $t_1<t_2<\dots<t_k$ be the time moments in $[0,\ell]$ 
+at which $\gamma$ crossing $\omega_x$.
+Note that 
+\[\mu(t_n)=s_n\cdot e_x\ \ \text{for some}\ \  s_n=\pm1.\]
+
+Set
+\begin{align*}
+\phi_n&=\phi(t_n)
+&
+\psi_n&=\psi(t_n)
+&
+\alpha_n&=\alpha(t_n)
+\end{align*}
 
 We say that a pair of indexes $i<j$
 forms an \emph{$\bm{s}$-pair} 
@@ -617,7 +610,7 @@ Moreover the maximal multiplicity of the disc is at most $\depth_{\bm{s}}(i,j)$.
 \end{thm}
 
 
-\begin{thm}{Corollary}
+\begin{thm}{Corollary}\label{cor:Sq}
 Let us denote by $S_q$  the subset of indiexes $\{1,\dots,k\}$
 which are the parts of $\bm{s}$-pairs with depth $q$.
 Then
@@ -639,7 +632,34 @@ The statement follows since the $\bm{s}$-pairs with the same depth do not overla
 
 
 
-\section{The estimate for the rest}
+\section{Geometric growth}\label{sec:geometric-growth}
+
+\begin{thm}{Claim}
+Let $\gamma\:[0,\ell]\to\Sigma$
+be elevating minimizing geodesic 
+in a strongly convex surface $\Sigma$
+and $t_n$, $s_n$, $\phi_n$ as defined above.
+
+Assume there are indexes $k_0<k_1$ such that
+we have the point $\gamma(t_{k_0})$ lies above the horizontal plane through $\tfrac12\cdot(\gamma(0)+\gamma(\ell))$
+and 
+\[|\sum_{n=k_0}^{k_1}s_n|\ge 5.\]
+Then for any pair of indexes $j>i>k_1$,
+such that 
+\[|\sum_{n=i}^{j}s_n|\ge 5\]
+we have
+\[\phi_j>2\cdot\phi_i.\]
+\end{thm}
+
+
+\parit{Proof.}
+Note that the arc $\gamma|_{[t_{k_0},t_{k_1}]}$ goes around the $z$-axis twice.
+By Corollary~\ref{cor:around-twice},
+the arc $\gamma|_{t_{k_1},\ell}$ lies in the dark side of $\Sigma$ with respect to $\bm{k}$.
+By Claim ???, the function $\phi$ increase in the interval $[t_{k_1},\ell]$.
+
+
+\qeds
 
 Set $R=\{1,\dots,k\}\backslash (S_1\cup\dots\cup S_5)$;
 this is the set of indexes which do not appear in any $\bm{s}$-pairs
@@ -655,7 +675,7 @@ by setting
 
 Consider yet two more angle functions.
 \begin{itemize}
-\item Let $\phi(t)=\measuredangle(\gamma'(t),\bm{k})$. Set $\phi_n=\phi(t_n)$.
+\item Let $\phi(t)=\measuredangle(\dot\gamma(t),\bm{k})$. Set $\phi_n=\phi(t_n)$.
 \item Let $\psi(t)$ be the signed angle between $\nu(t)$ and $(x,y)$-plane. 
 Set $\psi_n=\psi(t_n)$.
 \end{itemize}
@@ -684,7 +704,7 @@ algebraic rotation of $\mu(t)$ around the origin in $(x,y)$-plane;
 say it can be defined by the formula 
 \[\rho_{[a,b]}
 =
-\int\limits_a^b \<\mu(t),\mathrm{J}(\mu'(t))\>\cdot dt,\]
+\int\limits_a^b \<\mu(t),\mathrm{J}(\dot\mu(t))\>\cdot dt,\]
 where $\mathrm{J}\:\RR^2\to\RR^2$ denotes the rotation by angle $\tfrac\pi 2$ around the origin.
 
 Note that 
@@ -749,7 +769,7 @@ Then we can make in addition one of the following assumtions:
 
 \begin{enumerate}[(i)]
 \item\label{graph} $\Sigma_n$ is a graph $z=f_n(x,y)$ of a smooth convex function $f_n\:\RR^2\to\RR$
-and $\gamma'_z(t)>0$ for any $t\in[0,\ell]$. 
+and $\dot\gamma_z(t)>0$ for any $t\in[0,\ell]$. 
 \item\label{finite} $\left|\sum_{n=i}^js_n\right|<10$ for any $i<j$.
 \end{enumerate} 
 \end{thm}
@@ -782,105 +802,111 @@ and for some $i<j$ we have
 Then $\phi_j>2\cdot\phi_i$.
 \end{thm}
 
-
-
-\section{The sum estimate}
-
-There is no geometry in this section.
-Here we give an estimate for a sum 
-of finite sequence of real numbers 
-of a very specific form.
-
-
-Assume a finite  sign-sequence $\bm{s}=(s_1,\dots, s_k)$
-is given;
-that is $s_i=\pm1$ for $i$.
-
-We say that a pair of indexes $i< j$
-forms an \emph{$\bm{s}$-pair} 
-if 
-\begin{align*}
-\sum_{n=i}^js_n&=0&&
-\text{and}&
-\sum_{n=i}^{j'}s_n&>0
-\end{align*} 
-if $i<j'<j$.
-
-Note that for any index $i$ appears in at most one $\bm{s}$-pair and 
-for any $\bm{s}$-pair $(i,j)$ we have
-\begin{itemize}
-\item $s_i=1$; that is, $i$-th braket has to be openning.
- \item $s_j=-1$; that is, $j$-th braket has to be closing.
-\end{itemize}
-
-
+\section{An estimate for graphs}\label{sec:graph}
 
 \begin{thm}{Proposition}
-Assume that
-\begin{itemize}
-\item $s_1,\dots, s_k$ is a sign sequence,
-\item $0\le K_1\le K_2\le \dots\le K_k$.
-\item a sequence $\alpha_1,\dots,\alpha_k$ is such that for $\bm{s}$-pair $(i,j)$, we have
-\[|\alpha_i-\alpha_j|\le \depth_{\bm{s}}(i,j)\cdot(K_j-K_i),\]
-\item $0\le \phi_1\le\dots\le\phi_k$ such that $\phi_i\ge |\alpha_i|$ for any $i$ and $\phi_j>2\cdot\phi_i$ for any $j>i$ such that $|\sum_{n=i}^js_n|=5$.
-\end{itemize}
-Then
-\[|\sum s_n\cdot \alpha_n|\le 20\cdot( K_k+ \phi_k).\]
-
+There is c constant $\omega'$ ($\omega'=???$ will do)
+such that
+if $\gamma$ is an elevating minimizing geodesic on a graph $z=f(x,y)$
+of a concave function $f$ then
+\[\tc\gamma\le \omega'.\]
 \end{thm}
 
 \parit{Proof.}
-Note that for arbitrary the $\bm{s}$-pairs $(i,j)$ and $(i',j')$
-we have three possibllities:
-\begin{itemize}
-\item $[i,j]\subset [i',j']$ and in this case $\depth_{\bm{s}}(i,j)<\depth_{\bm{s}}(i',j')$;
-\item $[i,j]\supset [i',j']$ and in this case $\depth_{\bm{s}}(i,j)>\depth_{\bm{s}}(i',j')$;
-\item $[i,j]\cap [i',j']=\emptyset$.
-\end{itemize}
-In partcular, if $\depth_{\bm{s}}(i,j)=\depth_{\bm{s}}(i',j')$ then the intervals $[i,j]$ and $[i',j']$ do not overlap.
+We can assume that
+$\gamma$ cross the $\bm{i}$ horizon $\omega_{\bm{i}}$ tranfersally.
+Let $t_1<\dots<t_k$ be the values of parameter at which $\gamma$ cross $\omega_{\bm{i}}$ 
+and 
+$s_1,\dots,s_k$ the signs as in ...
 
+Recall that $S_q$ denotes the subset of indexes $\{1,\dots,k\}$
+which appear in $\bm{s}$-pair with depph $q$.
+According to Corollary~\ref{cor:Sq},
+\[\left|\sum_{n\in S_q}s_n\cdot\alpha_n\right|\le 4\cdot q\cdot \pi.\]
+In particular,
+\[\left|\sum_{n\in S_1\cup\dots\cup S_5}
+s_n\cdot\alpha_n\right|
+\le 
+40\cdot\pi.\]
 
-Therefore if 
-\[S_q=\sum_{\depth_{\bm{s}}(i,j)=q} (\alpha_i-\alpha_j)\] 
-is the sum for all $\bm{s}$-pairs with depth $q$ then 
-\[|S_q|\le q\cdot K_k.\]
+Set $R=\{1,\dots,k\}\backslash (S_1\cup\dots\cup S_5)$;
+this is the set of indexes which appear in $\bm{s}$-pairs with depth at least $6$ 
+as well as those which do not appear in any $\bm{s}$-pair.
 
-Since $s_i=1$ and $s_j=-1$ for any $\bm{s}$-pair $(i,j)$,
-we have
-\[\alpha_i-\alpha_j=s_i\cdot\alpha_i+s_j\cdot\alpha_j.\]
-That is, one can partition $\{1,\dots,k\}$ into two sets, say $H$ and $G$ such that
-\[S_1+S_2+S_3+S_4+S_5=\sum_{i\in H}s_i\cdot \alpha_i\] 
+According to ???
+\[\left|\sum_{n\in R}
+s_n\cdot\alpha_n\right|\le \sum_{n\in R}\phi_n.\] 
+To estimate the last sum will use the results in Section~\ref{sec:geometric-growth}.
+First let us subdivide $R$ into 5 subsets $R_1,\dots,R_5$,
+by setting 
+$n\in R_m$ if $m\equiv n\pmod 5$.
 
-An index $i$ belongs to $G$ 
-if it does not form an $\bm{s}$-pair 
-or its $\bm{s}$-pair has depth at least $6$.
-Let us subdivide $G$ into 5 groups, say $G_1,\dots,G_5$ 
-so $i$ and $j$ go into the same group if 
-\[\sum_{n=i}^j s_n\equiv 0\pmod 5.\]
+Given $n\in R_m$, denote by $n'$ the least index in $R_m$ which is larger $n$;
+$n'$ is defined for any $n\in R_m$ exept the largest one.
+According to ??? $\phi_{n'}>2\cdot \phi_n$.
+Since $\phi_n$ is nondecreasing in $n$,
+we get 
+\[\sum_{n\in R_m}\phi_n\le 2\cdot\phi_k.\]
+It follows that 
+\[\sum_{n\in R}\phi_n\le 10\cdot\phi_k< 5\cdot\pi.\]
 
-Note that
+According to Liberman's lemma
 \begin{align*}
-|\sum_{n\in G_m}s_n\cdot \alpha_n|
-&\le \sum_{n\in G_m}\phi_n\le
-\\
-&\le 2\cdot\phi_k;
-\end{align*}
-the last inequality follows since $(\phi_i)$ is an increasing sequence 
-and
-$\phi_j>2\cdot \phi_i$
-if $i,j\in G_m$ and $i<j$.
-
-Summarizing
-\begin{align*}
-|\sum_n s_n\cdot\alpha_n|&\le 
-\sum_{i=1}^5|S_i|
+\tc_{\bm{i}}\gamma
+&\le 
+4\cdot\pi
 +
-\sum_{i=1}^5\left|\sum_{n\in G_i} s_n\cdot\alpha_n\right|\le
+2\cdot [s_1\cdot\alpha_1+\dots+s_k\cdot\alpha_k]\le 
 \\
-&\le 15\cdot K_k+10\cdot \phi_k.
+&\le 100\cdot \pi.
 \end{align*}
+
+After rotationg $(x,y)$ plane we can assume that 
+\[\tc\gamma\le 10\cdot\tc_{\bm{i}}\gamma.\]
 Hence the result follows.
+
+
+
+\section{Final proof assembling}
+
+
+Assume there is a minimizing geodesic $\gamma\:[0,\ell]\to \Sigma$ in a convex surface $\Sigma\subset \RR^3$ such that
+\[\tc\gamma=\omega.\]
+
+According to ??? we can assume that $\Sigma$ is strongly convex.
+
+According to ???, we can pass to an elevating arc, of $\gamma$ for some $(x,y,z)$-coordinate system with total curvature $>\tfrac{\omega}{10^6}$.
+Rename this arc by $\gamma$ and let us use the notations in Section~\ref{sec:elevating}.
+
+Let us subdivide $\gamma$ into three arcs lower middle and upper arcs $\gamma_-$, $\gamma_0$ and $\gamma_+$
+the the following way.
+
+Note that according to ??? $\gamma_+$ lies on a graph of concvae function.
+By Proposition~\ref{prop:graph}, we get 
+\[\tc\gamma_+\le 100\cdot\pi.\eqlbl{+}\]
+Similarly $\gamma_-$ lies on a graph of convex function and the same proposition implies 
+\[\tc\gamma_-\le 100\cdot\pi.\eqlbl{-}\]
+
+It remains to estimate $\tc\gamma_0$.
+
+Note that any $\bm{s}$ pair on $\gamma_0$ has depth at most ???.
+Therefore ???
+
+It remains to note that the total number of indexes which do not appear in any $\bm{s}$ on $\gamma_0$ is at most ???.
+Hence 
+\[\sum_{t_n\in ???}s_n\cdot\alpha_n\le ???\]
+By Liberman's lemma, we get
+\[\tc_{\bm{i}}\gamma_0\le ???\]
+Since we can rotate $(x,y)$-plane arbitrary,
+we get
+\[\tc\gamma_0\le ???\]
+Together with \ref{+} and \ref{-},
+the later implies that 
+\[\tc\gamma\le ???.\]
 \qeds
+
+
+
 
 
 \sloppy
