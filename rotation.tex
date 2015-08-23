@@ -41,28 +41,15 @@ in the Euclidean space.
 
 \section{Introduction}
 
-
-Recall that the \emph{total curvature} of a curve $\gamma\:[0,\ell]\to \RR^3$ 
-(briefly $\tc\gamma$)
-is defined as supremum of sum of exterior angles 
-for the broken lines inscribed in $\gamma$.
-If $\gamma$ is smooth and equipped with the natural parameter, 
-then 
-\[\tc\gamma=\int\limits_0^\ell \kappa(t)\cdot dt,\]
-where $\kappa(t)=|\ddot\gamma(t)|$ is the curvature of $\gamma$ at $t$.
-
-By convex surface in the Euclidean 3-space $\RR^3$ we understand the boundary of closed convex set with nonempty interior.
-
 \begin{thm}{Main theorem}\label{thm:main}
-Let $\Sigma$ be a convex surface in $\RR^3$
-and $\gamma$ be a minimizing geodesic in $\Sigma$
-then 
+There is a constant $\omega$
+such that
 \[\tc\gamma\le \omega,\]
-where $\omega$ is a universal real constant.
+for any  convex surface $\Sigma\subset\RR^3$
+and any minimizing geodesic $\gamma$  in $\Sigma$.
 \end{thm}
 
-This question was formulated in \cite{AH-PSV}, \cite{pach} and \cite{BKZ},
-but we have learned it from Dmitry Burago only few years ago.
+The main theorem was stated as an open question in \cite{AH-PSV}, \cite{pach} and \cite{BKZ}, but we have learned it from Dmitry Burago only few years ago.
 
 Let us briefly discuss the related results.
 
@@ -96,33 +83,153 @@ with total curvature bigger that $2\cdot\pi$.
 (Note that $2\cdot\pi$ is the optimal bound for the analogous problem in the plane.)
 \end{itemize}
 
-\parbf{Plan of the proof.}
-We prove is divided in three steps.
-
-First we prove a sequence of propositions which alow us to consider only special case of surfaces and curves.
-Namely we show that we can assume that
-\begin{enumerate}[(i)]
-\item\label{smooth}{\it (Proposition \ref{prop:smooth}).} 
-The surface $\Sigma$ is $C^\infty$-smooth.
-\item{\it (Proposition \ref{prop:almost-const}).}  
-The $z$-component of $\dot\gamma$ is positive,
-\item\label{graph}{\it (Proposition \ref{prop:graph}).} The surface $\Sigma$ is formed by a graph $z=f(x,y)$ of a smooth convex function $f\:\RR^2\to \RR$.
-\end{enumerate}
-
-On the second step we give number of geometric inequalities which relate the angles between $\dot\gamma(t)$ and with the coordinate axis.
-
-The last step in the proof is purely algebraic, 
-here we combine the obtained inequalities to give a universal bound on the total curvature 
-of $\gamma_n$ 
-which satisfies the conditions (\ref{smooth})--(\ref{graph}).
-
 
 \section{Preliminaries}
 
-Let $\Sigma$ be a convex hypersurface in the Euclidean space.
+\parbf{Semicontinuity of total curvature.}
+Recall that the \emph{total curvature} of a curve $\gamma\:[0,\ell]\to \RR^3$ 
+(briefly $\tc\gamma$)
+is defined as supremum of sum of exterior angles 
+for the polygonal lines inscribed in $\gamma$.
+
+Note that for a polygonal line $\sigma$, 
+its total curvature coinside with the sum of its exterior angles.
+
+If $\gamma$ is a smooth curve with unit-speed parametrization, 
+then 
+\[\tc\gamma=\int\limits_0^\ell \kappa(t)\cdot dt,\]
+where $\kappa(t)=|\ddot\gamma(t)|$ is the curvature of $\gamma$ at $t$.
+
+\begin{thm}{Proposition}
+Assume $\gamma_n\:\II\to\RR^3$ is a sequence of curves  converging pointwise to a curve $\gamma_\infty\:\II\to\RR^3$.
+Then 
+\[\liminf_{n\to\infty}\tc\gamma_n\ge \tc\gamma_\infty.\]
+\end{thm}
+
+
+\parit{Proof.}
+Choose a polygonal line $\sigma_\infty$ inscribed in $\gamma_\infty$ with total curvature sufficiently close to $\tc\gamma_\infty$.
+Let $\gamma_\infty(t_0),\dots\gamma_\infty(t_k)$ be the vertices of $p_\infty$
+Consider the polygonal lines $\sigma_n$ with the vertices 
+$\gamma_n(t_0)\dots\gamma_n(t_k)$.
+Note that 
+\[\tc\sigma_n\to\tc\sigma_\infty.\]
+Hence the statement follows.
+\qeds
+
+\parbf{Convergence.}
+Given a closed set $\Sigma\subset \RR^3$,
+denote by $\dist_\Sigma$ the distance function from $\Sigma$;
+that is 
+\[\dist_\Sigma(x)=\inf\set{|x-y|}{y\in\Sigma}.\]
+
+We say that a sequence of closed sets $\Sigma_n\subset \RR^3$
+converges to the closed set $\Sigma_\infty\subset \RR^3$ 
+if for any $x\in\RR^3$,
+we have
+$\dist_{\Sigma_n}(x)\to\dist_{\Sigma_\infty}(x)$ as $n\to\infty$.
+
+
+\parbf{Convex surfaces.}
+By convex surface in the Euclidean 3-space $\RR^3$ we understand the boundary of closed convex set with nonempty interior.
+
+\begin{thm}{Proposition}
+Assume $\Sigma_n$ be a sequence of convex surfaces which converge to a convex surface $\Sigma_\infty$.
+Then for any minimizing geodesic $\gamma_\infty$ in $\Sigma_\infty$ there is a sequence of minimizing geodesics $\gamma_n$ in $\Sigma_n$ which pointwise converge to $\gamma_\infty$ as $n\to \infty$.
+\end{thm}
+
+\parit{Proof.}
+Assume $\gamma_\infty$ parametrized by its length $[0,\ell]$.
+
+Fix a subinterval $[a,b]\subset [0,\ell]$
+such that $0<a$ and $b<\ell$.
+Set $p_\infty=\gamma_\infty(a)$ and $q_\infty=\gamma_\infty(b)$.
+
+Let $p_n,q_n\in\Sigma_n$ be a two sequences of points which converge to $p_\infty$ and $q_\infty$ 
+correspondingly.
+
+Denote by $\gamma_n$ a minimizing geodesic from $p_n$ to $q_n$ in $\Sigma_n$.
+Note that $\gamma_n$ converges to $\gamma_\infty|_{[a,b]}$
+as $n\to\infty$.
+
+Taking the subinterval  $[a,b]$ closer and closer to $[0,\ell]$
+and applying diagonal procedure, we get the result.
+\qeds
+
+\parbf{Liberman's lemmas.} 
+Let $\gamma$ be a curve and $\bm{u}$ is a unit vector in $\RR^3$.
+Concider the cylindrical surface formed by all the lines parallel to $\bm{u}$ which pass through points of $\gamma$.
+This surface is flat and it can be developed isometrically on the plane. 
+The image 
+of $\gamma$ is called Liberman's development of $\gamma$ in the direction of $\bm{u}$;
+it will be denoted by $\tilde\gamma_{\bm{u}}$.
+(Formally, to perform this construction,
+we have to assume that $\dot\gamma$ is not collinear with $\bm{u}$,
+and the general case the construction is done by approximation.)
+
+Note that for any space curve $\gamma$ and any unit vector $\bm{u}$
+we have 
+\[\tc\tilde\gamma_{\bm{u}}\le\tc\gamma.\]
+On the other hand total curvature of few developments gives an estimate 
+for the total curvature of the original curve.
+For example if $\bm{i},\bm{j},\bm{k}$ is the orthonormal basis then
+\[\tc\gamma
+\le
+\tc\tilde\gamma_{\bm{i}}+\tc\tilde\gamma_{\bm{j}}+\tc\tilde\gamma_{\bm{k}}.\]
+
+We will assume that the lines parallel to $\bm{u}$ become vertical in the $(x,y)$-plane,
+so that the development $\tilde\gamma$ is always a graph.
+We say that development is convex (concave) on some arc if it is descrived by convex (correspondingly concave) function on this arc.
+
+Let $\Sigma$ be convex surface and $p\in \Sigma$.
+We say that $p$ lies on the \emph{dark} (\emph{light}) side of $\Sigma$ with respect to $\bm{u}$, if the points $p+t\cdot\bm{u}$ (correspondingly $p-t\cdot\bm{u}$) lie outside of $\Sigma$ for all $t>0$.
+The intersection of dark and light side is called \emph{horizon} with respect to $\bm{u}$;
+it will be denoted by $\omega_{\bm{u}}$.
+If $\Sigma$ is strongly and smooth convex then $\omega_{\bm{u}}$ is a smooth curve.
+
+\begin{thm}{Lemma}
+Let $\gamma$ be a geodesic on a convex surface $\Sigma\subset\RR^3$ and $\bm{u}$ is a unit vector.
+Then the arc $\tilde\gamma_{\bm{u}}|_{[a,b]}$ of Liberman develpoment $\tilde\gamma_{\bm{u}}$
+is convex (concave) if and only if the corresponding arc $\gamma|_{[a,b]}$ 
+lies on the light (correspondingly dark) side of $\Sigma$ with respecto to $\bm{u}$.
+\end{thm}
+
+The proof of the estimate on the total curvature of geodesic on convex surface given by Liberman in \cite{liberman} is based on the observation that the total curvature of concave as well as convex graph
+can not exceed $\pi$.
+
+
+\parbf{Conical Liberman lemma.} Inseted of cylindrical surface,
+one can consider the conical surface with given tip $z\notin \gamma$ trough $\gamma$.
+The conical surface is flat and it can be developed isometrically on the plane
+and the image of $\gamma$ is called \emph{Liberman's development} with repsct to point $z$.
+
+\begin{thm}{Lemma}
+Assume the point $z$ lies inside the convex surface $\Sigma$.
+Then Liberman development with respect to point $z$
+of any geodesic $\gamma$ on $\Sigma$ is locally convex.
+\end{thm}
+
+
+
+
+
+A curve $\tilde\gamma$ in $(x,y)$-plane is called \emph{Librman's development} of $\gamma$ in the direction of $\bm{u}$
+if there is a legth-preserving $\iota\:\RR^2\to\RR^3$
+such that $\gamma=\iota\circ \tilde\gamma$ and $\iota$ is cylindrical in the direction of $\bm{u}$; the is
+$\iota(x,y_1)-\iota(x,y_0)=(y_1-y_0)\cdot\bm{u}$
+for any $x,y_0$ and $y_1$.
+
+Let $\Sigma$ be a smooth convex hypersurface in the Euclidean space.
 
 Given a point $p\in \Sigma$, we will denote by $n_p$ the outer normal vector of $\Sigma$ at $p$;
 the map $\Sigma\to\SS^2$ defined as $p\mapsto n_p$ sometimes is called \emph{Gauss map}.
+
+Given a unit vector $\bm{u}$,
+we say that a point $p\in \Sigma$
+lies on the \emph{dark} (\emph{light}) side of $\Sigma$ with respect to $\bm{u}$, if $\langle\bm{u},n_p\rangle\ge0$ (correspondingly $\langle\bm{u},n_p\rangle\le0$).
+If $\langle\bm{u},n_p\rangle=0$, we say that $p$ lies on the \emph{horizon} with respect to $\bm{u}$.
+The horizon with respect to $\bm{u}$ will be denoted by $\omega_{\bm{u}}$;
+if $\Sigma$ is strongly convex then $\omega_{\bm{u}}$ is a smooth curve.
 
 Fix a points $z\notin\Sigma$.
 Given a point $p\in \Sigma$,
@@ -143,12 +250,15 @@ $|\tilde\gamma_p(t)|=|\gamma(t)-z|$ for any $t$.
 The Liberman's development $\tilde\gamma_z$ is called convex concave at $\tilde\gamma_z(t)$ if there the curvelinear triangle ??? 
 
 
-\begin{thm}{Liberman lemma}\label{lem:liberman}
+Assume $\gamma$ is a smooth curve in $\RR^3$ and $\bm{u}$ is a unit vector.
+Concider the cylindrical surface formed by all the lines parallel to $\bm{u}$ passing through the points on $\gamma$.
+
+
 Let $\Sigma$ be a convex surface in the Euclidean space 
 $z\not\in\Sigma$ and $\gamma$ be a unit-speed geodesic in $\Sigma$.
 Then the development $\tilde\gamma_z$ is locally convex (concave) 
 at the points on dark (light) side of $\Sigma$ with respect to $z$.
-\end{thm}
+
 
 Assume $\gamma\:[0,\ell]\to \Sigma$ is a unit-speed curve in the space.
 
@@ -161,12 +271,16 @@ is called the total curvature of $\gamma$ in the direction of $z$
 and denoted as $\tc_z\gamma$
 Given a point $z$, let us define the total curvature of $\gamma$ in the direction of $z$ as
 \[\tc_z\gamma
-\df
+\ge
 \int\limits_0^\ell
 \left|
 \langle\ddot\gamma(t),\tfrac{z-\gamma(t)}{|z-\gamma(t)|}\rangle
 \right|
 \cdot dt.\]
+
+
+
+\section{Key Lemma}
 
 \begin{thm}{Key Lemma}
 \label{lem:key}
@@ -217,31 +331,7 @@ we can taking avarage we get
 \[\tc\gamma\le 3\cdot(4\cdot N+2)\cdot\pi.\]
 
 
-\section{Smoothing}
 
-\begin{thm}{Proposition}\label{prop:smooth}
-Let $K_1,K_2,\dots,K_\infty$ be closed convex sets in $\RR^3$
-and $K_n\to K_\infty$ in the sense of Hausdorff.
-Then for any minimizing geodesic $\gamma_\infty$ in the surface of $K_\infty$
-there is a a sequence of minimizing geodesics $\gamma_n$ in the surface of $K_n$ such that  $\gamma_n\to\gamma_\infty$.
-\end{thm}
-
-\parit{Proof.}
-Assume $\gamma$ is a minimizing geodesic on a convex surface $\Sigma$.
-Assume $\gamma$ parametrized by its length $[0,\ell]$.
-
-Fix a subinterval $[a,b]\subset [0,\ell]$
-such that $0<a$ and $b<\ell$.
-Set $p=\gamma(a)$ and $q=\gamma(b)$.
-
-Assume $\Sigma_n$ be a sequence of smooth convex surfaces converging to $\Sigma$.
-and $p_n,q_n\in\Sigma_n$ be a two sequences of points which converge to $p$ and $q$ 
-correspondingly.
-
-Denote by $\gamma_n$ a minimizing geodesic from $p_n$ to $q_n$ in $\Sigma_n$.
-Note that $\gamma_n$ converges to $\gamma|_{[a,b]}$
-as $n\to\infty$.
-\qeds
 
 \section{Length and diameter}
 
@@ -629,37 +719,237 @@ we get
 The statement follows since the $\bm{s}$-pairs with the same depth do not overlap.
 \qeds
 
+\begin{thm}{Corollary}\label{cor:gamma-0}
+Assume 
+\[q=\max_{1\le i<j\le k}\left\{\left|\sum_{n=i}^js_n\right|\right\}\]
+Then
+\[\left|\sum_{n=1}^k s_n\cdot\alpha_n\right|
+\le 2\cdot q\cdot(q+\tfrac32)\cdot \pi.
+\]
+\end{thm}
+
+\parit{Proof.}
+Denote by $S$ the set of all indexes which appear in some $\bm{s}$-pair.
+
+Note that depth of any $\bm{s}$ pair is at most $q$.
+That is,
+\[S=S_1\cup\dots\cup S_q.\]
+By Corollary~\ref{cor:Sq},
+\[\sum_{n\in S}s_n\cdot\alpha_n\le 2\cdot q\cdot(q+1)\cdot\pi.\eqlbl{sum-S}\]
+
+Set $R=\{1,dots,k\}\backslash S$;
+this is the set of indexes 
+which do not appear in an $\bm{s}$-pair.
+
+Given $r$, set $i\in Q_r$ 
+if
+\[\sum_{n=1}^is_n=r.\]
+Note that $Q_r\ne\emptyset$ for at most $q$ values of $r$
+and in each set $Q_r$ there are at most $2$ indexes 
+which do not appear in an $\bm{s}$-pair;
+that is $Q_r\cap R$ has at most two indexes for each $r$.
+
+Sine $|a_n|<\tfrac\pi2$, we get
+\[\left|\sum_{n\in R}s_n\cdot\alpha_n\right|
+\le
+q\cdot\pi.
+\]
+The later inequality together with \ref{sum-S} implies the statement in the corollary.
+\qeds
 
 
 
 \section{Geometric growth}\label{sec:geometric-growth}
 
-\begin{thm}{Claim}
-Let $\gamma\:[0,\ell]\to\Sigma$
-be elevating minimizing geodesic 
-in a strongly convex surface $\Sigma$
-and $t_n$, $s_n$, $\phi_n$ as defined above.
+\begin{thm}{Claim}\label{clm:alpha-psi}
+Assume $\psi(t)>\eps$ for ant $t\in[t_{i},t_{j}]$
+and $s_i+\dots+s_j=2$
+Then 
+\[|\alpha_j-\alpha_i|>\pi\cdot\sin\eps.\] 
+\end{thm}
 
-Assume there are indexes $k_0<k_1$ such that
-we have the point $\gamma(t_{k_0})$ lies above the horizontal plane through $\tfrac12\cdot(\gamma(0)+\gamma(\ell))$
-and 
-\[|\sum_{n=k_0}^{k_1}s_n|\ge 5.\]
-Then for any pair of indexes $j>i>k_1$,
+
+\begin{thm}{Claim}
+Let $\gamma$
+be elevating minimizing geodesic on a graph $z=f(x,y)$ of a concave function.
+Then for any pair of indexes $j>i$,
 such that 
 \[|\sum_{n=i}^{j}s_n|\ge 5\]
 we have
-\[\phi_j>2\cdot\phi_i.\]
+\[\phi_j>\tfrac32\cdot\phi_i.\]
 \end{thm}
 
 
 \parit{Proof.}
-Note that the arc $\gamma|_{[t_{k_0},t_{k_1}]}$ goes around the $z$-axis twice.
-By Corollary~\ref{cor:around-twice},
-the arc $\gamma|_{t_{k_1},\ell}$ lies in the dark side of $\Sigma$ with respect to $\bm{k}$.
-By Claim ???, the function $\phi$ increase in the interval $[t_{k_1},\ell]$.
+Without loss of generality, we may assume that 
+\[\sum_{n=i}^{j}s_n= 6\]
 
+Let $j'$ be the least index 
+such that
+\[|\sum_{n=i}^{j'} s_n|=5.\]
 
+Note that for any $b>t_j$ there is $a\in[t_i,t_j]$
+such that intrval $[a,b]$ satisfies the assumptions of Proposition~\ref{prop:phi-psi}.
+In particular $\psi(b)>\phi_i$ for any $b>t_j$.
+Applying Claim~\ref{clm:alpha-psi},
+we get that $|\alpha_j|>\tfrac\pi2\cdot \phi_i$ or 
+$|\alpha_{j'}|>\tfrac\pi2\cdot \phi_i$.
+Since $\phi_n$ is nondecreasing,
+and $\phi_n\ge |\alpha_n|$ for any $n$,
+in both cases we get
+\[\phi_j>\tfrac\pi2\cdot \phi_i.\]
 \qeds
+
+
+\section{An estimate for graphs}\label{sec:graph}
+
+\begin{thm}{Proposition}
+There is c constant $\omega'$ ($\omega'=10\cdot\pi$ will do)
+such that
+if $\gamma$ is an elevating minimizing geodesic on a graph $z=f(x,y)$
+of a concave function $f$ then
+\[\tc_{\bm{i}}\gamma\le \omega'.\]
+\end{thm}
+
+\parit{Proof.}
+We can assume that
+$\gamma$ cross the $\bm{i}$ horizon $\omega_{\bm{i}}$ tranfersally.
+Let $t_1<\dots<t_k$ be the values of parameter at which $\gamma$ cross $\omega_{\bm{i}}$ 
+and 
+$s_1,\dots,s_k$ the signs as in ...
+
+Recall that $S_q$ denotes the subset of indexes $\{1,\dots,k\}$
+which appear in $\bm{s}$-pair with depph $q$.
+According to Corollary~\ref{cor:Sq},
+\[\left|\sum_{n\in S_q}s_n\cdot\alpha_n\right|\le 4\cdot q\cdot \pi.\]
+In particular,
+\[\left|\sum_{n\in S_1\cup\dots\cup S_5}
+s_n\cdot\alpha_n\right|
+\le 
+40\cdot\pi.\]
+
+Set $R=\{1,\dots,k\}\backslash (S_1\cup\dots\cup S_5)$;
+this is the set of indexes which appear in $\bm{s}$-pairs with depth at least $6$ 
+as well as those which do not appear in any $\bm{s}$-pair.
+
+According to ???
+\[\left|\sum_{n\in R}
+s_n\cdot\alpha_n\right|\le \sum_{n\in R}\phi_n.\] 
+To estimate the last sum will use the results in Section~\ref{sec:geometric-growth}.
+First let us subdivide $R$ into 5 subsets $R_1,\dots,R_5$,
+by setting 
+$n\in R_m$ if $m\equiv n\pmod 5$.
+
+Given $n\in R_m$, denote by $n'$ the least index in $R_m$ which is larger $n$;
+$n'$ is defined for any $n\in R_m$ exept the largest one.
+According to ??? $\phi_{n'}>2\cdot \phi_n$.
+Since $\phi_n$ is nondecreasing in $n$,
+we get 
+\[\sum_{n\in R_m}\phi_n\le 2\cdot\phi_k.\]
+It follows that 
+\[\sum_{n\in R}\phi_n\le 10\cdot\phi_k< 5\cdot\pi.\]
+
+According to Liberman's lemma
+\begin{align*}
+\tc_{\bm{i}}\gamma
+&\le 
+4\cdot\pi
++
+2\cdot [s_1\cdot\alpha_1+\dots+s_k\cdot\alpha_k]\le 
+\\
+&\le 100\cdot \pi.
+\end{align*}
+\qeds
+
+
+
+\section{Final assembling}
+
+
+Assume there is a minimizing geodesic $\gamma\:[0,\ell]\to \Sigma$ in a convex surface $\Sigma\subset \RR^3$ such that
+\[\tc\gamma=\omega.\]
+
+According to ??? we can assume that $\Sigma$ is strongly convex.
+
+According to ???, we can pass to an elevating arc, of $\gamma$ for some $(x,y,z)$-coordinate system with total curvature $>\tfrac{\omega}{10^6}$.
+Rename this arc by $\gamma$ and let us use the notations in Section~\ref{sec:elevating}.
+
+Rotating $(x,y)$-coordinate plane we can ensure that
+\[\tc\gamma\le 10\cdot\tc_{\bm{i}}\gamma\]
+and that $\gamma$ cross the horizon $\omega_{\bm{i}}$ transversally.
+
+Let us subdivide $\gamma$ into three arcs lower middle and upper arcs $\gamma_-$, $\gamma_0$ and $\gamma_+$
+the the following way.
+
+Note that according to ??? $\gamma_+$ lies on a graph of concvae function.
+By Proposition~\ref{prop:graph}, we get 
+\[\tc_{\bm{i}}\gamma_+\le 100\cdot\pi.\eqlbl{+}\]
+Similarly $\gamma_-$ lies on a graph of convex function and the same proposition implies 
+\[\tc_{\bm{i}}\gamma_-\le 100\cdot\pi.\eqlbl{-}\]
+
+By Corollary~\ref{cor:gamma-0},
+\[\tc_{\bm{i}}\gamma_0\le 100\cdot\pi.\eqlbl{0}\]
+
+\[\tc\gamma_0\le ???\]
+Together with \ref{+} and \ref{-},
+the later implies that 
+\[\tc_{\bm{i}}\gamma\le 300\cdot\pi.\]
+\qeds
+
+
+
+
+
+\sloppy
+\printbibliography[heading=bibintoc]
+\fussy
+
+\end{document}
+
+
+
+
+Denote by $\Sigma_t$ the subset of $\Sigma$ which lies below $\gamma(t)$;
+that is
+\[\Sigma_t=\set{x\in \Sigma}{\langle x-\gamma(t),\bm{k}\rangle\le 0}.\]
+Denote by $K_t$ the integral of Gauss curvature along $\Sigma_t$.
+Note that $t\mapsto K_t$ is nondecreasing.
+
+
+
+
+Set $K_n=K_{t_n}$. Note that $0\le K_0\le \dots\le K_k\le 4\cdot \pi$.
+
+\begin{thm}{Proposition}\label{prop:s-pair}
+Assume for some $(i,j)$ is an $\bm{s}$-pair.
+Then
+\[s_i\cdot\alpha_i+s_j\cdot\alpha_j\le (K_j-K_i)\cdot\depth_{\bm{s}}(i,j).\]
+
+\end{thm}
+
+\parit{Proof.}
+Consider the closed curve formed by the arc $\gamma|_{[t_i,t_j]}$ and the arc of $\omega_{\bm{i}}$ from $\gamma(t_i)$ to $\gamma(t_j)$.
+Note that it forms the boundary of immersed $\iota\:\DD\looparrowright\Sigma$ 
+which lies between the horizontal planes through $\gamma(t_i)$ and $\gamma(t_j)$
+and it overlaps at most $\depth_{\bm{s}}(i,j)$ times;
+that is for any any $p\in\Sigma$ the set $\iota^{-1}(\{p\})$ contains at most $\depth_{\bm{s}}(i,j)$ points.
+
+Applying Key lemma, the statement follows.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Set $R=\{1,\dots,k\}\backslash (S_1\cup\dots\cup S_5)$;
 this is the set of indexes which do not appear in any $\bm{s}$-pairs
@@ -801,147 +1091,3 @@ and for some $i<j$ we have
 \[\left|\sum_{n=i}^js_i\right|=5\]
 Then $\phi_j>2\cdot\phi_i$.
 \end{thm}
-
-\section{An estimate for graphs}\label{sec:graph}
-
-\begin{thm}{Proposition}
-There is c constant $\omega'$ ($\omega'=???$ will do)
-such that
-if $\gamma$ is an elevating minimizing geodesic on a graph $z=f(x,y)$
-of a concave function $f$ then
-\[\tc\gamma\le \omega'.\]
-\end{thm}
-
-\parit{Proof.}
-We can assume that
-$\gamma$ cross the $\bm{i}$ horizon $\omega_{\bm{i}}$ tranfersally.
-Let $t_1<\dots<t_k$ be the values of parameter at which $\gamma$ cross $\omega_{\bm{i}}$ 
-and 
-$s_1,\dots,s_k$ the signs as in ...
-
-Recall that $S_q$ denotes the subset of indexes $\{1,\dots,k\}$
-which appear in $\bm{s}$-pair with depph $q$.
-According to Corollary~\ref{cor:Sq},
-\[\left|\sum_{n\in S_q}s_n\cdot\alpha_n\right|\le 4\cdot q\cdot \pi.\]
-In particular,
-\[\left|\sum_{n\in S_1\cup\dots\cup S_5}
-s_n\cdot\alpha_n\right|
-\le 
-40\cdot\pi.\]
-
-Set $R=\{1,\dots,k\}\backslash (S_1\cup\dots\cup S_5)$;
-this is the set of indexes which appear in $\bm{s}$-pairs with depth at least $6$ 
-as well as those which do not appear in any $\bm{s}$-pair.
-
-According to ???
-\[\left|\sum_{n\in R}
-s_n\cdot\alpha_n\right|\le \sum_{n\in R}\phi_n.\] 
-To estimate the last sum will use the results in Section~\ref{sec:geometric-growth}.
-First let us subdivide $R$ into 5 subsets $R_1,\dots,R_5$,
-by setting 
-$n\in R_m$ if $m\equiv n\pmod 5$.
-
-Given $n\in R_m$, denote by $n'$ the least index in $R_m$ which is larger $n$;
-$n'$ is defined for any $n\in R_m$ exept the largest one.
-According to ??? $\phi_{n'}>2\cdot \phi_n$.
-Since $\phi_n$ is nondecreasing in $n$,
-we get 
-\[\sum_{n\in R_m}\phi_n\le 2\cdot\phi_k.\]
-It follows that 
-\[\sum_{n\in R}\phi_n\le 10\cdot\phi_k< 5\cdot\pi.\]
-
-According to Liberman's lemma
-\begin{align*}
-\tc_{\bm{i}}\gamma
-&\le 
-4\cdot\pi
-+
-2\cdot [s_1\cdot\alpha_1+\dots+s_k\cdot\alpha_k]\le 
-\\
-&\le 100\cdot \pi.
-\end{align*}
-
-After rotationg $(x,y)$ plane we can assume that 
-\[\tc\gamma\le 10\cdot\tc_{\bm{i}}\gamma.\]
-Hence the result follows.
-
-
-
-\section{Final proof assembling}
-
-
-Assume there is a minimizing geodesic $\gamma\:[0,\ell]\to \Sigma$ in a convex surface $\Sigma\subset \RR^3$ such that
-\[\tc\gamma=\omega.\]
-
-According to ??? we can assume that $\Sigma$ is strongly convex.
-
-According to ???, we can pass to an elevating arc, of $\gamma$ for some $(x,y,z)$-coordinate system with total curvature $>\tfrac{\omega}{10^6}$.
-Rename this arc by $\gamma$ and let us use the notations in Section~\ref{sec:elevating}.
-
-Let us subdivide $\gamma$ into three arcs lower middle and upper arcs $\gamma_-$, $\gamma_0$ and $\gamma_+$
-the the following way.
-
-Note that according to ??? $\gamma_+$ lies on a graph of concvae function.
-By Proposition~\ref{prop:graph}, we get 
-\[\tc\gamma_+\le 100\cdot\pi.\eqlbl{+}\]
-Similarly $\gamma_-$ lies on a graph of convex function and the same proposition implies 
-\[\tc\gamma_-\le 100\cdot\pi.\eqlbl{-}\]
-
-It remains to estimate $\tc\gamma_0$.
-
-Note that any $\bm{s}$ pair on $\gamma_0$ has depth at most ???.
-Therefore ???
-
-It remains to note that the total number of indexes which do not appear in any $\bm{s}$ on $\gamma_0$ is at most ???.
-Hence 
-\[\sum_{t_n\in ???}s_n\cdot\alpha_n\le ???\]
-By Liberman's lemma, we get
-\[\tc_{\bm{i}}\gamma_0\le ???\]
-Since we can rotate $(x,y)$-plane arbitrary,
-we get
-\[\tc\gamma_0\le ???\]
-Together with \ref{+} and \ref{-},
-the later implies that 
-\[\tc\gamma\le ???.\]
-\qeds
-
-
-
-
-
-\sloppy
-\printbibliography[heading=bibintoc]
-\fussy
-
-\end{document}
-
-
-
-
-Denote by $\Sigma_t$ the subset of $\Sigma$ which lies below $\gamma(t)$;
-that is
-\[\Sigma_t=\set{x\in \Sigma}{\langle x-\gamma(t),\bm{k}\rangle\le 0}.\]
-Denote by $K_t$ the integral of Gauss curvature along $\Sigma_t$.
-Note that $t\mapsto K_t$ is nondecreasing.
-
-
-
-
-Set $K_n=K_{t_n}$. Note that $0\le K_0\le \dots\le K_k\le 4\cdot \pi$.
-
-\begin{thm}{Proposition}\label{prop:s-pair}
-Assume for some $(i,j)$ is an $\bm{s}$-pair.
-Then
-\[s_i\cdot\alpha_i+s_j\cdot\alpha_j\le (K_j-K_i)\cdot\depth_{\bm{s}}(i,j).\]
-
-\end{thm}
-
-\parit{Proof.}
-Consider the closed curve formed by the arc $\gamma|_{[t_i,t_j]}$ and the arc of $\omega_{\bm{i}}$ from $\gamma(t_i)$ to $\gamma(t_j)$.
-Note that it forms the boundary of immersed $\iota\:\DD\looparrowright\Sigma$ 
-which lies between the horizontal planes through $\gamma(t_i)$ and $\gamma(t_j)$
-and it overlaps at most $\depth_{\bm{s}}(i,j)$ times;
-that is for any any $p\in\Sigma$ the set $\iota^{-1}(\{p\})$ contains at most $\depth_{\bm{s}}(i,j)$ points.
-
-Applying Key lemma, the statement follows.
-\qeds
