@@ -42,11 +42,8 @@ in the Euclidean space.
 \section{Introduction}
 
 \begin{thm}{Main theorem}\label{thm:main}
-There is a constant $\omega$
-such that
-\[\tc\gamma\le \omega,\]
-for any  convex surface $\Sigma\subset\RR^3$
-and any minimizing geodesic $\gamma$  in $\Sigma$.
+The total curvature of a minimizing geodesic
+on a convex surface in $\RR^3$ can not exceed $10^{10}$.
 \end{thm}
 
 The main theorem was stated as an open question in \cite{AH-PSV}, \cite{pach} and \cite{BKZ}, but we have learned it from Dmitry Burago only few years ago.
@@ -156,16 +153,86 @@ Taking the subinterval  $[a,b]$ closer and closer to $[0,\ell]$
 and applying diagonal procedure, we get the result.
 \qeds
 
-\parbf{Liberman's lemmas.} 
-Let $\gamma$ be a curve and $\bm{u}$ is a unit vector in $\RR^3$.
-Concider the cylindrical surface formed by all the lines parallel to $\bm{u}$ which pass through points of $\gamma$.
-This surface is flat and it can be developed isometrically on the plane. 
-The image 
-of $\gamma$ is called Liberman's development of $\gamma$ in the direction of $\bm{u}$;
-it will be denoted by $\tilde\gamma_{\bm{u}}$.
-(Formally, to perform this construction,
-we have to assume that $\dot\gamma$ is not collinear with $\bm{u}$,
-and the general case the construction is done by approximation.)
+\section{Liberman's lemma.}
+
+In this section we give a slight generalization 
+of the construction of Liberman in \cite{liberman}.
+
+\parbf{Development.}
+Let $\gamma\:[0,\ell]\to\RR^3$ be a curve parametrized by length
+and a point $p$ does not lie on $\gamma$.
+
+Assume  $\tilde\gamma_p\:[0,\ell]\to\RR^2$ is a plane curve parametrized by length
+and $\tilde p$ is a point in the plane such that 
+\[|\tilde p-\tilde\gamma(t)|=|\tilde p-\tilde\gamma(t)|\]
+for any $t\in[0,\ell]$ and the direction from $\tilde p$ to $\tilde \gamma(t)$ changes counterclockwise. 
+Then $\tilde\gamma_p$ is called \emph{development} of $\gamma$ with respect to $p$.
+
+We say that the development $\tilde\gamma_p$ is convex in the interval $[a,b]$
+if the curvelinear triangle bounded by arc $\tilde\gamma|_{[a,b]}$
+and the segments $[\tilde p\tilde\gamma(a)]$, $[\tilde p\tilde\gamma(a)]$
+is convex. 
+Correspondly we say that $\tilde\gamma$ is convex in the interval $[a,b]$
+if the complement of this triangle in the angle bounded by half-lines $[\tilde p\tilde\gamma(a))$ and $[\tilde p\tilde\gamma(b))$
+ is convex.
+
+We say that $\tilde\gamma_p$ is locally convex (concave) in the interval $[a,b]$
+if any point $x\in [a,b]$ admits a closed neighborhood $[a',b']$ in $[a,b]$
+such that $\tilde\gamma_p$ is convex (correspondingly concave) in the interval $[a',b']$.
+
+If we pass to the limit of this construction as $p$ moves to infinity along a half-line in the derection of a unit vector $\bm{u}$ then the limit curve is called development of $\gamma$ in direction $u$ and denoted as $\tilde\gamma_u$.
+
+The development $\tilde\gamma_u$ could be also defined directly.
+Namely assume a curve $\tilde\gamma_{u}\:[0,\ell]\to \R^2$
+is parametrized by length and
+and for a fixed unit vector $\tilde u\in\RR^2$,
+we have
+\[\langle \tilde u,\tilde\gamma_u(t)\rangle=\langle  u,\gamma_u(t)\rangle\]
+for any $t\in [0,\ell]$
+and the projection of $\tilde\gamma_u(t)$ to the line normal to $\tilde u$
+is monotonic in $t$.
+Then the curve $\tilde\gamma_u$ is called development of $\gamma$ in the direction $u$.
+
+We can assume that $\tilde u$ is the vertical vector in the coordinate plane.
+In this case $\tilde\gamma_u$ is a graph of a function $y=f(x)$
+defined in some real inteval.
+We say that $\tilde\gamma_u$ is concave (convex) in the interval $[a,b]$ 
+if the function $f$ is concave (correspondingly convex) in the corresponding real interval.
+ 
+\parbf{Dark and light sides.}
+Let $\Sigma\subset\RR^3$ be a smooth convex surface 
+and $z\notin\Sigma$ and $p\in\Sigma$.
+
+We say that $p$ lies on the dark (light) side of $\Sigma$ with from $z$ 
+if all the points $p+t\cdot(p-z)$ lie outside of $\Sigma$ for $t>0$ (correspondingly for $t<0$).
+The intesection of dark and light side is called horizon of $z$;
+it is denoted by $\omega_z$.
+
+Note that if $z$ lies inside $\Sigma$ then all the points on $\Sigma$ lies on dark side from $z$.
+
+If $\Sigma$ is smooth we can define the outer normal vector $\nu_p$ to $\Sigma$ at $p$.
+In this case $p$ lies on dark (light) side of $\Sigma$ with from $z$
+if and only if $\langle z-p,\nu_p\rangle\ge 0$
+(correspondingly for $\langle z-p,\nu_p\rangle\le 0$).
+If in addition $\Sigma$ is strongly convex then the horizon is formed by a collection of disjont smooth curves.
+
+We could also define light/dark sides and horizon in the limit case,
+if $p$ escapes to infinity along a half-line in derection $u$.
+Let us also define it derectly,
+we say that a point $p\in\Sigma$ lies on dark (light) side for the unit vector $u$ if all the points $p+u\cdot t$ lie outside of $\Sigma$ for all $t>0$, (correspondingly $t<0$).
+As before the intesection of light and dark side is called horizon and denoted by $\omega_u$.
+
+In the smooth case the later means that $\langle \nu_p,u\rangle\ge 0$ (correspondingly $\langle \nu_p,u\rangle\le 0$).
+If $\Sigma$ is strongley convex then $\omega_u$ is locally a smooth curve.
+
+\begin{thm}{Liberman's Lemma}\label{lem:liberman}
+Assume $\gamma$ be a geodesic on convex surface $\Sigma\subset \RR^3$.
+Then for any point $z\notin\Sigma$ the development $\tilde\gamma_z$ is locally convex (locally concve) if $\gamma$ lies on dark (correspondingly light) side of $\Sigma$ from $z$.
+
+Similarly for any unit vector $u$,
+the development $\tilde\gamma_u$ is locally convex (locally concve) if $\gamma$ lies on dark (correspondingly light) side of $\Sigma$ for $u$.
+
+\end{thm}
 
 Note that for any space curve $\gamma$ and any unit vector $\bm{u}$
 we have 
@@ -177,110 +244,92 @@ For example if $\bm{i},\bm{j},\bm{k}$ is the orthonormal basis then
 \le
 \tc\tilde\gamma_{\bm{i}}+\tc\tilde\gamma_{\bm{j}}+\tc\tilde\gamma_{\bm{k}}.\]
 
-We will assume that the lines parallel to $\bm{u}$ become vertical in the $(x,y)$-plane,
-so that the development $\tilde\gamma$ is always a graph.
-We say that development is convex (concave) on some arc if it is descrived by convex (correspondingly concave) function on this arc.
+If $\gamma$ lies on one dark or light side for direction $\bm{u}$
+then by Liberman's lemma we get 
+\[\tc\tilde\gamma_{\bm{u}}\le \pi.\]
+It follows that is $\gamma$ cross the horisons $\omega_{\bm{i}}$, $\omega_{\bm{j}}$ and $\omega_{\bm{k}}$
+at most $N$ times then 
+\begin{align*}
+\tc\gamma
+&\le
+\tc\tilde\gamma_{\bm{i}}
++\tc\tilde\gamma_{\bm{j}}
++\tc\tilde\gamma_{\bm{k}}
+\le
+\\
+&\le(N+1)\cdot \pi.
+\end{align*}
+Therefore if $\gamma$ violetes Main Theorem then it has to cross the  horisons $\omega_{\bm{i}}$, $\omega_{\bm{j}}$ and $\omega_{\bm{k}}$ more that $10^9$ times.
 
-Let $\Sigma$ be convex surface and $p\in \Sigma$.
-We say that $p$ lies on the \emph{dark} (\emph{light}) side of $\Sigma$ with respect to $\bm{u}$, if the points $p+t\cdot\bm{u}$ (correspondingly $p-t\cdot\bm{u}$) lie outside of $\Sigma$ for all $t>0$.
-The intersection of dark and light side is called \emph{horizon} with respect to $\bm{u}$;
-it will be denoted by $\omega_{\bm{u}}$.
-If $\Sigma$ is strongly and smooth convex then $\omega_{\bm{u}}$ is a smooth curve.
+\begin{thm}{Corollary}
+Let $\Sigma\subset\RR^3$
+be a strongly convex smooth surface
+and $\gamma\:[0,\ell]\to \Sigma$ be a unitspeed geodesic.
+Assume that for some unit vector $u$,
+the $\gamma$ cross the horizon $\omega_u$ tranversally at 
+$t_1<\dots t_k$.
+Set $\alpha_i=\measuredangle(\dot\gamma(t_i),u)$ for each $i$.
+Then
+\[\tc_{u}\gamma\le 3\cdot\pi+2\cdot|\alpha_1-\alpha_2+\dots -(-1)^k\cdot\alpha^k|\]
 
-\begin{thm}{Lemma}
-Let $\gamma$ be a geodesic on a convex surface $\Sigma\subset\RR^3$ and $\bm{u}$ is a unit vector.
-Then the arc $\tilde\gamma_{\bm{u}}|_{[a,b]}$ of Liberman develpoment $\tilde\gamma_{\bm{u}}$
-is convex (concave) if and only if the corresponding arc $\gamma|_{[a,b]}$ 
-lies on the light (correspondingly dark) side of $\Sigma$ with respecto to $\bm{u}$.
 \end{thm}
 
-The proof of the estimate on the total curvature of geodesic on convex surface given by Liberman in \cite{liberman} is based on the observation that the total curvature of concave as well as convex graph
-can not exceed $\pi$.
+Most of the remaining part of paper devoted to finding an
+estimate for
+\[|\alpha_1-\alpha_2+\dots -(-1)^k\cdot\alpha^k|.\]
 
-
-\parbf{Conical Liberman lemma.} Inseted of cylindrical surface,
-one can consider the conical surface with given tip $z\notin \gamma$ trough $\gamma$.
-The conical surface is flat and it can be developed isometrically on the plane
-and the image of $\gamma$ is called \emph{Liberman's development} with repsct to point $z$.
-
-\begin{thm}{Lemma}
-Assume the point $z$ lies inside the convex surface $\Sigma$.
-Then Liberman development with respect to point $z$
-of any geodesic $\gamma$ on $\Sigma$ is locally convex.
-\end{thm}
-
-
-
-
-
-A curve $\tilde\gamma$ in $(x,y)$-plane is called \emph{Librman's development} of $\gamma$ in the direction of $\bm{u}$
-if there is a legth-preserving $\iota\:\RR^2\to\RR^3$
-such that $\gamma=\iota\circ \tilde\gamma$ and $\iota$ is cylindrical in the direction of $\bm{u}$; the is
-$\iota(x,y_1)-\iota(x,y_0)=(y_1-y_0)\cdot\bm{u}$
-for any $x,y_0$ and $y_1$.
-
-Let $\Sigma$ be a smooth convex hypersurface in the Euclidean space.
-
-Given a point $p\in \Sigma$, we will denote by $n_p$ the outer normal vector of $\Sigma$ at $p$;
-the map $\Sigma\to\SS^2$ defined as $p\mapsto n_p$ sometimes is called \emph{Gauss map}.
-
-Given a unit vector $\bm{u}$,
-we say that a point $p\in \Sigma$
-lies on the \emph{dark} (\emph{light}) side of $\Sigma$ with respect to $\bm{u}$, if $\langle\bm{u},n_p\rangle\ge0$ (correspondingly $\langle\bm{u},n_p\rangle\le0$).
-If $\langle\bm{u},n_p\rangle=0$, we say that $p$ lies on the \emph{horizon} with respect to $\bm{u}$.
-The horizon with respect to $\bm{u}$ will be denoted by $\omega_{\bm{u}}$;
-if $\Sigma$ is strongly convex then $\omega_{\bm{u}}$ is a smooth curve.
-
-Fix a points $z\notin\Sigma$.
-Given a point $p\in \Sigma$,
-we say that $p$ lies on light (dark) side from $z$ if 
-if $\langle z-p,n_p\rangle\le 0$ (correspondingly $\langle z-p,n_p\rangle\ge 0$).
-If $\langle z-p,n_p\rangle= 0$ we say that $p$ lies on the horizon
-from $p$.
-Note that if $z$ lies inside of $\Sigma$ then all points on $\Sigma$ lie on the dark side from $z$.
-
-Let $\gamma$ be a space curve 
-parametrized by length.
-Fix a point $z\notin\gamma$. 
-Let us define \emph{Liberman's development} of $\gamma$ with respect to $z$ as the unit-speed plane cure $\tilde\gamma_z$ such that the direction $\tilde\gamma_z(t)$
-changes counterclockwise as $t$ changes
-and
-$|\tilde\gamma_p(t)|=|\gamma(t)-z|$ for any $t$.
-
-The Liberman's development $\tilde\gamma_z$ is called convex concave at $\tilde\gamma_z(t)$ if there the curvelinear triangle ??? 
-
-
-Assume $\gamma$ is a smooth curve in $\RR^3$ and $\bm{u}$ is a unit vector.
-Concider the cylindrical surface formed by all the lines parallel to $\bm{u}$ passing through the points on $\gamma$.
-
-
-Let $\Sigma$ be a convex surface in the Euclidean space 
-$z\not\in\Sigma$ and $\gamma$ be a unit-speed geodesic in $\Sigma$.
-Then the development $\tilde\gamma_z$ is locally convex (concave) 
-at the points on dark (light) side of $\Sigma$ with respect to $z$.
-
-
-Assume $\gamma\:[0,\ell]\to \Sigma$ is a unit-speed curve in the space.
-
-The vector $\ddot\gamma(t)$ is the curvature vector of $\gamma$ at $t$.
-The total curvature of $\gamma$ can be defined as 
-\[\tc\gamma\df\int\limits_0^\ell|\ddot\gamma(t)|\cdot dt.\]
-
-The total curvature of $\tilde\gamma_z$ 
-is called the total curvature of $\gamma$ in the direction of $z$ 
-and denoted as $\tc_z\gamma$
-Given a point $z$, let us define the total curvature of $\gamma$ in the direction of $z$ as
-\[\tc_z\gamma
-\ge
-\int\limits_0^\ell
-\left|
-\langle\ddot\gamma(t),\tfrac{z-\gamma(t)}{|z-\gamma(t)|}\rangle
-\right|
-\cdot dt.\]
-
+\parit{Proof.}
+By Liberman's lemma,
+\[\tc_{u}(\gamma|_{[t_i,t_{i+1}]}=\pm(\alpha_i-\alpha_{i+1})\]
+where we have $+$ sign if $[t_i,t_{i+1}]$ lies on the dark side from $u$ and $-$ if it lies on the light side.
+Summing all this up we get
+\[\tc_{u}(\gamma|_{[t_1,t_{k}]}=\alpha_1-2\cdot\alpha_2-\dots+(-1)^k\cdot2\cdot\alpha_{k-1}-(-1)^k\cdot\alpha_k.\]
+By Liberman's lemma we also have
+\[\tc_u(\gamma|_{[0,t_1]}),\tc_u(\gamma|_{[t_k,\ell]})\le \pi \]
+Since $|\alpha_i|\le\tfrac\pi 2$, the statement follows.
+\qeds 
 
 
 \section{Key Lemma}
+
+Let $\Sigma$ be a smooth strongly convex surface in $\RR^3$.
+Given a unit vector $\bm{u}$,
+denote by $\omega_{\bm{u}}$ the $\bm{u}$-horizon on $\Sigma$.
+
+Let $\gamma\:[a,b]\to\Sigma$ be a geodesic wich lies completely 
+on the dark side
+and both ends 
+$\gamma(a)$ and $\gamma(b)$ lie on $\omega_{\bm{u}}$.
+
+Set $\alpha=\measuredangle(\dot\gamma(a),\bm{u})$ and $\beta=\measuredangle(\dot\gamma(b),\bm{u})$.
+
+Assume $\Omega$ is one of the discs which 
+$\gamma$ cuts from the dark side of $\Sigma$.
+
+
+Then 
+\[\int\limits_\Omega K\cdot d\area\]
+takes one of the following four values 
+$\alpha-\beta$, $2\cdot\pi-(\alpha-\beta)$, 
+$\pi\pm(\alpha+\beta)$.
+
+Note that $\tc_{\bm{u}}\gamma=\alpha-\beta$
+therefore in all 4 cases we have
+\[\tc_{\bm{u}}\gamma\le\int\limits_\Omega K\cdot d\area.\]
+This observation makes possible to estimate $\tc_{\bm{u}}\gamma$
+if $\gamma$ cross $\omega_{\bm{u}}$ as shown on the picture.
+In this case $\gamma$ cross $\omega_{\bm{u}}$
+
+
+
+Assume that one of the arcs of $\omega_{\bm{u}}$ from $\gamma(a)$ and $\gamma(b)$, 
+say $\omega_{\bm{u}}^+$, together with $\gamma$ bound a disc in $\Sigma$.
+In particular,
+\[\tc_{\bm{u}}\gamma
+\le
+\int\limits_{\Omega} K\cdot d\area\]
+
+
 
 \begin{thm}{Key Lemma}
 \label{lem:key}
@@ -477,9 +526,6 @@ A smooth curve $\gamma\:[0,\ell]\to\RR^3$
 is called \emph{elevating} if both ends $\gamma(0)$ and $\gamma(\ell)$ lie on the $z$-axiz and $\langle\dot\gamma(t),\bm{k}\rangle>0$ for all $t$.
 \end{thm}
 
-According to Proposition~\ref{prop:almost-const}, it is sufficient to prove 
-Main theorem only for elevating geodesics.
-
 \parbf{$\bm{(\lambda,\mu,\nu)}$-frame.}
 Let $\Sigma$ be a convex surface 
 and $\gamma\:[0,\ell]\to \Sigma$ is an elevating minimizing geodesic 
@@ -512,23 +558,20 @@ For any $t$ we have
 \[
 \phi(t)\ge |\psi(t)|\ \ \text{and}\ \ \phi(t)\ge |\alpha(t)|
 \]
-In particular,
-$\phi_n\ge |\psi_n|$ 
-and
-$\phi_n\ge |\alpha_n|$
-for any $n$.
+
 \end{thm}
 
 Applying Liberman's Lemma in the direction $\bm{k}$ we also get the following.
 
 \begin{thm}{Claim}
-If an arc $\gamma|_{[a,b]}$ lies in the dark side for $\bm{k}$ then 
-the function $\phi$ is nondecreasing in $[a,b]$.
+If an arc $\gamma|_{[a,b]}$ lies in the dark (light) side for $\bm{k}$ then 
+the function $\phi$ is nondecreasing (correspondingly nonincreasing)
+in $[a,b]$.
 \end{thm}
 
 \section{Plane sections}
 
-Assume $\gamma$ is curve on a smooth strictly convex surface $\Sigma$ in $\RR^3$.
+Assume $\gamma$ is a curve on a smooth strictly convex surface $\Sigma$ in $\RR^3$.
 Consider a plane $L$ 
 passing through two points of $\gamma$, 
 say $p=\gamma(a)$ and $q=\gamma(b)$ with $a<b$.
@@ -544,25 +587,28 @@ If $\gamma$ is a minimizing geodesic in the convex surface $\Sigma\subset \RR^3$
 Based on this observation we give couple of estimates on elevating minimizing geodesics.
 
 \begin{thm}{Propostion}\label{prop:around-once}
-Assume $\gamma\:[0,\ell]\to \Sigma$ is elevating minimizing geodesic in the convex surface $\Sigma\subset \RR^3$.
+Assume $\gamma\:[0,\ell]\to \Sigma$ is an elevating minimizing geodesic in the convex surface $\Sigma\subset \RR^3$.
 Assume that for a subsegment $[a,b]\subset [0,\ell]$ the following conditions hold
 \begin{enumerate}[(i)]
-\item The points $\gamma(a)$ and $\gamma(b)$ lie in a one half-plane with boundary line formed by the $z$-axis
+\item The points $\gamma(a)$ and $\gamma(b)$ lie in a half-plane with boundary line formed by the $z$-axis
 and  the arc $\gamma|_{[a,b]}$ goes around the $z$-axis at least once.
 \item $\gamma(a)$ lies above the horizontal plane through $\tfrac12\cdot(\gamma(0)+\gamma(\ell))$.
 \end{enumerate}
 Then  $\gamma(b)$ lies on the dark side of $\Sigma$ with respect to $\bm{k}$.
 \end{thm}
 
-\parit{Proof.} We apply the observation above to the plane containing $z$-axis and $\gamma(b)$ and perform straightforward computations.
+\parit{Proof.} 
+Let us apply Observation~\ref{obs:cut} to the plane containing $z$-axis, $\gamma(a)$ and $\gamma(b)$.
+
 
 We can assume that $\gamma(0)$ is the origin of the $(x,y,z)$-coordinate system
 and both points $p=\gamma(a)$ and $q=\gamma(b)$ lie in the $(x,z)$-coordinate half-plane with $x\ge 0$, denoted by $\Pi$.
 We can assume that $\sigma_+\subset \Pi$.
 Let $(x_p,0,z_p)$ and $(x_q,0,z_q)$ be the coordinates of $p$ and $q$.
 
-From the assumptions $z_p<z_q<2\cdot z_p$.
-From convexity of the curve $\Pi\cap \Sigma$
+From the assumptions we get $z_p<z_q<2\cdot z_p$.
+
+By convexity of the curve $\Pi\cap \Sigma$
 we get 
 \[\length\sigma_+\le \sqrt{(z_q-z_p)^2+x_p^2}\]
 
@@ -593,7 +639,7 @@ then
 \end{thm}
 
 \parit{Proof.}
-We apply the observation to the plane $\Pi$ and $p=\gamma(s)$ and $q=\gamma(t)$.
+Let us apply Observation~\ref{obs:cut} to the plane $\Pi$ and $p=\gamma(s)$ and $q=\gamma(t)$.
 
 Let $z_p$ and $z_q$ be the $z$-coordinates of $p$ and $q$.
 
@@ -1091,3 +1137,148 @@ and for some $i<j$ we have
 \[\left|\sum_{n=i}^js_i\right|=5\]
 Then $\phi_j>2\cdot\phi_i$.
 \end{thm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+We will assume that the lines parallel to $\bm{u}$ become vertical in the $(x,y)$-plane,
+so that the development $\tilde\gamma$ is always a graph.
+We say that development is convex (concave) on some arc if it is descrived by convex (correspondingly concave) function on this arc.
+
+
+Let $\Sigma$ be a smooth strongly convex surface in $\RR^3$
+and $\gamma\:[0,\ell]\to\Sigma$ be a unit-speed geodesic.
+Given a point $p\in\RR^3$, set $f_p(t)=|\gamma(t)-p|^2$
+Then the following two expressions have the opposite  signs
+\[f_p''(t)-2
+\ \ \text{and}
+\ \ \langle\nu_{\gamma(t)},\gamma(t)-p\rangle.
+\]
+In particular, if $p$ lies inside of $\Sigma$ then $f_p''(t)-2<0$ for any $t$.
+
+Given a unit vector consider the function $h_{\bm{u}}=\langle\gamma(t),\bm{u}\rangle$.
+Then the following two expressions have the opposite signs
+\[h_{\bm{u}}''(t)
+\ \ \text{and}
+\ \ \langle\nu_{\gamma(t)},\bm{u}\rangle.
+\]
+
+
+Assume $\gamma$ is a geodesic on smooth convex surface $\Sigma\subset \RR^3$.
+
+Let $\gamma$ be a curve and $\bm{u}$ is a unit vector in $\RR^3$.
+Concider the cylindrical surface formed by all the lines parallel to $\bm{u}$ which pass through points of $\gamma$.
+This surface is flat and it can be developed isometrically on the plane. 
+The image 
+of $\gamma$ is called Liberman's development of $\gamma$ in the direction of $\bm{u}$;
+it will be denoted by $\tilde\gamma_{\bm{u}}$.
+(Formally, to perform this construction,
+we have to assume that $\dot\gamma$ is not collinear with $\bm{u}$,
+and the general case the construction is done by approximation.)
+
+
+Let $\Sigma$ be convex surface and $p\in \Sigma$.
+We say that $p$ lies on the \emph{dark} (\emph{light}) side of $\Sigma$ with respect to $\bm{u}$, if the points $p+t\cdot\bm{u}$ (correspondingly $p-t\cdot\bm{u}$) lie outside of $\Sigma$ for all $t>0$.
+The intersection of dark and light side is called \emph{horizon} with respect to $\bm{u}$;
+it will be denoted by $\omega_{\bm{u}}$.
+If $\Sigma$ is strongly and smooth convex then $\omega_{\bm{u}}$ is a smooth curve.
+
+\begin{thm}{Lemma}
+Let $\gamma$ be a geodesic on a convex surface $\Sigma\subset\RR^3$ and $\bm{u}$ is a unit vector.
+Then the arc $\tilde\gamma_{\bm{u}}|_{[a,b]}$ of Liberman develpoment $\tilde\gamma_{\bm{u}}$
+is convex (concave) if and only if the corresponding arc $\gamma|_{[a,b]}$ 
+lies on the light (correspondingly dark) side of $\Sigma$ with respecto to $\bm{u}$.
+\end{thm}
+
+The proof of the estimate on the total curvature of geodesic on convex surface given by Liberman in \cite{liberman} is based on the observation that the total curvature of concave as well as convex graph
+can not exceed $\pi$.
+
+
+\parbf{Conical Liberman lemma.} Inseted of cylindrical surface,
+one can consider the conical surface with given tip $z\notin \gamma$ trough $\gamma$.
+The conical surface is flat and it can be developed isometrically on the plane
+and the image of $\gamma$ is called \emph{Liberman's development} with repsct to point $z$.
+
+\begin{thm}{Lemma}
+Assume the point $z$ lies inside the convex surface $\Sigma$.
+Then Liberman development with respect to point $z$
+of any geodesic $\gamma$ on $\Sigma$ is locally convex.
+\end{thm}
+
+
+
+
+
+A curve $\tilde\gamma$ in $(x,y)$-plane is called \emph{Librman's development} of $\gamma$ in the direction of $\bm{u}$
+if there is a legth-preserving $\iota\:\RR^2\to\RR^3$
+such that $\gamma=\iota\circ \tilde\gamma$ and $\iota$ is cylindrical in the direction of $\bm{u}$; the is
+$\iota(x,y_1)-\iota(x,y_0)=(y_1-y_0)\cdot\bm{u}$
+for any $x,y_0$ and $y_1$.
+
+Let $\Sigma$ be a smooth convex hypersurface in the Euclidean space.
+
+Given a point $p\in \Sigma$, we will denote by $n_p$ the outer normal vector of $\Sigma$ at $p$;
+the map $\Sigma\to\SS^2$ defined as $p\mapsto n_p$ sometimes is called \emph{Gauss map}.
+
+Given a unit vector $\bm{u}$,
+we say that a point $p\in \Sigma$
+lies on the \emph{dark} (\emph{light}) side of $\Sigma$ with respect to $\bm{u}$, if $\langle\bm{u},n_p\rangle\ge0$ (correspondingly $\langle\bm{u},n_p\rangle\le0$).
+If $\langle\bm{u},n_p\rangle=0$, we say that $p$ lies on the \emph{horizon} with respect to $\bm{u}$.
+The horizon with respect to $\bm{u}$ will be denoted by $\omega_{\bm{u}}$;
+if $\Sigma$ is strongly convex then $\omega_{\bm{u}}$ is a smooth curve.
+
+Fix a points $z\notin\Sigma$.
+Given a point $p\in \Sigma$,
+we say that $p$ lies on light (dark) side from $z$ if 
+if $\langle z-p,n_p\rangle\le 0$ (correspondingly $\langle z-p,n_p\rangle\ge 0$).
+If $\langle z-p,n_p\rangle= 0$ we say that $p$ lies on the horizon
+from $p$.
+Note that if $z$ lies inside of $\Sigma$ then all points on $\Sigma$ lie on the dark side from $z$.
+
+Let $\gamma$ be a space curve 
+parametrized by length.
+Fix a point $z\notin\gamma$. 
+Let us define \emph{Liberman's development} of $\gamma$ with respect to $z$ as the unit-speed plane cure $\tilde\gamma_z$ such that the direction $\tilde\gamma_z(t)$
+changes counterclockwise as $t$ changes
+and
+$|\tilde\gamma_p(t)|=|\gamma(t)-z|$ for any $t$.
+
+The Liberman's development $\tilde\gamma_z$ is called convex concave at $\tilde\gamma_z(t)$ if there the curvelinear triangle ??? 
+
+
+Assume $\gamma$ is a smooth curve in $\RR^3$ and $\bm{u}$ is a unit vector.
+Concider the cylindrical surface formed by all the lines parallel to $\bm{u}$ passing through the points on $\gamma$.
+
+
+Let $\Sigma$ be a convex surface in the Euclidean space 
+$z\not\in\Sigma$ and $\gamma$ be a unit-speed geodesic in $\Sigma$.
+Then the development $\tilde\gamma_z$ is locally convex (concave) 
+at the points on dark (light) side of $\Sigma$ with respect to $z$.
+
+
+Assume $\gamma\:[0,\ell]\to \Sigma$ is a unit-speed curve in the space.
+
+The vector $\ddot\gamma(t)$ is the curvature vector of $\gamma$ at $t$.
+The total curvature of $\gamma$ can be defined as 
+\[\tc\gamma\df\int\limits_0^\ell|\ddot\gamma(t)|\cdot dt.\]
+
+The total curvature of $\tilde\gamma_z$ 
+is called the total curvature of $\gamma$ in the direction of $z$ 
+and denoted as $\tc_z\gamma$
+Given a point $z$, let us define the total curvature of $\gamma$ in the direction of $z$ as
+\[\tc_z\gamma
+\ge
+\int\limits_0^\ell
+\left|
+\langle\ddot\gamma(t),\tfrac{z-\gamma(t)}{|z-\gamma(t)|}\rangle
+\right|
+\cdot dt.\]
