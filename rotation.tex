@@ -301,7 +301,7 @@ on the dark side
 and both ends 
 $\gamma(a)$ and $\gamma(b)$ lie on $\omega_{\bm{u}}$.
 
-Set $\alpha=\measuredangle(\dot\gamma(a),\bm{u})$ and $\beta=\measuredangle(\dot\gamma(b),\bm{u})$.
+Set $\alpha=\measuredangle(\dot\gamma(a),\bm{u})-\tfrac\pi2$ and $\beta=\measuredangle(\dot\gamma(b),\bm{u})-\tfrac\pi2$.
 
 Assume $\Omega$ is one of the discs which 
 $\gamma$ cuts from the dark side of $\Sigma$.
@@ -316,9 +316,46 @@ $\pi\pm(\alpha+\beta)$.
 Note that $\tc_{\bm{u}}\gamma=\alpha-\beta$
 therefore in all 4 cases we have
 \[\tc_{\bm{u}}\gamma\le\int\limits_\Omega K\cdot d\area.\]
+
+\parbf{Snake case.}
 This observation makes possible to estimate $\tc_{\bm{u}}\gamma$
 if $\gamma$ cross $\omega_{\bm{u}}$ as shown on the picture.
-In this case $\gamma$ cross $\omega_{\bm{u}}$
+That is, points $\gamma(t_1),\dots,\gamma(t_k)$
+lie in the same order oncross $\omega_{\bm{u}}$.
+\begin{center}
+\begin{lpic}[t(-0 mm),b(0 mm),r(0 mm),l(0 mm)]{pics/horizon-geodesic(1)}
+\lbl[t]{5,5.5;$\gamma(0)$}
+\lbl[bl]{16,14;$\gamma(t_0)$}
+\lbl[b]{40.5,18,3;$\dots$}
+\lbl[br]{66,16.5;$\gamma(t_k)$}
+\lbl[t]{73,12;$\gamma(\ell)$}
+\lbl[tl]{29,4;$\omega_u$}
+\lbl[]{24.5,8;$\Omega_1$}
+\lbl[]{56,10;$\Omega_k$}
+\end{lpic}
+\end{center}
+In this case we can chhose nonoverlaping discs $\Omega_1,\dots,\Omega_k$ which $\gamma$ cuts from light and dark side alternatively.
+Then estimates above sho that 
+\begin{align*}
+\tc_{\bm{u}}\gamma
+&=\tc_{\bm{u}}(\gamma|_{[0,t_0]})
++\tc_{\bm{u}}(\gamma|_{[t_0,t_1]})+\dots
+\\
+&\ \ \ \ \dots+\tc_{\bm{u}}(\gamma|_{[t_{k-1},t_k]})+\tc_{\bm{u}}(\gamma|_{[t_k,\ell]})\le
+\\
+&\le \pi+K(\Omega_1)+\dots+K(\Omega_k)+\pi\le
+\\
+&\le 6\cdot\pi.
+\end{align*}
+The last integuality holds since the discs $\Omega_i$ do not overlap and by Gauss--Bonnet we have $K(\Sigma)\le 4\cdot\pi$.
+
+\begin{wrapfigure}{r}{35 mm}
+\begin{lpic}[t(-5 mm),b(0 mm),r(0 mm),l(0 mm)]{pics/spiral(1)}
+\end{lpic}
+\end{wrapfigure}
+
+This gives the first idea that the Key Lemma might be useful.
+It does not help that easily if the $\gamma$ cross $\omega$ in a different order, say as the spiral shown on the picture.
 
 
 
