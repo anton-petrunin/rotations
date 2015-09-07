@@ -317,13 +317,19 @@ Note that $\tc_{\bm{u}}\gamma=\alpha-\beta$
 therefore in all 4 cases we have
 \[\tc_{\bm{u}}\gamma\le\int\limits_\Omega K\cdot d\area.\]
 
-\parbf{Snake case.}
+\section{Snake and spirals}
+
+Formally speaking, this section is not needed;
+it only shows how to use Key Lemma in the simplest case
+and explains the difficulty in the general case.
+
+
 This observation makes possible to estimate $\tc_{\bm{u}}\gamma$
 if $\gamma$ cross $\omega_{\bm{u}}$ as shown on the picture.
 That is, points $\gamma(t_1),\dots,\gamma(t_k)$
 lie in the same order oncross $\omega_{\bm{u}}$.
 \begin{center}
-\begin{lpic}[t(-0 mm),b(0 mm),r(0 mm),l(0 mm)]{pics/horizon-geodesic(1)}
+\begin{lpic}[t(1 mm),b(1 mm),r(0 mm),l(0 mm)]{pics/horizon-geodesic(1)}
 \lbl[t]{5,5.5;$\gamma(0)$}
 \lbl[bl]{16,14;$\gamma(t_0)$}
 \lbl[b]{40.5,18,3;$\dots$}
@@ -356,99 +362,51 @@ The last integuality holds since the discs $\Omega_i$ do not overlap and by Gaus
 
 This gives the first idea that the Key Lemma might be useful.
 It does not help that easily if the $\gamma$ cross $\omega$ in a different order, say as the spiral shown on the picture.
-
-
-
-Assume that one of the arcs of $\omega_{\bm{u}}$ from $\gamma(a)$ and $\gamma(b)$, 
-say $\omega_{\bm{u}}^+$, together with $\gamma$ bound a disc in $\Sigma$.
-In particular,
-\[\tc_{\bm{u}}\gamma
-\le
-\int\limits_{\Omega} K\cdot d\area\]
-
-
-
-\begin{thm}{Key Lemma}
-\label{lem:key}
-Let $\gamma\:[0,\ell]\to \Sigma$ be a geodesic on the convex surface in the Euclidean space 
-and $u\in\SS^2$.
-Assume that $0=t_0<t_1<\dots<t_n=\ell$ be the values such that each arcs $\gamma|_{[t_{i-1},t_i]}$ alternating light and dark side of $\Sigma$ with respect to $u$.
-Set $\alpha_i=\measuredangle(\dot\gamma(t_i),u)$
-Then 
-\[\tc_u\gamma=|\sum_i(-1)^i\alpha_i|.\]
-
-Moreover, if $1<i<n$ 
-and $\Omega_i$ denotes the domain of $\Sigma$ bounded by the arc $\gamma|_{[t_{i-1},t_i]}$ and the $u$-horizon then 
-\[|\alpha_i-\alpha_{i-1}|\le \curv\Omega_i,\]
-where $\curv\Omega_i$ denotes the total curvature of $\Omega_i$.
-In particular,
-\[\tc_u\gamma\le 4\cdot\pi+\sum_i\curv\Omega_i.\]
-\end{thm}
-
-\parbf{Remarks.}
-Clearly $\tc_z\gamma\le \tc \gamma$ for any curve $\gamma$ in $\Sigma$.
-
-On the other hand given few points $z_i$ which do not lie in one plane
-one can estimate $\tc\gamma$ 
-in terms of $\tc_{z_i}\gamma$ 
-the distances between $z_i$ and the maximal distance to $\gamma$.
-
-Let $N=N(\Sigma,\gamma, u)$ be the maximal integer such that at most $N$ of the domains $\Omega_i$ intersect at one point.
-Note that from \cite{BKZ}, it follows that the value $N$ can take arbitrary large value.
-The number $N$ can be estimated through the maximal rotation number of subarcs of $\gamma$ with respect to the lines.
-In particular the total curvature of geodesic $\gamma$ 
-can be bounded in terms of maximal rotation number of subarcs of $\gamma$ around the lines.
-The later was claimed in \cite{BKZ} without a proof.
-
-Then
-\[\sum_{i=2}^{n-1}\curv\Omega_i
-\le 
-N\cdot\curv\Sigma
-\le 
-4\cdot N\cdot\pi.\]
-Therefore, we get an estimate
-\[\tc_u\gamma
-\le 
-4\cdot N\cdot\pi+|\alpha_0-\alpha_1|+|\alpha_{n-1}-\alpha_n|
-\le
-(4\cdot N+2)\cdot\pi.\]
-Since the same holds for any vector $u$,
-we can taking avarage we get
-\[\tc\gamma\le 3\cdot(4\cdot N+2)\cdot\pi.\]
-
-
-
+For any arc $\gamma|_{[t_{i-1},t_i}$ we have tow choose one of two discs as $\Omega_i$,
+but they will always overlap.
 
 \section{Length and diameter}
 
 Let $\eps>0$.
 A curve $\gamma\:[a,b]\to\RR^3$ will be called $\eps$-straight
 if 
-\[\length \gamma\le e^\eps\cdot|\gamma(b)-\gamma(a)|\]
+\[(1-\eps)\cdot\length \gamma\le |\gamma(b)-\gamma(a)|\]
 
 \begin{thm}{Lemma}\label{lem:eps-straight}
-Given $\eps>0$ there is $\delta>0$ (any  $\delta<(1-e^{-\eps})/2$ will do)
-such that
-in any minimizing geodesic of length $\ell$
-on a convex surface $\Sigma$ in $\RR^3$ there an $\eps$-straight arc of length at least $\delta\cdot\ell$;
+Assume $\eps>0$ 
+and $n$ is a positive integer such that
+$2\cdot n\cdot\eps>1$.
+Then any 
+in any minimizing geodesic
+on a convex surface $\Sigma$ in $\RR^3$
+can be sudivided into twenty  $\tfrac1{10}$-straight arcs.
 \end{thm}
 
 \parit{Proof.}
-Set $\alpha=\arccos e^{-\eps}$.
-Let $N$ be the maximal number of points in $\mathbb S^2$ which lie on distance at least $2\cdot\alpha$ from each other.
+Assume two points $p$ and $q$ lie on a canovex surface $\Sigma$.
+Denote by $\nu_p$ and $\nu_q$ the outer normal vectors at $p$ and $q$ correspondingly.
+Set $\alpha=\measuredangle(\nu_p,\nu_q)$ and  $\eps=1-\cos\tfrac\alpha2$.
+
+Note that any minimizing geodesic geodesic from $p$ to $q$ on $\Sigma$
+is $\eps$-straight.
+
+It follows that if two points $p$ and $q$ on $\Sigma$ can be jointed by an minimizing geodesic which is not $\tfrac1{10}$-straight
+then the 
+
+Note that there are at most $\tfrac2{1-e^{-\eps}}$ points in $\mathbb S^2$ which lie on distance at least $2\cdot\alpha$ from each other.
 
 Let $\gamma\:[0,\ell]\to \Sigma$ be a minimizing geodesic parametrized by its length.
 
 Given a value $t\in [0,\ell]$,
-set $t'$ to be the maximal value in $[0,\ell]$ such that the interval $[t,t']$ i $\eps$-straight.
+set $t'$ to be the maximal value in $[0,\ell]$ such that the interval $[t,t']$ is $\tfrac1{10}$-straight.
 
 Consider the maximal sequence $0=t_0<t_1<\dots<t_n<\ell$
 such that $t_{i+1}=t_i'$.
-
 Denote by $\nu_i$ the outer unit normal vector to $\Sigma$ at $\gamma(t_i)$. 
+
 Note that $\measuredangle(\nu_i,\nu_j)>2\cdot\alpha$ for all $i$ and $j$.
-It follows that the sequence $(t_i)$ terminates after at most $N$ steps.
-Therefore any $\delta<\tfrac1{N+1}$ does the job.
+It follows that $n<\tfrac2{1-e^{-\eps}}$.
+Hence the problem follows.
 \qeds
 
 
@@ -476,31 +434,53 @@ a contradiction.
 
 \section{Reduction to a monotonic case}
 
-In this section we show that to prove the Main theorem,
-it is sufficient to consider only the geodesics which go almost in one direction.
-The following proposition will be applied to $\eps=\tfrac\pi4$;
-in this case one can take $\delta=10^{-10}$.
-
 \begin{thm}{Proposition}\label{prop:almost-const}
-Given $\eps>0$ there is $\delta>0$
-such that the following statement holds.
-
-If $\gamma\:[0,\ell]\to\Sigma$ is a minimizing geodeisc 
-on a smooth strongly convex surface $\Sigma$ in $\RR^3$
-then there is an interval $[a,b]\subset[0,\ell]$
-such that \[\tc(\gamma|_{[a,b]}>\delta\cdot\tc\gamma.\]
+Let $\gamma\:[0,\ell]\to\Sigma$ be a minimizing geodeisc 
+on a smooth strongly convex surface $\Sigma$ in $\RR^3$.
+Then there is an interval $[a,b]\subset[0,\ell]$
+such that 
+\[\tc(\gamma|_{[a,b]}>\tfrac1{100}\cdot\tc\gamma.\]
 and 
-\[\measuredangle(\dot\gamma(t),\bm{k})<\eps\] 
+\[\measuredangle(\dot\gamma(t),\bm{u})<\tfrac\pi3\] 
 for any $t\in[a,b]$
-and a fixed unit vector $\bm{k}$.
+and a fixed unit vector $\bm{u}$.
 \end{thm}
+
+The proof will use the following claim.
+It states that 
+if a short smooth unit-speed curve runs at nearly the same rate from the vertices of triangle then it runs in nearly the same direction.
+
+\begin{thm}{Claim}
+Given $\eps>0$ there is $\delta>0$ such that the following condition holds.
+
+Assume $\gamma$ is a smooth unit-speed curve 
+in the unit ball $B\subset\RR^3$.
+Assume 
+$\length\gamma<\delta$ 
+and $B$ contains an equilateral triangle with vertices $x_1,x_2,x_3$ with sides $\eps$
+and for some fixed numbers
+$\alpha_1,\alpha_2,\alpha_3$
+for any $i$
+we have either
+\[|\gamma(t)-x_i|\le \tfrac\eps{10}\ \ \text{or}\ \ \measuredangle(x_i-\gamma(t),\dot\gamma(t))\lege \alpha_i\pm\delta\]
+for any $t$.
+Then there is a unit vector $u$ such that
+\[\measuredangle(\dot\gamma(t),u)\le\tfrac\pi3\]
+
+Moreover if $\eps=\tfrac1{100}$ 
+then one can take $\delta=\tfrac1{10000}$.
+\end{thm}
+
+The proof is straightforward calculations
+and it is left to the reader.
 
 \parit{Proof.}
 Applying rescaling, we can assume that $\diam\gamma=3$.
 By Lemma \ref{lem:diam-length} $\length\gamma_n\zz<12$.
 Therefore we can subdivide $\gamma$ into $12$ 
 arcs $\gamma_1,\dots,\gamma_{12}$
-such that for each $n$ there is a point $p_n\in K$ which lies on the distance at least $1$ from $\gamma_n$ and $\length\gamma_n\le 1$.
+such that for each $n$ there is a point $p_n\in K$ 
+which lies on the distance at least $1$ from $\gamma_n$ and $\length\gamma_n\le 1$.
 Choose
 an arc $\gamma'=\gamma_n$ with the maximal total curvature 
 and set $p'=p_n$.
@@ -510,7 +490,7 @@ Clearly
 
 Applying Liberman's Lemma to $\gamma'$ with  the reference point $p'$ 
 we get that 
-\[\tc_{p'}\gamma'<\pi+1<5.\]
+\[\tc\tilde\gamma'_{p'}<\pi+1<5.\]
 
 Choose an integer $N>\tfrac2\eps$.
 Note that we can divide $\gamma'$ into $N$ arcs 
@@ -544,6 +524,9 @@ and the distance $|\gamma(t)-a_i|$
 are nearly constant for each $i$.
 The later imply that $\dot\gamma$ is nearly constant.
 \qeds
+
+
+
 
 
 \section{Elevating geodesics}\label{sec:elevating}
@@ -1319,3 +1302,75 @@ Given a point $z$, let us define the total curvature of $\gamma$ in the directio
 \langle\ddot\gamma(t),\tfrac{z-\gamma(t)}{|z-\gamma(t)|}\rangle
 \right|
 \cdot dt.\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Assume that one of the arcs of $\omega_{\bm{u}}$ from $\gamma(a)$ and $\gamma(b)$, 
+say $\omega_{\bm{u}}^+$, together with $\gamma$ bound a disc in $\Sigma$.
+In particular,
+\[\tc_{\bm{u}}\gamma
+\le
+\int\limits_{\Omega} K\cdot d\area\]
+
+
+
+\begin{thm}{Key Lemma}
+\label{lem:key}
+Let $\gamma\:[0,\ell]\to \Sigma$ be a geodesic on the convex surface in the Euclidean space 
+and $u\in\SS^2$.
+Assume that $0=t_0<t_1<\dots<t_n=\ell$ be the values such that each arcs $\gamma|_{[t_{i-1},t_i]}$ alternating light and dark side of $\Sigma$ with respect to $u$.
+Set $\alpha_i=\measuredangle(\dot\gamma(t_i),u)$
+Then 
+\[\tc_u\gamma=|\sum_i(-1)^i\alpha_i|.\]
+
+Moreover, if $1<i<n$ 
+and $\Omega_i$ denotes the domain of $\Sigma$ bounded by the arc $\gamma|_{[t_{i-1},t_i]}$ and the $u$-horizon then 
+\[|\alpha_i-\alpha_{i-1}|\le \curv\Omega_i,\]
+where $\curv\Omega_i$ denotes the total curvature of $\Omega_i$.
+In particular,
+\[\tc_u\gamma\le 4\cdot\pi+\sum_i\curv\Omega_i.\]
+\end{thm}
+
+\parbf{Remarks.}
+Clearly $\tc_z\gamma\le \tc \gamma$ for any curve $\gamma$ in $\Sigma$.
+
+On the other hand given few points $z_i$ which do not lie in one plane
+one can estimate $\tc\gamma$ 
+in terms of $\tc_{z_i}\gamma$ 
+the distances between $z_i$ and the maximal distance to $\gamma$.
+
+Let $N=N(\Sigma,\gamma, u)$ be the maximal integer such that at most $N$ of the domains $\Omega_i$ intersect at one point.
+Note that from \cite{BKZ}, it follows that the value $N$ can take arbitrary large value.
+The number $N$ can be estimated through the maximal rotation number of subarcs of $\gamma$ with respect to the lines.
+In particular the total curvature of geodesic $\gamma$ 
+can be bounded in terms of maximal rotation number of subarcs of $\gamma$ around the lines.
+The later was claimed in \cite{BKZ} without a proof.
+
+Then
+\[\sum_{i=2}^{n-1}\curv\Omega_i
+\le 
+N\cdot\curv\Sigma
+\le 
+4\cdot N\cdot\pi.\]
+Therefore, we get an estimate
+\[\tc_u\gamma
+\le 
+4\cdot N\cdot\pi+|\alpha_0-\alpha_1|+|\alpha_{n-1}-\alpha_n|
+\le
+(4\cdot N+2)\cdot\pi.\]
+Since the same holds for any vector $u$,
+we can taking avarage we get
+\[\tc\gamma\le 3\cdot(4\cdot N+2)\cdot\pi.\]
