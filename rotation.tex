@@ -41,26 +41,36 @@ in the Euclidean space.
 
 \section{Introduction}
 
+The existence of a universal upper bound on total curvature of minimizing geodesic on convex surface was conjectured by Dmitry Burago;
+it was also stated as an open question in \cite{AH-PSV}, \cite{pach} and \cite{BKZ}.
+We answer this question affirmatively.
+Namely, we prove the following.
+
 \begin{thm}{Main theorem}\label{thm:main}
 The total curvature of a minimizing geodesic
 on a convex surface in $\RR^3$ can not exceed $10^{10}$.
 \end{thm}
 
-The main theorem was stated as an open question in \cite{AH-PSV}, \cite{pach} and \cite{BKZ}, but we have learned it from Dmitry Burago only few years ago.
-
-Let us briefly discuss the related results.
+The optimal upper bound is expected to be slightly bigger than $2\cdot\pi$.
+The value $2\cdot\pi$ is the optimal bound for the analogous problem in the plane.
+A minimizing geodesic on a convex surface in $\RR^3$
+with total curvature slightly bigger that $2\cdot\pi$ was constructed by 
+B{\'a}r{\'a}ny,
+Kuperberg, 
+and Zamfirescu in \cite{BKZ}.
+Let us list the related results.
 
 \begin{itemize}
 \item In \cite{liberman}, Liberman gives a bound on the total curvature of short geodesic in terms of the ratio diameter and inradius of $K$.
-In the proof he use now so called Liberman's lemma \ref{lem:liberman} discussed below.
-This statement was rediscovered in \cite{BKZ}.
+In the proof he use now so called Liberman's lemma,
+see \ref{lem:liberman} below.
+
 \item In \cite{usov}, 
 Usov gives the optimal bound for total curvature of geodesic on the graph of $\ell$-Lipscitz convex function. 
 Namely, he proves that if $f\:\RR^2\to\RR$ is $\ell$-Lipschitz and convex then any 
 geodesic in its graph 
 \[\Gamma_f=\set{(x,y,z)\in \RR^3}{z=f(x,y)}\] 
 has total curvature at most $2\cdot \ell$.
-This statement was also rediscovered in \cite{BKZ}.
 Yet an amusing generalization of Usov's result is given by Berg in \cite{berg}.
 \item In \cite{pogorelov}, Pogorelov conjectured that any the spherical image of geodesic on convex surface has to be contructable.
 It is easy to see that the length of spherical image of geodesic can not be smaller than its total curvature, 
@@ -75,9 +85,7 @@ Kuperberg,
 and Zamfirescu 
 have constructed a corkscrew minimizing geodesic on a closed hypersurface;
 that is a minimizing geodesic which twists around given line arbitrary many times.
-In the same paper they also constructed a minimizing geodesic on a convex surface in $\RR^3$
-with total curvature bigger that $2\cdot\pi$.
-(Note that $2\cdot\pi$ is the optimal bound for the analogous problem in the plane.)
+They also rediscovered the results of Liberman and Usov mentioned above.
 \end{itemize}
 
 
@@ -106,12 +114,17 @@ Then
 
 \parit{Proof.}
 Choose a polygonal line $\sigma_\infty$ inscribed in $\gamma_\infty$ with total curvature sufficiently close to $\tc\gamma_\infty$.
-Let $\gamma_\infty(t_0),\dots\gamma_\infty(t_k)$ be the vertices of $p_\infty$
-Consider the polygonal lines $\sigma_n$ with the vertices 
-$\gamma_n(t_0)\dots\gamma_n(t_k)$.
+Let $\gamma_\infty(t_0),\dots,\gamma_\infty(t_k)$
+for $t_0<\dots<t_k$
+be the vertices of $\sigma_\infty$.
+Consider the polygonal lines $\sigma_n$ inscribed in $\gamma_n$ with the vertices 
+$\gamma_n(t_0),\dots,\gamma_n(t_k)$.
 Note that 
 \[\tc\sigma_n\to\tc\sigma_\infty.\]
-Hence the statement follows.
+By the definition of total curvature 
+\[\tc\sigma_n\le\tc\gamma_n.\]
+The statement follows since the broken line $\sigma_\infty$ can be chosen in such a way that 
+$\tc\sigma_n$ is arbitrary close to $\tc\gamma_n$.
 \qeds
 
 \parbf{Convergence.}
@@ -136,7 +149,7 @@ Then for any minimizing geodesic $\gamma_\infty$ in $\Sigma_\infty$ there is a s
 \end{thm}
 
 \parit{Proof.}
-Assume $\gamma_\infty$ parametrized by its length $[0,\ell]$.
+Assume $\gamma_\infty\:[0,\ell]\to\Sigma_\infty$ is parametrized by its arc length.
 
 Fix a subinterval $[a,b]\subset [0,\ell]$
 such that $0<a$ and $b<\ell$.
@@ -156,7 +169,7 @@ and applying diagonal procedure, we get the result.
 \section{Liberman's lemma.}
 
 In this section we give a slight generalization 
-of the construction of Liberman in \cite{liberman}.
+of the construction given by Liberman in \cite{liberman}.
 
 \parbf{Development.}
 Let $\gamma\:[0,\ell]\to\RR^3$ be a curve parametrized by length
@@ -168,69 +181,82 @@ and $\tilde p$ is a point in the plane such that
 for any $t\in[0,\ell]$ and the direction from $\tilde p$ to $\tilde \gamma(t)$ changes counterclockwise. 
 Then $\tilde\gamma_p$ is called \emph{development} of $\gamma$ with respect to $p$.
 
-We say that the development $\tilde\gamma_p$ is convex in the interval $[a,b]$
-if the curvelinear triangle bounded by arc $\tilde\gamma|_{[a,b]}$
-and the segments $[\tilde p\tilde\gamma(a)]$, $[\tilde p\tilde\gamma(a)]$
-is convex. 
-Correspondly we say that $\tilde\gamma$ is convex in the interval $[a,b]$
-if the complement of this triangle in the angle bounded by half-lines $[\tilde p\tilde\gamma(a))$ and $[\tilde p\tilde\gamma(b))$
- is convex.
+\begin{center}
+\begin{lpic}[t(3 mm),b(6 mm),r(0 mm),l(0 mm)]{pics/convex-concave(1)}
+\lbl[l]{23,13;$\tilde\gamma_p(a)$}
+\lbl[r]{0,22;$\tilde\gamma_p(b)$}
+\lbl[r]{0,3;$\tilde p$}
+\lbl[l]{73,13;$\tilde\gamma_p(a)$}
+\lbl[r]{50,22;$\tilde\gamma_p(b)$}
+\lbl[r]{50,3;$\tilde p$}
+\lbl[t]{10,-1;Convex development.}
+\lbl[t]{60,-1;Concave development.}
+\end{lpic}
+\end{center}
+
+We say that the development $\tilde\gamma_p$ is convex (concave) in the interval $[a,b]$
+if the lune bounded by arc $\tilde\gamma_p|_{[a,b]}$
+and the segment $[\tilde\gamma_p(a)\tilde\gamma_p(b)]$
+is convex and lies on with $\tilde p$ on the opposite side 
+from the line $(\tilde\gamma_p(a)\tilde\gamma_p(b))$ 
+(correspondingly the same side from the line $(\tilde\gamma_p(a)\tilde\gamma_p(b))$).
 
 We say that $\tilde\gamma_p$ is locally convex (concave) in the interval $[a,b]$
 if any point $x\in [a,b]$ admits a closed neighborhood $[a',b']$ in $[a,b]$
 such that $\tilde\gamma_p$ is convex (correspondingly concave) in the interval $[a',b']$.
 
-If we pass to the limit of this construction as $p$ moves to infinity along a half-line in the derection of a unit vector $\bm{u}$ then the limit curve is called development of $\gamma$ in direction $u$ and denoted as $\tilde\gamma_u$.
+If we pass to the limit of this construction as $p$ moves to infinity along a half-line in the derection of a unit vector $\bm{u}$ then the limit curve is called development of $\gamma$ in direction $\bm{u}$ and denoted as $\tilde\gamma_{\bm{u}}$.
 
-The development $\tilde\gamma_u$ could be also defined directly.
-Namely assume a curve $\tilde\gamma_{u}\:[0,\ell]\to \R^2$
+The development $\tilde\gamma_{\bm{u}}$ could be also defined directly.
+Namely the curve $\tilde\gamma_{\bm{u}}\:[0,\ell]\to \R^2$
 is parametrized by length and
-and for a fixed unit vector $\tilde u\in\RR^2$,
+and for a fixed unit vector $\tilde{\bm{u}}\in\RR^2$,
 we have
-\[\langle \tilde u,\tilde\gamma_u(t)\rangle=\langle  u,\gamma_u(t)\rangle\]
+\[\langle \tilde{\bm{u}},\tilde\gamma_{\bm{u}}(t)\rangle
+=
+\langle  \bm{u},\gamma(t)\rangle\]
 for any $t\in [0,\ell]$
-and the projection of $\tilde\gamma_u(t)$ to the line normal to $\tilde u$
+and the projection of $\tilde\gamma_{\bm{u}}(t)$ to the line normal to $\tilde{\bm{u}}$
 is monotonic in $t$.
-Then the curve $\tilde\gamma_u$ is called development of $\gamma$ in the direction $u$.
 
-We can assume that $\tilde u$ is the vertical vector in the coordinate plane.
-In this case $\tilde\gamma_u$ is a graph of a function $y=f(x)$
-defined in some real inteval.
-We say that $\tilde\gamma_u$ is concave (convex) in the interval $[a,b]$ 
-if the function $f$ is concave (correspondingly convex) in the corresponding real interval.
+We can assume that $\tilde{\bm{u}}$ is the vertical vector in the coordinate plane.
+We say that $\tilde\gamma_{\bm{u}}$ is concave (convex) in the interval $[a,b]$ 
+if the lune bounded by arc $\tilde\gamma_{\bm{u}}|_{[a,b]}$
+and the segment $[\tilde_{\bm{u}}\gamma(a)\tilde\gamma_{\bm{u}}(b)]$
+is convex and lies above (correspondingly below) the line segment $[\tilde\gamma_{\bm{u}}(a)\tilde\gamma_{\bm{u}}(b)]$.
  
 \parbf{Dark and light sides.}
 Let $\Sigma\subset\RR^3$ be a smooth convex surface 
 and $z\notin\Sigma$ and $p\in\Sigma$.
 
 We say that $p$ lies on the dark (light) side of $\Sigma$ with from $z$ 
-if all the points $p+t\cdot(p-z)$ lie outside of $\Sigma$ for $t>0$ (correspondingly for $t<0$).
-The intesection of dark and light side is called horizon of $z$;
+if non of the points $p+t\cdot(p-z)$ lie inside of $\Sigma$ for $t>0$ (correspondingly for $t<0$).
+The intersection of dark and light side is called horizon of $z$;
 it is denoted by $\omega_z$.
 
 Note that if $z$ lies inside $\Sigma$ then all the points on $\Sigma$ lies on dark side from $z$.
 
 If $\Sigma$ is smooth we can define the outer normal vector $\nu_p$ to $\Sigma$ at $p$.
 In this case $p$ lies on dark (light) side of $\Sigma$ with from $z$
-if and only if $\langle z-p,\nu_p\rangle\ge 0$
-(correspondingly for $\langle z-p,\nu_p\rangle\le 0$).
-If in addition $\Sigma$ is strongly convex then the horizon is formed by a collection of disjont smooth curves.
+if and only if $\langle p-z,\nu_p\rangle\ge 0$
+(correspondingly for $\langle p-z,\nu_p\rangle\le 0$).
+If in addition $\Sigma$ is strongly convex then the horizon is formed by a collection of disjoint smooth curves.
 
 We could also define light/dark sides and horizon in the limit case,
-if $p$ escapes to infinity along a half-line in derection $u$.
+as $p$ escapes to infinity along a half-line in derection $\bm{u}$.
 Let us also define it derectly,
-we say that a point $p\in\Sigma$ lies on dark (light) side for the unit vector $u$ if all the points $p+u\cdot t$ lie outside of $\Sigma$ for all $t>0$, (correspondingly $t<0$).
-As before the intesection of light and dark side is called horizon and denoted by $\omega_u$.
+we say that a point $p\in\Sigma$ lies on dark (light) side for the unit vector $u$ if non of the points $p+\bm{u}\cdot t$ lie inside of $\Sigma$ for $t>0$, (correspondingly $t<0$).
+As before the intersection of light and dark side is called horizon of $\bm{u}$ and it is denoted as $\omega_{\bm{u}}$.
 
 In the smooth case the later means that $\langle \nu_p,u\rangle\ge 0$ (correspondingly $\langle \nu_p,u\rangle\le 0$).
-If $\Sigma$ is strongley convex then $\omega_u$ is locally a smooth curve.
+If $\Sigma$ is strongly convex then $\omega_u$ is locally a smooth curve.
 
 \begin{thm}{Liberman's Lemma}\label{lem:liberman}
 Assume $\gamma$ be a geodesic on convex surface $\Sigma\subset \RR^3$.
 Then for any point $z\notin\Sigma$ the development $\tilde\gamma_z$ is locally convex (locally concve) if $\gamma$ lies on dark (correspondingly light) side of $\Sigma$ from $z$.
 
-Similarly for any unit vector $u$,
-the development $\tilde\gamma_u$ is locally convex (locally concve) if $\gamma$ lies on dark (correspondingly light) side of $\Sigma$ for $u$.
+Similarly for any unit vector $\bm{u}$,
+the development $\tilde\gamma_{\bm{u}}$ is locally convex (locally concave) if $\gamma$ lies on dark (correspondingly light) side of $\Sigma$ for $\bm{u}$.
 
 \end{thm}
 
@@ -239,7 +265,7 @@ we have
 \[\tc\tilde\gamma_{\bm{u}}\le\tc\gamma.\]
 On the other hand total curvature of few developments gives an estimate 
 for the total curvature of the original curve.
-For example if $\bm{i},\bm{j},\bm{k}$ is the orthonormal basis then
+For example, if $\bm{i},\bm{j},\bm{k}$ is the orthonormal basis then
 \[\tc\gamma
 \le
 \tc\tilde\gamma_{\bm{i}}+\tc\tilde\gamma_{\bm{j}}+\tc\tilde\gamma_{\bm{k}}.\]
@@ -259,14 +285,14 @@ at most $N$ times then
 \\
 &\le(N+1)\cdot \pi.
 \end{align*}
-Therefore if $\gamma$ violetes Main Theorem then it has to cross the  horisons $\omega_{\bm{i}}$, $\omega_{\bm{j}}$ and $\omega_{\bm{k}}$ more that $10^9$ times.
+Therefore if $\gamma$ violetes Main Theorem then it has to cross the  horisons $\omega_{\bm{i}}$, $\omega_{\bm{j}}$ and $\omega_{\bm{k}}$ more that $10^9$ times.%???NUMBER???
 
 \begin{thm}{Corollary}
 Let $\Sigma\subset\RR^3$
 be a strongly convex smooth surface
 and $\gamma\:[0,\ell]\to \Sigma$ be a unitspeed geodesic.
-Assume that for some unit vector $u$,
-the $\gamma$ cross the horizon $\omega_u$ tranversally at 
+Assume that for some unit vector $\bm{u}$,
+the $\gamma$ cross the horizon $\omega_{\bm{u}}$ transversely at 
 $t_1<\dots t_k$.
 Set $\alpha_i=\measuredangle(\dot\gamma(t_i),u)$ for each $i$.
 Then
@@ -281,7 +307,9 @@ estimate for
 \parit{Proof.}
 By Liberman's lemma,
 \[\tc_{u}(\gamma|_{[t_i,t_{i+1}]}=\pm(\alpha_i-\alpha_{i+1})\]
-where we have $+$ sign if $[t_i,t_{i+1}]$ lies on the dark side from $u$ and $-$ if it lies on the light side.
+where the sign is ``$+$'' 
+if $[t_i,t_{i+1}]$ lies on the dark side 
+and ``$-$'' if it lies on the light side from $u$.
 Summing all this up we get
 \[\tc_{u}(\gamma|_{[t_1,t_{k}]}=\alpha_1-2\cdot\alpha_2-\dots+(-1)^k\cdot2\cdot\alpha_{k-1}-(-1)^k\cdot\alpha_k.\]
 By Liberman's lemma we also have
@@ -292,9 +320,12 @@ Since $|\alpha_i|\le\tfrac\pi 2$, the statement follows.
 
 \section{Key Lemma}
 
-Let $\Sigma$ be a smooth strongly convex surface in $\RR^3$.
-Given a unit vector $\bm{u}$,
-denote by $\omega_{\bm{u}}$ the $\bm{u}$-horizon on $\Sigma$.
+
+Recall that $\omega_{\bm{u}}$ denotes the horizon of the unite vector $\bm{u}$ on $\Sigma$;
+it forms by a collection of disjoint smooth curves.
+
+Assume $\Sigma$ is a smooth strongly convex surface in $\RR^3$
+and $\bm{u}$ is a unit vector.
 
 Let $\gamma\:[a,b]\to\Sigma$ be a geodesic wich lies completely 
 on the dark side
@@ -313,8 +344,8 @@ takes one of the following four values
 $\alpha-\beta$, $2\cdot\pi-(\alpha-\beta)$, 
 $\pi\pm(\alpha+\beta)$.
 
-Note that $\tc_{\bm{u}}\gamma=\alpha-\beta$
-therefore in all 4 cases we have
+Since $\tc_{\bm{u}}\gamma=\alpha-\beta$,
+we get
 \[\tc_{\bm{u}}\gamma\le\int\limits_\Omega K\cdot d\area.\]
 
 \section{Snake and spirals}
@@ -329,7 +360,7 @@ if $\gamma$ cross $\omega_{\bm{u}}$ as shown on the picture.
 That is, points $\gamma(t_1),\dots,\gamma(t_k)$
 lie in the same order oncross $\omega_{\bm{u}}$.
 \begin{center}
-\begin{lpic}[t(1 mm),b(1 mm),r(0 mm),l(0 mm)]{pics/horizon-geodesic(1)}
+\begin{lpic}[t(2 mm),b(1 mm),r(0 mm),l(0 mm)]{pics/horizon-geodesic(1)}
 \lbl[t]{5,5.5;$\gamma(0)$}
 \lbl[bl]{16,14;$\gamma(t_0)$}
 \lbl[b]{40.5,18,3;$\dots$}
