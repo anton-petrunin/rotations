@@ -41,9 +41,7 @@ in the Euclidean space.
 
 \section{Introduction}
 
-The existence of a universal upper bound on total curvature of minimizing geodesic on convex surface was conjectured by Dmitry Burago;
-it was also stated as an open question in \cite{AH-PSV}, \cite{pach} and \cite{BKZ}.
-We answer this question affirmatively.
+In this note we give an affirmative answer to the question asked by Dmitry Burago (the same question was also stated in \cite{AH-PSV}, \cite{pach} and \cite{BKZ}).
 Namely, we prove the following.
 
 \begin{thm}{Main theorem}\label{thm:main}
@@ -222,7 +220,7 @@ is monotonic in $t$.
 We can assume that $\tilde{\bm{u}}$ is the vertical vector in the coordinate plane.
 We say that $\tilde\gamma_{\bm{u}}$ is concave (convex) in the interval $[a,b]$ 
 if the lune bounded by arc $\tilde\gamma_{\bm{u}}|_{[a,b]}$
-and the segment $[\tilde_{\bm{u}}\gamma(a)\tilde\gamma_{\bm{u}}(b)]$
+and the segment $[\tilde\gamma_{\bm{u}}(a)\tilde\gamma_{\bm{u}}(b)]$
 is convex and lies above (correspondingly below) the line segment $[\tilde\gamma_{\bm{u}}(a)\tilde\gamma_{\bm{u}}(b)]$.
  
 \parbf{Dark and light sides.}
@@ -249,7 +247,7 @@ we say that a point $p\in\Sigma$ lies on dark (light) side for the unit vector $
 As before the intersection of light and dark side is called horizon of $\bm{u}$ and it is denoted as $\omega_{\bm{u}}$.
 
 In the smooth case the later means that $\langle \nu_p,u\rangle\ge 0$ (correspondingly $\langle \nu_p,u\rangle\le 0$).
-If $\Sigma$ is strongly convex then $\omega_u$ is locally a smooth curve.
+If $\Sigma$ is strongly convex then $\omega_{\bm{u}}$ is locally a smooth curve.
 
 \begin{thm}{Liberman's Lemma}\label{lem:liberman}
 Assume $\gamma$ be a geodesic on convex surface $\Sigma\subset \RR^3$.
@@ -287,94 +285,133 @@ at most $N$ times then
 \end{align*}
 Therefore if $\gamma$ violetes Main Theorem then it has to cross the  horisons $\omega_{\bm{i}}$, $\omega_{\bm{j}}$ and $\omega_{\bm{k}}$ more that $10^9$ times.%???NUMBER???
 
-\begin{thm}{Corollary}
+\section{Curvature of development}
+
 Let $\Sigma\subset\RR^3$
 be a strongly convex smooth surface
-and $\gamma\:[0,\ell]\to \Sigma$ be a unitspeed geodesic.
+and $\gamma\:[0,\ell]\to \Sigma$ be a unit-speed geodesic.
 Assume that for some unit vector $\bm{u}$,
 the $\gamma$ cross the horizon $\omega_{\bm{u}}$ transversely at 
 $t_1<\dots t_k$.
-Set $\alpha_i=\measuredangle(\dot\gamma(t_i),u)$ for each $i$.
+Set $\alpha_i=\pm\measuredangle(\dot\gamma(t_i),\bm{u})$ for each $i$,
+we can assume that $\alpha_i\in(-\pi,\pi)$ 
+and the sign is taken so that 
+$[\dot\gamma(t_i),\bm{u}]=\sin\alpha_i\cdot\nu_{\gamma(t_i)}$,
+where $[{*},{*}$ denotes vector product 
+and $\nu_p$ is the outer normal vector to $\Sigma$ at the point $p\in\Sigma$.
+
+The values $t_i$ will be called \emph{meeting moments} 
+and the angles $\alpha_i$ will be called \emph{meeting angles} 
+of the geodesic $\gamma$ with the horizon $\omega_{\bm{u}}$.
+The arc $\gamma|_{[t_{i-1},t_i]}$ will be called \emph{$\omega_{\bm{u}}$-archway}.
+
+\begin{center}
+\begin{lpic}[t(2 mm),b(1 mm),r(0 mm),l(0 mm)]{pics/mitting(1)}
+\lbl[r]{5,4;$\gamma(0)$}
+\lbl[lb]{9,9;{\small $\gamma(t_0)$}}
+\lbl[rb]{28,9;{\small $\gamma(t_1)$}}
+\lbl[t]{82,2;{\small $\gamma(t_k)$}}
+\lbl[b]{68,2;$\omega_{\bm{u}}$}
+\lbl[b]{57,17,24;$\dots$}
+\lbl[b]{70,20;$\gamma$}
+\lbl[lb]{8,17;{\small $\alpha_0$}}
+\lbl[lb]{34,13;{\small $\alpha_1$}}
+\end{lpic}
+\end{center}
+
+Let us introduce new notation
+\[\tc_{\bm{u}}\gamma\df\tc\tilde\gamma_{\bm{u}}.\]
+From Liberman's lemma \ref{lem:liberman},
+we get the following.
+
+\begin{thm}{Corollary}
+Let $\Sigma\subset\RR^3$
+be a strongly convex smooth surface
+and $\gamma\:[0,\ell]\to \Sigma$ be a unit-speed geodesic.
+Assume that for some unit vector $\bm{u}$,
+the $\gamma$ cross the horizon $\omega_{\bm{u}}$ transversely
+and 
+$t_1<\dots t_k$ be its meeting moments and $\alpha_1,\dots\alpha_k$ be its meeting angles with the horizon $\omega_{\bm{u}}$.
 Then
-\[\tc_{u}\gamma\le 3\cdot\pi+2\cdot|\alpha_1-\alpha_2+\dots -(-1)^k\cdot\alpha^k|\]
+\[\tc_{\bm{u}}\gamma
+\le 4\cdot\pi
++
+2\cdot\left||\alpha_1|-|\alpha_2|
++\dots -(-1)^k\cdot|\alpha_k|\right|
+\]
 
 \end{thm}
 
-Most of the remaining part of paper devoted to finding an
-estimate for
-\[|\alpha_1-\alpha_2+\dots -(-1)^k\cdot\alpha^k|.\]
+To find the needed estimate the total curvature
+of geodesic we will get an upper bound for
+\[\left||\alpha_1|-|\alpha_2|
++\dots -(-1)^k\cdot|\alpha_k|\right|.\]
+Most of the remaining part of paper devoted to finding  such an upper bound.
+
 
 \parit{Proof.}
 By Liberman's lemma,
-\[\tc_{u}(\gamma|_{[t_i,t_{i+1}]}=\pm(\alpha_i-\alpha_{i+1})\]
+\[\tc_{\bm{u}}(\gamma|_{[t_{i-1},t_i]})=\pm(|\alpha_{i-1}|-|\alpha_i)|\]
 where the sign is ``$+$'' 
-if $[t_i,t_{i+1}]$ lies on the dark side 
+if the archway $[t_i,t_{i+1}]$ lies on the dark side 
 and ``$-$'' if it lies on the light side from $u$.
 Summing all this up we get
-\[\tc_{u}(\gamma|_{[t_1,t_{k}]}=\alpha_1-2\cdot\alpha_2-\dots+(-1)^k\cdot2\cdot\alpha_{k-1}-(-1)^k\cdot\alpha_k.\]
+\[\tc_{\bm{u}}(\gamma|_{[t_1,t_{k}]})
+=
+\left||\alpha_1|
+-2\cdot|\alpha_2|
++\dots+(-1)^k\cdot2\cdot|\alpha_{k-1}|-(-1)^k\cdot|\alpha_k|\right|.\]
 By Liberman's lemma we also have
-\[\tc_u(\gamma|_{[0,t_1]}),\tc_u(\gamma|_{[t_k,\ell]})\le \pi \]
-Since $|\alpha_i|\le\tfrac\pi 2$, the statement follows.
+\[\tc_{\bm{u}}(\gamma|_{[0,t_1]}),\tc_{\bm{u}}(\gamma|_{[t_k,\ell]})\le \pi \]
+Since $|\alpha_k|\le\pi$, the statement follows.
 \qeds 
-
-
-\section{Key Lemma}
 
 If $\Sigma$ is a surface in $\RR^3$ and $p\in\Sigma$
 we denote by $K_p$ the Gauss curvature of $\Sigma$ at $p$.
 
-\begin{thm}{Lemma}
-Let $\gamma$ be a geodesic on the strongly convex surface $\Sigma$.
-Assume that the ends of $\gamma$ 
-lies on the horizon $\omega_{\bm{u}}$
-of $\bm{u}$
-and there an open map $\iota\:\DD\to\Sigma$
-such that the image of the boundary $\partial\DD$
-is formed by $\gamma$ and an arc of $\omega_{\bm{u}}$.
+\begin{thm}{Archway Lemma}
+Let $\bm{u}$ be a unit vector,
+$\gamma\:[a,b]\to\Sigma$ 
+be a minimizing geodesic on the strongly convex surface $\Sigma\subset\RR^3$.
+Assume that $\gamma(a),\gamma(b)\in \omega_{\bm{u}}$
+and there is an immeression of disc $\iota\:\DD\to\Sigma$
+with the boundary curve $\iota|_{\partial\DD}$ formed by $\gamma$ and an arc of $\omega_{\bm{u}}$.
+
 Then 
-\[\int\limits_\DD K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma.\]
+\[\int\limits_{\DD} K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma
+=
+\pm(\alpha-\beta) 
+\pmod{2\cdot\pi}
+\eqlbl{eq:key}\]
+The sign above is ``$+$'' if $\gamma$ goes contrclockwise in $\DD$ and ``$-$'' otherwise. 
+In particular 
+\[|\alpha|-|\beta|
+\le
+\int\limits_{\DD} K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma.
+\eqlbl{eq:key2}\]
 \end{thm}
 
+\parit{Proof.}
+Note that $\Omega_+$ is bounded by $\gamma|_{[a,b]}$ and an arc of $\omega_{\bm{u}}$.
+Since $\gamma$ is a geodesic, 
+the parallel translation along $\gamma|_{[a,b]}$ maps $\dot\gamma(a)$ to $\dot\gamma(b)$.
+Note also the field parallel to $\bm{u}$ in $\RR^3$ is also parallel along $\omega_{\bm{u}}$.
 
+Hence the parallel translation around $\Omega_\pm$ rotates the tangent plane by angle $\alpha-\beta$.
+To prove \ref{eq:key} remains to apply Gauss--Bonnet formula.
 
-Recall that $\omega_{\bm{u}}$ denotes the horizon of the unite vector $\bm{u}$ on $\Sigma$;
-it forms by a collection of disjoint smooth curves.
+By Liberman's lemma,
+\[\tc_{\bm{u}}\gamma|_{[a,b]}=|\alpha|-|\beta|.\]
+Whence \ref{eq:key2} follows.
+\qeds
 
-Assume $\Sigma$ is a smooth strongly convex surface in $\RR^3$
-and $\bm{u}$ is a unit vector.
-
-Let $\gamma\:[a,b]\to\Sigma$ be a geodesic wich lies completely 
-on the dark side
-and both ends 
-$\gamma(a)$ and $\gamma(b)$ lie on $\omega_{\bm{u}}$.
-
-Set $\alpha=\measuredangle(\dot\gamma(a),\bm{u})-\tfrac\pi2$ and $\beta=\measuredangle(\dot\gamma(b),\bm{u})-\tfrac\pi2$.
-
-Assume $\Omega$ is one of the discs which 
-$\gamma$ cuts from the dark side of $\Sigma$.
-
-
-Then 
-\[\int\limits_\Omega K\cdot d\area\]
-takes one of the following four values 
-$\alpha-\beta$, $2\cdot\pi-(\alpha-\beta)$, 
-$\pi\pm(\alpha+\beta)$.
-
-Since $\tc_{\bm{u}}\gamma=\alpha-\beta$,
-we get
-\[\tc_{\bm{u}}\gamma\le\int\limits_\Omega K\cdot d\area.\]
-
-\section{Snake and spirals}
+\section{Snakes and spirals}
 
 Formally speaking, this section is not needed;
-it only shows how to use Key Lemma in the simplest case
+it only shows how one can use the Archway Lemma in the simplest case
 and explains the difficulty in the general case.
 
-
-This observation makes possible to estimate $\tc_{\bm{u}}\gamma$
-if $\gamma$ cross $\omega_{\bm{u}}$ as shown on the picture.
-That is, points $\gamma(t_1),\dots,\gamma(t_k)$
-lie in the same order oncross $\omega_{\bm{u}}$.
+Assume $\gamma$ cross the horizon $\omega_{\bm{u}}$ as shown on the picture.
 \begin{center}
 \begin{lpic}[t(2 mm),b(1 mm),r(0 mm),l(0 mm)]{pics/horizon-geodesic(1)}
 \lbl[t]{5,5.5;$\gamma(0)$}
@@ -382,13 +419,17 @@ lie in the same order oncross $\omega_{\bm{u}}$.
 \lbl[b]{40.5,18,3;$\dots$}
 \lbl[br]{66,16.5;$\gamma(t_k)$}
 \lbl[t]{73,12;$\gamma(\ell)$}
-\lbl[tl]{29,4;$\omega_u$}
+\lbl[tl]{29,4;$\omega_{\bm{u}}$}
 \lbl[]{24.5,8;$\Omega_1$}
 \lbl[]{56,10;$\Omega_k$}
 \end{lpic}
 \end{center}
-In this case we can chhose nonoverlaping discs $\Omega_1,\dots,\Omega_k$ which $\gamma$ cuts from light and dark side alternatively.
-Then estimates above sho that 
+That is, $t_0<\dots<t_k$ are the $\bm{u}$-crossing moments 
+and the points $\gamma(t_0),\dots,\gamma(t_k)$ appear along $\omega_{\bm{u}}$
+in the same order.
+
+In this case we can chose nonoverlaping discs $\Omega_1,\dots,\Omega_k$ which $\gamma$ cuts from light and dark side alternatively.
+Then by Archway lemma,
 \begin{align*}
 \tc_{\bm{u}}\gamma
 &=\tc_{\bm{u}}(\gamma|_{[0,t_0]})
@@ -400,17 +441,20 @@ Then estimates above sho that
 \\
 &\le 6\cdot\pi.
 \end{align*}
-The last integuality holds since the discs $\Omega_i$ do not overlap and by Gauss--Bonnet we have $K(\Sigma)\le 4\cdot\pi$.
 
 \begin{wrapfigure}{r}{35 mm}
 \begin{lpic}[t(-5 mm),b(0 mm),r(0 mm),l(0 mm)]{pics/spiral(1)}
 \end{lpic}
 \end{wrapfigure}
 
-This gives the first idea that the Key Lemma might be useful.
-It does not help that easily if the $\gamma$ cross $\omega$ in a different order, say as the spiral shown on the picture.
-For any arc $\gamma|_{[t_{i-1},t_i}$ we have tow choose one of two discs as $\Omega_i$,
-but they will always overlap.
+\noindent The last integuality holds since the discs $\Omega_i$ do not overlap. 
+Therefore by Gauss--Bonnet,
+\[K(\Omega_1)+\dots+K(\Omega_k)\le K(\Sigma)\le4\cdot\pi.\]
+
+If the $\gamma$ cross $\omega_{\bm{u}}$ 
+in a different order, 
+say as the spiral shown on the picture then the idea above is not directly applicable.
+Indeed, no matter how we choose the discs $\Omega_i$ for the archways they will always overlap.
 
 \section{Length and diameter}
 
@@ -1381,14 +1425,14 @@ and $u\in\SS^2$.
 Assume that $0=t_0<t_1<\dots<t_n=\ell$ be the values such that each arcs $\gamma|_{[t_{i-1},t_i]}$ alternating light and dark side of $\Sigma$ with respect to $u$.
 Set $\alpha_i=\measuredangle(\dot\gamma(t_i),u)$
 Then 
-\[\tc_u\gamma=|\sum_i(-1)^i\alpha_i|.\]
+\[\tc_{\bm{u}}\gamma=|\sum_i(-1)^i\alpha_i|.\]
 
 Moreover, if $1<i<n$ 
 and $\Omega_i$ denotes the domain of $\Sigma$ bounded by the arc $\gamma|_{[t_{i-1},t_i]}$ and the $u$-horizon then 
 \[|\alpha_i-\alpha_{i-1}|\le \curv\Omega_i,\]
 where $\curv\Omega_i$ denotes the total curvature of $\Omega_i$.
 In particular,
-\[\tc_u\gamma\le 4\cdot\pi+\sum_i\curv\Omega_i.\]
+\[\tc_{\bm{u}}\gamma\le 4\cdot\pi+\sum_i\curv\Omega_i.\]
 \end{thm}
 
 \parbf{Remarks.}
@@ -1413,7 +1457,7 @@ N\cdot\curv\Sigma
 \le 
 4\cdot N\cdot\pi.\]
 Therefore, we get an estimate
-\[\tc_u\gamma
+\[\tc_{\bm{u}}\gamma
 \le 
 4\cdot N\cdot\pi+|\alpha_0-\alpha_1|+|\alpha_{n-1}-\alpha_n|
 \le
