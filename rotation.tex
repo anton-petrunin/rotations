@@ -373,8 +373,9 @@ we denote by $K_p$ the Gauss curvature of $\Sigma$ at $p$.
 Let $\bm{u}$ be a unit vector,
 $\gamma\:[a,b]\to\Sigma$ 
 be a minimizing geodesic on the strongly convex surface $\Sigma\subset\RR^3$.
-Assume that $\gamma(a),\gamma(b)\in \omega_{\bm{u}}$
-and there is an immeression of disc $\iota\:\DD\to\Sigma$
+Assume that $\gamma(a),\gamma(b)\in \omega_{\bm{u}}$,
+$\alpha$ and $\beta$ are the meeting angles at $a$ and $b$ correspondingly
+and there is an immersion of disc $\iota\:\DD\looparrowright\Sigma$
 with the boundary curve $\iota|_{\partial\DD}$ formed by $\gamma$ and an arc of $\omega_{\bm{u}}$.
 
 Then 
@@ -385,24 +386,39 @@ Then
 \eqlbl{eq:key}\]
 The sign above is ``$+$'' if $\gamma$ goes contrclockwise in $\DD$ and ``$-$'' otherwise. 
 In particular 
-\[|\alpha|-|\beta|
+\[\bigl||\alpha|-|\beta|\bigr|
 \le
 \int\limits_{\DD} K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma.
 \eqlbl{eq:key2}\]
+
+In particular if $\gamma$ is an archway; that is it lies completely in the dark or light side or $\bm{u}$ then
+\[\tc_{}\gamma
+\le 
+\int\limits_{\iota(\DD)} K_p\cdot d_p\area_\Sigma.\eqlbl{eq:key3}\]
 \end{thm}
 
 \parit{Proof.}
-Note that $\Omega_+$ is bounded by $\gamma|_{[a,b]}$ and an arc of $\omega_{\bm{u}}$.
 Since $\gamma$ is a geodesic, 
-the parallel translation along $\gamma|_{[a,b]}$ maps $\dot\gamma(a)$ to $\dot\gamma(b)$.
-Note also the field parallel to $\bm{u}$ in $\RR^3$ is also parallel along $\omega_{\bm{u}}$.
+the parallel translation along $\gamma$ maps $\dot\gamma(a)$ to $\dot\gamma(b)$.
 
-Hence the parallel translation around $\Omega_\pm$ rotates the tangent plane by angle $\alpha-\beta$.
+Note also that $\bm{u}$ belongs to the tangent plane to $\Sigma$ at any point $p\in\omega_{\bm{u}}$;
+in particular the $\bm{u}$ extends to a parallel tangent vector field on $\omega_{\bm{u}}$.
+
+It follows that parallel translation along $\iota|_{\partial\DD}$ 
+rotates the tangent plane by angle $\alpha-\beta$;
 To prove \ref{eq:key} remains to apply Gauss--Bonnet formula.
 
-By Liberman's lemma,
-\[\tc_{\bm{u}}\gamma|_{[a,b]}=|\alpha|-|\beta|.\]
-Whence \ref{eq:key2} follows.
+Denote by $R$ the right hand side in \ref{eq:key2}.
+Note that $R\ge 0$ 
+and $|\alpha|,|\beta|\le \pi$.
+From the main statement of lemma it follows then that the minimal possible value for $R$ is $\bigl||\alpha|-|\beta|\bigr|$.
+
+To prove \ref{eq:key3}, note that in this case $\iota$ is an embedding.
+Therefore 
+\[\int\limits_{\DD} K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma
+=
+\int\limits_{\iota(\DD)} K_p\cdot d_p\area_\Sigma.\]
+Whence the statement follows from Liberman's lemma.
 \qeds
 
 \section{Snakes and spirals}
@@ -442,19 +458,20 @@ Then by Archway lemma,
 &\le 6\cdot\pi.
 \end{align*}
 
+The last inequality holds since the discs $\Omega_i$ do not overlap. 
+Therefore by Gauss--Bonnet,
+$$K(\Omega_1)+\dots+K(\Omega_k)\le K(\Sigma)\le4\cdot\pi.$$
+
 \begin{wrapfigure}{r}{35 mm}
 \begin{lpic}[t(-5 mm),b(0 mm),r(0 mm),l(0 mm)]{pics/spiral(1)}
 \end{lpic}
 \end{wrapfigure}
 
-\noindent The last integuality holds since the discs $\Omega_i$ do not overlap. 
-Therefore by Gauss--Bonnet,
-\[K(\Omega_1)+\dots+K(\Omega_k)\le K(\Sigma)\le4\cdot\pi.\]
-
 If the $\gamma$ cross $\omega_{\bm{u}}$ 
 in a different order, 
 say as the spiral shown on the picture then the idea above is not directly applicable.
 Indeed, no matter how we choose the discs $\Omega_i$ for the archways they will always overlap.
+
 
 \section{Length and diameter}
 
