@@ -41,7 +41,8 @@ in the Euclidean space.
 
 \section{Introduction}
 
-In this note we give an affirmative answer to the question asked by Dmitry Burago (the same question was also stated in \cite{AH-PSV}, \cite{pach} and \cite{BKZ}).
+In this note we give an affirmative answer to the question asked by Dmitry Burago; 
+the same question was also stated in \cite{AH-PSV}, \cite{pach} and \cite{BKZ}.
 Namely, we prove the following.
 
 \begin{thm}{Main theorem}\label{thm:main}
@@ -487,7 +488,7 @@ $2\cdot n\cdot\eps>1$.
 Then any 
 in any minimizing geodesic
 on a convex surface $\Sigma$ in $\RR^3$
-can be sudivided into twenty  $\tfrac1{10}$-straight arcs.
+can be sudivided into $n$   $\eps$-straight arcs.
 \end{thm}
 
 \parit{Proof.}
@@ -547,16 +548,99 @@ Let $\gamma\:[0,\ell]\to\Sigma$ be a minimizing geodeisc
 on a smooth strongly convex surface $\Sigma$ in $\RR^3$.
 Then there is an interval $[a,b]\subset[0,\ell]$
 such that 
-\[\tc(\gamma|_{[a,b]}>\tfrac1{100}\cdot\tc\gamma.\]
+\[\tc(\gamma|_{[a,b]}>\tfrac1{10^7}\cdot\tc\gamma.\]
 and 
-\[\measuredangle(\dot\gamma(t),\bm{u})<\tfrac\pi3\] 
+\[\measuredangle(\dot\gamma(t),\bm{u})<\tfrac\pi2-\tfrac1{100}\] 
 for any $t\in[a,b]$
 and a fixed unit vector $\bm{u}$.
 \end{thm}
 
+\parit{Proof.}
+By Lemma~\ref{lem:eps-straight}, the geodesic $\gamma$ can be subdivided into twenty $\tfrac1{10}$-straight arcs.
+Let us choose the arc $\gamma'$ with the maximal total curvature.
+Clearly 
+\[\tc\gamma'\ge\tfrac1{20}\cdot\tc\gamma.\]
+
+Let $\alpha_1$ be the angle,
+$\bm{u}_1$ be the vector
+and $\gamma_1$ be the arc in $\gamma'$ 
+provided by Lemma~\ref{lem:almost-const}.
+
+If $\alpha\ge\tfrac\pi2+\tfrac1{10}$ or $\alpha\le \tfrac\pi2+\tfrac2{10}$ then statement follows.
+
+Otherwise let us repeat the above construction for $\gamma_1$
+Namely, apply Lemma~\ref{lem:eps-straight} to the geodesic $\gamma_1$ and
+denote by $\gamma_1'$ the $\tfrac1{10}$-straight 
+arc with maximal total curvature.
+Again, we get
+\[\tc\gamma_1'\ge\tfrac1{20}\cdot\tc\gamma_1.\]
+
+Further apply Lemma~\ref{lem:almost-const},
+denote by $\gamma_2$ and $\alpha_2$ the obtained subarc and angle.
+Again, if $\alpha_2\ge\tfrac\pi2+\tfrac1{10}$ or $\alpha_2\le \tfrac\pi2+\tfrac2{10}$ then statement follows.
+
+
+Otherwise $\gamma''''$ runs in the direction which is nearly perpendicular to the direction to $p$ and $q$.
+Namely ???
+Since ???
+
+
+
+\qeds
+
 The proof will use the following claim.
 It states that 
 if a short smooth unit-speed curve runs at nearly the same rate from the vertices of triangle then it runs in nearly the same direction.
+
+\begin{thm}{Lemma}\label{lem:almost-const}
+Let $\gamma\:[0,\ell]\to\Sigma$ be a $\tfrac1{1000}$-straight minimizing geodesic 
+on a smooth strongly convex surface $\Sigma$ in $\RR^3$.
+Then there is an interval $[a,b]\subset[0,\ell]$
+such that 
+\[\tc(\gamma|_{[a,b]})\ge\tfrac1{2000}\cdot\tc\gamma.\]
+and 
+\[\alpha
+\le
+\measuredangle(\dot\gamma(t),\gamma(\ell)-\gamma(0))
+\le\alpha+\tfrac1{10}\] 
+some fixed $\alpha$
+and
+any $t\in[a,b]$.
+\end{thm}
+
+\parit{Proof.}
+Without loss of generality we can assume that
+$\ell=2$ and 
+\[\tc(\gamma|_{[1,2]})
+\ge
+\tfrac12\cdot\tc\gamma.\]
+
+Set $p=\gamma(0)$.
+Since $\gamma$ is $\tfrac1{1000}$-straight,
+$|\gamma(t)-p|\ge 1-\tfrac1{1000}$ 
+and
+\[\measuredangle(\bm{v},\gamma(t)-p)
+\le
+\measuredangle(\tilde\gamma_p(1)-\tilde p,\tilde\gamma_p(2)-\tilde p)
+<
+\tfrac1{20}\]
+for any $t\ge 1$.
+
+By Liberman's lemma 
+\[\tc_p(\gamma|_{[1,2]})\le \tfrac1{20}+\pi<4.\]
+It follows that we can subdivide $\gamma|_{[1,2]}$ into $100$ arcs 
+such that $\gamma_1,\gamma_2,\dots,\gamma_{100}$ such that
+\[\tc_p(\gamma_n)\le \tfrac{1}{20}\]
+for each $n$.
+
+It follows that for each $n$, there is $\alpha_n$ such that
+\[\alpha_n
+\le
+\measuredangle(\dot\gamma_n(t),\gamma_n(\ell)-\gamma(0))
+\le
+\alpha_n+\tfrac1{10}.\] 
+The arc $\gamma_n$ with the maximal total curvature will solves the proposition.
+\qeds
 
 \begin{thm}{Claim}
 Given $\eps>0$ there is $\delta>0$ such that the following condition holds.
@@ -1037,7 +1121,7 @@ According to Liberman's lemma
 
 
 
-\section{Final assembling}
+\section{Final assembling of the proof}
 
 
 Assume there is a minimizing geodesic $\gamma\:[0,\ell]\to \Sigma$ in a convex surface $\Sigma\subset \RR^3$ such that
