@@ -13,4 +13,8 @@ lib/*
 *.patch
 */*.zip
 .*
+*.bbl
+*.bcf
+*.blg
+*.xml
 !/.gitignore

@@ -47,7 +47,7 @@ Namely, we prove the following.
 
 \begin{thm}{Main theorem}\label{thm:main}
 The total curvature of a minimizing geodesic
-on a convex surface in $\RR^3$ can not exceed $10^{10}$.
+on a convex surface in $\RR^3$ can not exceed $10^{100}$.
 \end{thm}
 
 The optimal upper bound is expected to be slightly bigger than $2\cdot\pi$.
@@ -57,7 +57,8 @@ with total curvature slightly bigger that $2\cdot\pi$ was constructed by
 B{\'a}r{\'a}ny,
 Kuperberg, 
 and Zamfirescu in \cite{BKZ}.
-Let us list the related results.
+
+Let us list other related results.
 
 \begin{itemize}
 \item In \cite{liberman}, Liberman gives a bound on the total curvature of short geodesic in terms of the ratio diameter and inradius of $K$.
@@ -422,10 +423,8 @@ Therefore
 Whence the statement follows from Liberman's lemma.
 \qeds
 
-\section{Snakes and spirals}
-
-Formally speaking, this section is not needed;
-it only shows how one can use the Archway Lemma in the simplest case
+\parbf{Snakes and spirals.}
+Let us show how one can use the Archway Lemma in the simplest case
 and explains the difficulty in the general case.
 
 Assume $\gamma$ cross the horizon $\omega_{\bm{u}}$ as shown on the picture.
@@ -479,12 +478,12 @@ Indeed, no matter how we choose the discs $\Omega_i$ for the archways they will 
 Let $\eps>0$.
 A curve $\gamma\:[a,b]\to\RR^3$ will be called $\eps$-straight
 if 
-\[(1-\eps)\cdot\length \gamma\le |\gamma(b)-\gamma(a)|\]
+\[(1-\eps)\cdot\length \gamma< |\gamma(b)-\gamma(a)|\]
 
 \begin{thm}{Lemma}\label{lem:eps-straight}
 Assume $\eps>0$ 
 and $n$ is a positive integer such that
-$2\cdot n\cdot\eps>1$.
+$n\cdot\eps>2$.
 Then any 
 in any minimizing geodesic
 on a convex surface $\Sigma$ in $\RR^3$
@@ -492,30 +491,40 @@ can be sudivided into $n$   $\eps$-straight arcs.
 \end{thm}
 
 \parit{Proof.}
-Assume two points $p$ and $q$ lie on a canovex surface $\Sigma$.
+Let $\alpha\in(0,\pi)$
+be such that 
+\[1-\cos\alpha=\eps.\]
+
+Assume two points $p$ and $q$ lie on the convex surface $\Sigma$.
 Denote by $\nu_p$ and $\nu_q$ the outer normal vectors at $p$ and $q$ correspondingly.
-Set $\alpha=\measuredangle(\nu_p,\nu_q)$ and  $\eps=1-\cos\tfrac\alpha2$.
-
 Note that any minimizing geodesic geodesic from $p$ to $q$ on $\Sigma$
-is $\eps$-straight.
-
-It follows that if two points $p$ and $q$ on $\Sigma$ can be jointed by an minimizing geodesic which is not $\tfrac1{10}$-straight
-then the 
+is $\eps$-straight if 
+\[\measuredangle(\nu_p,\nu_q)\le 2\cdot\alpha.\]
 
 Note that there are at most $\tfrac2{1-e^{-\eps}}$ points in $\mathbb S^2$ which lie on distance at least $2\cdot\alpha$ from each other.
 
 Let $\gamma\:[0,\ell]\to \Sigma$ be a minimizing geodesic parametrized by its length.
 
 Given a value $t\in [0,\ell]$,
-set $t'$ to be the maximal value in $[0,\ell]$ such that the interval $[t,t']$ is $\tfrac1{10}$-straight.
+set $t'$ to be the minimal value in $[t,\ell]$ such that the  interval $[t,t']$ is not $\eps$-straight.
 
-Consider the maximal sequence $0=t_0<t_1<\dots<t_n<\ell$
-such that $t_{i+1}=t_i'$.
+Consider a sequence $0=t_0<t_1<\dots<t_n<\ell$
+such that $t_{i+1}=t_i'$ for each $i$.
+Note that non of intervals $[t_i,t_j]$
+for $j>i$ is $\eps$-straight.
+
 Denote by $\nu_i$ the outer unit normal vector to $\Sigma$ at $\gamma(t_i)$. 
+It follows that 
+\[\measuredangle(\nu_i,\nu_j)\ge2\cdot\alpha\] for all $i$ and $j$.
+In other words, the open balls $\mathrm{B}_\alpha(\nu_i)$
+in $\SS^2$ do not intersect with each other.
 
-Note that $\measuredangle(\nu_i,\nu_j)>2\cdot\alpha$ for all $i$ and $j$.
-It follows that $n<\tfrac2{1-e^{-\eps}}$.
-Hence the problem follows.
+It remains to note that 
+\[\area\mathrm{B}_\alpha(\nu_i) =2\cdot\pi\cdot\eps
+ \ \ \text{and}\ \ 
+ \area\SS^2=4\cdot\pi.
+\]
+Hence the result follows.
 \qeds
 
 
@@ -544,48 +553,98 @@ a contradiction.
 \section{Reduction to a monotonic case}
 
 \begin{thm}{Proposition}\label{prop:almost-const}
-Let $\gamma\:[0,\ell]\to\Sigma$ be a minimizing geodeisc 
-on a smooth strongly convex surface $\Sigma$ in $\RR^3$.
-Then there is an interval $[a,b]\subset[0,\ell]$
+For any $\eps>0$ there is $\delta>0$ such that the following holds.
+
+If $\gamma\:[a,b]\to\Sigma$ be a minimizing geodeisc 
+on a smooth strongly convex surface $\Sigma$ in $\RR^3$
+then there is an interval $[a',b']\subset[a,b]$
 such that 
-\[\tc(\gamma|_{[a,b]}>\tfrac1{10^7}\cdot\tc\gamma.\]
+\[\tc(\gamma|_{[a,b]})>\delta\cdot\tc\gamma.\]
 and 
-\[\measuredangle(\dot\gamma(t),\bm{u})<\tfrac\pi2-\tfrac1{100}\] 
+\[\measuredangle(\dot\gamma(t),\bm{u})<\eps\] 
 for any $t\in[a,b]$
 and a fixed unit vector $\bm{u}$.
+
+Moreover, if $\eps=\tfrac1{10}$ then one can assume $\delta=\tfrac1{10^{50}}$.
 \end{thm}
 
-\parit{Proof.}
-By Lemma~\ref{lem:eps-straight}, the geodesic $\gamma$ can be subdivided into twenty $\tfrac1{10}$-straight arcs.
-Let us choose the arc $\gamma'$ with the maximal total curvature.
-Clearly 
-\[\tc\gamma'\ge\tfrac1{20}\cdot\tc\gamma.\]
+In the proof we will need the following two lemmas.
 
-Let $\alpha_1$ be the angle,
-$\bm{u}_1$ be the vector
+\begin{thm}{Lemma}
+For any $\eps$ there is $\delta>0$ such that the following holds.
+
+Assume $\gamma$ is a curve,
+$\bm{v}_1$ and $\bm{v}_2$  be two vectors in $\RR^3$
+and $0\le\alpha_1,\alpha_2\le\pi$ be such that
+such that $\eps<\measuredangle(\bm{v}_1,\bm{v}_2)<\pi-\eps$ and
+$\measuredangle(\bm{v}_i,\dot\gamma(t))\lege\alpha_i\pm\delta$
+then there is a vector $\bm{u}$ such that
+$\measuredangle(\bm{u},\dot\gamma(t))<\eps$.
+
+Moreover, if $\eps<\tfrac1{10}$ then one can take $\delta=\eps^{10}$.
+\end{thm}
+
+The proof is straightforward computation;
+we omit it.
+
+\parit{Proof.}
+Set $\gamma_0=\gamma$ and $\lambda_0=\tc\gamma_0$.
+By Lemma~\ref{lem:eps-straight}, the geodesic $\gamma_0$ can be subdivided into $n$ arcs which are  $\eps$-straight.
+Let us choose the arc $\gamma'_0$ with the maximal total curvature.
+Clearly 
+\[\tc\gamma'_0\ge\tfrac1{n}\cdot\lambda_0.\]
+
+Let $\alpha_1$ be the angle
 and $\gamma_1$ be the arc in $\gamma'$ 
 provided by Lemma~\ref{lem:almost-const}.
+In particular 
+\begin{align*}
+\tc\gamma_1&\ge\tfrac{\delta}{20}\cdot\tc\gamma'_0
+\ge
+\\
+&\ge \tfrac{\delta}{20\cdot n}\cdot\lambda_0
+\end{align*}
 
-If $\alpha\ge\tfrac\pi2+\tfrac1{10}$ or $\alpha\le \tfrac\pi2+\tfrac2{10}$ then statement follows.
 
-Otherwise let us repeat the above construction for $\gamma_1$
+If 
+$\alpha_1\ge\tfrac15\cdot\pi$ 
+or 
+$\alpha_1\le \tfrac45\cdot\pi-2\cdot\delta$ 
+then statement holds for the arc $\gamma_1$ and the vector $\bm{u}=\pm\bm{v}_{\gamma'}$.
+
+Otherwise let us repeat the above construction for $\gamma_1$.
 Namely, apply Lemma~\ref{lem:eps-straight} to the geodesic $\gamma_1$ and
-denote by $\gamma_1'$ the $\tfrac1{10}$-straight 
+denote by $\gamma_1'$ the $\eps$-straight 
 arc with maximal total curvature.
+Note that $\bm{v}_{\gamma_1'}$ is almost perpendicular to $\bm{v}_{\gamma'_0}$; 
+that is
+\[
+\tfrac15\pi- 10\cdot\delta
+\le
+\measuredangle(\bm{v}_{\gamma_1'},\bm{v}_{\gamma'_0})
+\le
+\tfrac45\pi+ 10\cdot\delta
+\eqlbl{eq:v1-perp-v_2}\]
 Again, we get
-\[\tc\gamma_1'\ge\tfrac1{20}\cdot\tc\gamma_1.\]
+\[\tc\gamma_1'\ge\tfrac1{n}\cdot\tc\gamma_1.\]
 
-Further apply Lemma~\ref{lem:almost-const},
-denote by $\gamma_2$ and $\alpha_2$ the obtained subarc and angle.
-Again, if $\alpha_2\ge\tfrac\pi2+\tfrac1{10}$ or $\alpha_2\le \tfrac\pi2+\tfrac2{10}$ then statement follows.
-
-
-Otherwise $\gamma''''$ runs in the direction which is nearly perpendicular to the direction to $p$ and $q$.
-Namely ???
-Since ???
+Further apply Lemma~\ref{lem:almost-const} to $\gamma_1'$.
+Denote by $\gamma_2$ and $\alpha_2$ the angle and the subarc of $\gamma_1'$.
+Again, 
+$\alpha_2\ge\tfrac15\cdot\pi$ 
+or 
+$\alpha_2\le \tfrac45\cdot\pi-2\cdot\delta$  then statement follows.
 
 
+Otherwise $\gamma_2$ runs in the direction which is nearly perpendicular $\bm{v}_{\gamma'_0}$ and $\bm{v}_{\gamma'_1}$.
+That is 
+\[\measuredangle(\dot\gamma_2(t),\bm{v}_{\gamma'_0}),\measuredangle(\dot\gamma_2(t),\bm{v}_{\gamma'_1}) \lege\tfrac\pi2\pm 4\cdot\delta
+\eqlbl{eq:v1,2-perp-gamma}\]
 
+The inequalities \ref{eq:v1-perp-v_2} and \ref{eq:v1,2-perp-gamma}
+imply that 
+\[\measuredangle(\dot\gamma_2(t),\bm{u})<10\cdot\delta\]
+for a vector $\bm{u}$ perpendicular to $\bm{v}_{\gamma'_1}$ and $\bm{v}_{\gamma'_2}$.
 \qeds
 
 The proof will use the following claim.
@@ -593,132 +652,66 @@ It states that
 if a short smooth unit-speed curve runs at nearly the same rate from the vertices of triangle then it runs in nearly the same direction.
 
 \begin{thm}{Lemma}\label{lem:almost-const}
-Let $\gamma\:[0,\ell]\to\Sigma$ be a $\tfrac1{1000}$-straight minimizing geodesic 
+Assume $\tfrac\pi2>\eps,\delta>0$ and $1-\cos\delta>\eps.$
+
+Let $\gamma\:[a,b]\to\Sigma$ 
+be an $\eps$-straight minimizing geodesic 
 on a smooth strongly convex surface $\Sigma$ in $\RR^3$.
-Then there is an interval $[a,b]\subset[0,\ell]$
+Set $\bm{v}_\gamma=\gamma(b)-\gamma(a)$.
+Then there is an interval $[a',b']\subset[a,b]$
 such that 
-\[\tc(\gamma|_{[a,b]})\ge\tfrac1{2000}\cdot\tc\gamma.\]
+\[\tc(\gamma|_{[a',b']})\ge\tfrac{\delta}{20}\cdot\tc\gamma.\]
 and 
 \[\alpha
 \le
-\measuredangle(\dot\gamma(t),\gamma(\ell)-\gamma(0))
-\le\alpha+\tfrac1{10}\] 
-some fixed $\alpha$
+\measuredangle(\dot\gamma(t),\bm{v}_\gamma)
+\le\alpha+2\cdot\delta\] 
+for some fixed $\alpha$
 and
-any $t\in[a,b]$.
+any $t\in[a',b']$ we have.
 \end{thm}
 
 \parit{Proof.}
 Without loss of generality we can assume that
-$\ell=2$ and 
+$a=0$, $b=2$ and 
 \[\tc(\gamma|_{[1,2]})
 \ge
 \tfrac12\cdot\tc\gamma.\]
 
 Set $p=\gamma(0)$.
-Since $\gamma$ is $\tfrac1{1000}$-straight,
-$|\gamma(t)-p|\ge 1-\tfrac1{1000}$ 
+Since $\gamma$ is $\eps$-straight,
+$|\gamma(t)-p|\ge 1-\eps$ 
 and
-\[\measuredangle(\bm{v},\gamma(t)-p)
-\le
+\[
+\begin{aligned}
+\measuredangle(\bm{v}_\gamma,\gamma(t)-p)
+&\le
 \measuredangle(\tilde\gamma_p(1)-\tilde p,\tilde\gamma_p(2)-\tilde p)
 <
-\tfrac1{20}\]
+\\
+&<
+\delta\end{aligned}
+\eqlbl{eq:angle}
+\]
 for any $t\ge 1$.
 
 By Liberman's lemma 
-\[\tc_p(\gamma|_{[1,2]})\le \tfrac1{20}+\pi<4.\]
-It follows that we can subdivide $\gamma|_{[1,2]}$ into $100$ arcs 
-such that $\gamma_1,\gamma_2,\dots,\gamma_{100}$ such that
-\[\tc_p(\gamma_n)\le \tfrac{1}{20}\]
+\[\tc_p(\gamma|_{[1,2]})< \pi+\delta.\]
+Set $N=\lceil\tfrac\pi\delta+1\rceil$.
+It follows that we can subdivide $\gamma|_{[1,2]}$ into $N$ arcs 
+such that $\gamma_1,\gamma_2,\dots,\gamma_N$ such that
+\[\tc_p(\gamma_n)\le \delta\eqlbl{eq:tcp}\]
 for each $n$.
 
-It follows that for each $n$, there is $\alpha_n$ such that
+From \ref{eq:angle} and \ref{eq:tcp},
+it follows that for each $n$, there is $\alpha_n$ such that
 \[\alpha_n
 \le
-\measuredangle(\dot\gamma_n(t),\gamma_n(\ell)-\gamma(0))
+\measuredangle(\dot\gamma_n(t),\bm{v}_\gamma)
 \le
-\alpha_n+\tfrac1{10}.\] 
+\alpha_n+2\cdot\delta.\] 
 The arc $\gamma_n$ with the maximal total curvature will solves the proposition.
 \qeds
-
-\begin{thm}{Claim}
-Given $\eps>0$ there is $\delta>0$ such that the following condition holds.
-
-Assume $\gamma$ is a smooth unit-speed curve 
-in the unit ball $B\subset\RR^3$.
-Assume 
-$\length\gamma<\delta$ 
-and $B$ contains an equilateral triangle with vertices $x_1,x_2,x_3$ with sides $\eps$
-and for some fixed numbers
-$\alpha_1,\alpha_2,\alpha_3$
-for any $i$
-we have either
-\[|\gamma(t)-x_i|\le \tfrac\eps{10}\ \ \text{or}\ \ \measuredangle(x_i-\gamma(t),\dot\gamma(t))\lege \alpha_i\pm\delta\]
-for any $t$.
-Then there is a unit vector $u$ such that
-\[\measuredangle(\dot\gamma(t),u)\le\tfrac\pi3\]
-
-Moreover if $\eps=\tfrac1{100}$ 
-then one can take $\delta=\tfrac1{10000}$.
-\end{thm}
-
-The proof is straightforward calculations
-and it is left to the reader.
-
-\parit{Proof.}
-Applying rescaling, we can assume that $\diam\gamma=3$.
-By Lemma \ref{lem:diam-length} $\length\gamma_n\zz<12$.
-Therefore we can subdivide $\gamma$ into $12$ 
-arcs $\gamma_1,\dots,\gamma_{12}$
-such that for each $n$ there is a point $p_n\in K$ 
-which lies on the distance at least $1$ from $\gamma_n$ and $\length\gamma_n\le 1$.
-Choose
-an arc $\gamma'=\gamma_n$ with the maximal total curvature 
-and set $p'=p_n$.
-Clearly
-\[\tc\gamma'\ge\tfrac1{12}\cdot\tc\gamma.\]
-
-
-Applying Liberman's Lemma to $\gamma'$ with  the reference point $p'$ 
-we get that 
-\[\tc\tilde\gamma'_{p'}<\pi+1<5.\]
-
-Choose an integer $N>\tfrac2\eps$.
-Note that we can divide $\gamma'$ into $N$ arcs 
-$\gamma'_1,\dots,\gamma'_N$
-so that 
-\[\tc_{p'}\gamma_n'\le \tfrac{5}{N}\]
-for each $n$.
-Choose among these arcs the one with maximal total curvature,
-denote it further by $\gamma''$.
-Clearly 
-\[\tc\gamma''>\tfrac\eps{10^3}\cdot \tc\gamma'.\]
-
-Fix a parameter $t$ of $\gamma''$
-and denote by $\alpha$ the angle between $\dot\gamma''(t)$ and $p-\gamma''(t)$.
-
-If $\alpha<\tfrac\eps2$ or $\alpha>\pi-\tfrac\eps2$,
-then the problem is solved.
-
-Otherwise 
-applying Lemma \ref{lem:eps-straight} we get a nondegenerate (say equilateral) 
-triangle $\triangle a_1a_2a_3$ in $K_n$ 
-of the size comparable to $\diam \gamma'$ 
-and on the distance comparable to $\diam \gamma'$ from any point of $\gamma''$,
-say side of triangle can be taken to be $\tfrac{\eps^2}{1000}\cdot\diam \bar\gamma$
-and the distance to any point can be assumed to be between $\diam \bar\gamma$ and $2\cdot \diam \bar\gamma$
-
-Apply the construction to each vertex of the triangle.
-We pass to an arc of $\hat\gamma$
-such that the angle between $\dot\gamma(t)$ and $a_i-\gamma(t)$ 
-and the distance $|\gamma(t)-a_i|$
-are nearly constant for each $i$.
-The later imply that $\dot\gamma$ is nearly constant.
-\qeds
-
-
-
 
 
 \section{Elevating geodesics}\label{sec:elevating}
@@ -1146,7 +1139,7 @@ Similarly $\gamma_-$ lies on a graph of convex function and the same proposition
 \[\tc_{\bm{i}}\gamma_-\le 100\cdot\pi.\eqlbl{-}\]
 
 By Corollary~\ref{cor:gamma-0},
-\[\tc_{\bm{i}}\gamma_0\le 100\cdot\pi.\eqlbl{0}\]
+\[\tc_{\bm{i}}\gamma_0\le 100\cdot\pi.\]
 
 \[\tc\gamma_0\le ???\]
 Together with \ref{+} and \ref{-},
@@ -1163,6 +1156,104 @@ the later implies that
 \fussy
 
 \end{document}
+
+
+
+
+
+
+
+\begin{thm}{Claim}
+Given $\eps>0$ there is $\delta>0$ such that the following condition holds.
+
+Assume $\gamma$ is a smooth unit-speed curve 
+in the unit ball $B\subset\RR^3$.
+Assume 
+$\length\gamma<\delta$ 
+and $B$ contains an equilateral triangle with vertices $x_1,x_2,x_3$ with sides $\eps$
+and for some fixed numbers
+$\alpha_1,\alpha_2,\alpha_3$
+for any $i$
+we have either
+\[|\gamma(t)-x_i|\le \tfrac\eps{10}\ \ \text{or}\ \ \measuredangle(x_i-\gamma(t),\dot\gamma(t))\lege \alpha_i\pm\delta\]
+for any $t$.
+Then there is a unit vector $u$ such that
+\[\measuredangle(\dot\gamma(t),u)\le\tfrac\pi3\]
+
+Moreover if $\eps=\tfrac1{100}$ 
+then one can take $\delta=\tfrac1{10000}$.
+\end{thm}
+
+The proof is straightforward calculations
+and it is left to the reader.
+
+\parit{Proof.}
+Applying rescaling, we can assume that $\diam\gamma=3$.
+By Lemma \ref{lem:diam-length} $\length\gamma_n\zz<12$.
+Therefore we can subdivide $\gamma$ into $12$ 
+arcs $\gamma_1,\dots,\gamma_{12}$
+such that for each $n$ there is a point $p_n\in K$ 
+which lies on the distance at least $1$ from $\gamma_n$ and $\length\gamma_n\le 1$.
+Choose
+an arc $\gamma'=\gamma_n$ with the maximal total curvature 
+and set $p'=p_n$.
+Clearly
+\[\tc\gamma'\ge\tfrac1{12}\cdot\tc\gamma.\]
+
+
+Applying Liberman's Lemma to $\gamma'$ with  the reference point $p'$ 
+we get that 
+\[\tc\tilde\gamma'_{p'}<\pi+1<5.\]
+
+Choose an integer $N>\tfrac2\eps$.
+Note that we can divide $\gamma'$ into $N$ arcs 
+$\gamma'_1,\dots,\gamma'_N$
+so that 
+\[\tc_{p'}\gamma_n'\le \tfrac{5}{N}\]
+for each $n$.
+Choose among these arcs the one with maximal total curvature,
+denote it further by $\gamma''$.
+Clearly 
+\[\tc\gamma''>\tfrac\eps{10^3}\cdot \tc\gamma'.\]
+
+Fix a parameter $t$ of $\gamma''$
+and denote by $\alpha$ the angle between $\dot\gamma''(t)$ and $p-\gamma''(t)$.
+
+If $\alpha<\tfrac\eps2$ or $\alpha>\pi-\tfrac\eps2$,
+then the problem is solved.
+
+Otherwise 
+applying Lemma \ref{lem:eps-straight} we get a nondegenerate (say equilateral) 
+triangle $\triangle a_1a_2a_3$ in $K_n$ 
+of the size comparable to $\diam \gamma'$ 
+and on the distance comparable to $\diam \gamma'$ from any point of $\gamma''$,
+say side of triangle can be taken to be $\tfrac{\eps^2}{1000}\cdot\diam \bar\gamma$
+and the distance to any point can be assumed to be between $\diam \bar\gamma$ and $2\cdot \diam \bar\gamma$
+
+Apply the construction to each vertex of the triangle.
+We pass to an arc of $\hat\gamma$
+such that the angle between $\dot\gamma(t)$ and $a_i-\gamma(t)$ 
+and the distance $|\gamma(t)-a_i|$
+are nearly constant for each $i$.
+The later imply that $\dot\gamma$ is nearly constant.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
