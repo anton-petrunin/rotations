@@ -39,12 +39,12 @@ Mode=LaTeX
 
 [item:kubik.sty]
 archive=true
-column=0
+column=26
 encoding=UTF-8
 highlight=LaTeX
-line=0
+line=150
 mode=LaTeX
-open=false
+open=true
 order=1
 
 [item:lib.bib]
@@ -149,19 +149,19 @@ order=-1
 
 [item:rotation.tex]
 archive=true
-column=34
+column=47
 encoding=UTF-8
 highlight=LaTeX
-line=660
+line=1143
 mode=LaTeX
 open=true
 order=0
 
 [view-settings,view=0,item:kubik.sty]
-CursorColumn=19
-CursorLine=123
+CursorColumn=26
+CursorLine=150
 JumpList=
-ViMarks=.,123,0,[,123,0,],123,18
+ViMarks=.,150,17,[,150,17,],150,25
 
 [view-settings,view=0,item:lib.bib]
 CursorColumn=71
@@ -170,7 +170,7 @@ JumpList=
 ViMarks=
 
 [view-settings,view=0,item:rotation.tex]
-CursorColumn=34
-CursorLine=660
+CursorColumn=47
+CursorLine=1143
 JumpList=
-ViMarks=.,660,34,[,660,34,],660,34
+ViMarks=.,1143,0,[,1143,0,],1143,0

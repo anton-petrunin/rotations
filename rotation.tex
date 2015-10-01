@@ -555,120 +555,65 @@ a contradiction.
 \begin{thm}{Proposition}\label{prop:almost-const}
 For any $\eps>0$ there is $\delta>0$ such that the following holds.
 
-If $\gamma\:[a,b]\to\Sigma$ be a minimizing geodeisc 
+If $\gamma\:[a,b]\to\Sigma$ is a minimizing geodeisc 
 on a smooth strongly convex surface $\Sigma$ in $\RR^3$
 then there is an interval $[a',b']\subset[a,b]$
 such that 
-\[\tc(\gamma|_{[a,b]})>\delta\cdot\tc\gamma.\]
+\[\tc(\gamma|_{[a',b']})>\delta\cdot\tc\gamma.\]
 and 
 \[\measuredangle(\dot\gamma(t),\bm{u})<\eps\] 
 for any $t\in[a,b]$
 and a fixed unit vector $\bm{u}$.
 
-Moreover, if $\eps=\tfrac1{10}$ then one can assume $\delta=\tfrac1{10^{50}}$.
+Moreover, if $\eps=\tfrac1{10}$ then one can assume $\delta=\tfrac1{100^{100}}$.
 \end{thm}
 
 In the proof we will need the following two lemmas.
 
-\begin{thm}{Lemma}
+\begin{thm}{Lemma}\label{lem:almost-const-angles}
 For any $\eps$ there is $\delta>0$ such that the following holds.
 
 Assume $\gamma$ is a curve,
 $\bm{v}_1$ and $\bm{v}_2$  be two vectors in $\RR^3$
 and $0\le\alpha_1,\alpha_2\le\pi$ be such that
-such that $\eps<\measuredangle(\bm{v}_1,\bm{v}_2)<\pi-\eps$ and
-$\measuredangle(\bm{v}_i,\dot\gamma(t))\lege\alpha_i\pm\delta$
+such that 
+\begin{align*}
+\eps
+&<\measuredangle(\bm{v}_1,\bm{v}_2)<\pi-\eps
+\\
+\alpha_i-\delta
+&<\measuredangle(\bm{v}_i,\dot\gamma(t))< \alpha_i+\delta
+\end{align*}
 then there is a vector $\bm{u}$ such that
 $\measuredangle(\bm{u},\dot\gamma(t))<\eps$.
 
-Moreover, if $\eps<\tfrac1{10}$ then one can take $\delta=\eps^{10}$.
+Moreover if $\eps<\tfrac1{10}$ one can take $\delta=\eps^{10}$.
 \end{thm}
 
 The proof is straightforward computation;
 we omit it.
 
-\parit{Proof.}
-Set $\gamma_0=\gamma$ and $\lambda_0=\tc\gamma_0$.
-By Lemma~\ref{lem:eps-straight}, the geodesic $\gamma_0$ can be subdivided into $n$ arcs which are  $\eps$-straight.
-Let us choose the arc $\gamma'_0$ with the maximal total curvature.
-Clearly 
-\[\tc\gamma'_0\ge\tfrac1{n}\cdot\lambda_0.\]
-
-Let $\alpha_1$ be the angle
-and $\gamma_1$ be the arc in $\gamma'$ 
-provided by Lemma~\ref{lem:almost-const}.
-In particular 
-\begin{align*}
-\tc\gamma_1&\ge\tfrac{\delta}{20}\cdot\tc\gamma'_0
-\ge
-\\
-&\ge \tfrac{\delta}{20\cdot n}\cdot\lambda_0
-\end{align*}
-
-
-If 
-$\alpha_1\ge\tfrac15\cdot\pi$ 
-or 
-$\alpha_1\le \tfrac45\cdot\pi-2\cdot\delta$ 
-then statement holds for the arc $\gamma_1$ and the vector $\bm{u}=\pm\bm{v}_{\gamma'}$.
-
-Otherwise let us repeat the above construction for $\gamma_1$.
-Namely, apply Lemma~\ref{lem:eps-straight} to the geodesic $\gamma_1$ and
-denote by $\gamma_1'$ the $\eps$-straight 
-arc with maximal total curvature.
-Note that $\bm{v}_{\gamma_1'}$ is almost perpendicular to $\bm{v}_{\gamma'_0}$; 
-that is
-\[
-\tfrac15\pi- 10\cdot\delta
-\le
-\measuredangle(\bm{v}_{\gamma_1'},\bm{v}_{\gamma'_0})
-\le
-\tfrac45\pi+ 10\cdot\delta
-\eqlbl{eq:v1-perp-v_2}\]
-Again, we get
-\[\tc\gamma_1'\ge\tfrac1{n}\cdot\tc\gamma_1.\]
-
-Further apply Lemma~\ref{lem:almost-const} to $\gamma_1'$.
-Denote by $\gamma_2$ and $\alpha_2$ the angle and the subarc of $\gamma_1'$.
-Again, 
-$\alpha_2\ge\tfrac15\cdot\pi$ 
-or 
-$\alpha_2\le \tfrac45\cdot\pi-2\cdot\delta$  then statement follows.
-
-
-Otherwise $\gamma_2$ runs in the direction which is nearly perpendicular $\bm{v}_{\gamma'_0}$ and $\bm{v}_{\gamma'_1}$.
-That is 
-\[\measuredangle(\dot\gamma_2(t),\bm{v}_{\gamma'_0}),\measuredangle(\dot\gamma_2(t),\bm{v}_{\gamma'_1}) \lege\tfrac\pi2\pm 4\cdot\delta
-\eqlbl{eq:v1,2-perp-gamma}\]
-
-The inequalities \ref{eq:v1-perp-v_2} and \ref{eq:v1,2-perp-gamma}
-imply that 
-\[\measuredangle(\dot\gamma_2(t),\bm{u})<10\cdot\delta\]
-for a vector $\bm{u}$ perpendicular to $\bm{v}_{\gamma'_1}$ and $\bm{v}_{\gamma'_2}$.
-\qeds
-
-The proof will use the following claim.
-It states that 
-if a short smooth unit-speed curve runs at nearly the same rate from the vertices of triangle then it runs in nearly the same direction.
-
 \begin{thm}{Lemma}\label{lem:almost-const}
-Assume $\tfrac\pi2>\eps,\delta>0$ and $1-\cos\delta>\eps.$
+For any $\eps>0$ there is $\delta>0$
+such that the following holds.
 
 Let $\gamma\:[a,b]\to\Sigma$ 
-be an $\eps$-straight minimizing geodesic 
+be an $\delta$-straight minimizing geodesic 
 on a smooth strongly convex surface $\Sigma$ in $\RR^3$.
 Set $\bm{v}_\gamma=\gamma(b)-\gamma(a)$.
-Then there is an interval $[a',b']\subset[a,b]$
+Then there in a subinterval $[a',b']$ in $[a,b]$
 such that 
-\[\tc(\gamma|_{[a',b']})\ge\tfrac{\delta}{20}\cdot\tc\gamma.\]
+\[\tc(\gamma|_{[a',b']})\ge\delta\cdot\tc\gamma.\]
 and 
-\[\alpha
+\[\alpha-\eps
 \le
 \measuredangle(\dot\gamma(t),\bm{v}_\gamma)
-\le\alpha+2\cdot\delta\] 
+\le\alpha+\eps\] 
 for some fixed $\alpha$
 and
 any $t\in[a',b']$ we have.
+
+Moreover if $\eps<\tfrac1{10}$ one can take $\delta=\eps^{10}$.
 \end{thm}
 
 \parit{Proof.}
@@ -679,39 +624,93 @@ $a=0$, $b=2$ and
 \tfrac12\cdot\tc\gamma.\]
 
 Set $p=\gamma(0)$.
-Since $\gamma$ is $\eps$-straight,
-$|\gamma(t)-p|\ge 1-\eps$ 
-and
-\[
-\begin{aligned}
-\measuredangle(\bm{v}_\gamma,\gamma(t)-p)
-&\le
+Let $\theta\in(0,\pi)$ be such that $1-\cos\theta=\delta$.
+Note that 
+$$\measuredangle(\bm{v}_\gamma,\gamma(t)-p)
+\le
 \measuredangle(\tilde\gamma_p(1)-\tilde p,\tilde\gamma_p(2)-\tilde p)
 <
-\\
-&<
-\delta\end{aligned}
-\eqlbl{eq:angle}
-\]
+\theta
+\eqlbl{eq:angle1}$$
 for any $t\ge 1$.
 
 By Liberman's lemma 
-\[\tc_p(\gamma|_{[1,2]})< \pi+\delta.\]
-Set $N=\lceil\tfrac\pi\delta+1\rceil$.
-It follows that we can subdivide $\gamma|_{[1,2]}$ into $N$ arcs 
+\[\tc_p(\gamma|_{[1,2]})< \pi+\theta.\]
+Assume $N=\lceil\tfrac\pi\theta+1\rceil$.
+Then we can subdivide $\gamma|_{[1,2]}$ into $N$ arcs 
 such that $\gamma_1,\gamma_2,\dots,\gamma_N$ such that
-\[\tc_p(\gamma_n)\le \delta\eqlbl{eq:tcp}\]
+\[\tc_p(\gamma_n)\le \theta\eqlbl{eq:tcp}\]
 for each $n$.
 
-From \ref{eq:angle} and \ref{eq:tcp},
+From \ref{eq:angle1} and \ref{eq:tcp},
 it follows that for each $n$, there is $\alpha_n$ such that
-\[\alpha_n
+\[\alpha_n-\theta
 \le
 \measuredangle(\dot\gamma_n(t),\bm{v}_\gamma)
 \le
-\alpha_n+2\cdot\delta.\] 
+\alpha_n+\theta.\] 
 The arc $\gamma_n$ with the maximal total curvature will solves the proposition.
+
+It remains to choose $\delta$ so that $\theta(\delta)<\tfrac\eps{100}$.
 \qeds
+
+
+\parit{Proof of Proposition~\ref{prop:almost-const}.}
+Set $\gamma_0=\gamma$ and 
+$\lambda_0=\tc\gamma_0$.
+
+Fix $\delta>0$, set $n=\lceil\tfrac2\delta\rceil$.
+By Lemma~\ref{lem:eps-straight}, the geodesic $\gamma_0$ can be subdivided into $n$ arcs which are  $\delta$-straight.
+Let us choose the arc $\gamma'_0$ with the maximal total curvature.
+Assuming $\delta<\tfrac1{10}$ we get
+\[\tc\gamma'_0\ge\tfrac\delta{10}\cdot\lambda_0.\]
+
+Let $\alpha_1$ be the angle
+and $\gamma_1$ be the arc in $\gamma'_0$ 
+provided by Lemma~\ref{lem:almost-const}.
+In particular 
+\begin{align*}
+\tc\gamma_1&\ge\delta\cdot\tc\gamma'_0
+\ge
+\\
+&\ge \tfrac{\delta^2}{10}\cdot\lambda_0
+\end{align*}
+
+
+If 
+$\alpha_1\le \tfrac\eps2$ or $\alpha_1\ge\pi-\tfrac\eps2$ 
+and $\delta$ is small enough
+then statement holds for the arc $\gamma_1$ and the vector $\bm{u}=\pm\bm{v}_{\gamma'_0}$.
+
+Otherwise let us repeat the above construction for $\gamma_1$.
+Namely, apply Lemma~\ref{lem:eps-straight} to the geodesic $\gamma_1$ and
+denote by $\gamma_1'$ the $\delta$-straight 
+arc with maximal total curvature.
+If $\delta$ is small, we get 
+\[
+\tfrac\eps3
+<
+\measuredangle(\bm{v}_{\gamma_1'},\bm{v}_{\gamma'_0})
+<
+\pi-\tfrac\eps3
+\eqlbl{eq:v1-perp-v_2}\]
+Again, we get
+\[\tc\gamma_1'\ge\tfrac\delta{10}\cdot\tc\gamma_1\ge \tfrac{\delta^3}{100}\cdot\lambda_0\]
+
+Further apply Lemma~\ref{lem:almost-const} to $\gamma_1'$.
+Denote by $\gamma_2$ and $\alpha_2$ the angle and the subarc of $\gamma_1'$.
+Again
+\[\tc\gamma_2\ge\tfrac{\delta^4}{100}\cdot\lambda_0\]
+
+
+The curve $\gamma_2$ runs under nearly constant angle to  $\bm{v}_{\gamma'_0}$ and $\bm{v}_{\gamma'_1}$.
+The inequality \ref{eq:v1-perp-v_2}
+makes possible to apply Lemma \ref{lem:almost-const-angles}.
+Hence the main statement in the proposition follows.
+
+Straightforward computations prove the last statement.
+\qeds
+
 
 
 \section{Elevating geodesics}\label{sec:elevating}
