@@ -17,4 +17,5 @@ lib/*
 *.bcf
 *.blg
 *.xml
+*.kilepr
 !/.gitignore

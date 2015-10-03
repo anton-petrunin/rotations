@@ -301,31 +301,37 @@ and $\gamma\:[0,\ell]\to \Sigma$ be a unit-speed geodesic.
 Assume that for some unit vector $\bm{u}$,
 the geodesic $\gamma$ cross the horizon $\omega_{\bm{u}}$ transversely at 
 $t_1<\dots <t_k$.
-Set $\alpha_i=\pm\measuredangle(\dot\gamma(t_i),\bm{u})$ for each $i$,
-we can assume that $\alpha_i\in(-\pi,\pi)$ 
-and the sign is taken so that 
-$[\dot\gamma(t_i),\bm{u}]=\sin\alpha_i\cdot\nu_{\gamma(t_i)}$,
+Set $\alpha_i=\measuredangle(\dot\gamma(t_i),\bm{u})-\\tfrac\pi2$ for each $i$.
+Note that $|\alpha_i|\le\tfrac\pi2$.
+
+
+Further note that that 
+\[[\dot\gamma(t_i),\bm{u}]=\pm\cos\alpha_i\cdot\nu_{\gamma(t_i)},
+\]
 where $[{*},{*}]$ denotes vector product 
 and $\nu_p$ is the outer normal vector to $\Sigma$ at the point $p\in\Sigma$.
+Therefore we can choose signs $s_i=\pm1$
+such that 
+\[[\dot\gamma(t_i),\bm{u}]=s_i\cdot\cos\alpha_i\cdot\nu_{\gamma(t_i)},
+\]
 
-The values $t_i$ will be called \emph{meeting moments} 
-and the angles $\alpha_i$ will be called \emph{meeting angles} 
+The values $t_i$, $\alpha_i$ and $s_i$ 
+will be called correspondingly \emph{meeting moments},\emph{meeting angles} and \emph{meeting signs}
 of the geodesic $\gamma$ with the horizon $\omega_{\bm{u}}$.
-The arc $\gamma|_{[t_{i-1},t_i]}$ will be called \emph{$\omega_{\bm{u}}$-archway}.
 
-\begin{center}
-\begin{lpic}[t(2 mm),b(1 mm),r(0 mm),l(0 mm)]{pics/mitting(1)}
-\lbl[r]{5,4;$\gamma(0)$}
-\lbl[lb]{9,9;{\small $\gamma(t_0)$}}
-\lbl[rb]{28,9;{\small $\gamma(t_1)$}}
-\lbl[t]{82,2;{\small $\gamma(t_k)$}}
-\lbl[b]{68,2;$\omega_{\bm{u}}$}
-\lbl[b]{57,17,24;$\dots$}
-\lbl[b]{70,20;$\gamma$}
-\lbl[lb]{8,17;{\small $\alpha_0$}}
-\lbl[lb]{34,13;{\small $\alpha_1$}}
-\end{lpic}
-\end{center}
+%\begin{center}
+%\begin{lpic}[t(2 mm),b(1 mm),r(0 mm),l(0 mm)]{pics/mitting(1)}
+%\lbl[r]{5,4;$\gamma(0)$}
+%\lbl[lb]{9,9;{\small $\gamma(t_0)$}}
+%\lbl[rb]{28,9;{\small $\gamma(t_1)$}}
+%\lbl[t]{82,2;{\small $\gamma(t_k)$}}
+%\lbl[b]{68,2;$\omega_{\bm{u}}$}
+%\lbl[b]{57,17,24;$\dots$}
+%\lbl[b]{70,20;$\gamma$}
+%\lbl[lb]{8,17;{\small $\alpha_0$}}
+%\lbl[lb]{34,13;{\small $\alpha_1$}}
+%\end{lpic}
+%\end{center}
 
 Let us introduce new notation
 \[\tc_{\bm{u}}\gamma\df\tc\tilde\gamma_{\bm{u}}.\]
@@ -342,64 +348,78 @@ and
 $t_1<\dots t_k$ be its meeting moments and $\alpha_1,\dots\alpha_k$ be its meeting angles with the horizon $\omega_{\bm{u}}$.
 Then
 \[\tc_{\bm{u}}\gamma
-\le 4\cdot\pi
+\le 3\cdot\pi
 +
-2\cdot\left||\alpha_1|-|\alpha_2|
-+\dots -(-1)^k\cdot|\alpha_k|\right|
+2\cdot\left|\alpha_1-\alpha_2
++\dots -(-1)^k\cdot\alpha_k\right|
 \]
 
 \end{thm}
 
 To find the needed estimate the total curvature
 of geodesic we will get an upper bound for
-\[\left||\alpha_1|-|\alpha_2|
-+\dots -(-1)^k\cdot|\alpha_k|\right|.\]
+\[\left|\alpha_1-\alpha_2
++\dots -(-1)^k\cdot\alpha_k\right|.\]
 Finding  such an upper bound is the most important ingredient in the proof of the Main Theorem.
 
 
 \parit{Proof.}
 By Liberman's lemma,
-\[\tc_{\bm{u}}(\gamma|_{[t_{i-1},t_i]})=\pm(|\alpha_{i-1}|-|\alpha_i)|\]
+\[\tc_{\bm{u}}(\gamma|_{[t_{i-1},t_i]})=\pm(\alpha_{i-1}-\alpha_i)\]
 where the sign is ``$+$'' 
-if the archway $[t_i,t_{i+1}]$ lies on the dark side 
+if the tongue $[t_i,t_{i+1}]$ lies on the dark side 
 and ``$-$'' if it lies on the light side from $u$.
 Summing all this up we get
 \[\tc_{\bm{u}}(\gamma|_{[t_1,t_{k}]})
 =
-\left||\alpha_1|
--2\cdot|\alpha_2|
-+\dots+(-1)^k\cdot2\cdot|\alpha_{k-1}|-(-1)^k\cdot|\alpha_k|\right|.\]
+\left|\alpha_1
+-2\cdot\alpha_2
++\dots+(-1)^k\cdot2\cdot\alpha_{k-1}-(-1)^k\cdot\alpha_k\right|.\]
 By Liberman's lemma we also have
 \[\tc_{\bm{u}}(\gamma|_{[0,t_1]}),\tc_{\bm{u}}(\gamma|_{[t_k,\ell]})\le \pi \]
-Since $|\alpha_k|\le\pi$, the statement follows.
+Since $\alpha_1,\alpha_k\le\tfrac\pi2$, the statement follows.
 \qeds 
 
 If $\Sigma$ is a surface in $\RR^3$ and $p\in\Sigma$
 we denote by $K_p$ the Gauss curvature of $\Sigma$ at $p$.
 
-\begin{thm}{Archway Lemma}
+\begin{wrapfigure}{r}{37 mm}
+\begin{lpic}[t(-5 mm),b(0 mm),r(0 mm),l(0 mm)]{pics/tongue(1)}
+\lbl[t]{34,12;{$\omega_{\bm{u}}$}}
+\lbl[lb]{26,24;{$\gamma$}}
+\lbl[t]{1,11;{\tiny $\gamma(t_i)$}}
+\lbl[t]{15,11;{\tiny $\gamma(t_i)$}}
+\end{lpic}
+\end{wrapfigure}
+ 
+Assume $t_i,t_j$ be the meeting moments of minimizing geodesic $\gamma$ with $\omega_{\bm{u}}$
+The arc $\gamma|_{[t_i,t_j]}$ will be called \emph{$\omega_{\bm{u}}$-tongue}
+if there is an immersed disc 
+$\iota\:\DD\looparrowright\Sigma$ 
+such that the closed curve $\iota|_{\partial D}$ is formed by joint of the arc $\gamma|_{[t_i,t_j]}$ and an arc of $\omega_{\bm{u}}$ bounds an.
+In this case the immersion $\iota$ is called the \emph{disc of the tongue}.
+
+%???+PIC
+
+\begin{thm}{Tongue Lemma}
 Let $\bm{u}$ be a unit vector,
 $\gamma\:[a,b]\to\Sigma$ 
 be a minimizing geodesic on the strongly convex surface $\Sigma\subset\RR^3$.
 Assume that $\gamma(a),\gamma(b)\in \omega_{\bm{u}}$,
-$\alpha$ and $\beta$ are the meeting angles at $a$ and $b$ correspondingly
-and there is an immersion of disc $\iota\:\DD\looparrowright\Sigma$
-with the boundary curve $\iota|_{\partial\DD}$ formed by $\gamma$ and an arc of $\omega_{\bm{u}}$.
+is an tongue and
+$\iota\:\DD\looparrowright\Sigma$
+is its disc.
 
-Then 
-\[\int\limits_{\DD} K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma
-=
-\pm(\alpha-\beta) 
-\pmod{2\cdot\pi}
-\eqlbl{eq:key}\]
-The sign above is ``$+$'' if $\gamma$ goes contrclockwise in $\DD$ and ``$-$'' otherwise. 
+Then $\int\limits_{\DD} K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma$ takes one of the following values
+$\alpha-\beta$, $2\cdot\pi-(\alpha-\beta)$, $\pi\pm(\alpha+\beta)$ modulo $2\cdot\pi$
+The values are taken depending on the signs $s_a$ and $s_b$...
+
 In particular 
-\[\bigl||\alpha|-|\beta|\bigr|
+\[\bigl|\alpha-\beta\bigr|
 \le
 \int\limits_{\DD} K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma.
 \eqlbl{eq:key2}\]
-
-In particular if $\gamma$ is an archway; that is it lies completely in the dark or light side or $\bm{u}$ then
+If in addition $\iota(\DD)$ lies  completely in the dark or light side for $\bm{u}$ then
 \[\tc_{}\gamma
 \le 
 \int\limits_{\iota(\DD)} K_p\cdot d_p\area_\Sigma.\eqlbl{eq:key3}\]
@@ -431,7 +451,7 @@ Whence the statement follows from Liberman's lemma.
 \qeds
 
 \parbf{Snakes and spirals.}
-Let us show how to apply the Archway Lemma in the simplest case
+Let us show how to apply the Tongue Lemma in the simplest case
 and explains the difficulty of the general case.
 
 Assume $\gamma$ cross the horizon $\omega_{\bm{u}}$ as shown on the picture.
@@ -455,7 +475,7 @@ In this case we can chose nonoverlaping discs $\Omega_1,\dots,\Omega_k$ which $\
 
 Set
 \[K(\Omega)\df\int\limits_\Omega K_p\cdot d_p\area.\]
-Then by Archway lemma,
+Then by Tongue lemma,
 \begin{align*}
 \tc_{\bm{u}}\gamma
 &=\tc_{\bm{u}}(\gamma|_{[0,t_0]})
@@ -479,7 +499,7 @@ $$K(\Omega_1)+\dots+K(\Omega_k)\le K(\Sigma)\le4\cdot\pi.$$
 If the $\gamma$ cross $\omega_{\bm{u}}$ 
 in a different order, 
 say as the spiral shown on the picture then the idea above is not directly applicable.
-Indeed, no matter how we choose the discs $\Omega_i$ for the archways they will always overlap.
+Indeed, no matter how we choose the discs $\Omega_i$ for the tongues they will always overlap.
 
 
 \section{Length and diameter}
