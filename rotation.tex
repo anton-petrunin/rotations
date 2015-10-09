@@ -107,7 +107,7 @@ then
 \[\tc\gamma=\int\limits_0^\ell \kappa(t)\cdot dt,\]
 where $\kappa(t)=|\ddot\gamma(t)|$ is the curvature of $\gamma$ at $t$.
 
-\begin{thm}{Proposition}
+\begin{thm}{Proposition}\label{prop:semicontinuity}
 Assume $\gamma_n\:\II\to\RR^3$ is a sequence of curves  converging pointwise to a curve $\gamma_\infty\:\II\to\RR^3$.
 Then 
 \[\liminf_{n\to\infty}\tc\gamma_n\ge \tc\gamma_\infty.\]
@@ -149,7 +149,7 @@ If $K$ is compact we say that the $\Sigma$ is \emph{closed}.
 Assuming $\Sigma$ is smooth,
 if at every point both of its principle curvatures are positive, we say that $\Sigma$ is \emph{strongly convex}. 
 
-\begin{thm}{Proposition}
+\begin{thm}{Proposition}\label{prop:convegence}
 Assume $\Sigma_n$ be a sequence of convex surfaces which converge to a convex surface $\Sigma_\infty$.
 Then for any minimizing geodesic $\gamma_\infty$ in $\Sigma_\infty$ there is a sequence of minimizing geodesics $\gamma_n$ in $\Sigma_n$ which pointwise converge to $\gamma_\infty$ as $n\to \infty$.
 \end{thm}
@@ -410,9 +410,16 @@ is an tongue and
 $\iota\:\DD\looparrowright\Sigma$
 is its disc.
 
-Then $\int\limits_{\DD} K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma$ takes one of the following values
-$\alpha-\beta$, $2\cdot\pi-(\alpha-\beta)$, $\pi\pm(\alpha+\beta)$ modulo $2\cdot\pi$
-The values are taken depending on the signs $s_a$ and $s_b$...
+Then $\int\limits_{\DD} K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma$ takes one of the value
+\[\alpha-\beta,
+\  -\alpha+\beta,
+\ \pi-\alpha-\beta,
+ \pi+\alpha+\beta \pmod{2\cdot\pi}
+\]
+if the pair of meeting angles $(s_a,s_b)$ 
+at $a$ and $b$ takes value
+\[(+1,+1),\ (-1,-1),\ (+1,-1),\ (-1,+1)\] 
+correspondingly.
 
 In particular 
 \[\bigl|\alpha-\beta\bigr|
@@ -433,16 +440,21 @@ Note also that $\bm{u}$ belongs to the tangent plane to $\Sigma$ at any point on
 in particular the $\bm{u}$ extends to a parallel tangent vector field on $\omega_{\bm{u}}$.
 
 It follows that parallel translation along $\iota|_{\partial\DD}$ 
-rotates the tangent plane by angle $\alpha-\beta$.
-To prove \ref{eq:key} remains to apply Gauss--Bonnet formula.
+rotates the tangent plane by angle 
+\[s_a\cdot(\tfrac\pi2+\alpha)-s_b\cdot(\tfrac\pi2+\beta)\]
+To prove the main statement of the lemma,
+it remains to apply Gauss--Bonnet formula.
 
 Denote by $R$ the right hand side in \ref{eq:key2}.
 Note that $R\ge 0$ 
-and $|\alpha|,|\beta|\le \pi$.
+and $|\alpha|,|\beta|\le \tfrac\pi2$.
 From the main statement of lemma it follows then that the minimal possible value for $R$ is $\bigl||\alpha|-|\beta|\bigr|$.
 
-To prove \ref{eq:key3}, note that in this case $\iota$ is an embedding.
-Therefore 
+To prove \ref{eq:key3}, note that 
+in this case $\iota$ is an embedding.
+Further note that the spherical image of the dark side of $\Sigma$ is hemisphere.
+Therefore $2\cdot\pi$ is the integral of Gauss curvature along the dark side.
+It follows that
 \[\int\limits_{\DD} K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma
 =
 \int\limits_{\iota(\DD)} K_p\cdot d_p\area_\Sigma
@@ -470,6 +482,10 @@ Assume $\gamma$ cross the horizon $\omega_{\bm{u}}$ as shown on the picture.
 That is, $t_0<\dots<t_k$ are the $\bm{u}$-crossing moments 
 and the points $\gamma(t_0),\dots,\gamma(t_k)$ appear along $\omega_{\bm{u}}$
 in the same order.
+
+Note that each arc $\gamma_{[t_{n-1},t_n]}$ is a $\bm{u}$-tongue.
+The discs of these tongues do not overlap and each lies on the 
+dark or light side of $\bm{u}$.
 
 In this case we can chose nonoverlaping discs $\Omega_1,\dots,\Omega_k$ which $\gamma$ cuts from light and dark side alternatively.
 
@@ -556,7 +572,7 @@ Then $\diam \gamma\ge \ell/10$.
 \end{thm}
 
 
-\section{Reduction to a monotonic case}
+\section{Elevating arc}
 
 \begin{thm}{Proposition}\label{prop:almost-const}
 For any $\eps>0$ there is $\delta>0$ such that the following holds.
@@ -786,15 +802,23 @@ Consider a plane $L$
 passing through two points of $\gamma$, 
 say $p=\gamma(a)$ and $q=\gamma(b)$ with $a<b$.
 Let $L_\pm$ be a  half-planes in $L$ bounded by the line trough $p$ and $q$.
-Set $\sigma_\pm=\Sigma\cap L_\pm$;
-note that $\sigma_\pm$ are a smooth convex plane curve connecting $p$ to $q$ in $\Sigma$.
+Set $\sigma_\pm=\Sigma\cap L_\pm$.
 
 \begin{thm}{Observation}\label{obs:cut}
 If $\gamma$ is a minimizing geodesic in the convex surface $\Sigma\subset \RR^3$ and $a$, $b$ and $\sigma_\pm$ as above then
 \[\length\sigma_\pm\ge\length(\gamma|_{[a,b]}).\]
 \end{thm}
 
+To prove the observation, it is sufficient to note that $\sigma_\pm$ are a smooth convex plane curve connecting $p$ to $q$ in $\Sigma$.
+
 Based on this observation we give couple of estimates on elevating minimizing geodesics.
+
+Let $\gamma\:[a,b]\to\RR^3$ be a curve and $\ell$ be a line which does not pass through points of $\gamma$.
+Assume $\phi\:[a,b]\to\RR$ be a continuous azimuth angle
+of $\gamma$ in the cylindrical coordinates with the axis $\ell$.
+If $\phi(b)-\phi(a)|\ge 2\cdot n\cdot\pi$,
+we will say that $\gamma$ \emph{goes around} the line $\ell$
+at least $n$ times.
 
 \begin{thm}{Propostion}\label{prop:around-once}
 Assume $\gamma\:[0,\ell]\to \Sigma$ is an elevating minimizing geodesic in the convex surface $\Sigma\subset \RR^3$.
@@ -804,7 +828,7 @@ Assume that for a subsegment $[a,b]\subset [0,\ell]$ the following conditions ho
 and  the arc $\gamma|_{[a,b]}$ goes around the $z$-axis at least once.
 \item $\gamma(a)$ lies above the horizontal plane through $\tfrac12\cdot(\gamma(0)+\gamma(\ell))$.
 \end{enumerate}
-Then  $\gamma(b)$ lies on the dark side of $\Sigma$ with respect to $\bm{k}$.
+Then  $\gamma(b)$ lies on the dark side for $\bm{k}$.
 \end{thm}
 
 \parit{Proof.} 
@@ -818,7 +842,9 @@ Let $(x_p,0,z_p)$ and $(x_q,0,z_q)$ be the coordinates of $p$ and $q$.
 
 From the assumptions we get $z_p<z_q<2\cdot z_p$.
 
-By convexity of the curve $\Pi\cap \Sigma$
+Assume contrary,
+then $\gamma(b)$ lies on the light side for $\bm{k}$.
+Then from convexity of the curve $\Pi\cap \Sigma$
 we get 
 \[\length\sigma_+\le \sqrt{(z_q-z_p)^2+x_p^2}\]
 
@@ -842,7 +868,6 @@ Note that one can find $a'\in [a,b]$ such that the the assumtions of Proposition
 \begin{thm}{Propostion}\label{prop:phi-psi}
 Assume $\gamma\:[0,\ell]\to \Sigma$ is elevating minimizing geodesic in the convex surface $\Sigma\subset \RR^3$.
 Assume that the arc $\gamma|_{[b,\ell]}$ lies in the dark side of $\Sigma$ with respect to $\bm{k}$.
-Set $\phi(t)=\measuredangle(\bm{k},\dot\gamma(t))$ and $\psi(t)=\tfrac\pi2-\measuredangle(\bm{k},\nu(t))$.
 If $b\le s<t\le \ell$ and the point $\gamma(s)$ lies in the plane $\Pi$ through $\gamma(t)$ spanned by $\nu(t)$ and $\lambda(t)$
 then 
 \[\phi(s)\le \psi(t).\]
@@ -878,19 +903,16 @@ After rotating $(x,y)$-plane if necessary,
 we can assume that the border of shadow in the directions of $x$-axis, say $\omega_x$, 
 is a smooth curve and $\gamma$ intersects them transversely.
 
-Let $t_1<t_2<\dots<t_k$ be the time moments in $[0,\ell]$ 
-at which $\gamma$ crossing $\omega_x$.
-Note that 
-\[\mu(t_n)=s_n\cdot e_x\ \ \text{for some}\ \  s_n=\pm1.\]
-
+Let $t_1<t_2<\dots<t_k$ be the miting moments of $\gamma$ with $\omega_{\bm{i}}$
 Set
 \begin{align*}
 \phi_n&=\phi(t_n)
 &
 \psi_n&=\psi(t_n)
 &
-\alpha_n&=\alpha(t_n)
+\alpha_n&=\alpha(t_n).
 \end{align*}
+Note that the definition of $\alpha_n$ agrees with the one given in Section ???, so we can define $s_n$ as in Section ???.
 
 We say that a pair of indexes $i<j$
 forms an \emph{$\bm{s}$-pair} 
@@ -915,7 +937,7 @@ In particular,
 If you exchange ``$+1$'' and ``$-1$'' in $\bm{s}$ by ``$($'' and ``$)$'' correspondingly then $(i,j)$ is an $\bm{s}$-pair
 if and only if the $i$-th bracket forms a pair with $j$-bracket.
 
-\parbf{Embedded disc interpretation.}
+\parbf{Tongue interpretation.}
 Assume $(i,j)$ is an $\bm{s}$-pair.
 Note that in this case there is an arc of $\omega_{\bm{i}}$
 from $\gamma(t_i)$ to $\gamma(t_j)$
@@ -1018,19 +1040,19 @@ The later inequality together with \ref{sum-S} implies the statement in the coro
 \section{Geometric growth}\label{sec:geometric-growth}
 
 \begin{thm}{Claim}\label{clm:alpha-psi}
-Assume $\psi(t)>\eps$ for ant $t\in[t_{i},t_{j}]$
+Assume $\psi(t)>\eps$ for and $t\in[t_{i},t_{j}]$
 and $s_i+\dots+s_j=2$
 Then 
 \[|\alpha_j-\alpha_i|>\pi\cdot\sin\eps.\] 
 \end{thm}
 
 
-\begin{thm}{Claim}
+\begin{thm}{Claim}\label{clm:geometric-grouth}
 Let $\gamma$
 be elevating minimizing geodesic on a graph $z=f(x,y)$ of a concave function.
 Then for any pair of indexes $j>i$,
 such that 
-\[|\sum_{n=i}^{j}s_n|\ge 5\]
+\[|\sum_{n=i}^{j}s_n|> 5\]
 we have
 \[\phi_j>\tfrac32\cdot\phi_i.\]
 \end{thm}
@@ -1054,6 +1076,7 @@ Since $\phi_n$ is nondecreasing,
 and $\phi_n\ge |\alpha_n|$ for any $n$,
 in both cases we get
 \[\phi_j>\tfrac\pi2\cdot \phi_i.\]
+Hence the result follows.
 \qeds
 
 
@@ -1070,9 +1093,8 @@ of a concave function $f$ then
 \parit{Proof.}
 We can assume that
 $\gamma$ cross the $\bm{i}$ horizon $\omega_{\bm{i}}$ tranfersally.
-Let $t_1<\dots<t_k$ be the values of parameter at which $\gamma$ cross $\omega_{\bm{i}}$ 
-and 
-$s_1,\dots,s_k$ the signs as in ...
+Let $t_1<\dots<t_k$ be the meeting moments of $\gamma$ with $\omega_{\bm{i}}$ and
+$s_1,\dots,s_k$ the signs.
 
 Recall that $S_q$ denotes the subset of indexes $\{1,\dots,k\}$
 which appear in $\bm{s}$-pair with depph $q$.
@@ -1098,7 +1120,8 @@ $n\in R_m$ if $m\equiv n\pmod 5$.
 
 Given $n\in R_m$, denote by $n'$ the least index in $R_m$ which is larger $n$;
 $n'$ is defined for any $n\in R_m$ exept the largest one.
-According to ??? $\phi_{n'}>2\cdot \phi_n$.
+According to Claim~\ref{clm:geometric-grouth}, 
+$\phi_{n'}>2\cdot \phi_n$.
 Since $\phi_n$ is nondecreasing in $n$,
 we get 
 \[\sum_{n\in R_m}\phi_n\le 2\cdot\phi_k.\]
@@ -1123,19 +1146,29 @@ According to Liberman's lemma
 
 
 Assume there is a minimizing geodesic $\gamma\:[0,\ell]\to \Sigma$ in a convex surface $\Sigma\subset \RR^3$ such that
-\[\tc\gamma=\omega.\]
+\[\tc\gamma>\omega.\]
 
-According to ??? we can assume that $\Sigma$ is strongly convex.
+According to propositions \ref{prop:semicontinuity} and \ref{prop:convegence} we can assume that $\Sigma$ is closed and strongly convex
+and the geodesic $\gamma$ has finite length.
 
-According to ???, we can pass to an elevating arc, of $\gamma$ for some $(x,y,z)$-coordinate system with total curvature $>\tfrac{\omega}{10^6}$.
-Rename this arc by $\gamma$ and let us use the notations in Section~\ref{sec:elevating}.
+According to Proposition~\ref{prop:almost-const}, 
+we can pass to an elevating arc, of $\gamma$ for some $(x,y,z)$-coordinate system with total curvature $>\tfrac{\omega}{100^{100}}$%???NUMBER
+.
+Denote this arc by $\gamma'$ and let us use the notations in Section~\ref{sec:elevating}.
 
 Rotating $(x,y)$-coordinate plane we can ensure that
-\[\tc\gamma\le 10\cdot\tc_{\bm{i}}\gamma\]
-and that $\gamma$ cross the horizon $\omega_{\bm{i}}$ transversally.
+\[\tc\gamma'\le 10\cdot\tc_{\bm{i}}\gamma'\]
+and that $\gamma'$ cross the horizon $\omega_{\bm{i}}$ transversally.
 
 Let us subdivide $\gamma$ into three arcs lower middle and upper arcs $\gamma_-$, $\gamma_0$ and $\gamma_+$
 the the following way.
+
+By corollary \ref{cor:around-twice},
+we can subdivide $\gamma'$ in 3 arcs $\gamma_-'$, $\gamma_0'$ and $\gamma_+'$
+such that $\gamma_-$ lies on the light side for $\bm{k}$,
+$\gamma_+$ lies on the dark side for $\bm{k}$
+and any arc in 
+$\gamma_0$ rotatates around $z$-axis at most $100$ times.
 
 Note that according to ??? $\gamma_+$ lies on a graph of concvae function.
 By Proposition~\ref{prop:graph}, we get 
