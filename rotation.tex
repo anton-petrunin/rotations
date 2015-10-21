@@ -51,15 +51,14 @@ on a convex surface in $\RR^3$ can not exceed $1000^{1000}$.
 \end{thm}
 
 The value $2\cdot\pi$ is the optimal bound for the analogous problem in the plane.
-It was  shown by B{\'a}r{\'a}ny,
-Kuperberg, 
-and Zamfirescu in \cite{BKZ} 
-that the total curvature
+The total curvature
 of minimizing geodesic on a convex surface in $\RR^3$
-can be bigger that $2\cdot\pi$
+can exceed $2\cdot\pi$
 and the optimal bound 
 is expected to be slightly bigger than $2\cdot\pi$.
-
+The former example was constructed by B{\'a}r{\'a}ny,
+Kuperberg, 
+and Zamfirescu in \cite{BKZ}.
 Let us list other related results.
 
 \begin{itemize}
@@ -67,25 +66,25 @@ Let us list other related results.
 In the proof he use an analog of Lemma \ref{lem:liberman} discussed below.
 
 \item In \cite{usov}, 
-Usov gives the optimal bound for total curvature of geodesic on the graph of $\ell$-Lipscitz convex function. 
+Usov gives the optimal bound for the total curvature of geodesics on the graphs of $\ell$-Lipscitz convex function. 
 Namely, he proves that if $f\:\RR^2\to\RR$ is $\ell$-Lipschitz and convex then any 
 geodesic in its graph 
 \[\Gamma_f=\set{(x,y,z)\in \RR^3}{z=f(x,y)}\] 
 has total curvature at most $2\cdot \ell$.
 An amusing generalization of Usov's result is given by Berg in \cite{berg}.
 \item In \cite{pogorelov}, Pogorelov conjectured %???maybe before
-that any the spherical image of geodesic on convex surface has to be contructable.
+that the spherical image of geodesic on convex surface has to be rectifiable.
 It is easy to see that the length of spherical image of geodesic can not be smaller than its total curvature, 
 so this conjecture (if it would be true) 
 would be stronger than Liberman's theorem.
 Counterexamples were found indepenently by Milka in \cite{milka}, 
 Usov in \cite{usov-conj-pog} 
-and yet much later rediscovered by Pach in \cite{pach}.
+and partly rediscovered by Pach in \cite{pach}.
 \item In \cite{BKZ},
 B{\'a}r{\'a}ny,
 Kuperberg, 
 and Zamfirescu 
-have constructed a corkscrew minimizing geodesic on a closed hypersurface;
+have constructed a corkscrew minimizing geodesic on a closed convex surface;
 that is a minimizing geodesic which twists around given line arbitrary many times.
 They also rediscovered the results of Liberman and Usov mentioned above.
 \end{itemize}
@@ -126,7 +125,7 @@ Note that
 By the definition of total curvature 
 \[\tc\sigma_n\le\tc\gamma_n.\]
 The statement follows since the broken line $\sigma_\infty$ can be chosen in such a way that 
-$\tc\sigma_n$ is arbitrary close to $\tc\gamma_n$.
+$\tc\sigma_\infty$ is arbitrary close to $\tc\gamma_\infty$.
 \qeds
 
 \parbf{Convergence.}
@@ -146,8 +145,8 @@ $\dist_{\Sigma_n}(x)\to\dist_{\Sigma_\infty}(x)$ as $n\to\infty$.
 By \emph{convex surface} $\Sigma$ in the Euclidean 3-space $\RR^3$ we understand the boundary of a closed convex set $K$ with nonempty interior.
 If $K$ is compact we say that the $\Sigma$ is \emph{closed}.
 
-Assuming $\Sigma$ is smooth,
-if at every point both of its principle curvatures are positive, we say that $\Sigma$ is \emph{strongly convex}. 
+Assume $\Sigma$ is smooth.
+If at every point both of its principle curvatures are positive, we say that $\Sigma$ is \emph{strongly convex}. 
 
 \begin{thm}{Proposition}\label{prop:convegence}
 Assume $\Sigma_n$ be a sequence of convex surfaces which converge to a convex surface $\Sigma_\infty$.
@@ -157,11 +156,9 @@ Then for any minimizing geodesic $\gamma_\infty$ in $\Sigma_\infty$ there is a s
 \parit{Proof.}
 Assume $\gamma_\infty\:[0,\ell]\to\Sigma_\infty$ is parametrized by its arc length.
 
-Fix a subinterval $[a,b]\subset [0,\ell]$
-such that $0<a$ and $b<\ell$.
+Fix a subinterval $[a,b]\subset (0,\ell)$.
 Set $p_\infty=\gamma_\infty(a)$ and $q_\infty=\gamma_\infty(b)$.
-
-Let $p_n,q_n\in\Sigma_n$ be a two sequences of points which converge to $p_\infty$ and $q_\infty$ 
+Let $p_n,q_n\zz\in\Sigma_n$ be a two sequences of points which converge to $p_\infty$ and $q_\infty$ 
 correspondingly.
 
 Denote by $\gamma_n$ a minimizing geodesic from $p_n$ to $q_n$ in $\Sigma_n$.
@@ -216,13 +213,14 @@ If we pass to the limit of this construction as $p$ moves to infinity along a ha
 We can define the development $\tilde\gamma_{\bm{u}}$ directly:
 (1) the development $\tilde\gamma_{\bm{u}}\:[0,\ell]\to \R^2$
 is parametrized by length,
-(2)for a fixed unit vector $\tilde{\bm{u}}\in\RR^2$,
+(2) for a fixed unit vector $\tilde{\bm{u}}\in\RR^2$,
 we have
 \[\langle \tilde{\bm{u}},\tilde\gamma_{\bm{u}}(t)\rangle
 =
 \langle  \bm{u},\gamma(t)\rangle\]
 for any $t\in [0,\ell]$
-and (3) the projection of $\tilde\gamma_{\bm{u}}(t)$ to the line normal to $\tilde{\bm{u}}$
+and 
+(3) the projection of $\tilde\gamma_{\bm{u}}(t)$ to the line normal to $\tilde{\bm{u}}$
 is monotonic in $t$.
 
 We can assume that $\tilde{\bm{u}}$ is the vertical vector in the coordinate plane.
@@ -240,7 +238,7 @@ if non of the points $p+t\cdot(p-z)$ lie inside of $\Sigma$ for $t>0$ (correspon
 The intersection of dark and light side is called horizon of $z$;
 it is denoted by $\omega_z$.
 
-Note that if $z$ lies inside $\Sigma$ then all the points on $\Sigma$ lies on dark side from $z$.
+Note that if $z$ lies inside $\Sigma$ then all the points on $\Sigma$ lies on dark side from $z$ and its horizon is empty.
 
 If $\Sigma$ is smooth we can define the outer normal vector $\nu_p$ to $\Sigma$ at $p$.
 In this case $p$ lies on dark (light) side of $\Sigma$ from $z$
@@ -251,15 +249,15 @@ If in addition $\Sigma$ is closed and strongly convex then the horizon is empty 
 We could also define light/dark sides and horizon in the limit case,
 as $p$ escapes to infinity along a half-line in derection $\bm{u}$.
 Let us also define it derectly,
-we say that a point $p\in\Sigma$ lies on dark (light) side for the unit vector $u$ if non of the points $p+\bm{u}\cdot t$ lie inside of $\Sigma$ for $t>0$, (correspondingly $t<0$).
+we say that a point $p\in\Sigma$ lies on dark (light) side for the unit vector $\bm{u}$ if non of the points $p+\bm{u}\cdot t$ lie inside of $\Sigma$ for $t>0$, (correspondingly $t<0$).
 As before the intersection of light and dark side is called horizon of $\bm{u}$ and it is denoted as $\omega_{\bm{u}}$.
 
-In the smooth case the later means that $\langle \nu_p,u\rangle\ge 0$ (correspondingly $\langle \nu_p,u\rangle\le 0$).
-If in addition $\Sigma$ is closed strongly convex then $\omega_{\bm{u}}$ is locally a smooth curve.
+In the smooth case the later means that $\langle \nu_p,\bm{u}\rangle\ge 0$ (correspondingly $\langle \nu_p,\bm{u}\rangle\le 0$).
+If in addition $\Sigma$ is closed strongly convex then $\omega_{\bm{u}}$ is a closed smooth curve.
 
 \begin{thm}{Liberman's Lemma}\label{lem:liberman}
-Assume $\gamma$ be a geodesic on convex surface $\Sigma\subset \RR^3$.
-Then for any point $z\notin\Sigma$ the development $\tilde\gamma_z$ is locally convex (locally concve) if $\gamma$ lies on dark (correspondingly light) side of $\Sigma$ from $z$.
+Assume $\gamma$ be a geodesic on the convex surface $\Sigma\subset \RR^3$.
+Then for any point $z\notin\Sigma$ the development $\tilde\gamma_z$ is locally convex (locally concave) if $\gamma$ lies on dark (correspondingly light) side of $\Sigma$ from $z$.
 
 Similarly for any unit vector $\bm{u}$,
 the development $\tilde\gamma_{\bm{u}}$ is locally convex (locally concave) if $\gamma$ lies on dark (correspondingly light) side of $\Sigma$ for $\bm{u}$.
@@ -279,7 +277,7 @@ For example, if $\bm{i},\bm{j},\bm{k}$ is the orthonormal basis then
 If $\gamma$ lies on one dark or light side for direction $\bm{u}$
 then by Liberman's lemma we get 
 \[\tc\tilde\gamma_{\bm{u}}\le \pi.\]
-It follows that is $\gamma$ cross the horisons $\omega_{\bm{i}}$, $\omega_{\bm{j}}$ and $\omega_{\bm{k}}$
+It follows that if $\gamma$ cross the horisons $\omega_{\bm{i}}$, $\omega_{\bm{j}}$ and $\omega_{\bm{k}}$
 at most $N$ times then 
 \begin{align*}
 \tc\gamma
@@ -300,8 +298,8 @@ be a strongly convex smooth surface
 and $\gamma\:[0,\ell]\to \Sigma$ be a unit-speed geodesic.
 Assume that for some unit vector $\bm{u}$,
 the geodesic $\gamma$ cross the horizon $\omega_{\bm{u}}$ transversely at 
-$t_1<\dots <t_k$.
-Set $\alpha_i=\measuredangle(\dot\gamma(t_i),\bm{u})-\\tfrac\pi2$ for each $i$.
+$t_0<\dots <t_k$.
+Set $\alpha_i=\measuredangle(\dot\gamma(t_i),\bm{u})-\tfrac\pi2$ for each $i$.
 Note that $|\alpha_i|\le\tfrac\pi2$.
 
 
@@ -312,8 +310,9 @@ where $[{*},{*}]$ denotes vector product
 and $\nu_p$ is the outer normal vector to $\Sigma$ at the point $p\in\Sigma$.
 Therefore we can choose signs $s_i=\pm1$
 such that 
-\[[\dot\gamma(t_i),\bm{u}]=s_i\cdot\cos\alpha_i\cdot\nu_{\gamma(t_i)},
+\[[\dot\gamma(t_i),\bm{u}]=s_i\cdot\cos\alpha_i\cdot\nu_{\gamma(t_i)}
 \]
+for each $i$.
 
 The values $t_i$, $\alpha_i$ and $s_i$ 
 will be called correspondingly \emph{meeting moments},\emph{meeting angles} and \emph{meeting signs}
@@ -338,28 +337,29 @@ Let us introduce new notation
 From Liberman's lemma \ref{lem:liberman},
 we get the following.
 
-\begin{thm}{Corollary}
+\begin{thm}{Corollary}\label{cor:liberman}
 Let $\Sigma\subset\RR^3$
 be a strongly convex smooth surface
 and $\gamma\:[0,\ell]\to \Sigma$ be a unit-speed geodesic.
 Assume that for some unit vector $\bm{u}$,
 the $\gamma$ cross the horizon $\omega_{\bm{u}}$ transversely
 and 
-$t_1<\dots t_k$ be its meeting moments and $\alpha_1,\dots\alpha_k$ be its meeting angles with the horizon $\omega_{\bm{u}}$.
+$t_0<\dots <t_k$ be its meeting moments 
+and $\alpha_0,\dots,\alpha_k$ be its meeting angles with the horizon $\omega_{\bm{u}}$.
 Then
 \[\tc_{\bm{u}}\gamma
 \le 3\cdot\pi
 +
-2\cdot\left|\alpha_1-\alpha_2
-+\dots -(-1)^k\cdot\alpha_k\right|
+2\cdot\left|\alpha_0-\alpha_1
++\dots +(-1)^k\cdot\alpha_k\right|
 \]
 
 \end{thm}
 
-To find the needed estimate the total curvature
+Further, in order to find the needed estimate the total curvature
 of geodesic we will get an upper bound for
-\[\left|\alpha_1-\alpha_2
-+\dots -(-1)^k\cdot\alpha_k\right|.\]
+\[\left|\alpha_0-\alpha_1
++\dots +(-1)^k\cdot\alpha_k\right|.\]
 Finding  such an upper bound is the most important ingredient in the proof of the Main Theorem.
 
 
@@ -372,12 +372,12 @@ and ``$-$'' if it lies on the light side from $u$.
 Summing all this up we get
 \[\tc_{\bm{u}}(\gamma|_{[t_1,t_{k}]})
 =
-\left|\alpha_1
--2\cdot\alpha_2
-+\dots+(-1)^k\cdot2\cdot\alpha_{k-1}-(-1)^k\cdot\alpha_k\right|.\]
+\left|\alpha_0
+-2\cdot\alpha_1
++\dots+(-1)^{k-1}\cdot2\cdot\alpha_{k-1}+(-1)^k\cdot\alpha_k\right|.\]
 By Liberman's lemma we also have
 \[\tc_{\bm{u}}(\gamma|_{[0,t_1]}),\tc_{\bm{u}}(\gamma|_{[t_k,\ell]})\le \pi \]
-Since $\alpha_1,\alpha_k\le\tfrac\pi2$, the statement follows.
+Since $\alpha_0,\alpha_k\le\tfrac\pi2$, the statement follows.
 \qeds 
 
 If $\Sigma$ is a surface in $\RR^3$ and $p\in\Sigma$
@@ -392,31 +392,29 @@ we denote by $K_p$ the Gauss curvature of $\Sigma$ at $p$.
 \end{lpic}
 \end{wrapfigure}
  
-Assume $t_i,t_j$ be the meeting moments of minimizing geodesic $\gamma$ with $\omega_{\bm{u}}$
-The arc $\gamma|_{[t_i,t_j]}$ will be called \emph{$\omega_{\bm{u}}$-tongue}
+Assume $a,b$ be the meeting moments of minimizing geodesic $\gamma$ with $\omega_{\bm{u}}$
+The arc $\gamma|_{[a,b]}$ will be called \emph{$\omega_{\bm{u}}$-tongue}
 if there is an immersed disc 
 $\iota\:\DD\looparrowright\Sigma$ 
-such that the closed curve $\iota|_{\partial D}$ is formed by joint of the arc $\gamma|_{[t_i,t_j]}$ and an arc of $\omega_{\bm{u}}$ bounds an.
+such that the closed curve $\iota|_{\partial D}$ is formed by joint of the arc $\gamma|_{[a,b]}$ and an arc of $\omega_{\bm{u}}$.
 In this case the immersion $\iota$ is called the \emph{disc of the tongue}.
-
-%???+PIC
 
 \begin{thm}{Tongue Lemma}
 Let $\bm{u}$ be a unit vector,
 $\gamma\:[a,b]\to\Sigma$ 
-be a minimizing geodesic on the strongly convex surface $\Sigma\subset\RR^3$.
-Assume that $\gamma(a),\gamma(b)\in \omega_{\bm{u}}$,
-is an tongue and
+be a minimizing geodesic on the strongly convex surface $\Sigma\subset\RR^3$ which is a $\omega_{\bm{u}}$-tongue.
+and 
 $\iota\:\DD\looparrowright\Sigma$
 is its disc.
 
-Then $\int\limits_{\DD} K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma$ takes one of the value
+Then 
+\[\int\limits_{\DD} K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma\] takes one of the value
 \[\alpha-\beta,
 \  -\alpha+\beta,
 \ \pi-\alpha-\beta,
  \pi+\alpha+\beta \pmod{2\cdot\pi}
 \]
-if the pair of meeting angles $(s_a,s_b)$ 
+if the pair of meeting signs $(s_a,s_b)$ 
 at $a$ and $b$ takes value
 \[(+1,+1),\ (-1,-1),\ (+1,-1),\ (-1,+1)\] 
 correspondingly.
@@ -448,7 +446,7 @@ it remains to apply Gauss--Bonnet formula.
 Denote by $R$ the right hand side in \ref{eq:key2}.
 Note that $R\ge 0$ 
 and $|\alpha|,|\beta|\le \tfrac\pi2$.
-From the main statement of lemma it follows then that the minimal possible value for $R$ is $\bigl||\alpha|-|\beta|\bigr|$.
+From the main statement of the lemma it follows then that the minimal possible value for $R$ is $\bigl||\alpha|-|\beta|\bigr|$.
 
 To prove \ref{eq:key3}, note that 
 in this case $\iota$ is an embedding.
@@ -464,7 +462,7 @@ Whence the statement follows from Liberman's lemma.
 
 \parbf{Snakes and spirals.}
 Let us show how to apply the Tongue Lemma in the simplest case
-and explains the difficulty of the general case.
+and explain the difficulty of the general case.
 
 Assume $\gamma$ cross the horizon $\omega_{\bm{u}}$ as shown on the picture.
 \begin{center}
@@ -483,11 +481,8 @@ That is, $t_0<\dots<t_k$ are the $\bm{u}$-crossing moments
 and the points $\gamma(t_0),\dots,\gamma(t_k)$ appear along $\omega_{\bm{u}}$
 in the same order.
 
-Note that each arc $\gamma_{[t_{n-1},t_n]}$ is a $\bm{u}$-tongue.
-The discs of these tongues do not overlap and each lies on the 
-dark or light side of $\bm{u}$.
-
-In this case we can chose nonoverlaping discs $\Omega_1,\dots,\Omega_k$ which $\gamma$ cuts from light and dark side alternatively.
+Note that each arc $\gamma|_{[t_{n-1},t_n]}$ is a $\bm{u}$-tongue.
+In this case we can chose nonoverlaping embedded discs $\Omega_1,\dots,\Omega_k$ for these tongues which $\gamma$ cuts from light and dark side alternatively.
 
 Set
 \[K(\Omega)\df\int\limits_\Omega K_p\cdot d_p\area.\]
@@ -503,19 +498,21 @@ Then by Tongue lemma,
 \\
 &\le 6\cdot\pi.
 \end{align*}
-The last inequality holds since the discs $\Omega_i$ do not overlap. 
-Therefore by Gauss--Bonnet,
-$$K(\Omega_1)+\dots+K(\Omega_k)\le K(\Sigma)\le4\cdot\pi.$$
+
+The last inequality holds since  by Gauss--Bonnet,
+$$K(\Omega_1)+\dots+K(\Omega_k)\le K(\Sigma)\le4\cdot\pi.\eqlbl{eq:4pi}$$
 
 \begin{wrapfigure}{r}{35 mm}
 \begin{lpic}[t(-5 mm),b(0 mm),r(0 mm),l(0 mm)]{pics/spiral(1)}
 \end{lpic}
 \end{wrapfigure}
 
+
 If the $\gamma$ cross $\omega_{\bm{u}}$ 
 in a different order, 
 say as the spiral shown on the picture then the idea above is not directly applicable.
-Indeed, no matter how we choose the discs $\Omega_i$ for the tongues they will always overlap.
+Indeed, no matter how we choose the discs $\Omega_i$ for the tongues they will always overlap
+and therefore inequality \ref{eq:4pi} may not hold.
 
 
 \section{Length and diameter}
@@ -568,11 +565,11 @@ Hence the result follows.
 
 \begin{thm}{Corollary}
 Assume $\gamma\:[0,\ell]\to \Sigma$ is a unit-speed minimizing geodeisic on the convex surface $\Sigma$ in $\RR^3$.
-Then $\diam \gamma\ge \ell/10$.
+Then $\diam \gamma\ge \tfrac\ell{10}$.
 \end{thm}
 
 
-\section{Elevating arc}
+\section{An arc in almost constant direction}
 
 \begin{thm}{Proposition}\label{prop:almost-const}
 For any $\eps>0$ there is $\delta>0$ such that the following holds.
@@ -584,8 +581,8 @@ such that
 \[\tc(\gamma|_{[a',b']})>\delta\cdot\tc\gamma.\]
 and 
 \[\measuredangle(\dot\gamma(t),\bm{u})<\eps\] 
-for any $t\in[a,b]$
-and a fixed unit vector $\bm{u}$.
+for a fixed unit vector $\bm{u}$
+and any $t\in[a,b]$.
 
 Moreover, if $\eps=\tfrac1{10}$ then one can assume $\delta=\tfrac1{100^{100}}$.
 \end{thm}
@@ -609,10 +606,12 @@ such that
 then there is a vector $\bm{u}$ such that
 $\measuredangle(\bm{u},\dot\gamma(t))<\eps$.
 
-Moreover if $\eps<\tfrac1{10}$ one can take $\delta=\eps^{10}$.
+Moreover if $\eps<\tfrac1{10}$ 
+then one can take $\delta=\eps^{10}$.
 \end{thm}
 
-The proof is straightforward computation;
+The proof of the lemma above 
+is straightforward computation;
 we omit it.
 
 \begin{thm}{Lemma}\label{lem:almost-const}
@@ -633,7 +632,7 @@ and
 \le\alpha+\eps\] 
 for some fixed $\alpha$
 and
-any $t\in[a',b']$ we have.
+any $t\in[a',b']$.
 
 Moreover if $\eps<\tfrac1{10}$ one can take $\delta=\eps^{10}$.
 \end{thm}
@@ -749,7 +748,8 @@ the lines and planes parallel to $(x,y)$-plane will be called \emph{horizontal}.
 
 \begin{thm}{Definition}
 A smooth curve $\gamma\:[0,\ell]\to\RR^3$ 
-is called \emph{elevating} if both ends $\gamma(0)$ and $\gamma(\ell)$ lie on the $z$-axiz and $\langle\dot\gamma(t),\bm{k}\rangle>0$ for all $t$.
+is called \emph{elevating} if both ends $\gamma(0)$ and $\gamma(\ell)$ lie on the $z$-axiz and 
+$\measuredangle(\dot\gamma(t),\bm{k})<\tfrac1{10}$ for all $t$.
 \end{thm}
 
 \parbf{$\bm{(\lambda,\mu,\nu)}$-frame.}
@@ -779,7 +779,7 @@ From the above definitions it follows that $|\alpha(t)|,|\psi(t)|\le \tfrac\pi2$
 In particular $\cos\alpha\cdot\cos\psi=\cos\phi$.
 Whence we get the following.
 
-\begin{thm}{Claim}
+\begin{thm}{Claim}\label{clm:alpha-phi-psi}
 For any $t$ we have 
 \[
 \phi(t)\ge |\psi(t)|\ \ \text{and}\ \ \phi(t)\ge |\alpha(t)|
@@ -1001,7 +1001,7 @@ The statement follows since the $\bm{s}$-pairs with the same depth do not overla
 Assume 
 \[q=\max_{1\le i<j\le k}\left\{\left|\sum_{n=i}^js_n\right|\right\}\]
 Then
-\[\left|\sum_{n=1}^k s_n\cdot\alpha_n\right|
+\[\left|\sum_{n=1}^k (-1)^n\cdot\alpha_n\right|
 \le 2\cdot q\cdot(q+\tfrac32)\cdot \pi.
 \]
 \end{thm}
@@ -1013,9 +1013,9 @@ Note that depth of any $\bm{s}$ pair is at most $q$.
 That is,
 \[S=S_1\cup\dots\cup S_q.\]
 By Corollary~\ref{cor:Sq},
-\[\sum_{n\in S}s_n\cdot\alpha_n\le 2\cdot q\cdot(q+1)\cdot\pi.\eqlbl{sum-S}\]
+\[\left|\sum_{n\in S}(-1)^n\cdot\alpha_n\right|\le 2\cdot q\cdot(q+1)\cdot\pi.\eqlbl{sum-S}\]
 
-Set $R=\{1,dots,k\}\backslash S$;
+Set $R=\{1,\dots,k\}\backslash S$;
 this is the set of indexes 
 which do not appear in an $\bm{s}$-pair.
 
@@ -1080,19 +1080,18 @@ Hence the result follows.
 \qeds
 
 
-\section{An estimate for graphs}\label{sec:graph}
+\section{An estimate on dark side}\label{sec:graph}
 
-\begin{thm}{Proposition}
+\begin{thm}{Proposition}\label{prop:graph}
 There is c constant $\omega'$ ($\omega'=10\cdot\pi$ will do)
 such that
-if $\gamma$ is an elevating minimizing geodesic on a graph $z=f(x,y)$
-of a concave function $f$ then
+if $\gamma$ is an elevating minimizing geodesic on the dark side for $\bm{k}$ then
 \[\tc_{\bm{i}}\gamma\le \omega'.\]
 \end{thm}
 
 \parit{Proof.}
 We can assume that
-$\gamma$ cross the $\bm{i}$ horizon $\omega_{\bm{i}}$ tranfersally.
+$\gamma$ cross the $\bm{i}$-horizon $\omega_{\bm{i}}$ tranfersally.
 Let $t_1<\dots<t_k$ be the meeting moments of $\gamma$ with $\omega_{\bm{i}}$ and
 $s_1,\dots,s_k$ the signs.
 
@@ -1110,9 +1109,12 @@ Set $R=\{1,\dots,k\}\backslash (S_1\cup\dots\cup S_5)$;
 this is the set of indexes which appear in $\bm{s}$-pairs with depth at least $6$ 
 as well as those which do not appear in any $\bm{s}$-pair.
 
-According to ???
+According to Claim~\ref{clm:alpha-phi-psi},
 \[\left|\sum_{n\in R}
-s_n\cdot\alpha_n\right|\le \sum_{n\in R}\phi_n.\] 
+(-1)^n\cdot\alpha_n\right|
+\le
+\sum_{n\in R}
+|\alpha_n|\le \sum_{n\in R}\phi_n.\] 
 To estimate the last sum will use the results in Section~\ref{sec:geometric-growth}.
 First let us subdivide $R$ into 5 subsets $R_1,\dots,R_5$,
 by setting 
@@ -1121,22 +1123,23 @@ $n\in R_m$ if $m\equiv n\pmod 5$.
 Given $n\in R_m$, denote by $n'$ the least index in $R_m$ which is larger $n$;
 $n'$ is defined for any $n\in R_m$ exept the largest one.
 According to Claim~\ref{clm:geometric-grouth}, 
-$\phi_{n'}>2\cdot \phi_n$.
+$\phi_{n'}>\tfrac32\cdot \phi_n$;
+that is, the sequence $(\phi_n)_{n\in R_m}$ growes faster than the geometriac progression with coefficient $\tfrac32$.
 Since $\phi_n$ is nondecreasing in $n$,
 we get 
-\[\sum_{n\in R_m}\phi_n\le 2\cdot\phi_k.\]
+\[\sum_{n\in R_m}\phi_n< 3\cdot\phi_k.\]
 It follows that 
-\[\sum_{n\in R}\phi_n\le 10\cdot\phi_k< 5\cdot\pi.\]
+\[\sum_{n\in R}\phi_n< 15\cdot\phi_k\le\tfrac{15}2\cdot\pi.\]
 
-According to Liberman's lemma
+By Corollary~\ref{cor:liberman},
 \begin{align*}
 \tc_{\bm{i}}\gamma
 &\le 
-4\cdot\pi
+2\cdot\pi
 +
-2\cdot [s_1\cdot\alpha_1+\dots+s_k\cdot\alpha_k]\le 
+2\cdot [\alpha_1-\alpha_2+\dots-(-1)^k\cdot\alpha_k]< 
 \\
-&\le 100\cdot \pi.
+&< 100\cdot \pi.
 \end{align*}
 \qeds
 
@@ -1152,35 +1155,48 @@ According to propositions \ref{prop:semicontinuity} and \ref{prop:convegence} we
 and the geodesic $\gamma$ has finite length.
 
 According to Proposition~\ref{prop:almost-const}, 
-we can pass to an elevating arc, of $\gamma$ for some $(x,y,z)$-coordinate system with total curvature $>\tfrac{\omega}{100^{100}}$%???NUMBER
+we can pass to an $\tfrac1{10}$-elevating arc
+of $\gamma$ for some $(x,y,z)$-coordinate system with total curvature $>\tfrac{\omega}{100^{100}}$%???NUMBER
 .
-Denote this arc by $\gamma'$ and let us use the notations in Section~\ref{sec:elevating}.
+Denote this arc by $\gamma'$;
+we will use the notations in Section~\ref{sec:elevating} for $\gamma'$.
 
 Rotating $(x,y)$-coordinate plane we can ensure that
 \[\tc\gamma'\le 10\cdot\tc_{\bm{i}}\gamma'\]
 and that $\gamma'$ cross the horizon $\omega_{\bm{i}}$ transversally.
 
-Let us subdivide $\gamma$ into three arcs lower middle and upper arcs $\gamma_-$, $\gamma_0$ and $\gamma_+$
-the the following way.
+By Corollary \ref{cor:around-twice},
+we can subdivide $\gamma'$ into at most three arcs: 
+\begin{itemize}
+\item \emph{Lower arc} $\gamma_-'$ which lies on the light side for $\bm{k}$,
+\item \emph{Middle arc} $\gamma_0'$ which rotatates around $z$-axis at most $4$ times.
+\item \emph{Upper arc} $\gamma_+'$ which lies on the dark side for $\bm{k}$.
+\end{itemize}
 
-By corollary \ref{cor:around-twice},
-we can subdivide $\gamma'$ in 3 arcs $\gamma_-'$, $\gamma_0'$ and $\gamma_+'$
-such that $\gamma_-$ lies on the light side for $\bm{k}$,
-$\gamma_+$ lies on the dark side for $\bm{k}$
-and any arc in 
-$\gamma_0$ rotatates around $z$-axis at most $100$ times.
+Indeed, choose an arc $\gamma|_{[a,b]}$  
+above the horizonal line through $\tfrac12\cdot(\gamma(0)+\gamma(\ell))$ which rotates around $z$-axsis 2 times and $b$ takes the minimal possible value.  
+Note that if $\gamma(s)$ lies on horizonal line through $\tfrac12\cdot(\gamma(0)+\gamma(\ell))$
+then $[s,b]\supset[a,b]$ 
+and any subarc of $[s,b]$ rotates around $z$ axis at most 2 times.
 
-Note that according to ??? $\gamma_+$ lies on a graph of concvae function.
+By Corollary \ref{cor:around-twice}, 
+we can take $\gamma'_+=\gamma'|_{[b,\ell]}$;
+in case if there is no such arc $[a,b]$, we assume that $\gamma_+'$ is not presented.
+Repeat the construction referting the direction of $z$-axis;
+we get the lower arc $\gamma_-'$.
+The remaining arc is aaumed to be $\gamma_0'$; note that any subarc of $\gamma_0'$ is devided by the horizontal plane through $\tfrac12\cdot(\gamma'(0)+\gamma'(\ell))$ into two each of which rotate around $z$-axis at most 2 times. 
+Therefore the number of rotations of any arc in $\gamma_0'$ is at most $4$.
+
+Let us estimate the total curvature of $\gamma_-$, $\gamma_0$ and $\gamma_+$ separately.
+
 By Proposition~\ref{prop:graph}, we get 
 \[\tc_{\bm{i}}\gamma_+\le 100\cdot\pi.\eqlbl{+}\]
-Similarly $\gamma_-$ lies on a graph of convex function and the same proposition implies 
+Similarly  
 \[\tc_{\bm{i}}\gamma_-\le 100\cdot\pi.\eqlbl{-}\]
 
 By Corollary~\ref{cor:gamma-0},
-\[\tc_{\bm{i}}\gamma_0\le 100\cdot\pi.\]
-
-\[\tc\gamma_0\le ???\]
-Together with \ref{+} and \ref{-},
+\[\tc_{\bm{i}}\gamma_0\le 100\cdot\pi.\eqlbl{0}\]
+Together with \ref{+}, \ref{-} and \ref{0}
 the later implies that 
 \[\tc_{\bm{i}}\gamma\le 300\cdot\pi.\]
 \qeds
