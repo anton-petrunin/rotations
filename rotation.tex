@@ -73,13 +73,13 @@ geodesic in its graph
 has total curvature at most $2\cdot \ell$.
 An amusing generalization of Usov's result is given by Berg in \cite{berg}.
 \item In \cite{pogorelov}, Pogorelov conjectured %???maybe before
-that the spherical image of geodesic on convex surface has to be rectifiable.
+that the spherical image of geodesic on convex surface has to be (locally) rectifiable.
 It is easy to see that the length of spherical image of geodesic can not be smaller than its total curvature, 
 so this conjecture (if it would be true) 
 would be stronger than Liberman's theorem.
-Counterexamples were found indepenently by Milka in \cite{milka}, 
+Counterexamples to the different forms of this conjecture were found  by Zalgaller in \cite{zalgaller} and  Milka in \cite{milka}, 
 Usov in \cite{usov-conj-pog} 
-and partly rediscovered by Pach in \cite{pach}.
+these results were partly rediscovered later by Pach in \cite{pach}.
 \item In \cite{BKZ},
 B{\'a}r{\'a}ny,
 Kuperberg, 
@@ -291,7 +291,7 @@ at most $N$ times then
 \end{align*}
 Therefore if $\gamma$ violetes Main Theorem then it has to cross the  horisons $\omega_{\bm{i}}$, $\omega_{\bm{j}}$ and $\omega_{\bm{k}}$ huge number of times.
 
-\section{Curvature of development}
+\section{Curvature of development}\label{sec:curv-develop}
 
 Let $\Sigma\subset\RR^3$
 be a strongly convex smooth surface
@@ -515,7 +515,7 @@ Indeed, no matter how we choose the discs $\Omega_i$ for the tongues they will a
 and therefore inequality \ref{eq:4pi} may not hold.
 
 
-\section{Length and diameter}
+\section{Almost straight arcs}
 
 Let $\eps>0$.
 A curve $\gamma\:[a,b]\to\RR^3$ will be called $\eps$-straight
@@ -772,17 +772,17 @@ Set
 \begin{align*}
 \phi(t)&=\measuredangle(\bm{k},\dot\gamma(t)),&
 \psi(t)&=\tfrac\pi2-\measuredangle(\bm{k},\nu(t)),&
-\alpha(t)&=\tfrac\pi2-\measuredangle(\mu(t),\dot\gamma(t)),
+\theta(t)&=\tfrac\pi2-\measuredangle(\mu(t),\dot\gamma(t)),
 \end{align*}
 
-From the above definitions it follows that $|\alpha(t)|,|\psi(t)|\le \tfrac\pi2$ and for each $t$ there is a right spherical triangle with legs $|\alpha(t)|,|\psi(t)|$ and hypotenuse $\phi(t)$.
-In particular $\cos\alpha\cdot\cos\psi=\cos\phi$.
+From the above definitions it follows that $|\theta(t)|,|\psi(t)|\le \tfrac\pi2$ and for each $t$ there is a right spherical triangle with legs $|\theta(t)|,|\psi(t)|$ and hypotenuse $\phi(t)$.
+In particular $\cos\theta\cdot\cos\psi=\cos\phi$.
 Whence we get the following.
 
 \begin{thm}{Claim}\label{clm:alpha-phi-psi}
 For any $t$ we have 
 \[
-\phi(t)\ge |\psi(t)|\ \ \text{and}\ \ \phi(t)\ge |\alpha(t)|
+\phi(t)\ge |\psi(t)|\ \ \text{and}\ \ \phi(t)\ge |\theta(t)|
 \]
 
 \end{thm}
@@ -791,13 +791,13 @@ Applying Liberman's Lemma in the direction $\bm{k}$ we also get the following.
 
 \begin{thm}{Claim}
 If an arc $\gamma|_{[a,b]}$ lies in the dark (light) side for $\bm{k}$ then 
-the function $\phi$ is nondecreasing (correspondingly nonincreasing)
+the angle function $\phi$ is nondecreasing (correspondingly nonincreasing)
 in $[a,b]$.
 \end{thm}
 
 \section{Plane sections}
 
-Assume $\gamma$ is a curve on a smooth strictly convex surface $\Sigma$ in $\RR^3$.
+Assume $\gamma$ is a curve on a smooth strongly convex surface $\Sigma$ in $\RR^3$.
 Consider a plane $L$ 
 passing through two points of $\gamma$, 
 say $p=\gamma(a)$ and $q=\gamma(b)$ with $a<b$.
@@ -805,7 +805,7 @@ Let $L_\pm$ be a  half-planes in $L$ bounded by the line trough $p$ and $q$.
 Set $\sigma_\pm=\Sigma\cap L_\pm$.
 
 \begin{thm}{Observation}\label{obs:cut}
-If $\gamma$ is a minimizing geodesic in the convex surface $\Sigma\subset \RR^3$ and $a$, $b$ and $\sigma_\pm$ as above then
+If $\gamma$ is a minimizing geodesic in the smooth strongly convex surface $\Sigma\subset \RR^3$ and $a$, $b$ and $\sigma_\pm$ as above then
 \[\length\sigma_\pm\ge\length(\gamma|_{[a,b]}).\]
 \end{thm}
 
@@ -816,13 +816,13 @@ Based on this observation we give couple of estimates on elevating minimizing ge
 Let $\gamma\:[a,b]\to\RR^3$ be a curve and $\ell$ be a line which does not pass through points of $\gamma$.
 Assume $\phi\:[a,b]\to\RR$ be a continuous azimuth angle
 of $\gamma$ in the cylindrical coordinates with the axis $\ell$.
-If $\phi(b)-\phi(a)|\ge 2\cdot n\cdot\pi$,
+If 
+\[|\phi(b)-\phi(a)|\ge 2\cdot n\cdot\pi,\]
 we will say that $\gamma$ \emph{goes around} the line $\ell$
 at least $n$ times.
 
 \begin{thm}{Propostion}\label{prop:around-once}
-Assume $\gamma\:[0,\ell]\to \Sigma$ is an elevating minimizing geodesic in the convex surface $\Sigma\subset \RR^3$.
-Assume that for a subsegment $[a,b]\subset [0,\ell]$ the following conditions hold
+Assume $\gamma\:[0,\ell]\to \Sigma$ is an elevating minimizing geodesic in the convex surface $\Sigma\subset \RR^3$ and a subsegment $[a,b]\subset [0,\ell]$ the following conditions hold
 \begin{enumerate}[(i)]
 \item The points $\gamma(a)$ and $\gamma(b)$ lie in a half-plane with boundary line formed by the $z$-axis
 and  the arc $\gamma|_{[a,b]}$ goes around the $z$-axis at least once.
@@ -856,13 +856,15 @@ These two estimates contradict Observation~\ref{obs:cut}.
 \qeds
 
 \begin{thm}{Corollary}\label{cor:around-twice}
-If $\Sigma$, $\gamma$, $\ell$, $a$ and $b$ as in the Proposition and the arc $\gamma|_{[a,b]}$ goes around the $z$-axis at least twice
+If $\Sigma$, $\gamma$, $\ell$, $a$ and $b$ as in the Proposition~\ref{prop:around-once} and the arc $\gamma|_{[a,b]}$ goes around the $z$-axis at least twice
 then the arc $\gamma|_{[b,\ell]}$ lies on the dark side with respect to $\bm{k}$.
 \end{thm}
 
 \parit{Proof.} 
 Fix $b'\in [b,\ell]$.
-Note that one can find $a'\in [a,b]$ such that the the assumtions of Proposition~\ref{prop:around-once} hold for the interval $[a',b']$. Applying Proposition we get the result.\qeds 
+Note that one can find $a'\in [a,b]$ such that the the assumtions of Proposition~\ref{prop:around-once} hold for the interval $[a',b']$. 
+It remains to apply Proposition~\ref{prop:around-once}.
+\qeds 
 
 
 \begin{thm}{Propostion}\label{prop:phi-psi}
@@ -910,9 +912,9 @@ Set
 &
 \psi_n&=\psi(t_n)
 &
-\alpha_n&=\alpha(t_n).
+\theta_n&=\theta(t_n).
 \end{align*}
-Note that the definition of $\alpha_n$ agrees with the one given in Section ???, so we can define $s_n$ as in Section ???.
+Note that the definition of $\theta_n=s_n\cdot\alpha_n$ where $s_n$ and $\alpha_n$ are the meeting sign and angle at $t_n$ defined in Section~\ref{sec:curv-develop}.
 
 We say that a pair of indexes $i<j$
 forms an \emph{$\bm{s}$-pair} 
@@ -931,42 +933,46 @@ for any $\bm{s}$-pair $(i,j)$ we have
  \item $s_j=-1$; that is, $j$-th braket has to be closing.
 \end{itemize}
 In particular,
-\[s_i\cdot\alpha_i+s_j\cdot\alpha_j=\alpha_i-\alpha_j.\]
+\[s_i\cdot\theta_i+s_j\cdot\theta_j=\theta_i-\theta_j.\]
 
 \parbf{Bracket interpretation.}
 If you exchange ``$+1$'' and ``$-1$'' in $\bm{s}$ by ``$($'' and ``$)$'' correspondingly then $(i,j)$ is an $\bm{s}$-pair
 if and only if the $i$-th bracket forms a pair with $j$-bracket.
+
+\begin{wrapfigure}{r}{52 mm}
+\begin{lpic}[t(-7 mm),b(1 mm),r(0 mm),l(0 mm)]{pics/s-pair(1)}
+\lbl[lt]{4,2;$\gamma(t_i)$}
+\lbl[rt]{46,2;$\gamma(t_j)$}
+\lbl[b]{4,29,79;$\dots$}
+\lbl[b]{30,38,70;$\dots$}
+\end{lpic}
+\end{wrapfigure}
 
 \parbf{Tongue interpretation.}
 Assume $(i,j)$ is an $\bm{s}$-pair.
 Note that in this case there is an arc of $\omega_{\bm{i}}$
 from $\gamma(t_i)$ to $\gamma(t_j)$
 with monotonic $z$-coordinate.
-Moreover this arc, say $\sigma$ together with $\gamma|{[t_i,t_j]}$ bounds an immesed disc in $\Sigma$.
-That is there is an immesion $\iota\:\DD\to\Sigma$ 
-such that the closed curve $\iota|_{\partial \DD}$ is formed by joint of $\sigma$ and $\gamma|{[t_i,t_j]}$.
+Moreover a disc of the tone has this arc in the boundary.
 
 The proof can be guessed from the diagram.
-It shows a lift of $\gamma$ in the universal cover of strip of $\Sigma$ between horizontal planes through $\gamma(t_i)$ and $\gamma(t_j)$;
-the solid vertical lines correspond are lifts of $\sigma$ and the dashed lines corresponds to the lifts of the other component of $\omega_{\bm{i}}$ bethween the planes.
+It shows a lift of $\gamma$ in the universal cover of strip of $\Sigma$ between horizontal planes containing $\gamma|_{[t_i,t_j]}$;
+the solid horizontal lines correspond are lifts of $\omega_{\bm{k}}$.
 
 We say that $q$ is the depth of an $\bm{s}$-pair $(i,j)$
 (briefly $q=\depth_{\bm{s}}(i,j)$) 
-if $q$ is the maximal number such that theis $q$-long nested sequence of $\bm{s}$-pairs starting with $(i,j)$; 
-that is a sequence of $\bm{s}$-pairs
+if $q$ is the maximal number such that theis $q$-long nested sequence of $\bm{s}$-pairs starting with $(i,j)$.
+For example the $\bm{s}$-pair on the diagram has depth $5$.
+
+More preisely, the depth of $(i,j)$ is the maximal number $q$
+for which there is a sequence of $\bm{s}$-pairs
 $(i,j)=(i_1,j_1),(i_2,j_2),\dots,(i_q,j_q)$ such that
 \[i=i_1<\dots<i_q<j_q<\dots<j_1=j.\]
 
-We say that $q$ is the depth of an $\bm{s}$-pair $(i,j)$
-(briefly $q=\depth_{\bm{s}}(i,j)$) 
-if $q$ is the maximal number such that theis $q$-long nested sequence of $\bm{s}$-pairs starting with $(i,j)$; 
-that is a sequence of $\bm{s}$-pairs
-$(i,j)=(i_1,j_1),(i_2,j_2),\dots,(i_q,j_q)$ such that
-\[i=i_1<\dots<i_q<j_q<\dots<j_1=j.\]
 
 Note that the $\bm{s}$-pair of the same depth do not overlap;
-that is if for two distinct $\bm{s}$-pairs $(i,j)$ and $(i',j')$,
-we have $\depth(i,j)=\depth(i',j')$
+that is if  $\depth(i,j)=\depth(i',j')$
+for two distinct $\bm{s}$-pairs $(i,j)$ and $(i',j')$
 then either $i<j<i'<j'$ or $i'<j'<i<j$.
 
 The following proposition follow directly from the definitions above.
@@ -982,7 +988,7 @@ Moreover the maximal multiplicity of the disc is at most $\depth_{\bm{s}}(i,j)$.
 Let us denote by $S_q$  the subset of indiexes $\{1,\dots,k\}$
 which are the parts of $\bm{s}$-pairs with depth $q$.
 Then
-\[\sum_{n\in S_q}s_n\cdot\alpha_n\le 4\cdot\pi\cdot q.\]
+\[\sum_{n\in S_q}s_n\cdot\theta_n\le 4\cdot\pi\cdot q.\]
 \end{thm}
 
 \parit{Proof.} For each $n$ denote by $K_n$ the integral of Gauss curvature of the part of surface $\Sigma$ which lies below horizontal plane through $\gamma(t_n)$.
@@ -992,7 +998,7 @@ Note that
 
 By Proposition~\ref{prop:immersion} and the Key Lemma,
 we get
-\[s_i\cdot\alpha_i+s_j\cdot\alpha_j=\alpha_i-\alpha_j\le q\cdot (K_j-K_i)\]
+\[s_i\cdot\theta_i+s_j\cdot\theta_j=\theta_i-\theta_j\le q\cdot (K_j-K_i)\]
 
 The statement follows since the $\bm{s}$-pairs with the same depth do not overlap.
 \qeds
@@ -1001,7 +1007,7 @@ The statement follows since the $\bm{s}$-pairs with the same depth do not overla
 Assume 
 \[q=\max_{1\le i<j\le k}\left\{\left|\sum_{n=i}^js_n\right|\right\}\]
 Then
-\[\left|\sum_{n=1}^k (-1)^n\cdot\alpha_n\right|
+\[\left|\sum_{n=1}^k (-1)^n\cdot\theta_n\right|
 \le 2\cdot q\cdot(q+\tfrac32)\cdot \pi.
 \]
 \end{thm}
@@ -1013,7 +1019,7 @@ Note that depth of any $\bm{s}$ pair is at most $q$.
 That is,
 \[S=S_1\cup\dots\cup S_q.\]
 By Corollary~\ref{cor:Sq},
-\[\left|\sum_{n\in S}(-1)^n\cdot\alpha_n\right|\le 2\cdot q\cdot(q+1)\cdot\pi.\eqlbl{sum-S}\]
+\[\left|\sum_{n\in S}(-1)^n\cdot\theta_n\right|\le 2\cdot q\cdot(q+1)\cdot\pi.\eqlbl{sum-S}\]
 
 Set $R=\{1,\dots,k\}\backslash S$;
 this is the set of indexes 
@@ -1028,7 +1034,7 @@ which do not appear in an $\bm{s}$-pair;
 that is $Q_r\cap R$ has at most two indexes for each $r$.
 
 Sine $|a_n|<\tfrac\pi2$, we get
-\[\left|\sum_{n\in R}s_n\cdot\alpha_n\right|
+\[\left|\sum_{n\in R}s_n\cdot\theta_n\right|
 \le
 q\cdot\pi.
 \]
@@ -1043,7 +1049,7 @@ The later inequality together with \ref{sum-S} implies the statement in the coro
 Assume $\psi(t)>\eps$ for and $t\in[t_{i},t_{j}]$
 and $s_i+\dots+s_j=2$
 Then 
-\[|\alpha_j-\alpha_i|>\pi\cdot\sin\eps.\] 
+\[|\theta_j-\theta_i|>\pi\cdot\sin\eps.\] 
 \end{thm}
 
 
@@ -1070,10 +1076,10 @@ Note that for any $b>t_j$ there is $a\in[t_i,t_j]$
 such that intrval $[a,b]$ satisfies the assumptions of Proposition~\ref{prop:phi-psi}.
 In particular $\psi(b)>\phi_i$ for any $b>t_j$.
 Applying Claim~\ref{clm:alpha-psi},
-we get that $|\alpha_j|>\tfrac\pi2\cdot \phi_i$ or 
-$|\alpha_{j'}|>\tfrac\pi2\cdot \phi_i$.
+we get that $|\theta_j|>\tfrac\pi2\cdot \phi_i$ or 
+$|\theta_{j'}|>\tfrac\pi2\cdot \phi_i$.
 Since $\phi_n$ is nondecreasing,
-and $\phi_n\ge |\alpha_n|$ for any $n$,
+and $\phi_n\ge |\theta_n|$ for any $n$,
 in both cases we get
 \[\phi_j>\tfrac\pi2\cdot \phi_i.\]
 Hence the result follows.
@@ -1098,10 +1104,10 @@ $s_1,\dots,s_k$ the signs.
 Recall that $S_q$ denotes the subset of indexes $\{1,\dots,k\}$
 which appear in $\bm{s}$-pair with depph $q$.
 According to Corollary~\ref{cor:Sq},
-\[\left|\sum_{n\in S_q}s_n\cdot\alpha_n\right|\le 4\cdot q\cdot \pi.\]
+\[\left|\sum_{n\in S_q}s_n\cdot\theta_n\right|\le 4\cdot q\cdot \pi.\]
 In particular,
 \[\left|\sum_{n\in S_1\cup\dots\cup S_5}
-s_n\cdot\alpha_n\right|
+s_n\cdot\theta_n\right|
 \le 
 40\cdot\pi.\]
 
@@ -1111,10 +1117,10 @@ as well as those which do not appear in any $\bm{s}$-pair.
 
 According to Claim~\ref{clm:alpha-phi-psi},
 \[\left|\sum_{n\in R}
-(-1)^n\cdot\alpha_n\right|
+(-1)^n\cdot\theta_n\right|
 \le
 \sum_{n\in R}
-|\alpha_n|\le \sum_{n\in R}\phi_n.\] 
+|\theta_n|\le \sum_{n\in R}\phi_n.\] 
 To estimate the last sum will use the results in Section~\ref{sec:geometric-growth}.
 First let us subdivide $R$ into 5 subsets $R_1,\dots,R_5$,
 by setting 
@@ -1137,7 +1143,7 @@ By Corollary~\ref{cor:liberman},
 &\le 
 2\cdot\pi
 +
-2\cdot [\alpha_1-\alpha_2+\dots-(-1)^k\cdot\alpha_k]< 
+2\cdot [\alpha_0-\alpha_1+\dots+(-1)^k\cdot\alpha_k]< 
 \\
 &< 100\cdot \pi.
 \end{align*}
