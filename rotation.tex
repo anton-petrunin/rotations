@@ -41,6 +41,11 @@ in the Euclidean space.
 
 \section{Introduction}
 
+
+
+
+
+
 In this note we give an affirmative answer to the question asked by Dmitry Burago; 
 the same question was also stated in \cite{AH-PSV}, \cite{pach} and \cite{BKZ}.
 Namely, we prove the following.
@@ -99,7 +104,7 @@ is defined as supremum of sum of exterior angles
 for the polygonal lines inscribed in $\gamma$.
 
 Note that for a polygonal line $\sigma$, 
-its total curvature coinside with the sum of its exterior angles.
+its total curvature coincide with the sum of its exterior angles.
 
 If $\gamma$ is a smooth curve with unit-speed parametrization, 
 then 
@@ -248,7 +253,7 @@ If in addition $\Sigma$ is closed and strongly convex then the horizon is empty 
 
 We could also define light/dark sides and horizon in the limit case,
 as $p$ escapes to infinity along a half-line in derection $\bm{u}$.
-Let us also define it derectly,
+Let us also define it directly,
 we say that a point $p\in\Sigma$ lies on dark (light) side for the unit vector $\bm{u}$ if non of the points $p+\bm{u}\cdot t$ lie inside of $\Sigma$ for $t>0$, (correspondingly $t<0$).
 As before the intersection of light and dark side is called horizon of $\bm{u}$ and it is denoted as $\omega_{\bm{u}}$.
 
@@ -308,11 +313,6 @@ Further note that that
 \]
 where $[{*},{*}]$ denotes vector product 
 and $\nu_p$ is the outer normal vector to $\Sigma$ at the point $p\in\Sigma$.
-Therefore we can choose signs $s_i=\pm1$
-such that 
-\[[\dot\gamma(t_i),\bm{u}]=s_i\cdot\cos\alpha_i\cdot\nu_{\gamma(t_i)}
-\]
-for each $i$.
 
 The values $t_i$, $\alpha_i$ and $s_i$ 
 will be called correspondingly \emph{meeting moments},\emph{meeting angles} and \emph{meeting signs}
@@ -399,7 +399,7 @@ $\iota\:\DD\looparrowright\Sigma$
 such that the closed curve $\iota|_{\partial D}$ is formed by joint of the arc $\gamma|_{[a,b]}$ and an arc of $\omega_{\bm{u}}$.
 In this case the immersion $\iota$ is called the \emph{disc of the tongue}.
 
-\begin{thm}{Tongue Lemma}
+\begin{thm}{Tongue Lemma}\label{lem:tongue}
 Let $\bm{u}$ be a unit vector,
 $\gamma\:[a,b]\to\Sigma$ 
 be a minimizing geodesic on the strongly convex surface $\Sigma\subset\RR^3$ which is a $\omega_{\bm{u}}$-tongue.
@@ -412,12 +412,8 @@ Then
 \[\alpha-\beta,
 \  -\alpha+\beta,
 \ \pi-\alpha-\beta,
- \pi+\alpha+\beta \pmod{2\cdot\pi}
+ \pi+\alpha+\beta \pmod{2\cdot\pi}.
 \]
-if the pair of meeting signs $(s_a,s_b)$ 
-at $a$ and $b$ takes value
-\[(+1,+1),\ (-1,-1),\ (+1,-1),\ (-1,+1)\] 
-correspondingly.
 
 In particular 
 \[\bigl|\alpha-\beta\bigr|
@@ -439,14 +435,14 @@ in particular the $\bm{u}$ extends to a parallel tangent vector field on $\omega
 
 It follows that parallel translation along $\iota|_{\partial\DD}$ 
 rotates the tangent plane by angle 
-\[s_a\cdot(\tfrac\pi2+\alpha)-s_b\cdot(\tfrac\pi2+\beta)\]
+\[\pm(\tfrac\pi2+\alpha)\pm(\tfrac\pi2+\beta)\]
 To prove the main statement of the lemma,
 it remains to apply Gauss--Bonnet formula.
 
 Denote by $R$ the right hand side in \ref{eq:key2}.
 Note that $R\ge 0$ 
 and $|\alpha|,|\beta|\le \tfrac\pi2$.
-From the main statement of the lemma it follows then that the minimal possible value for $R$ is $\bigl||\alpha|-|\beta|\bigr|$.
+From the main statement of the lemma it follows then that the minimal possible value for $R$ is $\bigl|\alpha-\beta\bigr|$.
 
 To prove \ref{eq:key3}, note that 
 in this case $\iota$ is an embedding.
@@ -529,7 +525,7 @@ $n\cdot\eps>2$.
 Then any 
 in any minimizing geodesic
 on a convex surface $\Sigma$ in $\RR^3$
-can be sudivided into  $\eps$-straight arcs $\gamma_1,\dots,\gamma_n$.
+can be subdivided into  $\eps$-straight arcs $\gamma_1,\dots,\gamma_n$.
 \end{thm}
 
 \parit{Proof.}
@@ -545,7 +541,7 @@ is $\eps$-straight if
 
 Let $\gamma\:[0,\ell]\to \Sigma$ be a minimizing geodesic parametrized by its length.
 
-Assume $\gamma_{[t,\ell]}$ is not $\eps$-straigt.
+Assume $\gamma_{[t,\ell]}$ is not $\eps$-straight.
 Set $t'$ to be the maximal value in $[t,\ell)$ such that the  interval $[t,t']$ is $\eps$-straight.
 Consider a sequence $0=t_0<t_1<\dots<t_n<\ell$
 such that $t_{i+1}=t_i'$ for each $i$.
@@ -574,7 +570,7 @@ Then $\diam \gamma\ge \tfrac\ell{10}$.
 \begin{thm}{Proposition}\label{prop:almost-const}
 For any $\eps>0$ there is $\delta>0$ such that the following holds.
 
-If $\gamma\:[a,b]\to\Sigma$ is a minimizing geodeisc 
+If $\gamma\:[a,b]\to\Sigma$ is a minimizing geodesic 
 on a smooth strongly convex surface $\Sigma$ in $\RR^3$
 then there is an interval $[a',b']\subset[a,b]$
 such that 
@@ -914,7 +910,15 @@ Set
 &
 \theta_n&=\theta(t_n).
 \end{align*}
-Note that the definition of $\theta_n=s_n\cdot\alpha_n$ where $s_n$ and $\alpha_n$ are the meeting sign and angle at $t_n$ defined in Section~\ref{sec:curv-develop}.
+Note that the definition of $\theta_n=\pm\alpha_n$
+so we can say $s_n\cdot\theta_n=(-1)^m\cdot \alpha_n$ so some sequence of signs $s_i=\pm1$.
+In particular
+\[\alpha_0-\alpha_1+\dots+(-1)^k\cdot\alpha_k
+=
+s_0\cdot\theta_0+s_1\cdot\theta_1+\dots+s_k\cdot\theta_k.\]
+We may think that the sign $s_n=+1$ if $\nu_{\gamma(t)}$ moves east 
+at $t_n$
+and $s_n=-1$ if it moves west.    
 
 We say that a pair of indexes $i<j$
 forms an \emph{$\bm{s}$-pair} 
@@ -929,11 +933,15 @@ if $i<j'<j$.
 Note that for any index $i$ appears in at most one $\bm{s}$-pair and 
 for any $\bm{s}$-pair $(i,j)$ we have
 \begin{itemize}
-\item $s_i=1$; that is, $i$-th braket has to be openning.
- \item $s_j=-1$; that is, $j$-th braket has to be closing.
+\item $s_i=1$; that is, $i$-th bracket has to be openning.
+ \item $s_j=-1$; that is, $j$-th bracket has to be closing.
 \end{itemize}
 In particular,
-\[s_i\cdot\theta_i+s_j\cdot\theta_j=\theta_i-\theta_j.\]
+\begin{align*}
+s_i\cdot\theta_i+s_j\cdot\theta_j&=\theta_i-\theta_j=
+\\
+&=(-1)^i\cdot\alpha_i+(-1)^j\cdot\alpha_j.
+\end{align*}
 
 \parbf{Bracket interpretation.}
 If you exchange ``$+1$'' and ``$-1$'' in $\bm{s}$ by ``$($'' and ``$)$'' correspondingly then $(i,j)$ is an $\bm{s}$-pair
@@ -941,10 +949,22 @@ if and only if the $i$-th bracket forms a pair with $j$-bracket.
 
 \begin{wrapfigure}{r}{52 mm}
 \begin{lpic}[t(-7 mm),b(1 mm),r(0 mm),l(0 mm)]{pics/s-pair(1)}
+\lbl[br]{2,4;$+$}
+\lbl[br]{3,14;$+$}
+\lbl[br]{4,24;$+$}
+\lbl[br]{6,34;$+$}
+\lbl[bl]{16,34;$-$}
+\lbl[br]{28,34;$+$}
+\lbl[br]{33,44;$+$}
+\lbl[bl]{43,44;$-$}
+\lbl[bl]{45,34;$-$}
+\lbl[bl]{46,24;$-$}
+\lbl[bl]{47,14;$-$}
+\lbl[bl]{47.5,4;$-$}
 \lbl[lt]{4,2;$\gamma(t_i)$}
 \lbl[rt]{46,2;$\gamma(t_j)$}
-\lbl[b]{4,29,79;$\dots$}
-\lbl[b]{30,38,70;$\dots$}
+%\lbl[b]{4,29,79;$\dots$}
+%\lbl[b]{30,38,70;$\dots$}
 \end{lpic}
 \end{wrapfigure}
 
@@ -961,10 +981,10 @@ the solid horizontal lines correspond are lifts of $\omega_{\bm{k}}$.
 
 We say that $q$ is the depth of an $\bm{s}$-pair $(i,j)$
 (briefly $q=\depth_{\bm{s}}(i,j)$) 
-if $q$ is the maximal number such that theis $q$-long nested sequence of $\bm{s}$-pairs starting with $(i,j)$.
+if $q$ is the maximal number such that there is $q$-long nested sequence of $\bm{s}$-pairs starting with $(i,j)$.
 For example the $\bm{s}$-pair on the diagram has depth $5$.
 
-More preisely, the depth of $(i,j)$ is the maximal number $q$
+More precisely, the depth of $(i,j)$ is the maximal number $q$
 for which there is a sequence of $\bm{s}$-pairs
 $(i,j)=(i_1,j_1),(i_2,j_2),\dots,(i_q,j_q)$ such that
 \[i=i_1<\dots<i_q<j_q<\dots<j_1=j.\]
@@ -985,7 +1005,7 @@ Moreover the maximal multiplicity of the disc is at most $\depth_{\bm{s}}(i,j)$.
 
 
 \begin{thm}{Corollary}\label{cor:Sq}
-Let us denote by $S_q$  the subset of indiexes $\{1,\dots,k\}$
+Let us denote by $S_q$  the subset of indexes $\{1,\dots,k\}$
 which are the parts of $\bm{s}$-pairs with depth $q$.
 Then
 \[\sum_{n\in S_q}s_n\cdot\theta_n\le 4\cdot\pi\cdot q.\]
@@ -1005,9 +1025,9 @@ The statement follows since the $\bm{s}$-pairs with the same depth do not overla
 
 \begin{thm}{Corollary}\label{cor:gamma-0}
 Assume 
-\[q=\max_{1\le i<j\le k}\left\{\left|\sum_{n=i}^js_n\right|\right\}\]
+\[q=\max_{1\le i<j\le k}\left\{\biggl|\sum_{n=i}^js_n\biggr|\right\}\]
 Then
-\[\left|\sum_{n=1}^k (-1)^n\cdot\theta_n\right|
+\[\left|\sum_{n=1}^k s_n\cdot\theta_n\right|
 \le 2\cdot q\cdot(q+\tfrac32)\cdot \pi.
 \]
 \end{thm}
@@ -1046,16 +1066,31 @@ The later inequality together with \ref{sum-S} implies the statement in the coro
 \section{Geometric growth}\label{sec:geometric-growth}
 
 \begin{thm}{Claim}\label{clm:alpha-psi}
-Assume $\psi(t)>\eps$ for and $t\in[t_{i},t_{j}]$
-and $s_i+\dots+s_j=2$
+Assume $\psi(t)>\eps$ for and $t\in[t_{i},t_{i+1}]$
+and $s_i=s_{i+1}$
 Then 
 \[|\theta_j-\theta_i|>\pi\cdot\sin\eps.\] 
 \end{thm}
 
+\parit{Proof.}
+Note that the arc $\gamma|_{[t_{i},t_{i+1}]}$ is a tongue with embedded disc $\iota\:\DD^2\to \Sigma$.
+Since $\psi(t)>\eps$, 
+the spherical image $\nu\circ\iota(\DD^2)$ 
+of $\iota(\DD^2)$ 
+lies in a halfdisc of radius $\tfrac\pi2-\eps$ in $\SS^2$.
+Note that
+\[K(\iota(\DD^2))
+=
+\area(\nu\circ\iota(\DD^2))
+<
+\pi\cdot(1-\sin\eps).\]
+It remains to apply Tongue Lemma~\ref{lem:tongue}.
+\qeds
+
+
 
 \begin{thm}{Claim}\label{clm:geometric-grouth}
-Let $\gamma$
-be elevating minimizing geodesic on a graph $z=f(x,y)$ of a concave function.
+Assume $\gamma$ lies on the dark side for $\bm{k}$.
 Then for any pair of indexes $j>i$,
 such that 
 \[|\sum_{n=i}^{j}s_n|> 5\]
@@ -1073,7 +1108,7 @@ such that
 \[|\sum_{n=i}^{j'} s_n|=5.\]
 
 Note that for any $b>t_j$ there is $a\in[t_i,t_j]$
-such that intrval $[a,b]$ satisfies the assumptions of Proposition~\ref{prop:phi-psi}.
+such that interval $[a,b]$ satisfies the assumptions of Proposition~\ref{prop:phi-psi}.
 In particular $\psi(b)>\phi_i$ for any $b>t_j$.
 Applying Claim~\ref{clm:alpha-psi},
 we get that $|\theta_j|>\tfrac\pi2\cdot \phi_i$ or 
@@ -1086,7 +1121,6 @@ Hence the result follows.
 \qeds
 
 
-\section{An estimate on dark side}\label{sec:graph}
 
 \begin{thm}{Proposition}\label{prop:graph}
 There is c constant $\omega'$ ($\omega'=10\cdot\pi$ will do)
@@ -1102,7 +1136,7 @@ Let $t_1<\dots<t_k$ be the meeting moments of $\gamma$ with $\omega_{\bm{i}}$ an
 $s_1,\dots,s_k$ the signs.
 
 Recall that $S_q$ denotes the subset of indexes $\{1,\dots,k\}$
-which appear in $\bm{s}$-pair with depph $q$.
+which appear in $\bm{s}$-pair with depth $q$.
 According to Corollary~\ref{cor:Sq},
 \[\left|\sum_{n\in S_q}s_n\cdot\theta_n\right|\le 4\cdot q\cdot \pi.\]
 In particular,
@@ -1117,7 +1151,7 @@ as well as those which do not appear in any $\bm{s}$-pair.
 
 According to Claim~\ref{clm:alpha-phi-psi},
 \[\left|\sum_{n\in R}
-(-1)^n\cdot\theta_n\right|
+s_n\cdot\theta_n\right|
 \le
 \sum_{n\in R}
 |\theta_n|\le \sum_{n\in R}\phi_n.\] 
@@ -1127,10 +1161,10 @@ by setting
 $n\in R_m$ if $m\equiv n\pmod 5$.
 
 Given $n\in R_m$, denote by $n'$ the least index in $R_m$ which is larger $n$;
-$n'$ is defined for any $n\in R_m$ exept the largest one.
+$n'$ is defined for any $n\in R_m$ except the largest one.
 According to Claim~\ref{clm:geometric-grouth}, 
 $\phi_{n'}>\tfrac32\cdot \phi_n$;
-that is, the sequence $(\phi_n)_{n\in R_m}$ growes faster than the geometriac progression with coefficient $\tfrac32$.
+that is, the sequence $(\phi_n)_{n\in R_m}$ grows faster than the geometric progression with coefficient $\tfrac32$.
 Since $\phi_n$ is nondecreasing in $n$,
 we get 
 \[\sum_{n\in R_m}\phi_n< 3\cdot\phi_k.\]
@@ -1175,20 +1209,20 @@ By Corollary \ref{cor:around-twice},
 we can subdivide $\gamma'$ into at most three arcs: 
 \begin{itemize}
 \item \emph{Lower arc} $\gamma_-'$ which lies on the light side for $\bm{k}$,
-\item \emph{Middle arc} $\gamma_0'$ which rotatates around $z$-axis at most $4$ times.
+\item \emph{Middle arc} $\gamma_0'$ which rotates around $z$-axis at most $4$ times.
 \item \emph{Upper arc} $\gamma_+'$ which lies on the dark side for $\bm{k}$.
 \end{itemize}
 
 Indeed, choose an arc $\gamma|_{[a,b]}$  
-above the horizonal line through $\tfrac12\cdot(\gamma(0)+\gamma(\ell))$ which rotates around $z$-axsis 2 times and $b$ takes the minimal possible value.  
-Note that if $\gamma(s)$ lies on horizonal line through $\tfrac12\cdot(\gamma(0)+\gamma(\ell))$
+above the horizontal line through $\tfrac12\cdot(\gamma(0)+\gamma(\ell))$ which rotates around $z$-axsis 2 times and $b$ takes the minimal possible value.  
+Note that if $\gamma(s)$ lies on horizontal line through $\tfrac12\cdot(\gamma(0)+\gamma(\ell))$
 then $[s,b]\supset[a,b]$ 
 and any subarc of $[s,b]$ rotates around $z$ axis at most 2 times.
 
 By Corollary \ref{cor:around-twice}, 
 we can take $\gamma'_+=\gamma'|_{[b,\ell]}$;
 in case if there is no such arc $[a,b]$, we assume that $\gamma_+'$ is not presented.
-Repeat the construction referting the direction of $z$-axis;
+Repeat the construction reverting the direction of $z$-axis;
 we get the lower arc $\gamma_-'$.
 The remaining arc is aaumed to be $\gamma_0'$; note that any subarc of $\gamma_0'$ is devided by the horizontal plane through $\tfrac12\cdot(\gamma'(0)+\gamma'(\ell))$ into two each of which rotate around $z$-axis at most 2 times. 
 Therefore the number of rotations of any arc in $\gamma_0'$ is at most $4$.
@@ -1362,7 +1396,7 @@ Applying Key lemma, the statement follows.
 
 Set $R=\{1,\dots,k\}\backslash (S_1\cup\dots\cup S_5)$;
 this is the set of indexes which do not appear in any $\bm{s}$-pairs
-as well as the indexes which appera in $\bm{s}$-pairs of depth at least $6$.
+as well as the indexes which appear in $\bm{s}$-pairs of depth at least $6$.
 
 According to ???, the theorem will follow if we can find an universal upper bound on 
 \[|\sum_{n\in R}s_n\cdot \alpha_n|.\]
@@ -1464,7 +1498,7 @@ that is, there is a sequence of convex surfaces $\Sigma_n$
 and a sequence of minimizing geodesic $\gamma_n$ in $\Sigma_n$ such that 
 \[\tc \gamma_n\to\infty\ \ \text{as}\ \ n\to\infty.\]
 
-Then we can make in addition one of the following assumtions:
+Then we can make in addition one of the following assumptions:
 
 \begin{enumerate}[(i)]
 \item\label{graph} $\Sigma_n$ is a graph $z=f_n(x,y)$ of a smooth convex function $f_n\:\RR^2\to\RR$
@@ -1475,7 +1509,7 @@ and $\dot\gamma_z(t)>0$ for any $t\in[0,\ell]$.
 
 In particular, from now on $\psi(t)>0$ for any $t\in[0,\ell]$.
 Note also that by Liberman's lemma $\phi(t)$ is a nondecreasing function on $[0,\ell]$.
-The two cases (\ref{graph}) and (\ref{finite}) will be done separetely.
+The two cases (\ref{graph}) and (\ref{finite}) will be done separately.
 The case (\ref{graph}) is more involved.
 
 \begin{thm}{Claim}
