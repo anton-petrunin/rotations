@@ -98,14 +98,15 @@ They also rediscovered the results of Liberman and Usov mentioned above.
 \end{itemize}
 
 \parbf{Idea of the proof.}
-First we show that it is sufficient to estimate total curvature for the minimizing geodesics with almost constant velocity vector, say $\dot\gamma(t)\approx\bm{k}$.
+First we show that it is sufficient to estimate total curvature for the minimizing geodesics with almost constant velocity vector, say $\dot\gamma(t)\approx\bm{i}$.
 
 To estimate total curvature in this case it is sufficient 
 to estimate the integral
-\[\int\langle\ddot\gamma(t),\bm{i}\rangle\cdot dt\] for suitable vector $\bm{i}\perp \bm{k}$.
+\[\int\langle\ddot\gamma(t),\bm{j}\rangle\cdot dt\] 
+for a vector $\bm{j}\perp\bm{i}$.
 To understand the idea of this estimate, 
 imagine that 
-the surface is lighten in the direction of $\bm{i}$,
+the surface is lighten in the direction of $\bm{j}$,
 so it is divided into dark side and light side 
 by a curve $\omega$.
 On the diagram you see different combinatorics in which
@@ -113,14 +114,14 @@ $\gamma$ meets $\omega$.
 
 \begin{center}
  \begin{lpic}[t(2 mm),b(2 mm),r(0 mm),l(0 mm)]{pics/spiral-and-snake(1)}
-\lbl[b]{88,14;$\omega$}
+\lbl[b]{93,14;$\omega$}
 \end{lpic}
 \end{center}
 
 In the first case the total curvature is estimated by integral of Gauss curvature of the regions squeezed between $\gamma$ and $\omega$; see Tongue Lemma \ref{lem:tongue}.
 
 The second case might look impossible, 
-but the corkscrew geodesic constructed in \cite{BKZ} can intersect $\omega$ this way.
+but the corkscrew geodesic constructed in \cite{BKZ} can meets $\omega$ in this order.
 Here we show that the total curvature of the twists grows geometrically from a middle twist to the ends and at the ends 
 the integral of the full twists can not be bigger than $2\cdot\pi$.
 This is enough to estimate the total curvature of whole geodesic.
@@ -869,8 +870,7 @@ Let $\Sigma\subset \RR^3$
 be a strongly convex surface
 and $\gamma\:[0,\ell]\to\Sigma$ be an $\bm{i}$-drifting minimizing geodesic.
 
-After rotating $(x,y)$-plane if necessary, 
-we can assume that the border of shadow in the directions of $x$-axis, say $\omega_x$, 
+We can assume that the horizon $\omega_{\bm{j}}$, 
 is a smooth curve and $\gamma$ intersects them transversely.
 
 Let $t_0<t_1<\dots<t_k$ be the meeting moments of $\gamma$ with $\omega_{\bm{j}}$
@@ -889,9 +889,9 @@ In particular
 =
 s_0\cdot\theta_0+s_1\cdot\theta_1+\dots+s_k\cdot\theta_k.\]
 We may think that the sign $s_n=+1$ 
-if $\nu_{\gamma(t)}$ moves west in $\SS^2$
+if $\nu_{\gamma(t)}$ moves clockwise in $\SS^2$
 at $t_n$
-and $s_n=-1$ if it moves east.    
+and $s_n=-1$ if it moves counterclockwise.    
 
 We say that a pair of indexes $i<j$
 forms an \emph{$s$-pair} 
@@ -902,6 +902,9 @@ if
 \sum_{n=i}^{j'}s_n>0
 \]
 if $i<j'<j$.
+
+If you exchange ``$+1$'' and ``$-1$'' in $s$ by ``$($'' and ``$)$'' correspondingly then $(i,j)$ is an $s$-pair
+if and only if the $i$-th bracket forms a pair with $j$-bracket.
 
 Note that for any index $i$ appears in at most one $s$-pair and 
 for any $s$-pair $(i,j)$ we have
@@ -916,9 +919,6 @@ s_i\cdot\theta_i+s_j\cdot\theta_j&=\theta_i-\theta_j=
 &=(-1)^i\cdot\alpha_i+(-1)^j\cdot\alpha_j.
 \end{align*}
 
-\parbf{Bracket interpretation.}
-If you exchange ``$+1$'' and ``$-1$'' in $s$ by ``$($'' and ``$)$'' correspondingly then $(i,j)$ is an $s$-pair
-if and only if the $i$-th bracket forms a pair with $j$-bracket.
 
 
 \begin{wrapfigure}{r}{52 mm}
@@ -1178,7 +1178,7 @@ such that
 \]
 We will use the notations in Section~\ref{sec:drifting} for $\gamma'$.
 
-Rotating $(x,y)$-coordinate plane we can ensure that
+Rotating $(y,z)$-coordinate plane we can ensure that
 \[\tc\gamma'\le 10\cdot\tc_{\bm{j}}\gamma'\]
 and that $\gamma'$ cross the horizon $\omega_{\bm{j}}$ transversally.
 
