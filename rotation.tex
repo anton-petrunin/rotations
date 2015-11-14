@@ -63,7 +63,8 @@ and the optimal bound
 is expected to be slightly bigger than $2\cdot\pi$.
 The former example was constructed by B{\'a}r{\'a}ny,
 Kuperberg, 
-and Zamfirescu in \cite{BKZ}.
+and Zamfirescu in \cite{BKZ}. 
+
 Let us list other related results.
 
 \begin{itemize}
@@ -118,7 +119,9 @@ $\gamma$ meets $\omega$.
 \end{lpic}
 \end{center}
 
-In the first case the total curvature is estimated by integral of Gauss curvature of the regions squeezed between $\gamma$ and $\omega$; see Tongue Lemma \ref{lem:tongue}.
+In the first case the total curvature is estimated by integral of Gauss curvature of the regions squeezed between $\gamma$ and $\omega$.
+The latter follows from the Tongue Lemma \ref{lem:tongue},
+which is the hart of our proof.
 
 The second case might look impossible, 
 but the corkscrew geodesic constructed in \cite{BKZ} can meets $\omega$ in this order.
@@ -127,10 +130,6 @@ the integral of the full twists can not be bigger than $2\cdot\pi$.
 This is enough to estimate the total curvature of whole geodesic.
 
 The last case is a mixture of first two and it is done by mixing both techniques.
-
-
-
-
 
 \section{Preliminaries}
 
@@ -232,15 +231,15 @@ the direction from $\tilde p$ to $\tilde \gamma(t)$ changes monotonically (clock
 Then $\tilde\gamma_p$ is called \emph{development} of $\gamma$ with respect to $p$.
 
 \begin{center}
-\begin{lpic}[t(3 mm),b(6 mm),r(0 mm),l(0 mm)]{pics/convex-concave(1)}
-\lbl[l]{23,13;$\tilde\gamma_p(a)$}
-\lbl[r]{0,22;$\tilde\gamma_p(b)$}
-\lbl[r]{0,3;$\tilde p$}
-\lbl[l]{73,13;$\tilde\gamma_p(a)$}
-\lbl[r]{50,22;$\tilde\gamma_p(b)$}
-\lbl[r]{50,3;$\tilde p$}
-\lbl[t]{10,-1;Convex development.}
-\lbl[t]{60,-1;Concave development.}
+\begin{lpic}[t(0 mm),b(9 mm),r(0 mm),l(0 mm)]{pics/convex-concave(1)}
+\lbl[tl]{23,16;$\tilde\gamma_p(a)$}
+\lbl[tr]{4,16;$\tilde\gamma_p(b)$}
+\lbl[tl]{14,1;$\tilde p$}
+\lbl[ll]{67,18;$\tilde\gamma_p(a)$}
+\lbl[rt]{45,18;$\tilde\gamma_p(b)$}
+\lbl[tl]{57,1;$\tilde p$}
+\lbl[t]{13,-5;Convex development.}
+\lbl[t]{56,-5;Concave development.}
 \end{lpic}
 \end{center}
 
@@ -1165,7 +1164,7 @@ By Corollary~\ref{cor:liberman},
 
 
 
-\section{Final assembling of the proof}
+\section{Assembling of the proof}
 
 
 Assume $\gamma\:[0,\ell]\to \Sigma$ is a minimizing geodesic in a convex surface $\Sigma\subset \RR^3$.
@@ -1225,9 +1224,6 @@ the later implies that
 \[\tc_{\bm{j}}\gamma'\le 300\cdot\pi.\]
 From \ref{eq:1/100} the result follows.
 \qeds
-
-
-
 
 
 \sloppy
