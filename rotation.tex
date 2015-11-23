@@ -94,7 +94,7 @@ B{\'a}r{\'a}ny,
 Kuperberg, 
 and Zamfirescu 
 have constructed a corkscrew minimizing geodesic on a closed convex surface;
-that is a minimizing geodesic which twists around given line arbitrary many times.
+that is a minimizing geodesic which twists around a given line arbitrary many times.
 They also rediscovered the results of Liberman and Usov mentioned above.
 \end{itemize}
 
@@ -127,7 +127,7 @@ The second case might look impossible,
 but the corkscrew geodesic constructed in \cite{BKZ} can meets $\omega$ in this order.
 Here we show that the total curvature of the twists grows geometrically from a middle twist to the ends and at the ends 
 the integral of the full twists can not be bigger than $2\cdot\pi$.
-This is enough to estimate the total curvature of whole geodesic.
+This is enough to estimate the total curvature of the whole geodesic.
 
 The last case is a mixture of first two and it is done by mixing both techniques.
 
@@ -224,7 +224,7 @@ and a point $p$ does not lie on $\gamma$.
 
 Assume  $\tilde\gamma_p\:[0,\ell]\to\RR^2$ is a plane curve parametrized by arc-length
 and $\tilde p$ is a point in the plane such that 
-\[|\tilde p-\tilde\gamma(t)|=|\tilde p-\tilde\gamma(t)|\]
+\[|\tilde p-\tilde\gamma(t)|=|p-\gamma(t)|\]
 for any $t\in[0,\ell]$;
 moreover, 
 the direction from $\tilde p$ to $\tilde \gamma(t)$ changes monotonically (clockwise or counterclockwise). 
@@ -252,7 +252,7 @@ We say that $\tilde\gamma_p$ is locally convex (concave) in the interval $[a,b]$
 if any point $x\in [a,b]$ admits a closed neighborhood $[a',b']$ in $[a,b]$
 such that $\tilde\gamma_p$ is convex (correspondingly concave) in the interval $[a',b']$.
 
-If we pass to the limit of this construction as $p$ moves to infinity along a half-line in the direction of a unit vector $\bm{u}$ then the limit curve is called development of $\gamma$ in direction $\bm{u}$ and denoted as $\tilde\gamma_{\bm{u}}$.
+If we pass to the limit of this construction as $p$ moves to infinity along a half-line in the direction of a unit vector $\bm{u}$ then the limit curve is called development of $\gamma$ in the direction $\bm{u}$ and denoted as $\tilde\gamma_{\bm{u}}$.
 
 We can define the development $\tilde\gamma_{\bm{u}}$ directly:
 (1) the development $\tilde\gamma_{\bm{u}}\:[0,\ell]\to \R^2$
@@ -380,7 +380,7 @@ Then
 
 \end{thm}
 
-Further, in order to find the needed estimate the total curvature
+Further, in order to find the needed estimate for the total curvature
 of geodesic we will get an upper bound for the sum
 \[\left|\alpha_0-\alpha_1
 +\dots +(-1)^k\cdot\alpha_k\right|.\]
@@ -552,7 +552,7 @@ such that
 and 
 \[\measuredangle(\dot\gamma(t),\bm{u})<\eps\] 
 for a fixed unit vector $\bm{u}$
-and any $t\in[a,b]$.
+and any $t\in[a',b']$.
 
 Moreover, if $\eps=\tfrac1{10}$ then one can assume $\delta=\tfrac1{100^{100}}$.
 \end{thm}
@@ -565,7 +565,6 @@ For any $\eps$ there is $\delta>0$ such that the following holds.
 Assume $\gamma$ is a curve,
 $\bm{v}_1$ and $\bm{v}_2$  be two vectors in $\RR^3$
 and $0\le\alpha_1,\alpha_2\le\pi$ be such that
-such that 
 \begin{align*}
 \eps
 &<\measuredangle(\bm{v}_1,\bm{v}_2)<\pi-\eps
@@ -629,7 +628,7 @@ By Liberman's lemma
 \[\tc_p(\gamma|_{[1,2]})< \pi+\theta.\]
 Assume $N=\lceil\tfrac\pi\theta+1\rceil$.
 Then we can subdivide $\gamma|_{[1,2]}$ into $N$ arcs 
-such that $\gamma_1,\gamma_2,\dots,\gamma_N$ such that
+ $\gamma_1,\gamma_2,\dots,\gamma_N$ such that
 \[\tc_p(\gamma_n)\le \theta\eqlbl{eq:tcp}\]
 for each $n$.
 
@@ -640,7 +639,7 @@ it follows that for each $n$, there is $\alpha_n$ such that
 \measuredangle(\dot\gamma_n(t),\bm{v}_\gamma)
 \le
 \alpha_n+\theta.\] 
-The arc $\gamma_n$ with the maximal total curvature will solves the proposition.
+The arc $\gamma_n$ with the maximal total curvature will solve the proposition.
 
 It remains to choose $\delta$ so that $\theta(\delta)<\tfrac\eps{100}$.
 \qeds
@@ -778,7 +777,7 @@ If $\gamma$ is a minimizing geodesic in the smooth strongly convex surface $\Sig
 \[\length\sigma_\pm\ge\length(\gamma|_{[a,b]}).\]
 \end{thm}
 
-To prove the observation, it is sufficient to note that $\sigma_\pm$ are a smooth convex plane curve connecting $p$ to $q$ in $\Sigma$.
+To prove the observation, it is sufficient to note that $\sigma_\pm$ are  smooth convex plane curve connecting $p$ to $q$ in $\Sigma$.
 
 Based on this observation we give couple of estimates on drifting minimizing geodesics.
 
@@ -791,7 +790,7 @@ we will say that $\gamma$ \emph{goes around} the line $\ell$
 at least $n$ times.
 
 \begin{thm}{Proposition}\label{prop:around-once}
-Assume $\gamma\:[0,\ell]\to \Sigma$ is an $\bm{i}$-drifting minimizing geodesic in the convex surface $\Sigma\subset \RR^3$ and a sub-segment $[a,b]\subset [0,\ell]$ the following conditions hold
+Assume $\gamma\:[0,\ell]\to \Sigma$ is an $\bm{i}$-drifting minimizing geodesic in the convex surface $\Sigma\subset \RR^3$, a sub-segment $[a,b]\subset [0,\ell]$ and the following conditions hold
 \begin{enumerate}[(i)]
 \item The points $\gamma(a)$ and $\gamma(b)$ lie in a half-plane with boundary line formed by the $z$-axis
 and  the arc $\gamma|_{[a,b]}$ goes around the $z$-axis at least once.
