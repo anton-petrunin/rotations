@@ -1,6 +1,7 @@
 \documentclass[a4paper,10pt]{amsart}
 \usepackage{kubik}
 
+
 \begin{document}
 \title{On the total curvature of \\
 minimizing geodesics on convex surfaces}
@@ -40,11 +41,6 @@ in the Euclidean space.
 \maketitle
 
 \section{Introduction}
-
-
-
-
-
 
 In this note we give an affirmative answer to the question asked by Dmitry Burago; 
 the same question was also stated in \cite{AH-PSV}, \cite{pach} and \cite{BKZ}.
@@ -108,7 +104,7 @@ for a vector $\bm{j}\perp\bm{i}$.
 To understand the idea of this estimate, 
 imagine that 
 the surface is lighten in the direction of $\bm{j}$,
-so it is divided into dark side and light side 
+so it is divided into the dark and light sides 
 by a curve $\omega$.
 On the diagram you see different combinatorics in which
 $\gamma$ meets $\omega$.
@@ -140,7 +136,7 @@ is defined as supremum of sum of exterior angles
 for the polygonal lines inscribed in $\gamma$.
 
 Note that for a polygonal line $\sigma$, 
-its total curvature coincide with the sum of its exterior angles.
+its total curvature coincides with the sum of its exterior angles.
 
 If $\gamma$ is a smooth curve with unit-speed parametrization, 
 then 
@@ -159,11 +155,11 @@ Fix a polygonal line $\sigma_\infty$ inscribed in $\gamma_\infty$.
 Let $\gamma_\infty(t_0),\dots,\gamma_\infty(t_k)$
 be its vertices 
 as they appear on $\gamma_\infty$.
-Consider the polygonal lines $\sigma_n$ inscribed in $\gamma_n$ with the vertices 
+Consider the polygonal line $\sigma_n$ inscribed in $\gamma_n$ with the vertices 
 $\gamma_n(t_0),\dots,\gamma_n(t_k)$.
 Note that 
-\[\tc\sigma_n\to\tc\sigma_\infty.\]
-By the definition of total curvature 
+\[\tc\sigma_n\to\tc\sigma_\infty\ \ \text{as}\ \ n\to\infty.\]
+By the definition of total curvature, 
 \[\tc\sigma_n\le\tc\gamma_n.\]
 The statement follows since the broken line $\sigma_\infty$ can be chosen in such a way that 
 $\tc\sigma_\infty$ is arbitrary close to $\tc\gamma_\infty$.
@@ -299,7 +295,7 @@ The latter can be defined directly.
 We say that a point $p\in\Sigma$ lies on dark (light) side for the unit vector $\bm{u}$ if non of the points $p+\bm{u}\cdot t$ lie inside of $\Sigma$ for $t>0$, (correspondingly $t<0$).
 As before the intersection of light and dark side is called horizon of $\bm{u}$ and it is denoted as $\omega_{\bm{u}}$.
 
-In the smooth case the later means that $\langle \nu_p,\bm{u}\rangle\ge 0$ (correspondingly $\langle \nu_p,\bm{u}\rangle\le 0$).
+In the smooth case the latter means that $\langle \nu_p,\bm{u}\rangle\ge 0$ (correspondingly $\langle \nu_p,\bm{u}\rangle\le 0$).
 If in addition $\Sigma$ is closed strongly convex then $\omega_{\bm{u}}$ is a closed smooth curve.
 
 \begin{thm}{Liberman's Lemma}\label{lem:liberman}
@@ -321,7 +317,7 @@ For example, if $\bm{i},\bm{j},\bm{k}$ is the orthonormal basis then
 \le
 \tc\tilde\gamma_{\bm{i}}+\tc\tilde\gamma_{\bm{j}}+\tc\tilde\gamma_{\bm{k}}.\]
 
-If $\gamma$ lies on one dark or light side for direction $\bm{u}$
+If $\gamma$ lies completely on the dark (or light) side for direction $\bm{u}$
 then by Liberman's lemma we get 
 \[\tc\tilde\gamma_{\bm{u}}\le \pi.\]
 It follows that if $\gamma$ cross the horizons $\omega_{\bm{i}}$, $\omega_{\bm{j}}$ and $\omega_{\bm{k}}$
@@ -343,7 +339,7 @@ $\gamma$ has to cross the  horizons $\omega_{\bm{i}}$, $\omega_{\bm{j}}$ and $\o
 \section{Curvature of development}\label{sec:curv-develop}
 
 Let $\Sigma\subset\RR^3$
-be a strongly convex smooth surface
+be a closed smooth strongly convex surface
 and $\gamma\:[0,\ell]\to \Sigma$ be a unit-speed geodesic.
 Assume that for some unit vector $\bm{u}$,
 the geodesic $\gamma$ cross the horizon $\omega_{\bm{u}}$ transversely at 
@@ -380,7 +376,8 @@ Then
 
 \end{thm}
 
-Further, in order to find the needed estimate the total curvature
+As you will see further, 
+in order to find the needed estimate the total curvature
 of geodesic we will get an upper bound for the sum
 \[\left|\alpha_0-\alpha_1
 +\dots +(-1)^k\cdot\alpha_k\right|.\]
@@ -416,7 +413,7 @@ we denote by $K_p$ the Gauss curvature of $\Sigma$ at $p$.
 \end{lpic}
 \end{wrapfigure}
  
-Assume $a,b$ be the meeting moments of minimizing geodesic $\gamma$ with $\omega_{\bm{u}}$
+Assume $a,b$ be the meeting moments of minimizing geodesic $\gamma$ with $\omega_{\bm{u}}$.
 The arc $\gamma|_{[a,b]}$ will be called \emph{$\omega_{\bm{u}}$-tongue}
 if there is an immersed disc 
 $\iota\:\DD\looparrowright\Sigma$ 
@@ -444,7 +441,7 @@ In particular
 \le
 \int\limits_{\DD} K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma.
 \eqlbl{eq:key2}\]
-If in addition $\iota(\DD)$ lies  completely in the dark or light side for $\bm{u}$ then
+If in addition the image $\iota(\DD)$ lies  completely in the dark or light side for $\bm{u}$ then
 \[\tc_{}\gamma
 \le 
 \int\limits_{\iota(\DD)} K_p\cdot d_p\area_\Sigma.\eqlbl{eq:key3}\]
@@ -478,7 +475,7 @@ It follows that
 =
 \int\limits_{\iota(\DD)} K_p\cdot d_p\area_\Sigma
 <2\cdot\pi.\]
-Whence the statement follows from Liberman's lemma.
+By Liberman's lemma the statement follows.
 \qeds
 
 \section{Almost straight arcs}
@@ -505,9 +502,10 @@ be such that
 
 Assume two points $p$ and $q$ lie on the convex surface $\Sigma$.
 Denote by $\nu_p$ and $\nu_q$ the outer normal vectors at $p$ and $q$ correspondingly.
-Note that any minimizing geodesic from $p$ to $q$ on $\Sigma$
-is $\eps$-straight if 
-\[\measuredangle(\nu_p,\nu_q)\le 2\cdot\theta.\]
+Note that if 
+\[\measuredangle(\nu_p,\nu_q)\le 2\cdot\theta\]
+then any minimizing geodesic from $p$ to $q$ on $\Sigma$
+is $\eps$-straight.
 
 Let $\gamma\:[0,\ell]\to \Sigma$ be a minimizing geodesic parametrized by its arc-length.
 
@@ -663,7 +661,7 @@ In particular
 \tc\gamma_1&\ge\delta\cdot\tc\gamma'_0
 \ge
 \\
-&\ge \tfrac{\delta^2}{10}\cdot\tc\gamma_0
+&\ge \tfrac{\delta^2}{10}\cdot\tc\gamma_0.
 \end{align*}
 
 
@@ -729,7 +727,7 @@ Given $t\in [0,\ell]$,
 consider the oriented orthonormal frame $\lambda(t),\mu(t),\nu(t)$ 
 such that $\nu(t)$ is the outer normal to $\Sigma$ at $\gamma(t)$,
 the vector $\mu(t)$ is lies in $(y,z)$-plane 
-and therefore the vector $\lambda(t)$ lies in the plane spanned by $\nu(t)$ and the $z$-axis.
+and therefore the vector $\lambda(t)$ lies in the plane spanned by $\nu(t)$ and the $x$-axis.
 We assume in addition that $\langle\lambda,\bm{i}\rangle\ge 0$.
 
 Since $\langle\dot\gamma(t),\bm{i}\rangle>0$, 
@@ -793,15 +791,15 @@ at least $n$ times.
 \begin{thm}{Proposition}\label{prop:around-once}
 Assume $\gamma\:[0,\ell]\to \Sigma$ is an $\bm{i}$-drifting minimizing geodesic in the convex surface $\Sigma\subset \RR^3$ and a sub-segment $[a,b]\subset [0,\ell]$ the following conditions hold
 \begin{enumerate}[(i)]
-\item The points $\gamma(a)$ and $\gamma(b)$ lie in a half-plane with boundary line formed by the $z$-axis
-and  the arc $\gamma|_{[a,b]}$ goes around the $z$-axis at least once.
+\item The points $\gamma(a)$ and $\gamma(b)$ lie in a half-plane with boundary line formed by the $x$-axis
+and  the arc $\gamma|_{[a,b]}$ goes around the $x$-axis at least once.
 \item  The $x$-coordinate of $\gamma(a)$ is larger that the $x$-coordinate of $\tfrac12\cdot(\gamma(0)+\gamma(\ell))$.
 \end{enumerate}
 Then  $\gamma(b)$ lies on the dark side for $\bm{i}$.
 \end{thm}
 
 \parit{Proof.} 
-Let us apply Observation~\ref{obs:cut} to the plane containing $z$-axis, $\gamma(a)$ and $\gamma(b)$.
+Let us apply Observation~\ref{obs:cut} to the plane containing $x$-axis, $\gamma(a)$ and $\gamma(b)$.
 
 
 We can assume that $\gamma(0)$ is the origin of the $(x,y,z)$-coordinate system
@@ -809,23 +807,23 @@ and both points $p=\gamma(a)$ and $q=\gamma(b)$ lie in the $(x,z)$-coordinate ha
 We can assume that $\sigma_+\subset \Pi$.
 Let $(x_p,0,z_p)$ and $(x_q,0,z_q)$ be the coordinates of $p$ and $q$.
 
-From the assumptions we get $z_p<z_q<2\cdot z_p$.
+From the assumptions we get $x_p<x_q<2\cdot x_p$.
 
 Assume contrary,
 then $\gamma(b)$ lies on the light side for $\bm{i}$.
 Then from convexity of the curve $\Pi\cap \Sigma$
 we get 
-\[\length\sigma_+\le \sqrt{(z_q-z_p)^2+x_p^2}\]
+\[\length\sigma_+\le \sqrt{(x_q-x_p)^2+z_p^2}\]
 
-On the other hand, since $\gamma|_{[a,b]}$ goes around $z$-axis at least once,
+On the other hand, since $\gamma|_{[a,b]}$ goes around $x$-axis at least once,
 we get 
-\[\length\gamma|_{[a,b]}\ge \sqrt{(z_q-z_p)^2+(x_p+x_q)^2}.\]
+\[\length\gamma|_{[a,b]}\ge \sqrt{(x_q-x_p)^2+(z_p+z_q)^2}.\]
 
 These two estimates contradict Observation~\ref{obs:cut}.
 \qeds
 
 \begin{thm}{Corollary}\label{cor:around-twice}
-If $\Sigma$, $\gamma$, $\ell$, $a$ and $b$ as in the Proposition~\ref{prop:around-once} and the arc $\gamma|_{[a,b]}$ goes around the $z$-axis at least twice
+If $\Sigma$, $\gamma$, $\ell$, $a$ and $b$ as in the Proposition~\ref{prop:around-once} and the arc $\gamma|_{[a,b]}$ goes around the $x$-axis at least twice
 then the arc $\gamma|_{[b,\ell]}$ lies on the dark side with respect to $\bm{i}$.
 \end{thm}
 
@@ -850,7 +848,7 @@ then
 \parit{Proof.}
 Let us apply Observation~\ref{obs:cut} to the plane $\Pi$ and $p=\gamma(s)$ and $q=\gamma(t)$.
 
-Let $z_p$ and $z_q$ be the $z$-coordinates of $p$ and $q$.
+Let $x_p$ and $x_q$ be the $x$-coordinates of $p$ and $q$.
 
 Since $\gamma|_{[s,t]}$ lies in the dark side,
 its Liberman's development $\tilde\gamma|_{[s,t]}$ 
@@ -860,10 +858,10 @@ In particular
 =
 \length(\tilde\gamma|_{[s,t]})
 \ge
-\tfrac{z_q-z_p}{\cos\phi(s)}.\]
+\tfrac{x_q-x_p}{\cos\phi(s)}.\]
 
 On the other hand, convexity of $\sigma_+$ imply that
-\[\length\sigma_+\le \tfrac{z_q-z_p}{\cos\psi(t)}.\]
+\[\length\sigma_+\le \tfrac{x_q-x_p}{\cos\psi(t)}.\]
 It remains to apply Observation~\ref{obs:cut}.
 \qeds
 
@@ -876,7 +874,7 @@ and $\gamma\:[0,\ell]\to\Sigma$ be an $\bm{i}$-drifting minimizing geodesic.
 We can assume that the horizon $\omega_{\bm{j}}$, 
 is a smooth curve and $\gamma$ intersects them transversely.
 
-Let $t_0<t_1<\dots<t_k$ be the meeting moments of $\gamma$ with $\omega_{\bm{j}}$
+Let $t_0<t_1<\dots<t_k$ be the meeting moments of $\gamma$ with $\omega_{\bm{j}}$.
 Set
 \begin{align*}
 \phi_n&=\phi(t_n)
@@ -885,16 +883,18 @@ Set
 &
 \theta_n&=\theta(t_n).
 \end{align*}
-Note that the definition of $\theta_n=\pm\alpha_n$
-for we can say $s_n\cdot\theta_n=(-1)^m\cdot \alpha_n$ so some sequence of signs $s_i=\pm1$.
+Note that  $\theta_n=\pm\alpha_n$
+so we can say $s_n\cdot\theta_n=(-1)^m\cdot \alpha_n$ 
+for some sequence of signs $s_i=\pm1$.
 In particular
 \[\alpha_0-\alpha_1+\dots+(-1)^k\cdot\alpha_k
 =
 s_0\cdot\theta_0+s_1\cdot\theta_1+\dots+s_k\cdot\theta_k.\]
-We may think that the sign $s_n=+1$ 
-if $\nu_{\gamma(t)}$ moves clockwise in $\SS^2$
+Note that for the right choice of orientation,
+if $s_n=+1$ 
+then $\nu_{\gamma(t)}$ moves clockwise in $\SS^2$
 at $t_n$
-and $s_n=-1$ if it moves counterclockwise.    
+and if $s_n=-1$ then it moves counterclockwise.    
 
 We say that a pair of indexes $i<j$
 forms an \emph{$s$-pair} 
@@ -949,12 +949,12 @@ s_i\cdot\theta_i+s_j\cdot\theta_j&=\theta_i-\theta_j=
 Assume $(i,j)$ is an $s$-pair.
 Note that in this case there is an arc of $\omega_{\bm{j}}$
 from $\gamma(t_i)$ to $\gamma(t_j)$
-with monotonic $z$-coordinate.
+with monotonic $x$-coordinate.
 Moreover a disc of the tone has this arc in the boundary.
 
 The proof can be guessed from the diagram.
 It shows a lift of $\gamma$ in the universal cover of strip of $\Sigma$ between $(y,z)$-planes containing $\gamma|_{[t_i,t_j]}$;
-the solid horizontal lines correspond are lifts of $\omega_{\bm{i}}$.
+the solid horizontal lines correspond are lifts of $\omega_{\bm{j}}$.
 
 We say that $q$ is the depth of an $s$-pair $(i,j)$
 (briefly $q=\depth_{s}(i,j)$) 
@@ -1037,7 +1037,7 @@ Since $|a_n|<\tfrac\pi2$, we get
 \le
 q\cdot\pi.
 \]
-The later inequality together with \ref{sum-S} implies the statement in the corollary.
+The latter inequality together with \ref{sum-S} implies the statement in the corollary.
 \qeds
 
 
@@ -1072,7 +1072,7 @@ It remains to apply Tongue Lemma~\ref{lem:tongue}.
 Assume $\gamma$ lies on the dark side for $\bm{i}$.
 Then for any pair of indexes $j>i$,
 such that 
-\[|\sum_{n=i}^{j}s_n|> 5\]
+\[\bigl|\sum_{n=i}^{j}s_n\bigr|> 5\]
 we have
 \[\phi_j>\tfrac32\cdot\phi_i.\]
 \end{thm}
@@ -1102,10 +1102,8 @@ Hence the result follows.
 
 
 \begin{thm}{Proposition}\label{prop:graph}
-There is c constant $\omega'$ ($\omega'=10\cdot\pi$ will do)
-such that
-if $\gamma$ is an $\bm{i}$-drifting minimizing geodesic on the dark side for $\bm{i}$ then
-\[\tc_{\bm{j}}\gamma\le \omega'.\]
+If $\gamma$ is an $\bm{i}$-drifting minimizing geodesic on the dark side for $\bm{i}$ then
+\[\tc_{\bm{j}}\gamma\le 100\cdot\pi.\]
 \end{thm}
 
 \parit{Proof.}
@@ -1188,26 +1186,26 @@ and that $\gamma'$ cross the horizon $\omega_{\bm{j}}$ transversally.
 By Corollary \ref{cor:around-twice},
 we can subdivide $\gamma'$ into at most three arcs: 
 \begin{itemize}
-\item \emph{Lower arc} $\gamma_-'$ which lies on the light side for $\bm{i}$,
-\item \emph{Middle arc} $\gamma_0'$ which rotates around $z$-axis at most $4$ times.
-\item \emph{Upper arc} $\gamma_+'$ which lies on the dark side for $\bm{i}$.
+\item \emph{Left arc} $\gamma_-'$ which lies on the light side for $\bm{i}$,
+\item \emph{Middle arc} $\gamma_0'$ which rotates around $x$-axis at most $4$ times.
+\item \emph{Right arc} $\gamma_+'$ which lies on the dark side for $\bm{i}$.
 \end{itemize}
 
 Indeed, choose an arc $\gamma'|_{[a,b]}$  
 on the right from the $(y,z)$-plane through
 $\tfrac12\cdot(\gamma'(0)+\gamma'(\ell))$
-which rotates around $z$-axis 2 times 
+which rotates around $x$-axis 2 times 
 and assume that $b$ takes the minimal possible value.  
 Note that if $\gamma'(s)$ lies on $(y,z)$-plane through $\tfrac12\cdot(\gamma'(0)+\gamma'(\ell))$
 then $[s,b]\supset[a,b]$ 
-and any sub-arc of $[s,b]$ rotates around $z$ axis at most 2 times.
+and any sub-arc of $[s,b]$ rotates around $x$ axis at most 2 times.
 
 By Corollary \ref{cor:around-twice}, 
 we can take $\gamma'_+=\gamma'|_{[b,\ell]}$;
 in case if there is no such arc $[a,b]$, we assume that $\gamma_+'$ is not presented.
-Repeat the construction reverting the direction of $z$-axis;
+Repeat the construction reverting the direction of $x$-axis;
 we get the lower arc $\gamma_-'$.
-The remaining arc is assumed to be $\gamma_0'$; note that any sub-arc of $\gamma_0'$ is divided by the $(y,z)$-plane through $\tfrac12\cdot(\gamma'(0)+\gamma'(\ell))$ into two each of which rotate around $z$-axis at most 2 times. 
+The remaining arc is assumed to be $\gamma_0'$; note that any sub-arc of $\gamma_0'$ is divided by the $(y,z)$-plane through $\tfrac12\cdot(\gamma'(0)+\gamma'(\ell))$ into two each of which rotate around $x$-axis at most 2 times. 
 Therefore the number of rotations of any arc in $\gamma_0'$ is at most $4$.
 
 Let us estimate the total curvature of $\gamma'_-$, $\gamma'_0$ and $\gamma'_+$ separately.
@@ -1220,7 +1218,7 @@ Similarly
 By Corollary~\ref{cor:gamma-0},
 \[\tc_{\bm{j}}\gamma'_0\le 100\cdot\pi.\eqlbl{0}\]
 Together with \ref{+}, \ref{-} and \ref{0}
-the later implies that 
+the latter implies that 
 \[\tc_{\bm{j}}\gamma'\le 300\cdot\pi.\]
 From \ref{eq:1/100} the result follows.
 \qeds
