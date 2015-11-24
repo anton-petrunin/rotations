@@ -43,10 +43,6 @@ in the Euclidean space.
 \section{Introduction}
 
 
-
-
-
-
 In this note we give an affirmative answer to the question asked by Dmitry Burago; 
 the same question was also stated in \cite{AH-PSV}, \cite{pach} and \cite{BKZ}.
 Namely, we prove the following.
@@ -1228,8 +1224,28 @@ From \ref{eq:1/100} the result follows.
 \qeds
 
 
+
+\input{bib.tex}
+\end{document}
+
+\usepackage[
+sorting=none,
+bibencoding=auto,
+backend=biber,
+maxnames=10,
+%babel=other,
+autolang=other,
+doi=false,
+url=false,
+style=numeric-comp,
+isbn=false]{biblatex}
+\usepackage{csquotes}
+\AtEveryBibitem{\clearlist{language}}
+\AtEveryBibitem{\clearlist{note}}
+\renewbibmacro{in:}{}
+%\renewcommand*{\bibfont}{\small}
+\addbibresource{lib.bib}
+
 \sloppy
 \printbibliography[heading=bibintoc]
 \fussy
-
-\end{document}
