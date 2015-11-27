@@ -3,6 +3,7 @@
 
 
 \begin{document}
+%\fontsize{5mm}{6mm}\selectfont
 \title{On the total curvature of \\
 minimizing geodesics on convex surfaces}
 \author{Nina Lebedeva}
@@ -41,10 +42,6 @@ in the Euclidean space.
 \maketitle
 
 \section{Introduction}
-
-
-
-
 
 
 In this note we give an affirmative answer to the question asked by Dmitry Burago; 
@@ -157,11 +154,11 @@ Then
 
 \parit{Proof.}
 Fix a polygonal line $\sigma_\infty$ inscribed in $\gamma_\infty$.
-Let $\gamma_\infty(t_0),\dots,\gamma_\infty(t_k)$
+Let $\gamma_\infty(t_0),\zz\dots,\gamma_\infty(t_k)$
 be its vertices 
 as they appear on $\gamma_\infty$.
 Consider the polygonal line $\sigma_n$ inscribed in $\gamma_n$ with the vertices 
-$\gamma_n(t_0),\dots,\gamma_n(t_k)$.
+$\gamma_n(t_0),\zz\dots,\gamma_n(t_k)$.
 Note that 
 \[\tc\sigma_n\to\tc\sigma_\infty\ \ \text{as}\ \ n\to\infty.\]
 By the definition of total curvature, 
@@ -217,7 +214,7 @@ and applying diagonal procedure, we get the result.
 
 In this section we give a slight generalization 
 of the construction given by Liberman in \cite{liberman};
-see also \cite{petrunin}.
+see also \cite{milka-liberman} and \cite{petrunin}.
 
 \parbf{Development.}
 Let $\gamma\:[0,\ell]\to\RR^3$ be a curve parametrized by arc-length
@@ -725,7 +722,7 @@ $\measuredangle(\dot\gamma(t),\bm{i})<\tfrac1{10}$ for all $t$.
 \parbf{$\bm{(\lambda,\mu,\nu)}$-frame.}
 Let $\Sigma$ be a convex surface 
 and $\gamma\:[0,\ell]\to \Sigma$ be an $\bm{i}$-drifting minimizing geodesic 
-with unit-speed parametrization.
+with unit-speed para\-me\-tri\-za\-tion.
 
 Given $t\in [0,\ell]$, 
 consider the oriented orthonormal frame $\lambda(t),\mu(t),\nu(t)$ 
@@ -967,7 +964,7 @@ For example the $s$-pair on the diagram has depth $5$.
 
 More precisely, the depth of $(i,j)$ is the maximal number $q$
 for which there is a sequence of $s$-pairs
-$(i,j)=(i_1,j_1),(i_2,j_2),\dots,(i_q,j_q)$ such that
+$(i,j)=(i_1,j_1),(i_2,j_2),\zz\dots,(i_q,j_q)$ such that
 \[i=i_1<\dots<i_q<j_q<\dots<j_1=j.\]
 
 
@@ -1228,8 +1225,28 @@ From \ref{eq:1/100} the result follows.
 \qeds
 
 
+
+\input{bib.tex}
+\end{document}
+
+\usepackage[
+sorting=none,
+bibencoding=auto,
+backend=biber,
+maxnames=10,
+%babel=other,
+autolang=other,
+doi=false,
+url=false,
+style=numeric-comp,
+isbn=false]{biblatex}
+\usepackage{csquotes}
+\AtEveryBibitem{\clearlist{language}}
+\AtEveryBibitem{\clearlist{note}}
+\renewbibmacro{in:}{}
+%\renewcommand*{\bibfont}{\small}
+\addbibresource{lib.bib}
+
 \sloppy
 \printbibliography[heading=bibintoc]
 \fussy
-
-\end{document}
