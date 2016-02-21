@@ -106,7 +106,7 @@ for a vector $\bm{j}\perp\bm{i}$.
 To understand the idea of this estimate, 
 imagine that 
 the surface is lighten in the direction of $\bm{j}$,
-so it is divided into the dark and light sides 
+so it is divided into the dark and bright sides 
 by a curve $\omega$.
 On the diagram you see different combinatorics in which
 $\gamma$ meets $\omega$.
@@ -271,41 +271,41 @@ if the lune bounded by arc $\tilde\gamma_{\bm{u}}|_{[a,b]}$
 and the segment $[\tilde\gamma_{\bm{u}}(a)\tilde\gamma_{\bm{u}}(b)]$
 is convex and lies above (correspondingly below) the line segment $[\tilde\gamma_{\bm{u}}(a)\tilde\gamma_{\bm{u}}(b)]$.
  
-\parbf{Dark and light sides.}
+\parbf{Dark and bright sides.}
 Let $\Sigma\subset\RR^3$ be a convex surface,
 $p\in\Sigma$ and $z\ne p$.
 
-We say that $p$ lies on the dark (light) side of $\Sigma$ with from $z$ 
+We say that $p$ lies on the dark (bright) side of $\Sigma$ with from $z$ 
 if non of the points $p+t\cdot(p-z)$ lie inside of $\Sigma$ for $t>0$ (correspondingly for $t<0$).
-The intersection of dark and light side is called horizon of $z$;
+The intersection of dark and bright side is called horizon of $z$;
 it is denoted by $\omega_z$.
 
 Note that if $z$ lies inside $\Sigma$ 
 then all the points on $\Sigma$ lie on the dark side from $z$ and its horizon $\omega_z$ is empty.
 
 If $\Sigma$ is smooth we can define the outer normal vector $\nu_p$ to $\Sigma$ at $p$.
-In this case $p$ lies on dark (light) side of $\Sigma$ from $z$
+In this case $p$ lies on dark (bright) side of $\Sigma$ from $z$
 if and only if $\langle p-z,\nu_p\rangle\ge 0$
 (correspondingly for $\langle p-z,\nu_p\rangle\le 0$).
 If in addition $\Sigma$ is closed and strongly convex then the horizon is empty for $z$ inside $\Sigma$ 
 and it is formed by a closed smooth curve for $z$ outside $\Sigma$.
 
-We could also define light/dark sides and horizon in the limit case,
+We could also define bright/dark sides and horizon in the limit case,
 as $p$ escapes to infinity along a half-line in direction $\bm{u}$.
 
 The latter can be defined directly.
-We say that a point $p\in\Sigma$ lies on dark (light) side for the unit vector $\bm{u}$ if non of the points $p+\bm{u}\cdot t$ lie inside of $\Sigma$ for $t>0$, (correspondingly $t<0$).
-As before the intersection of light and dark side is called horizon of $\bm{u}$ and it is denoted as $\omega_{\bm{u}}$.
+We say that a point $p\in\Sigma$ lies on dark (bright) side for the unit vector $\bm{u}$ if non of the points $p+\bm{u}\cdot t$ lie inside of $\Sigma$ for $t>0$, (correspondingly $t<0$).
+As before the intersection of bright and dark side is called horizon of $\bm{u}$ and it is denoted as $\omega_{\bm{u}}$.
 
 In the smooth case the latter means that $\langle \nu_p,\bm{u}\rangle\ge 0$ (correspondingly $\langle \nu_p,\bm{u}\rangle\le 0$).
 If in addition $\Sigma$ is closed strongly convex then $\omega_{\bm{u}}$ is a closed smooth curve.
 
 \begin{thm}{Liberman's Lemma}\label{lem:liberman}
 Assume $\gamma$ be a geodesic on the convex surface $\Sigma\subset \RR^3$.
-Then for any point $z\notin\Sigma$ the development $\tilde\gamma_z$ is locally convex (locally concave) if $\gamma$ lies on dark (correspondingly light) side of $\Sigma$ from $z$.
+Then for any point $z\notin\Sigma$ the development $\tilde\gamma_z$ is locally convex (locally concave) if $\gamma$ lies on dark (correspondingly bright) side of $\Sigma$ from $z$.
 
 Similarly for any unit vector $\bm{u}$,
-the development $\tilde\gamma_{\bm{u}}$ is locally convex (locally concave) if $\gamma$ lies on dark (correspondingly light) side of $\Sigma$ for $\bm{u}$.
+the development $\tilde\gamma_{\bm{u}}$ is locally convex (locally concave) if $\gamma$ lies on dark (correspondingly bright) side of $\Sigma$ for $\bm{u}$.
 
 \end{thm}
 
@@ -319,7 +319,7 @@ For example, if $\bm{i},\bm{j},\bm{k}$ is the orthonormal basis then
 \le
 \tc\tilde\gamma_{\bm{i}}+\tc\tilde\gamma_{\bm{j}}+\tc\tilde\gamma_{\bm{k}}.\]
 
-If $\gamma$ lies completely on the dark (or light) side for direction $\bm{u}$
+If $\gamma$ lies completely on the dark (or bright) side for direction $\bm{u}$
 then by Liberman's lemma we get 
 \[\tc\tilde\gamma_{\bm{u}}\le \pi.\]
 It follows that if $\gamma$ cross the horizons $\omega_{\bm{i}}$, $\omega_{\bm{j}}$ and $\omega_{\bm{k}}$
@@ -391,7 +391,7 @@ By Liberman's lemma,
 \[\tc_{\bm{u}}(\gamma|_{[t_{i-1},t_i]})=\pm(\alpha_{i-1}-\alpha_i)\]
 where the sign is ``$+$'' 
 if  $\gamma_{[t_i,t_{i+1}]}$ lies on the dark side 
-and ``$-$'' if it lies on the light side from $\bm{u}$.
+and ``$-$'' if it lies on the bright side from $\bm{u}$.
 Summing all this up we get
 \[\tc_{\bm{u}}(\gamma|_{[t_0,t_{k}]})
 =
@@ -410,8 +410,8 @@ we denote by $K_p$ the Gauss curvature of $\Sigma$ at $p$.
 \begin{lpic}[t(-5 mm),b(0 mm),r(0 mm),l(0 mm)]{pics/tongue(1)}
 \lbl[t]{34,12;{$\omega_{\bm{u}}$}}
 \lbl[lb]{26,24;{$\gamma$}}
-\lbl[t]{1,11;{\tiny $\gamma(t_i)$}}
-\lbl[t]{15,11;{\tiny $\gamma(t_i)$}}
+\lbl[t]{1,11;{\tiny $\gamma(a)$}}
+\lbl[t]{15,11;{\tiny $\gamma(b)$}}
 \end{lpic}
 \end{wrapfigure}
  
@@ -443,7 +443,7 @@ In particular
 \le
 \int\limits_{\DD} K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma.
 \eqlbl{eq:key2}\]
-If in addition the image $\iota(\DD)$ lies  completely in the dark or light side for $\bm{u}$ then
+If in addition the image $\iota(\DD)$ lies  completely in the dark or bright side for $\bm{u}$ then
 \[\tc_{}\gamma
 \le 
 \int\limits_{\iota(\DD)} K_p\cdot d_p\area_\Sigma.\eqlbl{eq:key3}\]
@@ -758,7 +758,7 @@ For any $t$ we have
 Applying Liberman's Lemma in the direction $\bm{i}$ we also get the following.
 
 \begin{thm}{Claim}\label{clm:7.3}
-If an arc $\gamma|_{[a,b]}$ lies in the dark (light) side for $\bm{i}$ then 
+If an arc $\gamma|_{[a,b]}$ lies in the dark (bright) side for $\bm{i}$ then 
 the angle function $\phi$ is non-decreasing (correspondingly non-increasing)
 in $[a,b]$.
 \end{thm}
@@ -811,7 +811,7 @@ Let $(x_p,0,z_p)$ and $(x_q,0,z_q)$ be the coordinates of $p$ and $q$.
 From the assumptions we get $x_p<x_q<2\cdot x_p$.
 
 Assume contrary,
-then $\gamma(b)$ lies on the light side for $\bm{i}$.
+then $\gamma(b)$ lies on the bright side for $\bm{i}$.
 Then from convexity of the curve $\Pi\cap \Sigma$
 we get 
 \[\length\sigma_+\le \sqrt{(x_q-x_p)^2+z_p^2}\]
@@ -1187,7 +1187,7 @@ and that $\gamma'$ cross the horizon $\omega_{\bm{j}}$ transversally.
 By Corollary \ref{cor:around-twice},
 we can subdivide $\gamma'$ into at most three arcs: 
 \begin{itemize}
-\item \emph{Left arc} $\gamma_-'$ which lies on the light side for $\bm{i}$,
+\item \emph{Left arc} $\gamma_-'$ which lies on the bright side for $\bm{i}$,
 \item \emph{Middle arc} $\gamma_0'$ which rotates around $x$-axis at most $4$ times.
 \item \emph{Right arc} $\gamma_+'$ which lies on the dark side for $\bm{i}$.
 \end{itemize}
