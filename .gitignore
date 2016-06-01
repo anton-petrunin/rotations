@@ -19,3 +19,5 @@ lib/*
 *.xml
 *.kilepr
 !/.gitignore
+!/rotation.pdf
+!/rotation-ru.pdf

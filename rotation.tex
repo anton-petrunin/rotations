@@ -66,7 +66,8 @@ and Zamfirescu in \cite{BKZ}.
 Let us list other related results.
 
 \begin{itemize}
-\item In \cite{liberman}, Liberman gives a bound on the total curvature of short geodesic in terms of the ratio diameter and inradius of $K$.
+\item In \cite{liberman}, Liberman gives a bound on the total curvature of short geodesic on the surface of convex body $K$
+in terms of the ratio diameter and inradius of $K$.
 In the proof he use an analog of Lemma \ref{lem:liberman} discussed below.
 
 \item In \cite{usov}, 
@@ -89,7 +90,7 @@ these results were partly rediscovered later
 by Pach in \cite{pach}.
 \item In \cite{BKZ},
 B{\'a}r{\'a}ny,
-Kuperberg, 
+Kuperberg 
 and Zamfirescu 
 have constructed a corkscrew minimizing geodesic on a closed convex surface;
 that is a minimizing geodesic which twists around a given line arbitrary many times.
@@ -171,13 +172,13 @@ $\tc\sigma_\infty$ is arbitrary close to $\tc\gamma_\infty$.
 Given a closed set $\Sigma\subset \RR^3$,
 denote by $\dist_\Sigma$ the distance function from $\Sigma$;
 that is 
-\[\dist_\Sigma(x)=\inf\set{|x-y|}{y\in\Sigma}.\]
+\[\dist_\Sigma x=\inf\set{|x-y|}{y\in\Sigma}.\]
 
 We say that a sequence of closed sets $\Sigma_n\subset \RR^3$
-converges to the closed set $\Sigma_\infty\subset \RR^3$ 
+\emph{converges} to the closed set $\Sigma_\infty\subset \RR^3$ 
 if for any $x\in\RR^3$,
 we have
-$\dist_{\Sigma_n}(x)\to\dist_{\Sigma_\infty}(x)$ as $n\to\infty$.
+$\dist_{\Sigma_n}x\to\dist_{\Sigma_\infty}x$ as $n\to\infty$.
 
 
 \parbf{Convex surfaces.}
@@ -210,7 +211,7 @@ Taking the sub-interval  $[a,b]$ closer and closer to $[0,\ell]$
 and applying diagonal procedure, we get the result.
 \qeds
 
-\section{Liberman's lemma.}
+\section{Liberman's lemma}
 
 In this section we give a slight generalization 
 of the construction given by Liberman in \cite{liberman};
@@ -223,8 +224,8 @@ and a point $p$ does not lie on $\gamma$.
 Assume  $\tilde\gamma_p\:[0,\ell]\to\RR^2$ is a plane curve parametrized by arc-length
 and $\tilde p$ is a point in the plane such that 
 \[|\tilde p-\tilde\gamma(t)|=|p-\gamma(t)|\]
-for any $t\in[0,\ell]$;
-moreover, 
+for any $t\in[0,\ell]$.
+Moreover, 
 the direction from $\tilde p$ to $\tilde \gamma(t)$ changes monotonically (clockwise or counterclockwise). 
 Then $\tilde\gamma_p$ is called \emph{development} of $\gamma$ with respect to $p$.
 
@@ -246,11 +247,11 @@ if the arc $\tilde\gamma_p|_{[a,b]}$
 cuts from the solid angle $\angle \tilde p^{\tilde\gamma_p(a)}_{\tilde\gamma_p(b)}$
 convex bounded (correspondingly unbounded) domain.
 
-We say that $\tilde\gamma_p$ is locally convex (concave) in the interval $[a,b]$
+We say that $\tilde\gamma_p$ is \emph{locally} convex (concave) in the interval $[a,b]$
 if any point $x\in [a,b]$ admits a closed neighborhood $[a',b']$ in $[a,b]$
 such that $\tilde\gamma_p$ is convex (correspondingly concave) in the interval $[a',b']$.
 
-If we pass to the limit of this construction as $p$ moves to infinity along a half-line in the direction of a unit vector $\bm{u}$ then the limit curve is called development of $\gamma$ in the direction $\bm{u}$ and denoted as $\tilde\gamma_{\bm{u}}$.
+If we pass to the limit of this construction as $p$ moves to infinity along a half-line in the direction of a unit vector $-\bm{u}$ then the limit curve is called development of $\gamma$ in the direction $\bm{u}$ and denoted as $\tilde\gamma_{\bm{u}}$.
 
 We can define the development $\tilde\gamma_{\bm{u}}$ directly:
 (1) the development $\tilde\gamma_{\bm{u}}\:[0,\ell]\to \R^2$
@@ -275,7 +276,7 @@ is convex and lies above (correspondingly below) the line segment $[\tilde\gamma
 Let $\Sigma\subset\RR^3$ be a convex surface,
 $p\in\Sigma$ and $z\ne p$.
 
-We say that $p$ lies on the dark (bright) side of $\Sigma$ with from $z$ 
+We say that $p$ lies on the \emph{dark} (\emph{bright}) side of $\Sigma$ with from $z$ 
 if non of the points $p+t\cdot(p-z)$ lie inside of $\Sigma$ for $t>0$ (correspondingly for $t<0$).
 The intersection of dark and bright side is called horizon of $z$;
 it is denoted by $\omega_z$.
@@ -286,12 +287,12 @@ then all the points on $\Sigma$ lie on the dark side from $z$ and its horizon $\
 If $\Sigma$ is smooth we can define the outer normal vector $\nu_p$ to $\Sigma$ at $p$.
 In this case $p$ lies on dark (bright) side of $\Sigma$ from $z$
 if and only if $\langle p-z,\nu_p\rangle\ge 0$
-(correspondingly for $\langle p-z,\nu_p\rangle\le 0$).
+(correspondingly $\langle p-z,\nu_p\rangle\le 0$).
 If in addition $\Sigma$ is closed and strongly convex then the horizon is empty for $z$ inside $\Sigma$ 
 and it is formed by a closed smooth curve for $z$ outside $\Sigma$.
 
 We could also define bright/dark sides and horizon in the limit case,
-as $p$ escapes to infinity along a half-line in direction $\bm{u}$.
+as $p$ escapes to infinity along a half-line in direction $-\bm{u}$.
 
 The latter can be defined directly.
 We say that a point $p\in\Sigma$ lies on dark (bright) side for the unit vector $\bm{u}$ if non of the points $p+\bm{u}\cdot t$ lie inside of $\Sigma$ for $t>0$, (correspondingly $t<0$).
@@ -425,10 +426,10 @@ In this case the immersion $\iota$ is called the \emph{disc of the tongue}.
 \begin{thm}{Tongue Lemma}\label{lem:tongue}
 Let $\bm{u}$ be a unit vector,
 $\gamma\:[a,b]\to\Sigma$ 
-be a minimizing geodesic on the strongly convex surface $\Sigma\subset\RR^3$ which is a $\omega_{\bm{u}}$-tongue
+be a minimizing geodesic and $\omega_{\bm{u}}$-tongue on the strongly convex surface $\Sigma\subset\RR^3$ 
 and 
 $\iota\:\DD\looparrowright\Sigma$
-is its disc.
+be its disc.
 
 Then 
 \[\int\limits_{\DD} K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma\] takes one of the value
@@ -483,7 +484,7 @@ By Liberman's lemma the statement follows.
 \section{Almost straight arcs}
 
 Let $\eps>0$.
-A curve $\gamma\:[a,b]\to\RR^3$ will be called $\eps$-straight
+A curve $\gamma\:[a,b]\to\RR^3$ will be called \emph{$\eps$-straight}
 if 
 \[(1-\eps)\cdot\length \gamma\le |\gamma(b)-\gamma(a)|\]
 
@@ -517,7 +518,7 @@ Consider a sequence $0=t_0<t_1<\dots<t_n<\ell$
 such that $t_{i+1}=t_i'$ for each $i$.
 Denote by $\nu_i$ the outer unit normal vector to $\Sigma$ at $\gamma(t_i)$. 
 From above we get
-\[\measuredangle(\nu_i,\nu_j)\ge2\cdot\theta\] for all $i$ and $j$.
+\[\measuredangle(\nu_i,\nu_j)\ge2\cdot\theta\] for all $i\ne j$.
 In other words, the open balls $\mathrm{B}_\theta(\nu_i)$ do not overlap 
 in $\SS^2$.
 
@@ -731,9 +732,9 @@ the vector $\mu(t)$ is lies in $(y,z)$-plane
 and therefore the vector $\lambda(t)$ lies in the plane spanned by $\nu(t)$ and the $x$-axis.
 We assume in addition that $\langle\lambda,\bm{i}\rangle\ge 0$.
 
-Since $\langle\dot\gamma(t),\bm{i}\rangle>0$, 
-$\nu(t)\ne\bm{i}$
-and therefore the frame $(\lambda,\mu,\nu)$ is uniquely defined for any $t\in[0,\ell]$.
+Since $\langle\dot\gamma(t),\bm{i}\rangle>0$, w have
+$\nu(t)\ne\bm{i}$.
+Therefore the frame $(\lambda,\mu,\nu)$ is uniquely defined for any $t\in[0,\ell]$.
 
 \parbf{Angle functions.}
 Set 
@@ -814,7 +815,7 @@ Assume contrary,
 then $\gamma(b)$ lies on the bright side for $\bm{i}$.
 Then from convexity of the curve $\Pi\cap \Sigma$
 we get 
-\[\length\sigma_+\le \sqrt{(x_q-x_p)^2+z_p^2}\]
+\[\length\sigma_+\le \sqrt{(x_q-x_p)^2+z_p^2}.\]
 
 On the other hand, since $\gamma|_{[a,b]}$ goes around $x$-axis at least once,
 we get 
@@ -872,8 +873,7 @@ Let $\Sigma\subset \RR^3$
 be a strongly convex surface
 and $\gamma\:[0,\ell]\to\Sigma$ be an $\bm{i}$-drifting minimizing geodesic.
 
-We can assume that the horizon $\omega_{\bm{j}}$, 
-is a smooth curve and $\gamma$ intersects them transversely.
+Аssume that $\gamma$ intersects the horizon $\omega_{\bm{j}}$  transversely.
 
 Let $t_0<t_1<\dots<t_k$ be the meeting moments of $\gamma$ with $\omega_{\bm{j}}$.
 Set
@@ -910,7 +910,7 @@ if $i<j'<j$.
 If you exchange ``$+1$'' and ``$-1$'' in $s$ by ``$($'' and ``$)$'' correspondingly then $(i,j)$ is an $s$-pair
 if and only if the $i$-th bracket forms a pair with $j$-bracket.
 
-Note that  any index $i$ appears in at most one $s$-pair and 
+Note that any index $i$ appears in at most one $s$-pair and 
 for any $s$-pair $(i,j)$ we have
 \begin{itemize}
 \item $s_i=1$; that is, $i$-th bracket has to be opening.
@@ -968,7 +968,7 @@ $(i,j)=(i_1,j_1),(i_2,j_2),\zz\dots,(i_q,j_q)$ such that
 \[i=i_1<\dots<i_q<j_q<\dots<j_1=j.\]
 
 
-Note that the $s$-pair of the same depth do not overlap;
+Note that the $s$-pairs of the same depth do not overlap;
 that is if  $\depth(i,j)=\depth(i',j')$
 for two distinct $s$-pairs $(i,j)$ and $(i',j')$
 then either $i<j<i'<j'$ or $i'<j'<i<j$.
@@ -991,7 +991,7 @@ Then
 \le 4\cdot\pi\cdot q.\]
 \end{thm}
 
-\parit{Proof.} For each $n$ denote by $K_n$ the integral of Gauss curvature of the part of surface $\Sigma$ with the $x$-coordinate less that he $x$-coordinate of $\gamma(t_n)$.
+\parit{Proof.} For each $n$ denote by $K_n$ the integral of Gauss curvature of the part of surface $\Sigma$ with the $x$-coordinate less then the $x$-coordinate of $\gamma(t_n)$.
 Note that 
 \[0\le K_1\le\dots\le K_k\le 4\cdot\pi.\]
 
@@ -1015,7 +1015,7 @@ Then
 \parit{Proof.}
 Denote by $S$ the set of all indexes which appear in some $s$-pair.
 
-Note that depth of any $s$ pair is at most $q$.
+Note that depth of any $s$-pair is at most $q$.
 That is,
 \[S=S_1\cup\dots\cup S_q.\]
 By Corollary~\ref{cor:Sq},
@@ -1049,7 +1049,8 @@ The latter inequality together with \ref{sum-S} implies the statement in the cor
 Assume $\psi(t)>\eps$ for  $t\in[t_{i},t_{i+1}]$
 and $s_i=s_{i+1}$
 Then 
-\[|\theta_{i+1}-\theta_i|>\pi\cdot\sin\eps.\] 
+\[|\theta_{i+1}-\theta_i|>\pi\cdot\sin\eps.\]
+
 \end{thm}
 
 \parit{Proof.}
@@ -1076,6 +1077,7 @@ such that
 \[\bigl|\sum_{n=i}^{j}s_n\bigr|> 5\]
 we have
 \[\phi_j>\tfrac32\cdot\phi_i.\]
+
 \end{thm}
 
 
@@ -1105,6 +1107,7 @@ Hence the result follows.
 \begin{thm}{Proposition}\label{prop:graph}
 If $\gamma$ is an $\bm{i}$-drifting minimizing geodesic on the dark side for $\bm{i}$ then
 \[\tc_{\bm{j}}\gamma\le 100\cdot\pi.\]
+
 \end{thm}
 
 \parit{Proof.}
@@ -1205,7 +1208,7 @@ By Corollary \ref{cor:around-twice},
 we can take $\gamma'_+=\gamma'|_{[b,\ell]}$;
 in case if there is no such arc $[a,b]$, we assume that $\gamma_+'$ is not presented.
 Repeat the construction reverting the direction of $x$-axis;
-we get the lower arc $\gamma_-'$.
+we get the left arc $\gamma_-'$.
 The remaining arc is assumed to be $\gamma_0'$; note that any sub-arc of $\gamma_0'$ is divided by the $(y,z)$-plane through $\tfrac12\cdot(\gamma'(0)+\gamma'(\ell))$ into two each of which rotate around $x$-axis at most 2 times. 
 Therefore the number of rotations of any arc in $\gamma_0'$ is at most $4$.
 
