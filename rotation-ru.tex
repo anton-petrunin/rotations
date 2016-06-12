@@ -1,42 +1,39 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage{kubik-ru}
 
-
+\newcommand{\nofootnote}[1]{%
+\begingroup\def\thefootnote{}\footnotetext{#1}\endgroup}
 \begin{document}
 %\fontsize{5mm}{6mm}\selectfont
 \title{О вариации поворота кратчайших\\
  на выпуклых поверхностях}
 \author{Нина Лебедева и Антон Петрунин}
-%\address{N. Lebedeva\newline\vskip-4mm
-%Math. Dept.
-%St. Petersburg State University,
-%Universitetsky pr., 28, 
-%Stary Peterhof, 
-%198504, Russia.
-%\newline\vskip-4mm
-%Steklov Institute,
-%27 Fontanka, St. Petersburg, 
-%191023, Russia.}
-%\email{lebed@pdmi.ras.ru}
+\nofootnote{Работа
+выполнена при финансовой поддержке первого из авторов фондом РФФИ грант 14-01-00062, второго фондом NSF, грант DMS 1309340.}
 
-%\address{A. Petrunin\newline\vskip-4mm
-%Math. Dept. PSU,
-%University Park, PA 16802,
-%USA}
-%\email{petrunin@math.psu.edu}
-%\thanks{N.~Lebedeva was partially supported by RFBR grant 14-01-00062.}
-%\thanks{A.~Petrunin was partially supported by NSF grant DMS 1309340.}
+\newcommand{\Addresses}{{\bigskip\footnotesize
 
+  Нина Лебедева, \par\nopagebreak\textsc{198504, Санкт-Петербург, Старый Петергоф, Университетский пр., дом 28.}
+  \par\nopagebreak
+  \textsc{191023, Санкт-Петербург, наб. Фонтанки, 27.}
+  \par\nopagebreak
+  \textit{Электронная почта}: \texttt{lebed@pdmi.ras.ru}
 
+\medskip
+
+  Anton Petrunin, \par\nopagebreak\textsc{Math. Dept. PSU, University Park, PA 16802, USA}
+  \par\nopagebreak
+  \textit{Электронная почта}: \texttt{petrunin@math.psu.edu}
+}}
 \date{}
 \maketitle
+
 
 \begin{abstract}
 Показано, что вариация поворота кратчайших
 на выпуклой поверхности в трёхмерном евклидовом пространстве 
 не превосходит некоторой константы.
 \end{abstract}
-%\subjclass{53A05, 53C45, 53C22}
 
 
 \section{Введение}
@@ -1190,7 +1187,7 @@ $\tfrac12\cdot(\gamma'(0)+\gamma'(\ell))$,
 
 \begin{thm}{Лемма о выпуклой горбушке}
 Пусть $\Sigma\subset\RR^m$ --- замкнутая выпуклая гиперповерхность и
-$\Pi$ --- плоскость, разрезающая $\Sigma$ на две части $\Sigma_1$ и $\Sigma_2$.
+$\Pi$ --- гиперплоскость, разрезающая $\Sigma$ на две части $\Sigma_1$ и $\Sigma_2$.
 Предположим, что отражение $\Sigma_1$ в плоскости $\Pi$ заключено внутри  $\Sigma$.
 Тогда $\Sigma_1$ образует выпуклое множество в $\Sigma$,
 то есть любая кратчайшая в $\Sigma$ с концами в $\Sigma_1$ полностью лежит в $\Sigma_1$.
@@ -1206,7 +1203,7 @@ $\Pi$ --- плоскость, разрезающая $\Sigma$ на две час
 \begin{thm}{Открытый вопрос}
 Верно ли, что для любого положительного целого $m$,
 существует вещественная константа $C_m$,
-такая, что вариация поворота произвольной кратчайшей $\gamma$ на выпуклой замкнутой гиперповерхности $\Sigma\subset\RR^m$ не превосходит $C_m$?
+такая, что вариация поворота произвольной кратчайшей на выпуклой замкнутой гиперповерхности в $\RR^m$ не превосходит $C_m$?
 \end{thm}
 
 
@@ -1215,6 +1212,7 @@ $\Pi$ --- плоскость, разрезающая $\Sigma$ на две час
 
 
 \input{bib.tex}
+\Addresses
 \end{document}
 
 \usepackage[

@@ -1,35 +1,38 @@
-\documentclass[a4paper,10pt]{amsart}
+\documentclass[a4paper,10pt]{article}
 \usepackage{kubik}
-
+\newcommand{\nofootnote}[1]{%
+\begingroup\def\thefootnote{}\footnotetext{#1}\endgroup}
 
 \begin{document}
-%\fontsize{5mm}{6mm}\selectfont
 \title{On the total curvature of \\
 minimizing geodesics on convex surfaces}
-\author{Nina Lebedeva}
-\address{N. Lebedeva\newline\vskip-4mm
-Math. Dept.
+\author{Nina Lebedeva and Anton Petrunin}
+\nofootnote{1991 Mathematics Subject Classification. 53A05, 53C45, 53C22.}
+\nofootnote{N.~Lebedeva was partially supported by RFBR grant 14-01-00062.}
+\nofootnote{A.~Petrunin was partially supported by NSF grant DMS 1309340.}
+
+\newcommand{\Addresses}{{\bigskip\footnotesize
+
+  Nina Lebedeva, \par\nopagebreak\textsc{Math. Dept.
 St. Petersburg State University,
 Universitetsky pr., 28, 
 Stary Peterhof, 
-198504, Russia.
-\newline\vskip-4mm
-Steklov Institute,
+198504, Russia.}
+  \par\nopagebreak
+  \textsc{Steklov Institute,
 27 Fontanka, St. Petersburg, 
 191023, Russia.}
-\email{lebed@pdmi.ras.ru}
-\author{Anton Petrunin}
-\address{A. Petrunin\newline\vskip-4mm
-Math. Dept. PSU,
-University Park, PA 16802,
-USA}
-\email{petrunin@math.psu.edu}
-\thanks{N.~Lebedeva was partially supported by RFBR grant 
-14-01-00062.}
-\thanks{A.~Petrunin was partially supported by NSF grant DMS 1309340.}
+  \par\nopagebreak
+  \textit{Электронная почта}: \texttt{lebed@pdmi.ras.ru}
 
+\medskip
 
+  Anton Petrunin, \par\nopagebreak\textsc{Math. Dept. PSU, University Park, PA 16802, USA}
+  \par\nopagebreak
+  \textit{Электронная почта}: \texttt{petrunin@math.psu.edu}
+}}
 \date{}
+\maketitle
 
 \begin{abstract}
 We give a universal upper bound 
@@ -38,14 +41,12 @@ of minimizing geodesic
 on a convex surface 
 in the Euclidean space.
 \end{abstract}
-\subjclass{53A05, 53C45, 53C22}
-\maketitle
 
 \section{Introduction}
 
 
 In this note we give an affirmative answer to the question asked by Dmitry Burago; 
-the same question was also stated in \cite{AH-PSV}, \cite{pach} and \cite{BKZ}.
+later we found the same question in \cite{AH-PSV}, \cite{pach} and \cite{BKZ}.
 Namely, we prove the following.
 
 \begin{thm}{Main theorem}\label{thm:main}
@@ -124,9 +125,10 @@ which is the hart of our proof.
 
 The second case might look impossible, 
 but the corkscrew geodesic constructed in \cite{BKZ} can meets $\omega$ in this order.
-Here we show that the total curvature of the twists grows geometrically from a middle twist to the ends and at the ends 
-the integral of the full twists can not be bigger than $2\cdot\pi$.
-This is enough to estimate the total curvature of the whole geodesic.
+Here we calculate the total curvature for each twists
+and show that the obtained sequence of numbers grows geometrically from some place in the middle to the ends. 
+At the ends the integral of the full twists can not be bigger than $2\cdot\pi$ ---
+this is enough to estimate the total curvature of the whole geodesic.
 
 The last case is a mixture of first two and it is done by mixing both techniques.
 
@@ -374,7 +376,7 @@ Then
 \le 3\cdot\pi
 +
 2\cdot\left|\alpha_0-\alpha_1
-+\dots +(-1)^k\cdot\alpha_k\right|
++\dots +(-1)^k\cdot\alpha_k\right|.
 \]
 
 \end{thm}
@@ -486,7 +488,7 @@ By Liberman's lemma the statement follows.
 Let $\eps>0$.
 A curve $\gamma\:[a,b]\to\RR^3$ will be called \emph{$\eps$-straight}
 if 
-\[(1-\eps)\cdot\length \gamma\le |\gamma(b)-\gamma(a)|\]
+\[(1-\eps)\cdot\length \gamma\le |\gamma(b)-\gamma(a)|.\]
 
 \begin{thm}{Lemma}\label{lem:eps-straight}
 Assume $\eps>0$ 
@@ -506,7 +508,7 @@ be such that
 Assume two points $p$ and $q$ lie on the convex surface $\Sigma$.
 Denote by $\nu_p$ and $\nu_q$ the outer normal vectors at $p$ and $q$ correspondingly.
 Note that if 
-\[\measuredangle(\nu_p,\nu_q)\le 2\cdot\theta\]
+\[\measuredangle(\nu_p,\nu_q)\le 2\cdot\theta,\]
 then any minimizing geodesic from $p$ to $q$ on $\Sigma$
 is $\eps$-straight.
 
@@ -685,12 +687,12 @@ If $\delta$ is small, we get
 \pi-\tfrac\eps3
 \eqlbl{eq:v1-perp-v_2}\]
 Again, we get
-\[\tc\gamma_1'\ge\tfrac\delta{10}\cdot\tc\gamma_1\ge \tfrac{\delta^3}{100}\cdot\tc\gamma_0\]
+\[\tc\gamma_1'\ge\tfrac\delta{10}\cdot\tc\gamma_1\ge \tfrac{\delta^3}{100}\cdot\tc\gamma_0.\]
 
 Further apply Lemma~\ref{lem:almost-const} to $\gamma_1'$.
 Denote by $\gamma_2$ and $\alpha_2$ the angle and the sub-arc of $\gamma_1'$.
 Again
-\[\tc\gamma_2\ge\tfrac{\delta^4}{100}\cdot\tc\gamma_0\]
+\[\tc\gamma_2\ge\tfrac{\delta^4}{100}\cdot\tc\gamma_0.\]
 
 
 The curve $\gamma_2$ runs under nearly constant angle to  $\bm{v}_{\gamma'_0}$ and $\bm{v}_{\gamma'_1}$.
@@ -1074,7 +1076,7 @@ It remains to apply Tongue Lemma~\ref{lem:tongue}.
 Assume $\gamma$ lies on the dark side for $\bm{i}$.
 Then for any pair of indexes $j>i$,
 such that 
-\[\bigl|\sum_{n=i}^{j}s_n\bigr|> 5\]
+\[\biggl|\sum_{n=i}^{j}s_n\biggr|> 5\]
 we have
 \[\phi_j>\tfrac32\cdot\phi_i.\]
 
@@ -1087,7 +1089,7 @@ By Claim~\ref{clm:7.3}, we may assume that
 
 Let $j'$ be the least index 
 such that
-\[|\sum_{n=i}^{j'} s_n|=5.\]
+\[\biggl|\sum_{n=i}^{j'} s_n\biggr|=5.\]
 
 Note that for any $b>t_j$ there is $a\in[t_i,t_j]$
 such that interval $[a,b]$ satisfies the assumptions of Proposition~\ref{prop:phi-psi}.
@@ -1227,9 +1229,44 @@ the latter implies that
 From \ref{eq:1/100} the result follows.
 \qeds
 
+\section{Final remarks}
+
+Note that our main theorem does not hold if one removes word \emph{minimizing} from its formulation.
+The minimizing geodesics have distinguishing properties in the class of all geodesics on a convex hypersurfaces.
+We want to mention some of them although they did not help us in the proof.
+
+The first of these properties was essentially discovered by Anatolii Milka in \cite{milka-bending}.
+To keep things simpler, we give a formulation only in the smooth case.
+
+\begin{thm}{Stretching lemma}
+Let $\gamma\:[0,\ell]\to\Sigma$ be a unit-speed minimizing geodesic from $p$ to $q$ on smooth convex hypersurface $\Sigma\subset\RR^m$ and $p_t=\gamma(t)-\dot\gamma(t)\cdot t$.
+Then for any $t\in [0,\ell]$, the point $q$ lies on the dark side from $p_t$.
+\end{thm}
+
+\begin{thm}{Convex hat lemma}
+Let $\Sigma\subset\RR^m$ be a closed convex hypersurface and
+$\Pi$ be a hyperplane which cuts $\Sigma$ into two parts $\Sigma_1$ and $\Sigma_2$.
+Assume that the reflection of $\Sigma_1$ in $\Pi$ lies inside $\Sigma$.
+Then $\Sigma_1$ forms a convex set in $\Sigma$;
+that is, any minimizing geodesic in $\Sigma$ with the ends in $\Sigma_1$ lies completely in $\Sigma_1$.
+\end{thm}
+
+The proofs of both statements can be found in \cite{petrunin-orthodox}.
+
+\medskip
+
+It is ashamed to confess, but we were not able to generalize the main theorem to higher dimensions.
+Namely we can not give an answer to the following question.
+
+\begin{thm}{Open question}
+Is it true that for any positive integer $m$,
+there is a constant $C_m$
+such that the total curvature of arbitrary minimizing geodesic on a convex hypersurface in $\RR^m$ does not exceed $C_m$?
+\end{thm}
 
 
 \input{bib.tex}
+\Addresses
 \end{document}
 
 \usepackage[
