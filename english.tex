@@ -73,7 +73,7 @@ In the proof he use an analog of Lemma \ref{lem:liberman} discussed below.
 
 \item In \cite{usov}, 
 Usov gives the optimal bound for the total curvature of geodesics on the graphs of $\ell$-Lipschitz convex function. 
-Namely, he proves that if $f\:\RR^2\to\RR$ is $\ell$-Lipschitz and convex then any 
+Namely, he proves that if $f\:\RR^2\to\RR$ is $\ell$-Lipschitz and convex, then any 
 geodesic in its graph 
 \[\Gamma_f=\set{(x,y,z)\in \RR^3}{z=f(x,y)}\] 
 has total curvature at most $2\cdot \ell$.
@@ -128,7 +128,7 @@ but the corkscrew geodesic constructed in \cite{BKZ} can meets $\omega$ in this 
 Here we calculate the total curvature for each twists
 and show that the obtained sequence of numbers grows geometrically from some place in the middle to the ends. 
 At the ends the integral of the full twists can not be bigger than $2\cdot\pi$ ---
-this is enough to estimate the total curvature of the whole geodesic.
+this is sufficient to estimate the total curvature of the whole geodesic.
 
 The last case is a mixture of first two and it is done by mixing both techniques.
 
@@ -253,7 +253,7 @@ We say that $\tilde\gamma_p$ is \emph{locally} convex (concave) in the interval 
 if any point $x\in [a,b]$ admits a closed neighborhood $[a',b']$ in $[a,b]$
 such that $\tilde\gamma_p$ is convex (correspondingly concave) in the interval $[a',b']$.
 
-If we pass to the limit of this construction as $p$ moves to infinity along a half-line in the direction of a unit vector $-\bm{u}$ then the limit curve is called development of $\gamma$ in the direction $\bm{u}$ and denoted as $\tilde\gamma_{\bm{u}}$.
+If we pass to the limit of this construction as $p$ moves to infinity along a half-line in the direction of a unit vector $-\bm{u}$, then the limit curve is called development of $\gamma$ in the direction $\bm{u}$ and denoted as $\tilde\gamma_{\bm{u}}$.
 
 We can define the development $\tilde\gamma_{\bm{u}}$ directly:
 (1) the development $\tilde\gamma_{\bm{u}}\:[0,\ell]\to \R^2$
@@ -283,14 +283,14 @@ if non of the points $p+t\cdot(p-z)$ lie inside of $\Sigma$ for $t>0$ (correspon
 The intersection of dark and bright side is called horizon of $z$;
 it is denoted by $\omega_z$.
 
-Note that if $z$ lies inside $\Sigma$ 
+Note that if $z$ lies inside $\Sigma$, 
 then all the points on $\Sigma$ lie on the dark side from $z$ and its horizon $\omega_z$ is empty.
 
 If $\Sigma$ is smooth we can define the outer normal vector $\nu_p$ to $\Sigma$ at $p$.
 In this case $p$ lies on dark (bright) side of $\Sigma$ from $z$
 if and only if $\langle p-z,\nu_p\rangle\ge 0$
 (correspondingly $\langle p-z,\nu_p\rangle\le 0$).
-If in addition $\Sigma$ is closed and strongly convex then the horizon is empty for $z$ inside $\Sigma$ 
+If in addition $\Sigma$ is closed and strongly convex, then the horizon is empty for $z$ inside $\Sigma$ 
 and it is formed by a closed smooth curve for $z$ outside $\Sigma$.
 
 We could also define bright/dark sides and horizon in the limit case,
@@ -301,7 +301,7 @@ We say that a point $p\in\Sigma$ lies on dark (bright) side for the unit vector 
 As before the intersection of bright and dark side is called horizon of $\bm{u}$ and it is denoted as $\omega_{\bm{u}}$.
 
 In the smooth case the latter means that $\langle \nu_p,\bm{u}\rangle\ge 0$ (correspondingly $\langle \nu_p,\bm{u}\rangle\le 0$).
-If in addition $\Sigma$ is closed strongly convex then $\omega_{\bm{u}}$ is a closed smooth curve.
+If in addition $\Sigma$ is closed strongly convex, then $\omega_{\bm{u}}$ is a closed smooth curve.
 
 \begin{thm}{Liberman's Lemma}\label{lem:liberman}
 Assume $\gamma$ be a geodesic on the convex surface $\Sigma\subset \RR^3$.
@@ -317,16 +317,16 @@ we have
 \[\tc\tilde\gamma_{\bm{u}}\le\tc\gamma.\]
 On the other hand total curvature of few developments gives an estimate 
 for the total curvature of the original curve.
-For example, if $\bm{i},\bm{j},\bm{k}$ is the orthonormal basis then
+For example, if $\bm{i},\bm{j},\bm{k}$ is the orthonormal basis, then
 \[\tc\gamma
 \le
 \tc\tilde\gamma_{\bm{i}}+\tc\tilde\gamma_{\bm{j}}+\tc\tilde\gamma_{\bm{k}}.\]
 
-If $\gamma$ lies completely on the dark (or bright) side for direction $\bm{u}$
+If $\gamma$ lies completely on the dark (or bright) side for direction $\bm{u}$,
 then by Liberman's lemma we get 
 \[\tc\tilde\gamma_{\bm{u}}\le \pi.\]
 It follows that if $\gamma$ cross the horizons $\omega_{\bm{i}}$, $\omega_{\bm{j}}$ and $\omega_{\bm{k}}$
-at most $N$ times then 
+at most $N$ times, then 
 \begin{align*}
 \tc\gamma
 &\le
@@ -447,7 +447,7 @@ In particular
 \le
 \int\limits_{\DD} K_{\iota(x)}\cdot d_{\iota(x)}\area_\Sigma.
 \eqlbl{eq:key2}\]
-If in addition the image $\iota(\DD)$ lies  completely in the dark or bright side for $\bm{u}$ then
+If in addition the image $\iota(\DD)$ lies  completely in the dark or bright side for $\bm{u}$, then
 \[\tc_{\bm{u}}\gamma
 \le 
 \int\limits_{\iota(\DD)} K_p\cdot d_p\area_\Sigma<2\cdot \pi.\eqlbl{eq:key3}\]
@@ -549,7 +549,7 @@ Apply Lemma~\ref{lem:eps-straight} for $\eps=\tfrac12$.
 For any $\eps>0$ there is $\delta>0$ such that the following holds.
 
 If $\gamma\:[a,b]\to\Sigma$ is a minimizing geodesic 
-on a smooth strongly convex surface $\Sigma$ in $\RR^3$
+on a smooth strongly convex surface $\Sigma$ in $\RR^3$,
 then there is an interval $[a',b']\subset[a,b]$
 such that 
 \[\tc(\gamma|_{[a',b']})>\delta\cdot\tc\gamma.\]
@@ -558,7 +558,7 @@ and
 for a fixed unit vector $\bm{u}$
 and any $t\in[a',b']$.
 
-Moreover, if $\eps=\tfrac1{10}$ then one can assume $\delta=\tfrac1{100^{100}}$.
+Moreover, if $\eps=\tfrac1{10}$, then one can assume $\delta=\tfrac1{100^{100}}$.
 \end{thm}
 
 In the proof we will need the following two lemmas.
@@ -567,19 +567,19 @@ In the proof we will need the following two lemmas.
 For any $\eps$ there is $\delta>0$ such that the following holds.
 
 Assume $\gamma$ is a curve,
-$\bm{v}_1$ and $\bm{v}_2$  be two vectors in $\RR^3$
+$\bm{v}_1$ and $\bm{v}_2$  are two vectors in $\RR^3$
 and $0\le\alpha_1,\alpha_2\le\pi$ be such that
 \begin{align*}
 \eps
 &<\measuredangle(\bm{v}_1,\bm{v}_2)<\pi-\eps
 \\
 \alpha_i-\delta
-&<\measuredangle(\bm{v}_i,\dot\gamma(t))< \alpha_i+\delta
+&<\measuredangle(\bm{v}_i,\dot\gamma(t))< \alpha_i+\delta.
 \end{align*}
-then there is a vector $\bm{u}$ such that
+Then there is a vector $\bm{u}$ such that
 $\measuredangle(\bm{u},\dot\gamma(t))<\eps$.
 
-Moreover if $\eps<\tfrac1{10}$ 
+Moreover if $\eps<\tfrac1{10}$, 
 then one can take $\delta=\eps^{10}$.
 \end{thm}
 
@@ -672,7 +672,7 @@ In particular
 
 If 
 $\alpha_1\le \tfrac\eps2$ or $\alpha_1\ge\pi-\tfrac\eps2$ 
-and $\delta$ is small enough
+and $\delta$ is sufficiently small,
 then statement holds for the arc $\gamma_1$ and the vector $\bm{u}=\pm\bm{v}_{\gamma'_0}$.
 
 Otherwise let us repeat the above construction for $\gamma_1$.
@@ -762,7 +762,7 @@ For any $t$ we have
 Applying Liberman's Lemma in the direction $\bm{i}$ we also get the following.
 
 \begin{thm}{Claim}\label{clm:7.3}
-If an arc $\gamma|_{[a,b]}$ lies in the dark (bright) side for $\bm{i}$ then 
+If an arc $\gamma|_{[a,b]}$ lies in the dark (bright) side for $\bm{i}$, then 
 the angle function $\phi$ is non-decreasing (correspondingly non-increasing)
 in $[a,b]$.
 \end{thm}
@@ -771,13 +771,13 @@ in $[a,b]$.
 
 Assume $\gamma$ is a curve on a smooth strongly convex surface $\Sigma$ in $\RR^3$.
 Consider a plane $L$ 
-passing through two points of $\gamma$, 
+passing thru two points of $\gamma$, 
 say $p=\gamma(a)$ and $q=\gamma(b)$ with $a<b$.
-Let $L_\pm$ be a  half-planes in $L$ bounded by the line trough $p$ and $q$.
+Let $L_\pm$ be a  half-planes in $L$ bounded by the line thru $p$ and $q$.
 Set $\sigma_\pm=\Sigma\cap L_\pm$.
 
 \begin{thm}{Observation}\label{obs:cut}
-If $\gamma$ is a minimizing geodesic in the smooth strongly convex surface $\Sigma\subset \RR^3$ and $a$, $b$ and $\sigma_\pm$ as above then
+If $\gamma$ is a minimizing geodesic in the smooth strongly convex surface $\Sigma\subset \RR^3$ and $a$, $b$ and $\sigma_\pm$ as above, then
 \[\length\sigma_\pm\ge\length(\gamma|_{[a,b]}).\]
 \end{thm}
 
@@ -785,7 +785,7 @@ To prove the observation, it is sufficient to note that $\sigma_\pm$ are  smooth
 
 Based on this observation we give couple of estimates on drifting minimizing geodesics.
 
-Let $\gamma\:[a,b]\to\RR^3$ be a curve and $\ell$ be a line which does not pass through points of $\gamma$.
+Let $\gamma\:[a,b]\to\RR^3$ be a curve and $\ell$ be a line which does not pass thru points of $\gamma$.
 Assume $\phi\:[a,b]\to\RR$ be a continuous azimuth angle
 of $\gamma$ in the cylindrical coordinates with the axis $\ell$.
 If 
@@ -828,7 +828,7 @@ These two estimates contradict Observation~\ref{obs:cut}.
 \qeds
 
 \begin{thm}{Corollary}\label{cor:around-twice}
-If $\Sigma$, $\gamma$, $\ell$, $a$ and $b$ as in the Proposition~\ref{prop:around-once} and the arc $\gamma|_{[a,b]}$ goes around the $x$-axis at least twice
+If $\Sigma$, $\gamma$, $\ell$, $a$ and $b$ as in the Proposition~\ref{prop:around-once} and the arc $\gamma|_{[a,b]}$ goes around the $x$-axis at least twice,
 then the arc $\gamma|_{[b,\ell]}$ lies on the dark side with respect to $\bm{i}$.
 \end{thm}
 
@@ -845,7 +845,7 @@ Assume $\gamma\:[0,\ell]\to \Sigma$ is an $\bm{i}$-drifting minimizing geodesic
 in the convex surface $\Sigma\subset \RR^3$.
 Assume that the arc $\gamma|_{[b,\ell]}$ 
 lies on the dark side of $\Sigma$ with respect to $\bm{i}$.
-If $b\le s<t\le \ell$ and the point $\gamma(s)$ lies in the plane $\Pi$ through $\gamma(t)$ spanned by $\nu(t)$ and $\lambda(t)$
+If $b\le s<t\le \ell$ and the point $\gamma(s)$ lies in the plane $\Pi$ thru $\gamma(t)$ spanned by $\nu(t)$ and $\lambda(t)$,
 then 
 \[\phi(s)\le \psi(t).\]
 \end{thm}
@@ -895,10 +895,10 @@ In particular
 =
 s_0\cdot\theta_0+s_1\cdot\theta_1+\dots+s_k\cdot\theta_k.\]
 Note that for the right choice of orientation,
-if $s_n=+1$ 
+if $s_n=+1$, 
 then $\nu_{\gamma(t)}$ moves clockwise in $\SS^2$
 at $t_n$
-and if $s_n=-1$ then it moves counterclockwise.    
+and if $s_n=-1$, then it moves counterclockwise.    
 
 We say that a pair of indexes $i<j$
 forms an \emph{$s$-pair} 
@@ -910,7 +910,7 @@ if
 \]
 if $i<j'<j$.
 
-If you exchange ``$+1$'' and ``$-1$'' in $s$ by ``$($'' and ``$)$'' correspondingly then $(i,j)$ is an $s$-pair
+If you exchange ``$+1$'' and ``$-1$'' in $s$ by ``$($'' and ``$)$'' correspondingly, then $(i,j)$ is an $s$-pair
 if and only if the $i$-th bracket forms a pair with $j$-bracket.
 
 Note that any index $i$ appears in at most one $s$-pair and 
@@ -973,14 +973,14 @@ $(i,j)=(i_1,j_1),(i_2,j_2),\zz\dots,(i_q,j_q)$ such that
 
 Note that the $s$-pairs of the same depth do not overlap;
 that is if  $\depth(i,j)=\depth(i',j')$
-for two distinct $s$-pairs $(i,j)$ and $(i',j')$
+for two distinct $s$-pairs $(i,j)$ and $(i',j')$,
 then either $i<j<i'<j'$ or $i'<j'<i<j$.
 
 The following proposition follow directly from the discussion above.
 
 \begin{thm}{Proposition}\label{prop:immersion}
 Let $(i,j)$ be an $s$-pair.
-Then the arcs $\gamma|_{[t_i,t_j]}$ and an arc of $\omega_{\bm{j}}$ bound an immersed disc in $\Sigma$ which lies between $(y,z)$-planes through $\gamma(t_i)$ and $\gamma(t_j)$.
+Then the arcs $\gamma|_{[t_i,t_j]}$ and an arc of $\omega_{\bm{j}}$ bound an immersed disc in $\Sigma$ which lies between $(y,z)$-planes thru $\gamma(t_i)$ and $\gamma(t_j)$.
 Moreover the maximal multiplicity of the disc is at most $\depth_{s}(i,j)$.
 \end{thm}
 
@@ -994,7 +994,7 @@ Then
 \le 4\cdot\pi\cdot q.\]
 \end{thm}
 
-\parit{Proof.} For each $n$ denote by $K_n$ the integral of Gauss curvature of the part of surface $\Sigma$ with the $x$-coordinate less then the $x$-coordinate of $\gamma(t_n)$.
+\parit{Proof.} For each $n$ denote by $K_n$ the integral of Gauss curvature of the part of surface $\Sigma$ with the $x$-coordinate less than the $x$-coordinate of $\gamma(t_n)$.
 Note that 
 \[0\le K_1\le\dots\le K_k\le 4\cdot\pi.\]
 
@@ -1108,7 +1108,7 @@ Hence the result follows.
 
 
 \begin{thm}{Proposition}\label{prop:graph}
-If $\gamma$ is an $\bm{i}$-drifting minimizing geodesic on the dark side for $\bm{i}$ then
+If $\gamma$ is an $\bm{i}$-drifting minimizing geodesic on the dark side for $\bm{i}$, then
 \[\tc_{\bm{j}}\gamma\le 100\cdot\pi.\]
 
 \end{thm}
@@ -1199,11 +1199,11 @@ we can subdivide $\gamma'$ into at most three arcs:
 \end{itemize}
 
 Indeed, choose an arc $\gamma'|_{[a,b]}$  
-on the right from the $(y,z)$-plane through
+on the right from the $(y,z)$-plane thru
 $\tfrac12\cdot(\gamma'(0)+\gamma'(\ell))$
 which rotates around $x$-axis 2 times 
 and assume that $b$ takes the minimal possible value.  
-Note that if $\gamma'(s)$ lies on $(y,z)$-plane through $\tfrac12\cdot(\gamma'(0)+\gamma'(\ell))$
+Note that if $\gamma'(s)$ lies on $(y,z)$-plane thru $\tfrac12\cdot(\gamma'(0)+\gamma'(\ell))$,
 then $[s,b]\supset[a,b]$ 
 and any sub-arc of $[s,b]$ rotates around $x$-axis at most 2 times.
 
@@ -1212,7 +1212,7 @@ we can take $\gamma'_+=\gamma'|_{[b,\ell]}$;
 in case if there is no such arc $[a,b]$, we assume that $\gamma_+'$ is not presented.
 Repeat the construction reverting the direction of $x$-axis;
 we get the left arc $\gamma_-'$.
-The remaining arc is assumed to be $\gamma_0'$; note that any sub-arc of $\gamma_0'$ is divided by the $(y,z)$-plane through $\tfrac12\cdot(\gamma'(0)+\gamma'(\ell))$ into two each of which rotate around $x$-axis at most 2 times. 
+The remaining arc is assumed to be $\gamma_0'$; note that any sub-arc of $\gamma_0'$ is divided by the $(y,z)$-plane thru $\tfrac12\cdot(\gamma'(0)+\gamma'(\ell))$ into two each of which rotate around $x$-axis at most 2 times. 
 Therefore the number of rotations of any arc in $\gamma_0'$ is at most $4$.
 
 Let us estimate the total curvature of $\gamma'_-$, $\gamma'_0$ and $\gamma'_+$ separately.
@@ -1236,7 +1236,7 @@ Note that our main theorem does not hold if one removes word \emph{minimizing} f
 
 In addition to Corollary~\ref{cor:length-diameter}, 
 we know couple of properties of the minimizing geodesics which distinguish them in the class of all geodesics on a convex surfaces.
-We want to mention them although they did not help us in the proof.
+We want to mention them altho they did not help us in the proof.
 The first of these properties was essentially discovered by Anatolii Milka in \cite{milka-bending}.
 To keep things simpler, we give a formulation only in the smooth case.
 
