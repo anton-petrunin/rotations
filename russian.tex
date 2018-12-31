@@ -1,6 +1,8 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage{kubik-ru}
 
+\renewcommand*{\HyperDestNameFilter}[1]{\jobname-#1}%might help in arXiv
+
 \newcommand{\nofootnote}[1]{%
 \begingroup\def\thefootnote{}\footnotetext{#1}\endgroup}
 \begin{document}

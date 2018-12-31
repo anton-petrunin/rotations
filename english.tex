@@ -3,6 +3,8 @@
 \newcommand{\nofootnote}[1]{%
 \begingroup\def\thefootnote{}\footnotetext{#1}\endgroup}
 
+\renewcommand*{\HyperDestNameFilter}[1]{\jobname-#1}%might help in arXiv
+
 \begin{document}
 \title{On the total curvature of \\
 minimizing geodesics on convex surfaces}
